@@ -1,0 +1,7 @@
+mayor de la cuenta 1.01.001.0001 / caja
+644.774.896
+
+Saldos por Cuenta 1.01.001.0001 / caja
+659.774.896
+
+REconstruccion de Cabecera de Asientos --> ver donde agregar y de que manera este proceso

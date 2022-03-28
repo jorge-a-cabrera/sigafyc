@@ -1,0 +1,9 @@
+C:\Mis Proyectos\sigafyc\Utilitarios\bin\Debug\Utilitarios.dll
+C:\Mis Proyectos\sigafyc\Utilitarios\bin\Debug\Utilitarios.pdb
+C:\Mis Proyectos\sigafyc\Utilitarios\bin\Debug\Utilitarios.xml
+C:\Mis Proyectos\sigafyc\Utilitarios\obj\Debug\Utilitarios.frmFGeneraArchivoControl.resources
+C:\Mis Proyectos\sigafyc\Utilitarios\obj\Debug\Utilitarios.Resources.resources
+C:\Mis Proyectos\sigafyc\Utilitarios\obj\Debug\Utilitarios.vbproj.GenerateResource.Cache
+C:\Mis Proyectos\sigafyc\Utilitarios\obj\Debug\Utilitarios.dll
+C:\Mis Proyectos\sigafyc\Utilitarios\obj\Debug\Utilitarios.xml
+C:\Mis Proyectos\sigafyc\Utilitarios\obj\Debug\Utilitarios.pdb

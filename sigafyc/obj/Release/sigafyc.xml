@@ -1,0 +1,470 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+sigafyc
+</name>
+</assembly>
+<members>
+<member name="T:sigafyc.My.Resources.Resources">
+<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.ResourceManager">
+<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.Culture">
+<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources._1920x1080_2979438_linux_gnu_debian___mixed_wallpapers">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources._2560x1440_2917445_linux_debian___mixed_wallpapers">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources._7f95204b_37ad_499f_a4b0_83ec7340270c">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.background_2462431_640">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.iconfinder_Cancel">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.iconfinder_Check">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.iconfinder_cross">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.iconfinder_delet">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.iconfinder_edit">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.iconfinder_exit">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.iconfinder_plus">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.iconfinder_security">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.iconfinder_TextEdit">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icono_grande">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icono_mediano">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_add_row_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_add_row_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_back_to_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_back_to_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_blue_cancel_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_blue_cancel_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_blue_ok_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_blue_ok_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_cancel_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_cancel_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_cancel_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_cancel_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_checked_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_add_row_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_cancel_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_cancel_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_delete_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_delete_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_delete_row_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_details_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_edit_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_edit_row_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_exit_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_exit_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_eye_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_ok_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_ok_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_ok_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_plus_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_plus_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_print_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_print_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_survey_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_color_survey_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_danger_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_delete_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_delete_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_delete_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_delete_row_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_delete_row_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_details_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_details_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_edit_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_edit_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_edit_row_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_edit_row_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_exit_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_exit_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_exit_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_eye_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_eye_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_eye_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_high_priority_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_info_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_next_page_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_next_page_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_ok_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_ok_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_ok_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_ok_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_plus_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_plus_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_preview_pane_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_print_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_survey_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_survey_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_survey_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_view_48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_view_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:sigafyc.My.Resources.Resources.icons8_warn_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="M:sigafyc.BaseDatosException.#ctor(System.String,System.Exception)">
+ <summary>
+ Construye una instancia en base a un mensaje de error y la una excepción original.
+ </summary>
+ <param name="mensaje">El mensaje de error.</param>
+ <param name="original">La excepción original.</param>
+</member>
+<member name="M:sigafyc.BaseDatosException.#ctor(System.String)">
+ <summary>
+ Construye una instancia en base a un mensaje de error.
+ </summary>
+ <param name="mensaje">El mensaje de error.</param>
+</member>
+<member name="M:sigafyc.SeguridadException.#ctor(System.String)">
+ <summary>
+ Construye una instancia en base a un mensaje de error.
+ </summary>
+ <param name="mensaje">El mensaje de error.</param>
+</member>
+</members>
+</doc>

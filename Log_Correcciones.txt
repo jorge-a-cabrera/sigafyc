@@ -1,0 +1,7 @@
+Correcciones a Realizar 2019-01-03 15:14 --> Detectado: JACG-864222
+|	frmBss060equipos
+|	   CancelButton -> Salir --> ok
+|	frmBss110parametros
+|	   CancelButton -> Salir --> ok
++-->Corregido el 2019-01-03 15:23 --> JACG-864222
+

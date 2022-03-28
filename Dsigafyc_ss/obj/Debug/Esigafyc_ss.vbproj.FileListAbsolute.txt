@@ -1,0 +1,12 @@
+C:\Mis Proyectos\sigafyc\Dsigafyc_ss\bin\Debug\Esigafyc_ss.dll
+C:\Mis Proyectos\sigafyc\Dsigafyc_ss\bin\Debug\Esigafyc_ss.pdb
+C:\Mis Proyectos\sigafyc\Dsigafyc_ss\bin\Debug\Esigafyc_ss.xml
+C:\Mis Proyectos\sigafyc\Dsigafyc_ss\bin\Debug\Npgsql.dll
+C:\Mis Proyectos\sigafyc\Dsigafyc_ss\bin\Debug\Npgsql.pdb
+C:\Mis Proyectos\sigafyc\Dsigafyc_ss\bin\Debug\Npgsql.xml
+C:\Mis Proyectos\sigafyc\Dsigafyc_ss\obj\Debug\Esigafyc_ss.vbprojResolveAssemblyReference.cache
+C:\Mis Proyectos\sigafyc\Dsigafyc_ss\obj\Debug\Esigafyc_ss.Resources.resources
+C:\Mis Proyectos\sigafyc\Dsigafyc_ss\obj\Debug\Esigafyc_ss.vbproj.GenerateResource.Cache
+C:\Mis Proyectos\sigafyc\Dsigafyc_ss\obj\Debug\Esigafyc_ss.dll
+C:\Mis Proyectos\sigafyc\Dsigafyc_ss\obj\Debug\Esigafyc_ss.xml
+C:\Mis Proyectos\sigafyc\Dsigafyc_ss\obj\Debug\Esigafyc_ss.pdb

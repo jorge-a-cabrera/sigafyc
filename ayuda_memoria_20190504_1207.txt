@@ -1,0 +1,24 @@
+Mantenedor: e020ventacabecera / d040ventatotales
+	Tablas requeridas
+		c001empresas -> ok
+		c010timbpropios -> ok 2019-05-06 19:04
+		b070sucursales -> ok
+		c020documentos -> ok
+		b060perautgest -> ok
+		b100vendedores -> ok 2019-05-04 17:34
+		c040docimpuestos
+	Mantenedores previos
+		Mantenedor: b100vendedores -> ok 2019-05-04 17:34
+			Tablas requeridas	
+				c001empresas -> ok
+				
+		Mantenedor: c010timbpropios
+			Tablas requeridas	
+				c001empresas -> ok 
+				b070sucursales -> ok
+
+		Mantenedor: c040docimpuestos	
+			Tablas requeridas
+				c001empresas -> ok
+				c020documentos -> ok
+				a040impuestos -> ok

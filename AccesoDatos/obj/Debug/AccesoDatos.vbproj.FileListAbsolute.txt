@@ -1,0 +1,17 @@
+C:\Mis Proyectos\sigafyc\AccesoDatos\bin\Debug\AccesoDatos.dll
+C:\Mis Proyectos\sigafyc\AccesoDatos\bin\Debug\AccesoDatos.pdb
+C:\Mis Proyectos\sigafyc\AccesoDatos\bin\Debug\AccesoDatos.xml
+C:\Mis Proyectos\sigafyc\AccesoDatos\bin\Debug\MySql.Data.dll
+C:\Mis Proyectos\sigafyc\AccesoDatos\bin\Debug\Utilitarios.dll
+C:\Mis Proyectos\sigafyc\AccesoDatos\bin\Debug\Google.Protobuf.dll
+C:\Mis Proyectos\sigafyc\AccesoDatos\bin\Debug\Utilitarios.pdb
+C:\Mis Proyectos\sigafyc\AccesoDatos\bin\Debug\Utilitarios.xml
+C:\Mis Proyectos\sigafyc\AccesoDatos\bin\Debug\MySql.Data.xml
+C:\Mis Proyectos\sigafyc\AccesoDatos\obj\Debug\AccesoDatos.vbprojResolveAssemblyReference.cache
+C:\Mis Proyectos\sigafyc\AccesoDatos\obj\Debug\AccesoDatos.frmAviso.resources
+C:\Mis Proyectos\sigafyc\AccesoDatos\obj\Debug\AccesoDatos.frmConfirmacion.resources
+C:\Mis Proyectos\sigafyc\AccesoDatos\obj\Debug\AccesoDatos.Resources.resources
+C:\Mis Proyectos\sigafyc\AccesoDatos\obj\Debug\AccesoDatos.vbproj.GenerateResource.Cache
+C:\Mis Proyectos\sigafyc\AccesoDatos\obj\Debug\AccesoDatos.dll
+C:\Mis Proyectos\sigafyc\AccesoDatos\obj\Debug\AccesoDatos.xml
+C:\Mis Proyectos\sigafyc\AccesoDatos\obj\Debug\AccesoDatos.pdb

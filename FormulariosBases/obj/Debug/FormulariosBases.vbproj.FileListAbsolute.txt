@@ -1,0 +1,7 @@
+C:\Mis Proyectos\sigafyc\FormulariosBases\obj\Debug\FormulariosBases.frmBrowse.resources
+C:\Mis Proyectos\sigafyc\FormulariosBases\obj\Debug\FormulariosBases.frmConfirmar.resources
+C:\Mis Proyectos\sigafyc\FormulariosBases\obj\Debug\FormulariosBases.frmFormulario.resources
+C:\Mis Proyectos\sigafyc\FormulariosBases\obj\Debug\FormulariosBases.frmMensaje.resources
+C:\Mis Proyectos\sigafyc\FormulariosBases\obj\Debug\FormulariosBases.Resources.resources
+C:\Mis Proyectos\sigafyc\FormulariosBases\obj\Debug\FormulariosBases.vbproj.GenerateResource.Cache
+C:\Mis Proyectos\sigafyc\FormulariosBases\obj\Debug\FormulariosBases.xml
