@@ -196,7 +196,9 @@
     <Compile Include="ESistemaPrincipal\Ea030personas.vb" />
     <Compile Include="ESistemaPrincipal\Ea040impuestos.vb" />
     <Compile Include="ESistemaPrincipal\Ea050unidades.vb" />
+    <Compile Include="ESistemaPrincipal\Ea060clasmerc.vb" />
     <Compile Include="ESistemaPrincipal\Eb030cotizaciones.vb" />
+    <Compile Include="ESistemaPrincipal\Eb040depositos.vb" />
     <Compile Include="ESistemaPrincipal\Eb050plancuentas.vb" />
     <Compile Include="ESistemaPrincipal\Eb060perautgest.vb" />
     <Compile Include="ESistemaPrincipal\Eb070sucursales.vb" />
@@ -254,6 +256,12 @@
     <Compile Include="Formularios\Browse\frmBa050unidades.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Browse\frmBa060clasmerc.Designer.vb">
+      <DependentUpon>frmBa060clasmerc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBa060clasmerc.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Browse\frmBb020conceptos.Designer.vb">
       <DependentUpon>frmBb020conceptos.vb</DependentUpon>
     </Compile>
@@ -264,6 +272,12 @@
       <DependentUpon>frmBb030cotizaciones.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Browse\frmBb030cotizaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBb040depositos.Designer.vb">
+      <DependentUpon>frmBb040depositos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBb040depositos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Browse\frmBb050plancuentas.Designer.vb">
@@ -440,6 +454,12 @@
     <Compile Include="Formularios\Form\frmFa050unidades.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Form\frmFa060clasmerc.Designer.vb">
+      <DependentUpon>frmFa060clasmerc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFa060clasmerc.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Form\frmFb020conceptos.Designer.vb">
       <DependentUpon>frmFb020conceptos.vb</DependentUpon>
     </Compile>
@@ -450,6 +470,12 @@
       <DependentUpon>frmFb030cotizaciones.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Form\frmFb030cotizaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFb040depositos.Designer.vb">
+      <DependentUpon>frmFb040depositos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFb040depositos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Form\frmFb050plancuentas.Designer.vb">
@@ -865,11 +891,17 @@
     <EmbeddedResource Include="Formularios\Browse\frmBa050unidades.resx">
       <DependentUpon>frmBa050unidades.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Browse\frmBa060clasmerc.resx">
+      <DependentUpon>frmBa060clasmerc.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Browse\frmBb020conceptos.resx">
       <DependentUpon>frmBb020conceptos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Browse\frmBb030cotizaciones.resx">
       <DependentUpon>frmBb030cotizaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Browse\frmBb040depositos.resx">
+      <DependentUpon>frmBb040depositos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Browse\frmBb050plancuentas.resx">
       <DependentUpon>frmBb050plancuentas.vb</DependentUpon>
@@ -958,11 +990,17 @@
     <EmbeddedResource Include="Formularios\Form\frmFa050unidades.resx">
       <DependentUpon>frmFa050unidades.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form\frmFa060clasmerc.resx">
+      <DependentUpon>frmFa060clasmerc.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form\frmFb020conceptos.resx">
       <DependentUpon>frmFb020conceptos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form\frmFb030cotizaciones.resx">
       <DependentUpon>frmFb030cotizaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form\frmFb040depositos.resx">
+      <DependentUpon>frmFb040depositos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form\frmFb050plancuentas.resx">
       <DependentUpon>frmFb050plancuentas.vb</DependentUpon>

@@ -647,3 +647,7 @@ C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBb081timbotros.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFb081timbotros.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBa050unidades.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFa050unidades.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBa060clasmerc.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFa060clasmerc.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBb040depositos.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFb040depositos.resources

@@ -48,6 +48,8 @@
     Public Const sCompra_ As String = "Compra"
     Public Const sVenta_ As String = "Venta"
     Public Const sSemisuma_ As String = "Semisuma"
+    Public Const sEntrada_ As String = "1-Entrada"
+    Public Const sSalida_ As String = "2-Salida"
 
     Public Const sBorrado_ As String = "*"
     Public Const sBlanco_ As String = " "
@@ -181,6 +183,7 @@
     Public Const sCredito_ As String = "2-Credito"
     Public Const sIngreso_ As String = "6"
     Public Const sEgreso_ As String = "7"
+    Public Const sMovil_ As String = "Movil"
 
     Public Const sPorcentaje_ As String = "%-Porcentaje"
     Public Const sImporte_ As String = "I-Importe fijo"
