@@ -53,6 +53,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Size = New System.Drawing.Size(900, 481)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
@@ -79,12 +80,19 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         Me.TabPage1.Controls.Add(Me.lblNombreEmpresa)
         Me.TabPage1.Controls.Add(Me.txtCodEmpresa_NE)
         Me.TabPage1.Controls.Add(Me.Label4)
+        Me.TabPage1.Size = New System.Drawing.Size(892, 441)
         '
         'btnCancelar
         '
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 532)
         '
         'btnAceptar
         '
+        Me.btnAceptar.Location = New System.Drawing.Point(775, 532)
+        '
+        'lblMensaje
+        '
+        Me.lblMensaje.Size = New System.Drawing.Size(896, 37)
         '
         'TabPage2
         '
@@ -146,7 +154,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'txtCodigo_NE
         '
         Me.txtCodigo_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodigo_NE.Location = New System.Drawing.Point(176, 57)
+        Me.txtCodigo_NE.Location = New System.Drawing.Point(176, 52)
         Me.txtCodigo_NE.Name = "txtCodigo_NE"
         Me.txtCodigo_NE.Size = New System.Drawing.Size(115, 29)
         Me.txtCodigo_NE.TabIndex = 47
@@ -154,7 +162,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(15, 59)
+        Me.Label1.Location = New System.Drawing.Point(15, 54)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(113, 24)
         Me.Label1.TabIndex = 48
@@ -163,7 +171,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'lblNombreSucursal
         '
         Me.lblNombreSucursal.AutoSize = True
-        Me.lblNombreSucursal.Location = New System.Drawing.Point(246, 99)
+        Me.lblNombreSucursal.Location = New System.Drawing.Point(246, 89)
         Me.lblNombreSucursal.Name = "lblNombreSucursal"
         Me.lblNombreSucursal.Size = New System.Drawing.Size(178, 24)
         Me.lblNombreSucursal.TabIndex = 51
@@ -172,7 +180,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'txtCodSucursal_NE
         '
         Me.txtCodSucursal_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodSucursal_NE.Location = New System.Drawing.Point(176, 97)
+        Me.txtCodSucursal_NE.Location = New System.Drawing.Point(176, 87)
         Me.txtCodSucursal_NE.Name = "txtCodSucursal_NE"
         Me.txtCodSucursal_NE.Size = New System.Drawing.Size(64, 29)
         Me.txtCodSucursal_NE.TabIndex = 49
@@ -180,7 +188,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(15, 99)
+        Me.Label3.Location = New System.Drawing.Point(15, 89)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(88, 24)
         Me.Label3.TabIndex = 50
@@ -189,7 +197,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'txtFecha_FE
         '
         Me.txtFecha_FE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtFecha_FE.Location = New System.Drawing.Point(176, 137)
+        Me.txtFecha_FE.Location = New System.Drawing.Point(176, 119)
         Me.txtFecha_FE.Name = "txtFecha_FE"
         Me.txtFecha_FE.Size = New System.Drawing.Size(115, 29)
         Me.txtFecha_FE.TabIndex = 52
@@ -197,7 +205,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(15, 139)
+        Me.Label13.Location = New System.Drawing.Point(14, 124)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(159, 24)
         Me.Label13.TabIndex = 53
@@ -206,7 +214,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'txtCodDocumento_NE
         '
         Me.txtCodDocumento_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodDocumento_NE.Location = New System.Drawing.Point(176, 177)
+        Me.txtCodDocumento_NE.Location = New System.Drawing.Point(176, 154)
         Me.txtCodDocumento_NE.Name = "txtCodDocumento_NE"
         Me.txtCodDocumento_NE.Size = New System.Drawing.Size(64, 29)
         Me.txtCodDocumento_NE.TabIndex = 54
@@ -214,7 +222,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(15, 179)
+        Me.Label5.Location = New System.Drawing.Point(14, 159)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(113, 24)
         Me.Label5.TabIndex = 55
@@ -223,7 +231,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'lblNombreDocumento
         '
         Me.lblNombreDocumento.AutoSize = True
-        Me.lblNombreDocumento.Location = New System.Drawing.Point(246, 179)
+        Me.lblNombreDocumento.Location = New System.Drawing.Point(246, 159)
         Me.lblNombreDocumento.Name = "lblNombreDocumento"
         Me.lblNombreDocumento.Size = New System.Drawing.Size(204, 24)
         Me.lblNombreDocumento.TabIndex = 56
@@ -232,7 +240,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'txtNroDocumento_AN
         '
         Me.txtNroDocumento_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNroDocumento_AN.Location = New System.Drawing.Point(176, 217)
+        Me.txtNroDocumento_AN.Location = New System.Drawing.Point(176, 189)
         Me.txtNroDocumento_AN.Name = "txtNroDocumento_AN"
         Me.txtNroDocumento_AN.Size = New System.Drawing.Size(115, 29)
         Me.txtNroDocumento_AN.TabIndex = 57
@@ -240,7 +248,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(15, 219)
+        Me.Label6.Location = New System.Drawing.Point(15, 191)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(152, 24)
         Me.Label6.TabIndex = 58
@@ -249,7 +257,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'txtCodMoneda_AN
         '
         Me.txtCodMoneda_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodMoneda_AN.Location = New System.Drawing.Point(176, 257)
+        Me.txtCodMoneda_AN.Location = New System.Drawing.Point(176, 224)
         Me.txtCodMoneda_AN.Name = "txtCodMoneda_AN"
         Me.txtCodMoneda_AN.Size = New System.Drawing.Size(64, 29)
         Me.txtCodMoneda_AN.TabIndex = 59
@@ -257,7 +265,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(15, 259)
+        Me.Label7.Location = New System.Drawing.Point(14, 226)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(85, 24)
         Me.Label7.TabIndex = 60
@@ -266,7 +274,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'lblNombreMoneda
         '
         Me.lblNombreMoneda.AutoSize = True
-        Me.lblNombreMoneda.Location = New System.Drawing.Point(246, 259)
+        Me.lblNombreMoneda.Location = New System.Drawing.Point(245, 226)
         Me.lblNombreMoneda.Name = "lblNombreMoneda"
         Me.lblNombreMoneda.Size = New System.Drawing.Size(178, 24)
         Me.lblNombreMoneda.TabIndex = 61
@@ -275,7 +283,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'txtCodConcepto_NE
         '
         Me.txtCodConcepto_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodConcepto_NE.Location = New System.Drawing.Point(175, 297)
+        Me.txtCodConcepto_NE.Location = New System.Drawing.Point(176, 259)
         Me.txtCodConcepto_NE.Name = "txtCodConcepto_NE"
         Me.txtCodConcepto_NE.Size = New System.Drawing.Size(65, 29)
         Me.txtCodConcepto_NE.TabIndex = 62
@@ -283,7 +291,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(16, 299)
+        Me.Label8.Location = New System.Drawing.Point(15, 259)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(97, 24)
         Me.Label8.TabIndex = 63
@@ -292,7 +300,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         'txtConcepto_AN
         '
         Me.txtConcepto_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtConcepto_AN.Location = New System.Drawing.Point(175, 337)
+        Me.txtConcepto_AN.Location = New System.Drawing.Point(176, 294)
         Me.txtConcepto_AN.Multiline = True
         Me.txtConcepto_AN.Name = "txtConcepto_AN"
         Me.txtConcepto_AN.Size = New System.Drawing.Size(707, 133)
@@ -303,7 +311,7 @@ Partial Class frmFe010asientoscabeceras : Inherits frmFormulario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Nothing
-        Me.ClientSize = New System.Drawing.Size(917, 660)
+        Me.ClientSize = New System.Drawing.Size(917, 614)
         Me.Name = "frmFe010asientoscabeceras"
         Me.Tag = ""
         Me.Text = "Formulario de Asiento contable"

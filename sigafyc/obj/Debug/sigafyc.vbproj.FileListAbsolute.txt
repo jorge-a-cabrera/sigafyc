@@ -651,3 +651,9 @@ C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBa060clasmerc.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFa060clasmerc.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBb040depositos.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFb040depositos.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBc030ubicaciones.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFc030ubicaciones.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBd020mercentrada.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFd020mercentrada.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBd030mercsalida.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFd030mercsalida.resources

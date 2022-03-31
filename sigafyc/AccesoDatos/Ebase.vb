@@ -337,8 +337,6 @@ Public Class Ebase : Inherits BaseDatos
         lsResultado &= sFiltroBorrado_
         If psJoin.Trim.Length > 0 Then
             lsResultado &= " AND " & ControlChars.CrLf & psJoin
-        Else
-
         End If
         If psWhere.Trim.Length > 0 Then
             lsResultado &= " AND " & ControlChars.CrLf & psWhere

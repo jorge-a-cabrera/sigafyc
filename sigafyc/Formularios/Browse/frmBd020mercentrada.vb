@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
-Public Class frmBb040depositos
-    Private moFormulario As frmFb040depositos
+
+Public Class frmBd020mercentrada
+    Private moFormulario As frmFd020mercentrada
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
     Private mbAgregar As Boolean
@@ -57,7 +58,6 @@ Public Class frmBb040depositos
         AddHandler DataGridView1.KeyDown, AddressOf DataGrid_KeyDown
         AddHandler DataGridView1.CellContentDoubleClick, AddressOf DataGrid_DoubleClick
 
-
         If Me.Tag.ToString = sELEGIR_ Then
             If Me.Name <> "frmBa010monedas" Then
                 Dim lofrmBase As New frmBa010monedas
@@ -76,9 +76,11 @@ Public Class frmBb040depositos
                 txtCodEmpresa_NE.Text = miCodEmpresa.ToString
             End If
         End If
+
         lblNombreEmpresa.Text = ""
         mbabrirform = False
         If miCodEmpresa > 0 Then
+            txtCodEmpresa_NE.Text = miCodEmpresa.ToString
             txtCodEmpresa_NE.Enabled = False
             LPCargarDatos()
         End If
@@ -88,15 +90,14 @@ Public Class frmBb040depositos
     Private Sub BuscarClave(sender As Object, e As EventArgs)
         LPCargarDatos()
     End Sub
-
     Private Sub LPCargarDatos()
-        Dim lsSQL As String
-        Dim loDatos As New Eb040depositos
+        If txtCodEmpresa_NE.Text.Trim.Length = 0 Then Exit Sub
+
+        Dim lsSQL As String = GFsGeneraSQL("frmBd020mercentrada")
+        Dim loDatos As New Ed020mercentrada
         Dim loDataSet As DataSet
-        Dim lsWhere As String = "codempresa = @codempresa and nombre <> " & Chr(39) & sRESERVADO_ & Chr(39)
-        lsWhere = lsWhere.Replace("@codempresa", Integer.Parse(txtCodEmpresa_NE.Text).ToString)
-        Dim lsCampos As String = "coddeposito as codigo, nombre, abreviado, tipdeposito, ubicaciones, estado"
-        Dim lsCamposConcat As String = "coddeposito, nombre, abreviado, tipdeposito, ubicaciones, estado"
+        Dim lsCamposConcat As String = "codigo, nombre, abreviado, nomunidad, nomclasificacion, tipobien, tipocosto, codbarra, estado"
+        Dim lsCamposOcultos As String = "codunidad, codclasificacion"
         Dim lsConcatFiltro As String = lsCamposConcat
         Dim lsFiltro As String = sFiltroSentencia_
         lsFiltro = lsFiltro.Replace(sFiltroCampo_, lsConcatFiltro)
@@ -105,24 +106,31 @@ Public Class frmBb040depositos
         Else
             lsFiltro = lsFiltro.Replace(sFiltroValor_, txtBuscar.Text)
         End If
-        lsSQL = loDatos.GenerarSQL(lsCampos, lsFiltro, lsWhere)
-        loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+
+        lsSQL = lsSQL.Replace("@filtro", lsFiltro)
+        lsSQL = lsSQL.Replace("&tipo", sEntrada_)
+        lsSQL = lsSQL.Replace("&codempresa", Integer.Parse(txtCodEmpresa_NE.Text).ToString)
+        lsSQL = lsSQL.Replace("&reservado", sRESERVADO_)
+
         loDataSet = loDatos.RecuperarTabla(lsSQL)
         DataGridView1.DataSource = loDataSet
         DataGridView1.DataMember = loDatos.tableName
+        Dim lsCampoOculto() As String = lsCamposOcultos.Split(","c)
+        For i As Integer = 0 To lsCampoOculto.Length - 1
+            DataGridView1.Columns(lsCampoOculto(i).Trim).Visible = False
+        Next
 
-        'DataGridView1.Columns.Item("codempresa").Visible = False
-        DataGridView1.Sort(DataGridView1.Columns("codigo"), ListSortDirection.Ascending)
+        DataGridView1.Sort(DataGridView1.Columns("nombre"), ListSortDirection.Ascending)
         If msLocalizar IsNot Nothing Then LPLocalizaRegistro(msLocalizar)
 
         msTabla = loDatos.tableName
         miCantidad = loDataSet.Tables.Item(0).Rows.Count
-        loDataSet = Nothing
         loDatos.CerrarConexion()
-        loDatos = Nothing
+
         LPSinRegistro_AbrirForm()
         LPHabilitaControles()
     End Sub
+
     Private Sub LPInicializaMaxLength()
         txtCodEmpresa_NE.MaxLength = 6
     End Sub
@@ -206,11 +214,11 @@ Public Class frmBb040depositos
     End Sub
 
     Private Sub Botones_Click(sender As Object, e As EventArgs)
-        Dim loDatos As New Eb040depositos
+        Dim loDatos As New Ed020mercentrada
         loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
         Select Case CType(sender, Button).AccessibleName
             Case sAGREGAR_
-                moFormulario = New frmFb040depositos
+                moFormulario = New frmFd020mercentrada
                 moFormulario.Tag = CType(sender, Button).AccessibleName
                 moFormulario.entidad = loDatos
                 GPCargar(moFormulario)
@@ -231,15 +239,15 @@ Public Class frmBb040depositos
                 Dim lsParte() As String = lsTablaHash.Split(sSF_)
                 If GFbPuedeModificarBorrar(CType(sender, Button).AccessibleName, lsParte(0), lsParte(1), lsCodigo) = False Then Exit Sub
                 Try
-                    loDatos.coddeposito = Integer.Parse(lsCodigo)
+                    loDatos.codmercaderia = lsCodigo
                     If loDatos.GetPK = sOk_ Then
                         If Me.Tag.ToString = sELEGIR_ And CType(sender, Button).AccessibleName = sCONSULTAR_ Then
                             entidad = loDatos
                             SendKeys.Send("%(s)")
                             Exit Sub
                         End If
-                        moFormulario = New frmFb040depositos
-                        moFormulario.AccessibleName = "Empresa: " & loDatos.codEmpresa & ", Deposito No.: " & loDatos.coddeposito
+                        moFormulario = New frmFd020mercentrada
+                        moFormulario.AccessibleName = "Empresa: " & loDatos.codEmpresa & ", Mercaderia/Servicio: " & loDatos.codmercaderia
                         moFormulario.Tag = CType(sender, Button).AccessibleName
                         moFormulario.entidad = loDatos
                         GPCargar(moFormulario)
@@ -249,10 +257,11 @@ Public Class frmBb040depositos
                         moFormulario = Nothing
                     End If
                 Catch ex As Exception
-                    GFsAvisar("Error en Browse", sError_, "No existe datos para Deposito No. [" & loDatos.coddeposito & "], Empresa [" & loDatos.codEmpresa & "]" & ControlChars.CrLf & ex.Message)
+                    GFsAvisar("Error en Browse", sError_, "No existe datos para Mercaderia/servicio [" & loDatos.codmercaderia & "], Empresa [" & loDatos.codEmpresa & "]" & ControlChars.CrLf & ex.Message)
                 End Try
         End Select
         loDatos.CerrarConexion()
+        loDatos = Nothing
         LPCargarDatos()
     End Sub
 
@@ -268,9 +277,9 @@ Public Class frmBb040depositos
         Dim lsResultado As String = ""
         If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
             If psCodigo.Trim.Length > 0 Then
-                Dim loDatos As New Eb040depositos
+                Dim loDatos As New Ed020mercentrada
                 loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
-                loDatos.coddeposito = Integer.Parse(psCodigo)
+                loDatos.codmercaderia = psCodigo
                 Try
                     If loDatos.GetPK(sSi_) = sOk_ Then
                         lsResultado = loDatos.tableName & sSF_ & loDatos.hash_Pk
@@ -295,14 +304,6 @@ Public Class frmBb040depositos
         End If
     End Sub
 
-    Private Sub ImportarTexto_Click(sender As Object, e As EventArgs)
-        If GFsPuedeUsar(Me.Name & ":Importar->Texto delimitado", "Permite importar el contenido de " & Me.Name & " a la tabla DOCUMENTOS") = sSi_ Then
-            Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
-            GPImportarDocumentos(liCodEmpresa)
-        End If
-
-    End Sub
-
     Private Sub Form_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         txtCodEmpresa_NE.Focus()
     End Sub
@@ -314,26 +315,6 @@ Public Class frmBb040depositos
                 SendKeys.Send("%(a)")
             End If
         End If
-    End Sub
-
-    Private Sub btnDetalle_Click(sender As Object, e As EventArgs) Handles btnDetalle.Click
-        Dim lsCodigo As String = DataGridView1.Item("codigo", DataGridView1.CurrentRow.Index).Value.ToString
-        If lsCodigo.Trim.Length = 0 Then Exit Sub
-
-        Dim loPK As New Eb040depositos
-        loPK.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text)
-        loPK.coddeposito = Integer.Parse(lsCodigo)
-        If loPK.GetPK <> sOk_ Then Exit Sub
-        If loPK.ubicaciones = sNo_ Then
-            GFsAvisar("Empresa [" & loPK.codEmpresa & "], Deposito [" & loPK.coddeposito & "] no maneja ubicaciones", sAvisoUsuario_, "Favor verifique su elección.")
-            LPLocalizaRegistro(lsCodigo)
-            Exit Sub
-        End If
-
-        Dim loBrowseDetalle As New frmBc030ubicaciones
-        loBrowseDetalle.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text)
-        loBrowseDetalle.codDeposito = Integer.Parse(lsCodigo)
-        GPCargar(loBrowseDetalle)
     End Sub
 
 End Class

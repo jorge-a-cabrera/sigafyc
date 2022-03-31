@@ -37,7 +37,7 @@ Partial Class frmFa050unidades
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Size = New System.Drawing.Size(432, 158)
+        Me.TabControl1.Size = New System.Drawing.Size(432, 141)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
@@ -47,15 +47,15 @@ Partial Class frmFa050unidades
         Me.TabPage1.Controls.Add(Me.txtCodigo_AN)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Size = New System.Drawing.Size(424, 118)
+        Me.TabPage1.Size = New System.Drawing.Size(424, 101)
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 209)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 192)
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(307, 209)
+        Me.btnAceptar.Location = New System.Drawing.Point(307, 192)
         '
         'lblMensaje
         '
@@ -64,7 +64,7 @@ Partial Class frmFa050unidades
         'txtNombre_AN
         '
         Me.txtNombre_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNombre_AN.Location = New System.Drawing.Point(107, 62)
+        Me.txtNombre_AN.Location = New System.Drawing.Point(107, 53)
         Me.txtNombre_AN.Name = "txtNombre_AN"
         Me.txtNombre_AN.Size = New System.Drawing.Size(296, 29)
         Me.txtNombre_AN.TabIndex = 1
@@ -80,7 +80,7 @@ Partial Class frmFa050unidades
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(17, 64)
+        Me.Label2.Location = New System.Drawing.Point(17, 55)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(84, 24)
         Me.Label2.TabIndex = 16
@@ -130,7 +130,7 @@ Partial Class frmFa050unidades
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Nothing
-        Me.ClientSize = New System.Drawing.Size(451, 294)
+        Me.ClientSize = New System.Drawing.Size(451, 277)
         Me.Name = "frmFa050unidades"
         Me.Tag = ""
         Me.Text = "Formulario Unidad de medida"

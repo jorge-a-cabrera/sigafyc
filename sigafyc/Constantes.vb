@@ -184,6 +184,12 @@
     Public Const sIngreso_ As String = "6"
     Public Const sEgreso_ As String = "7"
     Public Const sMovil_ As String = "Movil"
+    Public Const sBienCambio_ As String = "BienCambio"
+    Public Const sBienServicio_ As String = "BienServicio"
+    Public Const sBienUso_ As String = "BienUso"
+    Public Const sCostoPromedio_ As String = "CostoPromedio"
+    Public Const sUltimaCompra_ As String = "UltimaCompra"
+    Public Const sCostoFijo_ As String = "CostoFijo"
 
     Public Const sPorcentaje_ As String = "%-Porcentaje"
     Public Const sImporte_ As String = "I-Importe fijo"

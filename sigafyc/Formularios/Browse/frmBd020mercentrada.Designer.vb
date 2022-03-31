@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmBb040depositos
+Partial Class frmBd020mercentrada
     Inherits frmBrowseSinGrid
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,42 +22,31 @@ Partial Class frmBb040depositos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.lblNombreEmpresa = New System.Windows.Forms.Label()
         Me.txtCodEmpresa_NE = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.btnDetalle = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(10, 44)
-        Me.txtBuscar.TabIndex = 9
-        '
-        'btnSalir
-        '
-        Me.btnSalir.TabIndex = 8
+        Me.txtBuscar.Location = New System.Drawing.Point(8, 44)
         '
         'btnAuditoria
         '
-        Me.btnAuditoria.TabIndex = 7
         '
-        'btnConsultar
+        'DataGridView1
         '
-        Me.btnConsultar.TabIndex = 5
-        '
-        'btnBorrar
-        '
-        Me.btnBorrar.TabIndex = 4
-        '
-        'btnModificar
-        '
-        Me.btnModificar.TabIndex = 3
-        '
-        'btnAgregar
-        '
-        Me.btnAgregar.TabIndex = 2
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(8, 72)
+        Me.DataGridView1.MultiSelect = False
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(851, 578)
+        Me.DataGridView1.TabIndex = 26
         '
         'lblNombreEmpresa
         '
@@ -65,9 +54,9 @@ Partial Class frmBb040depositos
         Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(177, 14)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
-        Me.lblNombreEmpresa.Size = New System.Drawing.Size(182, 20)
-        Me.lblNombreEmpresa.TabIndex = 39
-        Me.lblNombreEmpresa.Text = "<nombre del usuario>"
+        Me.lblNombreEmpresa.Size = New System.Drawing.Size(168, 20)
+        Me.lblNombreEmpresa.TabIndex = 42
+        Me.lblNombreEmpresa.Text = "<nombre_empresa>"
         '
         'txtCodEmpresa_NE
         '
@@ -76,7 +65,7 @@ Partial Class frmBb040depositos
         Me.txtCodEmpresa_NE.Location = New System.Drawing.Point(97, 12)
         Me.txtCodEmpresa_NE.Name = "txtCodEmpresa_NE"
         Me.txtCodEmpresa_NE.Size = New System.Drawing.Size(74, 26)
-        Me.txtCodEmpresa_NE.TabIndex = 0
+        Me.txtCodEmpresa_NE.TabIndex = 40
         '
         'Label1
         '
@@ -85,48 +74,21 @@ Partial Class frmBb040depositos
         Me.Label1.Location = New System.Drawing.Point(6, 14)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(85, 20)
-        Me.Label1.TabIndex = 38
+        Me.Label1.TabIndex = 41
         Me.Label1.Text = "Empresa:"
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(10, 72)
-        Me.DataGridView1.MultiSelect = False
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(849, 578)
-        Me.DataGridView1.TabIndex = 1
-        '
-        'btnDetalle
-        '
-        Me.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDetalle.Image = Global.sigafyc.My.Resources.Resources.icons8_details_32
-        Me.btnDetalle.Location = New System.Drawing.Point(867, 362)
-        Me.btnDetalle.Name = "btnDetalle"
-        Me.btnDetalle.Size = New System.Drawing.Size(86, 81)
-        Me.btnDetalle.TabIndex = 6
-        Me.btnDetalle.Tag = "&ubicaciones"
-        Me.btnDetalle.Text = "&Ubicaciones"
-        Me.btnDetalle.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnDetalle.UseVisualStyleBackColor = True
-        '
-        'frmBb040depositos
+        'frmBd020mercentrada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(962, 659)
-        Me.Controls.Add(Me.btnDetalle)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.ClientSize = New System.Drawing.Size(962, 661)
         Me.Controls.Add(Me.lblNombreEmpresa)
         Me.Controls.Add(Me.txtCodEmpresa_NE)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "frmBb040depositos"
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Name = "frmBd020mercentrada"
         Me.Tag = ""
-        Me.Text = "Browse de Depositos"
+        Me.Text = "Browse de mercaderias/servicios de entrada"
         Me.Controls.SetChildIndex(Me.btnAgregar, 0)
         Me.Controls.SetChildIndex(Me.btnModificar, 0)
         Me.Controls.SetChildIndex(Me.btnBorrar, 0)
@@ -134,20 +96,18 @@ Partial Class frmBb040depositos
         Me.Controls.SetChildIndex(Me.btnAuditoria, 0)
         Me.Controls.SetChildIndex(Me.btnSalir, 0)
         Me.Controls.SetChildIndex(Me.txtBuscar, 0)
+        Me.Controls.SetChildIndex(Me.DataGridView1, 0)
         Me.Controls.SetChildIndex(Me.Label1, 0)
         Me.Controls.SetChildIndex(Me.txtCodEmpresa_NE, 0)
         Me.Controls.SetChildIndex(Me.lblNombreEmpresa, 0)
-        Me.Controls.SetChildIndex(Me.DataGridView1, 0)
-        Me.Controls.SetChildIndex(Me.btnDetalle, 0)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
+    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents lblNombreEmpresa As Label
     Friend WithEvents txtCodEmpresa_NE As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents btnDetalle As Button
 End Class

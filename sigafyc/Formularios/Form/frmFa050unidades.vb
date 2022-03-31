@@ -34,7 +34,6 @@ Public Class frmFa050unidades
                         End If
                         loDatos.Add()
                         loDatos.CerrarConexion()
-                        loDatos = Nothing
                     Case sMODIFICAR_
                         Dim loDatos As New Ea050unidades
                         loDatos.codunidad = txtCodigo_AN.Text
