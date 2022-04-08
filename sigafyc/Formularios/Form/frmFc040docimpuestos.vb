@@ -123,6 +123,9 @@ Public Class frmFc040docimpuestos
                         If loLookUp.entidad IsNot Nothing Then
                             txtCodImpuesto_AN.Text = CType(loLookUp.entidad, Ea040impuestos).codImpuesto
                             txtCodImpuesto_AN.Tag = sOk_
+                            e.Cancel = True
+                            Exit Sub
+
                         Else
                             txtCodDocumento_NE.Tag = sCancelar_
                             e.Cancel = True

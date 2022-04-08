@@ -100,6 +100,14 @@
                 '---------------------------------------------------------------------------------------------
                 Dim lsParte() As String = lsTablaHash.Split(sSF_)
                 If GFbPuedeModificarBorrar(CType(sender, Button).AccessibleName, lsParte(0), lsParte(1), lsCodigo) = False Then Exit Sub
+                If CType(sender, Button).AccessibleName = sBORRAR_ Then
+                    Dim liCantidad As Integer = LFiCantidadDetalle(lsCodigo)
+                    If liCantidad > 0 Then
+                        GFsAvisar("Codigo Sistema [" & lsCodigo & "] tiene [" & liCantidad.ToString & "] registros asociados", sMENSAJE_, "Por lo cual no lo podrá eliminar.")
+                        Exit Sub
+                    End If
+                End If
+
                 Try
                     loDatos.codigo = lsCodigo
                     If loDatos.GetPK = sOk_ Then
@@ -150,4 +158,13 @@
         Return lsResultado
     End Function
 
+    Private Function LFiCantidadDetalle(ByVal psCodigo As String) As Integer
+        Dim loDatos As New Ess110parametros
+        Dim lsSQL As String = GFsGeneraSQL("Ess110parametros_conteo")
+        lsSQL = lsSQL.Replace("&codigo", psCodigo)
+        loDatos.CrearComando(lsSQL)
+        Dim liCantidad As Integer = loDatos.EjecutarEscalar
+        loDatos.CerrarConexion()
+        Return liCantidad
+    End Function
 End Class

@@ -133,7 +133,13 @@ Public Class frmBa010monedas
                 '---------------------------------------------------------------------------------------------
                 Dim lsParte() As String = lsTablaHash.Split(sSF_)
                 If GFbPuedeModificarBorrar(CType(sender, Button).AccessibleName, lsParte(0), lsParte(1), lsCodigo) = False Then Exit Sub
-
+                If CType(sender, Button).AccessibleName = sBORRAR_ Then
+                    Dim liCantidad As Integer = LFiCantidadDetalle(lsCodigo)
+                    If liCantidad > 0 Then
+                        GFsAvisar("Codigo Moneda [" & lsCodigo & "] tiene [" & liCantidad.ToString & "] registros asociados", sMENSAJE_, "Por lo cual no lo podrá eliminar.")
+                        Exit Sub
+                    End If
+                End If
                 Try
                     loDatos.codMoneda = lsCodigo
                     If loDatos.GetPK = sOk_ Then
@@ -198,4 +204,15 @@ Public Class frmBa010monedas
             End If
         End If
     End Sub
+
+    Private Function LFiCantidadDetalle(ByVal psCodigo As String) As Integer
+        Dim loDatos As New Ec001empresas
+        Dim lsSQL As String = GFsGeneraSQL("Ec001empresas_conteo")
+        lsSQL = lsSQL.Replace("&codigo", psCodigo)
+        loDatos.CrearComando(lsSQL)
+        Dim liCantidad As Integer = loDatos.EjecutarEscalar
+        loDatos.CerrarConexion()
+        Return liCantidad
+    End Function
+
 End Class

@@ -13,6 +13,7 @@ Public Class SesionActiva
     Shared msIp As String = ""
     Shared msMac As String = ""
     Shared msUsuario As String = ""
+    Shared msModulos As String = ""
     Shared msNombreUsuario As String = ""
     Shared msLoginAcceso As String = ""
     Shared msEquipo As String = ""
@@ -51,6 +52,15 @@ Public Class SesionActiva
         End Get
         Set(value As String)
             msUsuario = value
+        End Set
+    End Property
+
+    Public Shared Property modulos As String
+        Get
+            Return msModulos.ToUpper
+        End Get
+        Set(value As String)
+            msModulos = value
         End Set
     End Property
 
@@ -114,6 +124,19 @@ Public Class SesionActiva
             msIp = LFsObtenerIP()
             msMac = LFsObtenerMAC()
             msSerialHDD = LFsObtenerHDDSerial()
+            Dim loSS020 As New Ess020modulos
+            Dim lsSQL As String = GFsGeneraSQL("Ess020modulos_codigos")
+            lsSQL = lsSQL.Replace("&ss010_codigo", msSistema)
+            loSS020.CrearComando(lsSQL)
+            Dim loDataTable As DataTable = loSS020.EjecutarConsultaTable()
+            msModulos = ""
+            For Each loRow As DataRow In loDataTable.Rows
+                If msModulos.Trim.Length = 0 Then
+                    msModulos = loRow.Item(0).ToString
+                Else
+                    msModulos &= sSF_ & loRow.Item(0).ToString
+                End If
+            Next
             LPInicializaRegistry()
 
             If msUsuario.Trim.Length = 0 Then msUsuario = msLoginAcceso

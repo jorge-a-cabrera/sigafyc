@@ -12,6 +12,7 @@
                                        "codclasificacion" & sInteger_ & sSF_ &
                                        "tipobien" & sString_ & sSF_ &
                                        "tipocosto" & sString_ & sSF_ &
+                                       "inventario" & sString_ & sSF_ &
                                        "codbarra" & sString_
 
     Private msCampos_PK() As Integer = {0, 1}
@@ -26,6 +27,7 @@
     Private miCodClasificacion As Integer
     Private msTipoBien As String
     Private msTipoCosto As String
+    Private msInventario As String
     Private msCodBarra As String
 #End Region
 
@@ -97,6 +99,15 @@
         End Get
         Set(value As String)
             msTipoCosto = value
+        End Set
+    End Property
+
+    Public Property inventario As String
+        Get
+            Return msInventario
+        End Get
+        Set(value As String)
+            msInventario = value
         End Set
     End Property
 

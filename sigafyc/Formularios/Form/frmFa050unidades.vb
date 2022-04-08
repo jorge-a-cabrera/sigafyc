@@ -115,7 +115,7 @@ Public Class frmFa050unidades
         LPInicializaMaxLength()
         LPInicializaControles()
         ' Inicializa los controles de edición con los valores pertinentes
-        msEntidad = "reg. moneda"
+        msEntidad = "unidades basicas"
         DesplegarMensaje()
 
         Select Case Me.Tag.ToString
@@ -126,9 +126,9 @@ Public Class frmFa050unidades
                     End If
                 Next
             Case Else
-                txtCodigo_AN.Text = CType(entidad, Ea010monedas).codMoneda
-                txtNombre_AN.Text = CType(entidad, Ea010monedas).nombre
-                cmbEstado.Text = CType(entidad, Ea010monedas).estado
+                txtCodigo_AN.Text = CType(entidad, Ea050unidades).codunidad
+                txtNombre_AN.Text = CType(entidad, Ea050unidades).nombre
+                cmbEstado.Text = CType(entidad, Ea050unidades).estado
         End Select
         ' Habilita o deshabilita los controles de edición
         txtCodigo_AN.Enabled = True

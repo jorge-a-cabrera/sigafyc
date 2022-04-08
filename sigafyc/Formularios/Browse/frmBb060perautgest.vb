@@ -116,8 +116,8 @@ Public Class frmBb060perautgest
         Dim lsSQL As String = GFsGeneraSQL("frmBb060perautgest")
         Dim loCN As New BaseDatos
         Dim loDataTable As DataTable
-        Dim lsCamposConcat As String = "x.tipo_documento, x.nro_documento, x.nombre, x.dias, x.moneda, x.limite_credito, x.sucursal, x.direccion, x.telefono
-"
+        Dim lsCamposConcat As String = "tipo_documento, nro_documento, nombre, dias, moneda, limite_credito, sucursal, direccion, telefono"
+        Dim lsCamposOcultos As String = "codempresa, tipoperfil, decimales, culture"
         Dim lsConcatFiltro As String = lsCamposConcat
         Dim lsFiltro As String = sFiltroSentencia_
         lsFiltro = lsFiltro.Replace(sFiltroCampo_, lsConcatFiltro)
@@ -139,9 +139,10 @@ Public Class frmBb060perautgest
 
         DataGridView1.Columns.Item("limite_credito").HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomRight
         DataGridView1.Columns.Item("limite_credito").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-
-        DataGridView1.Columns.Item("codempresa").Visible = False
-        DataGridView1.Columns.Item("tipoperfil").Visible = False
+        Dim lsCampoOculto() As String = lsCamposOcultos.Split(","c)
+        For I As Integer = 0 To lsCampoOculto.Length - 1
+            DataGridView1.Columns.Item(lsCampoOculto(I).Trim).Visible = False
+        Next
 
         DataGridView1.Sort(DataGridView1.Columns(sCodigo2_), ListSortDirection.Ascending)
 

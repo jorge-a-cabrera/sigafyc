@@ -105,6 +105,13 @@
                 '---------------------------------------------------------------------------------------------
                 Dim lsParte() As String = lsTablaHash.Split(sSF_)
                 If GFbPuedeModificarBorrar(CType(sender, Button).AccessibleName, lsParte(0), lsParte(1), lsCodigo) = False Then Exit Sub
+                If CType(sender, Button).AccessibleName = sBORRAR_ Then
+                    Dim liCantidad As Integer = LFiCantidadDetalle(lsCodigo)
+                    If liCantidad > 0 Then
+                        GFsAvisar("El Numero Timbrado [" & lsCodigo & "] tiene [" & liCantidad.ToString & "] registros asociados", sMENSAJE_, "Por lo cual no lo podrá eliminar.")
+                        Exit Sub
+                    End If
+                End If
                 Try
                     loDatos.numTimbrado = lsCodigo
                     If loDatos.GetPK = sOk_ Then
@@ -160,6 +167,15 @@
         Dim loBrowseDetalle As New frmBc011timbpropios
         loBrowseDetalle.numTimbrado = DataGridView1.Item("numtimbrado", DataGridView1.CurrentRow.Index).Value.ToString
         GPCargar(loBrowseDetalle)
-
     End Sub
+
+    Private Function LFiCantidadDetalle(ByVal psNumTimbrado As String) As Integer
+        Dim loDatos As New Ec011timbpropios
+        Dim lsSQL As String = GFsGeneraSQL("Ec011timbpropios_conteo")
+        lsSQL = lsSQL.Replace("&numtimbrado", psNumTimbrado)
+        loDatos.CrearComando(lsSQL)
+        Dim liCantidad As Integer = loDatos.EjecutarEscalar
+        loDatos.CerrarConexion()
+        Return liCantidad
+    End Function
 End Class

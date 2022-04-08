@@ -101,6 +101,14 @@ Public Class frmBc001empresas
                 '---------------------------------------------------------------------------------------------
                 Dim lsParte() As String = lsTablaHash.Split(sSF_)
                 If GFbPuedeModificarBorrar(CType(sender, Button).AccessibleName, lsParte(0), lsParte(1), lsCodigo) = False Then Exit Sub
+                If CType(sender, Button).AccessibleName = sBORRAR_ Then
+                    Dim liCantidad As Integer = LFiCantidadDetalle(Integer.Parse(lsCodigo))
+                    If liCantidad > 0 Then
+                        GFsAvisar("La Empresa No. [" & lsCodigo & "] tiene [" & liCantidad.ToString & "] registros asociados", sMENSAJE_, "Por lo cual no lo podrá eliminar.")
+                        Exit Sub
+                    End If
+                End If
+
                 Try
                     loDatos.codEmpresa = Integer.Parse(lsCodigo.ToString)
                     If loDatos.GetPK = sOk_ Then
@@ -149,6 +157,16 @@ Public Class frmBc001empresas
         End If
 
         Return lsResultado
+    End Function
+
+    Private Function LFiCantidadDetalle(ByVal piCodEmpresa As Integer) As Integer
+        Dim loDatos As New Eb050plancuentas
+        Dim lsSQL As String = GFsGeneraSQL("Eb050plancuentas_conteo")
+        lsSQL = lsSQL.Replace("&codempresa", piCodEmpresa.ToString)
+        loDatos.CrearComando(lsSQL)
+        Dim liCantidad As Integer = loDatos.EjecutarEscalar
+        loDatos.CerrarConexion()
+        Return liCantidad
     End Function
 
 End Class

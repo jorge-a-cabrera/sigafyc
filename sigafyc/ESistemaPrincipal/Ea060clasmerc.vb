@@ -76,6 +76,12 @@
     Public Function ReservarRegistro(Optional ByVal psTipo As String = sEntrada_) As Integer
         tipo = psTipo
         Dim liNumero As Integer = SiguienteNumero(msAutonumerado, msTableName, msFiltroClave)
+        If liNumero = 1 Then
+            Select Case psTipo
+                Case sSalida_
+                    liNumero = Integer.Parse(GFsParametroObtener(sGeneral_, "Ea060clasmerc.Salida.Autonumerado.Desde"))
+            End Select
+        End If
         tipo = psTipo
         codclasificacion = liNumero
         nombre = sRESERVADO_

@@ -139,6 +139,7 @@ Public Class frmBss090perusu
             If loLookUp.entidad IsNot Nothing Then
                 txtSS050_codigo_AB.Text = CType(loLookUp.entidad, Ess050usuarios).codigo
                 lblNombreUsuario.Text = CType(loLookUp.entidad, Ess050usuarios).nombre
+                msSS050_codigo = txtSS050_codigo_AB.Text
             Else
                 e.Cancel = True
                 Exit Sub

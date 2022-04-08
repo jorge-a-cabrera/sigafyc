@@ -104,6 +104,14 @@
                 '---------------------------------------------------------------------------------------------
                 Dim lsParte() As String = lsTablaHash.Split(sSF_)
                 If GFbPuedeModificarBorrar(CType(sender, Button).AccessibleName, lsParte(0), lsParte(1), lsCodigo) = False Then Exit Sub
+                If CType(sender, Button).AccessibleName = sBORRAR_ Then
+                    Dim liCantidad As Integer = LFiCantidadDetalle(lsTipoDocumento, lsCodigo)
+                    If liCantidad > 0 Then
+                        GFsAvisar("Tipo Documento: " & lsTipoDocumento & ", Nro. [" & lsCodigo & "] tiene [" & liCantidad.ToString & "] registros asociados", sMENSAJE_, "Por lo cual no lo podrá eliminar.")
+                        Exit Sub
+                    End If
+                End If
+
                 Try
                     loDatos.tipoDocumento = lsTipoDocumento
                     loDatos.nroDocumento = lsCodigo
@@ -157,5 +165,16 @@
         End If
 
         Return lsResultado
+    End Function
+
+    Private Function LFiCantidadDetalle(ByVal psTipo As String, ByVal psCodigo As String) As Integer
+        Dim loDatos As New Eb060perautgest
+        Dim lsSQL As String = GFsGeneraSQL("Eb060perautgest_conteo")
+        lsSQL = lsSQL.Replace("&tipo", psTipo)
+        lsSQL = lsSQL.Replace("&codigo", psCodigo)
+        loDatos.CrearComando(lsSQL)
+        Dim liCantidad As Integer = loDatos.EjecutarEscalar
+        loDatos.CerrarConexion()
+        Return liCantidad
     End Function
 End Class

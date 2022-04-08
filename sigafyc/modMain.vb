@@ -296,6 +296,12 @@ Module modMain
         If GFsParametroObtener(lsTipo, lsClave) = sRESERVADO_ Then
             GPParametroGuardar(lsTipo, lsClave, lsValor)
         End If
+
+        lsClave = "Ea060clasmerc.Salida.Autonumerado.Desde"
+        lsValor = "10001"
+        If GFsParametroObtener(lsTipo, lsClave) = sRESERVADO_ Then
+            GPParametroGuardar(lsTipo, lsClave, lsValor)
+        End If
     End Sub
 
     Private Sub LPParametrosLocales()

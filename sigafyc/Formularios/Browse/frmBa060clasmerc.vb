@@ -190,6 +190,14 @@ Public Class frmBa060clasmerc
                 '---------------------------------------------------------------------------------------------
                 Dim lsParte() As String = lsTablaHash.Split(sSF_)
                 If GFbPuedeModificarBorrar(CType(sender, Button).AccessibleName, lsParte(0), lsParte(1), lsCodigo) = False Then Exit Sub
+                If CType(sender, Button).AccessibleName = sBORRAR_ Then
+                    Dim liCantidad As Integer = LFiCantidadDetalle(cmbTipo.Text, Integer.Parse(lsCodigo))
+                    If liCantidad > 0 Then
+                        GFsAvisar("Tipo[" & cmbTipo.Text & "], Clasificacion[" & lsCodigo & "] tiene [" & liCantidad.ToString & "] registros asociados", sMENSAJE_, "Por lo cual no lo podrá eliminar.")
+                        Exit Sub
+                    End If
+                End If
+
                 Try
                     loDatos.codclasificacion = Integer.Parse(lsCodigo)
                     If loDatos.GetPK = sOk_ Then
@@ -273,4 +281,25 @@ Public Class frmBa060clasmerc
         End If
     End Sub
 
+    Private Function LFiCantidadDetalle(ByVal psTipo As String, ByVal piCodigo As Integer) As Integer
+        Dim liCantidad As Integer = 0
+        Select Case psTipo
+            Case sEntrada_
+                Dim loDatos As New Ed020mercentrada
+                Dim lsSQL As String = GFsGeneraSQL("Ed020mercentrada_conteo2")
+                lsSQL = lsSQL.Replace("&codigo", piCodigo.ToString)
+                loDatos.CrearComando(lsSQL)
+                liCantidad = loDatos.EjecutarEscalar
+                loDatos.CerrarConexion()
+            Case sSalida_
+                Dim loDatos As New Ed030mercsalida
+                Dim lsSQL As String = GFsGeneraSQL("Ed030mercsalida_conteo")
+                lsSQL = lsSQL.Replace("&codigo", piCodigo.ToString)
+                loDatos.CrearComando(lsSQL)
+                liCantidad = loDatos.EjecutarEscalar
+                loDatos.CerrarConexion()
+        End Select
+
+        Return liCantidad
+    End Function
 End Class

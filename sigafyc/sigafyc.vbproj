@@ -206,6 +206,7 @@
     <Compile Include="ESistemaPrincipal\Eb081timbotros.vb" />
     <Compile Include="ESistemaPrincipal\Eb090cuentassaldos.vb" />
     <Compile Include="ESistemaPrincipal\Eb100vendedores.vb" />
+    <Compile Include="ESistemaPrincipal\Eb110undalternativas.vb" />
     <Compile Include="ESistemaPrincipal\Ec001empresas.vb" />
     <Compile Include="ESistemaPrincipal\Eb020conceptos.vb" />
     <Compile Include="ESistemaPrincipal\Ec010timbpropios.vb" />
@@ -213,6 +214,7 @@
     <Compile Include="ESistemaPrincipal\Ec020documentos.vb" />
     <Compile Include="ESistemaPrincipal\Ec030ubicaciones.vb" />
     <Compile Include="ESistemaPrincipal\Ec040docimpuestos.vb" />
+    <Compile Include="ESistemaPrincipal\Ec050mercvinculadas.vb" />
     <Compile Include="ESistemaPrincipal\Ed010asientosdetalles.vb" />
     <Compile Include="ESistemaPrincipal\Ed020mercentrada.vb" />
     <Compile Include="ESistemaPrincipal\Ed030mercsalida.vb" />
@@ -319,6 +321,12 @@
     <Compile Include="Formularios\Browse\frmBb100vendedores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Browse\frmBb110undalternativas.Designer.vb">
+      <DependentUpon>frmBb110undalternativas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBb110undalternativas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Browse\frmBc001empresas.Designer.vb">
       <DependentUpon>frmBc001empresas.vb</DependentUpon>
     </Compile>
@@ -359,6 +367,12 @@
       <DependentUpon>frmBc040docimpuestos.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Browse\frmBc040docimpuestos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBc050mercvinculadas.Designer.vb">
+      <DependentUpon>frmBc050mercvinculadas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBc050mercvinculadas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Browse\frmBd020mercentrada.Designer.vb">
@@ -535,6 +549,12 @@
     <Compile Include="Formularios\Form\frmFb100vendedores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Form\frmFb110undalternativas.Designer.vb">
+      <DependentUpon>frmFb110undalternativas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFb110undalternativas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Form\frmFc001empresas.Designer.vb">
       <DependentUpon>frmFc001empresas.vb</DependentUpon>
     </Compile>
@@ -569,6 +589,12 @@
       <DependentUpon>frmFc040docimpuestos.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Form\frmFc040docimpuestos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFc050mercvinculadas.Designer.vb">
+      <DependentUpon>frmFc050mercvinculadas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFc050mercvinculadas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Form\frmFCambioPassword.Designer.vb">
@@ -960,6 +986,9 @@
     <EmbeddedResource Include="Formularios\Browse\frmBb100vendedores.resx">
       <DependentUpon>frmBb100vendedores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Browse\frmBb110undalternativas.resx">
+      <DependentUpon>frmBb110undalternativas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Browse\frmBc001empresas.resx">
       <DependentUpon>frmBc001empresas.vb</DependentUpon>
     </EmbeddedResource>
@@ -980,6 +1009,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Browse\frmBc040docimpuestos.resx">
       <DependentUpon>frmBc040docimpuestos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Browse\frmBc050mercvinculadas.resx">
+      <DependentUpon>frmBc050mercvinculadas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Browse\frmBd020mercentrada.resx">
       <DependentUpon>frmBd020mercentrada.vb</DependentUpon>
@@ -1068,6 +1100,9 @@
     <EmbeddedResource Include="Formularios\Form\frmFb100vendedores.resx">
       <DependentUpon>frmFb100vendedores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form\frmFb110undalternativas.resx">
+      <DependentUpon>frmFb110undalternativas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form\frmFc001empresas.resx">
       <DependentUpon>frmFc001empresas.vb</DependentUpon>
     </EmbeddedResource>
@@ -1085,6 +1120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form\frmFc040docimpuestos.resx">
       <DependentUpon>frmFc040docimpuestos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form\frmFc050mercvinculadas.resx">
+      <DependentUpon>frmFc050mercvinculadas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form\frmFCambioPassword.resx">
       <DependentUpon>frmFCambioPassword.vb</DependentUpon>

@@ -42,10 +42,13 @@ Partial Class frmFd020mercentrada
         Me.txtCodBarra_AN = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnDetalle = New System.Windows.Forms.Button()
         Me.cmbEstado = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblNombreUnidad = New System.Windows.Forms.Label()
         Me.lblNombreClasificacion = New System.Windows.Forms.Label()
+        Me.cmbInventario = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -54,12 +57,14 @@ Partial Class frmFd020mercentrada
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Size = New System.Drawing.Size(651, 352)
+        Me.TabControl1.Size = New System.Drawing.Size(651, 381)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.cmbInventario)
+        Me.TabPage1.Controls.Add(Me.Label11)
         Me.TabPage1.Controls.Add(Me.lblNombreClasificacion)
         Me.TabPage1.Controls.Add(Me.lblNombreUnidad)
         Me.TabPage1.Controls.Add(Me.txtCodBarra_AN)
@@ -81,15 +86,15 @@ Partial Class frmFd020mercentrada
         Me.TabPage1.Controls.Add(Me.txtCodMercaderia_AN)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Size = New System.Drawing.Size(643, 312)
+        Me.TabPage1.Size = New System.Drawing.Size(643, 341)
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 403)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 436)
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(526, 403)
+        Me.btnAceptar.Location = New System.Drawing.Point(526, 436)
         '
         'lblMensaje
         '
@@ -267,16 +272,16 @@ Partial Class frmFd020mercentrada
         '
         Me.txtCodBarra_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCodBarra_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodBarra_AN.Location = New System.Drawing.Point(163, 275)
+        Me.txtCodBarra_AN.Location = New System.Drawing.Point(163, 309)
         Me.txtCodBarra_AN.Name = "txtCodBarra_AN"
         Me.txtCodBarra_AN.Size = New System.Drawing.Size(380, 26)
-        Me.txtCodBarra_AN.TabIndex = 8
+        Me.txtCodBarra_AN.TabIndex = 9
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(18, 277)
+        Me.Label9.Location = New System.Drawing.Point(18, 311)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(100, 20)
         Me.Label9.TabIndex = 76
@@ -284,14 +289,29 @@ Partial Class frmFd020mercentrada
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.btnDetalle)
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label10)
         Me.TabPage2.Location = New System.Drawing.Point(4, 36)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(643, 312)
+        Me.TabPage2.Size = New System.Drawing.Size(643, 341)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'btnDetalle
+        '
+        Me.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDetalle.Image = Global.sigafyc.My.Resources.Resources.icons8_details_32
+        Me.btnDetalle.Location = New System.Drawing.Point(415, 231)
+        Me.btnDetalle.Name = "btnDetalle"
+        Me.btnDetalle.Size = New System.Drawing.Size(225, 78)
+        Me.btnDetalle.TabIndex = 45
+        Me.btnDetalle.Tag = "&unidades"
+        Me.btnDetalle.Text = "&unidades alternativas"
+        Me.btnDetalle.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnDetalle.UseVisualStyleBackColor = True
         '
         'cmbEstado
         '
@@ -334,15 +354,37 @@ Partial Class frmFd020mercentrada
         Me.lblNombreClasificacion.TabIndex = 78
         Me.lblNombreClasificacion.Text = "<nombre_clasificacion>"
         '
+        'cmbInventario
+        '
+        Me.cmbInventario.AccessibleDescription = "tipo"
+        Me.cmbInventario.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cmbInventario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbInventario.FormattingEnabled = True
+        Me.cmbInventario.Items.AddRange(New Object() {"Si", "No"})
+        Me.cmbInventario.Location = New System.Drawing.Point(163, 275)
+        Me.cmbInventario.Name = "cmbInventario"
+        Me.cmbInventario.Size = New System.Drawing.Size(47, 28)
+        Me.cmbInventario.TabIndex = 8
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(18, 278)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(94, 20)
+        Me.Label11.TabIndex = 80
+        Me.Label11.Text = "Inventario:"
+        '
         'frmFd020mercentrada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Nothing
-        Me.ClientSize = New System.Drawing.Size(670, 487)
+        Me.ClientSize = New System.Drawing.Size(670, 521)
         Me.Name = "frmFd020mercentrada"
         Me.Tag = ""
-        Me.Text = "Formulario Mercaderia/servicio  entrada"
+        Me.Text = "Formulario bienes de cambio/uso"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -376,4 +418,7 @@ Partial Class frmFd020mercentrada
     Friend WithEvents Label10 As Label
     Friend WithEvents lblNombreClasificacion As Label
     Friend WithEvents lblNombreUnidad As Label
+    Friend WithEvents btnDetalle As Button
+    Friend WithEvents cmbInventario As ComboBox
+    Friend WithEvents Label11 As Label
 End Class

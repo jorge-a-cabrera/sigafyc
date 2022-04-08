@@ -110,7 +110,7 @@ Public Class frmFormulario
     Friend Sub DesplegarMensaje()
         Select Case Me.Tag.ToString
             Case sAGREGAR_
-                lblMensaje.Text = "agregar nuevo " & msEntidad
+                lblMensaje.Text = "agregar nueva " & msEntidad
             Case sMODIFICAR_
                 lblMensaje.Text = "modificar " & msEntidad
             Case sBORRAR_

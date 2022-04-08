@@ -1,8 +1,8 @@
 ﻿Imports System.ComponentModel
 
-Public Class frmFa060clasmerc
+Public Class frmFb110undalternativas
     Private msValidado() As String
-    Private msRequeridos As String() = {"tipo", "codclasificacion", "abreviado", "nombre", "listaprecio", "estado"}
+    Private msRequeridos As String() = {"codempresa", "codmercaderia", "codunidad", "nomunidad", "cantidad", "estado"}
     Private moRequeridos As New ArrayList(msRequeridos)
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -10,7 +10,6 @@ Public Class frmFa060clasmerc
     End Sub
 
     Private Sub LPOperacionCancelada()
-        LPBorrarAlCancelar()
         Me.Tag = sCancelar_
         GPBitacoraRegistrar(sSALIO_, Me.Text & ", haciendo click en CANCELAR.")
         Me.Close()
@@ -22,22 +21,23 @@ Public Class frmFa060clasmerc
 
             If InStr(msValidado(0), sCancelar_) > 0 Then
                 GFsAvisar("Validacion final" & ControlChars.CrLf & msValidado(1), sMENSAJE_, "No han sido ingresado correctamente todos los datos")
-                txtCodClasificacion_NE.Focus()
+                txtCodUnidad_AN.Focus()
             Else
                 Select Case Me.Tag.ToString
                     Case sAGREGAR_
-                        Dim loDatos As New Ea060clasmerc
+                        Dim loDatos As New Eb110undalternativas
                         LPTruncaSegunLongitud()
+                        loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                         loDatos.tipo = cmbTipo.Text
-                        loDatos.codclasificacion = Integer.Parse(txtCodClasificacion_NE.Text.ToString)
-                        loDatos.abreviado = txtAbreviado_AN.Text
-                        loDatos.nombre = txtNombre_AN.Text
-                        loDatos.listaprecio = cmbListaPrecio.Text
+                        loDatos.codmercaderia = txtCodMercaderia_AN.Text
+                        loDatos.codunidad = txtCodUnidad_AN.Text
+                        loDatos.nomunidad = txtNomUnidad_AN.Text
+                        loDatos.cantidad = Decimal.Parse(txtCantidad_ND.Text)
                         If cmbEstado.Text.Trim.Length > 0 Then
                             loDatos.estado = cmbEstado.Text
                         End If
                         Try
-                            loDatos.Put(sSi_, sSi_, sAGREGAR_)
+                            loDatos.Add()
                         Catch ex As Exception
                             LPOperacionCancelada()
                             Exit Sub
@@ -45,16 +45,19 @@ Public Class frmFa060clasmerc
                         loDatos.CerrarConexion()
                         loDatos = Nothing
                     Case sMODIFICAR_
-                        Dim loDatos As New Ea060clasmerc
+                        Dim loDatos As New Eb110undalternativas
+                        loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                         loDatos.tipo = cmbTipo.Text
-                        loDatos.codclasificacion = Integer.Parse(txtCodClasificacion_NE.Text.ToString)
+                        loDatos.codmercaderia = txtCodMercaderia_AN.Text
+                        loDatos.codunidad = txtCodUnidad_AN.Text
                         If loDatos.GetPK = sOk_ Then
                             LPTruncaSegunLongitud()
+                            loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                             loDatos.tipo = cmbTipo.Text
-                            loDatos.codclasificacion = Integer.Parse(txtCodClasificacion_NE.Text.ToString)
-                            loDatos.nombre = txtNombre_AN.Text
-                            loDatos.abreviado = txtAbreviado_AN.Text
-                            loDatos.listaprecio = cmbListaPrecio.Text
+                            loDatos.codmercaderia = txtCodMercaderia_AN.Text
+                            loDatos.codunidad = txtCodUnidad_AN.Text
+                            loDatos.nomunidad = txtNomUnidad_AN.Text
+                            loDatos.cantidad = Decimal.Parse(txtCantidad_ND.Text)
                             If cmbEstado.Text.Trim.Length > 0 Then
                                 loDatos.estado = cmbEstado.Text
                             End If
@@ -65,21 +68,26 @@ Public Class frmFa060clasmerc
                 Me.Tag = sOk_
                 '-->  .AccesibleName envia al Browse la información del codigo que luego deberia 
                 '-->  ser usado para la localización del registro en el DataGridView
-                Me.AccessibleName = txtCodClasificacion_NE.Text
+                Me.AccessibleName = txtCodUnidad_AN.Text
                 GPBitacoraRegistrar(sSALIO_, Me.Text & ", haciendo click en ACEPTAR.")
                 Me.Close()
             End If
         Else
             If Me.Tag.ToString = sBORRAR_ Then
-                Dim loDatos As New Ea060clasmerc
+                Dim loDatos As New Eb110undalternativas
+                loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                 loDatos.tipo = cmbTipo.Text
-                loDatos.codclasificacion = Integer.Parse(txtCodClasificacion_NE.Text.ToString)
+                loDatos.codmercaderia = txtCodMercaderia_AN.Text
+                loDatos.codunidad = txtCodUnidad_AN.Text
                 If loDatos.GetPK = sOk_ Then
+                    loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                     loDatos.tipo = cmbTipo.Text
-                    loDatos.codclasificacion = Integer.Parse(txtCodClasificacion_NE.Text.ToString)
+                    loDatos.codmercaderia = txtCodMercaderia_AN.Text
+                    loDatos.codunidad = txtCodUnidad_AN.Text
                     loDatos.Del()
                 End If
                 loDatos.CerrarConexion()
+                loDatos = Nothing
             End If
             Me.Tag = sOk_
             GPBitacoraRegistrar(sSALIO_, Me.Text & ", haciendo click en ACEPTAR.")
@@ -92,23 +100,20 @@ Public Class frmFa060clasmerc
             If LFsExiste(CType(sender, Control).AccessibleName) = sNo_ Then Exit Sub
             Dim lsValorInicial As String = ""
             Select Case CType(sender, Control).AccessibleName
-                Case "tipo"
-                    lsValorInicial = sEntrada_
-                Case "abreviado"
-                    lsValorInicial = "Abreviado No." & txtCodClasificacion_NE.Text
-                Case "nombre"
-                    lsValorInicial = txtAbreviado_AN.Text
-                Case "listaprecio"
-                    lsValorInicial = cmbListaPrecio.Items(1).ToString
-                    If cmbTipo.Text = sSalida_ Then
-                        lsValorInicial = cmbListaPrecio.Items(0).ToString
-                    End If
+                Case "cantidad"
+                    lsValorInicial = "1.00"
             End Select
             CType(sender, Control).Text = lsValorInicial
             CType(sender, Control).Tag = sCancelar_
             e.Cancel = True
+            Exit Sub
         Else
             Select Case CType(sender, Control).AccessibleName
+                Case "cantidad"
+                    If Decimal.Parse(CType(sender, Control).Text) = 0.00D Then
+                        e.Cancel = True
+                        Exit Sub
+                    End If
             End Select
             If CType(sender, Control).Name.Substring(0, 3) = sPrefijoComboBox_ Then
                 If CType(sender, ComboBox).Items.Contains(CType(sender, ComboBox).Text) = False Then
@@ -130,10 +135,9 @@ Public Class frmFa060clasmerc
         LPInicializaParametros()
         LPInicializaMaxLength()
         LPInicializaControles()
-
         ' Inicializa los controles de edición con los valores pertinentes
         Dim loControls As TabPage.ControlCollection = Me.TabPage1.Controls
-        msEntidad = "Clasificacion"
+        msEntidad = "unidades medidas alternativas"
         DesplegarMensaje()
 
         Select Case Me.Tag.ToString
@@ -143,64 +147,65 @@ Public Class frmFa060clasmerc
                         loControls.Item(liNDX).Text = ""
                     End If
                 Next
-                Dim loDatos As New Ea060clasmerc
-                cmbTipo.Text = CType(entidad, Ea060clasmerc).tipo
-                txtCodClasificacion_NE.Text = loDatos.ReservarRegistro(cmbTipo.Text).ToString
-                cmbTipo.Tag = sOk_
-                txtCodClasificacion_NE.Tag = sOk_
-                cmbListaPrecio.Text = cmbListaPrecio.Items(1).ToString
-                If cmbTipo.Text = sSalida_ Then
-                    cmbListaPrecio.Text = cmbListaPrecio.Items(0).ToString
-                End If
+                Dim loDatos As New Eb110undalternativas
+                txtCodEmpresa_NE.Text = CType(entidad, Eb110undalternativas).codEmpresa.ToString
+                cmbTipo.Text = CType(entidad, Eb110undalternativas).tipo
+                txtCodMercaderia_AN.Text = CType(entidad, Eb110undalternativas).codmercaderia
                 loDatos.CerrarConexion()
+
             Case Else
-                cmbTipo.Text = CType(entidad, Ea060clasmerc).tipo
-                txtCodClasificacion_NE.Text = CType(entidad, Ea060clasmerc).codclasificacion.ToString
-                txtAbreviado_AN.Text = CType(entidad, Ea060clasmerc).abreviado
-                txtNombre_AN.Text = CType(entidad, Ea060clasmerc).nombre
-                cmbEstado.Text = CType(entidad, Ea060clasmerc).estado
-                cmbListaPrecio.Text = CType(entidad, Ea060clasmerc).listaprecio
+                txtCodEmpresa_NE.Text = CType(entidad, Eb110undalternativas).codEmpresa.ToString
+                cmbTipo.Text = CType(entidad, Eb110undalternativas).tipo
+                txtCodMercaderia_AN.Text = CType(entidad, Eb110undalternativas).codmercaderia
+                txtCodUnidad_AN.Text = CType(entidad, Eb110undalternativas).codunidad
+                txtNomUnidad_AN.Text = CType(entidad, Eb110undalternativas).nomunidad
+                txtCantidad_ND.Text = CType(entidad, Eb110undalternativas).cantidad.ToString
+                cmbEstado.Text = CType(entidad, Eb110undalternativas).estado
+
+                txtCodEmpresa_NE.Tag = sOk_
                 cmbTipo.Tag = sOk_
-                txtCodClasificacion_NE.Tag = sOk_
-                txtAbreviado_AN.Tag = sOk_
-                txtNombre_AN.Tag = sOk_
-                cmbListaPrecio.Tag = sOk_
+                txtCodMercaderia_AN.Tag = sOk_
+                txtCodUnidad_AN.Tag = sOk_
+                txtNomUnidad_AN.Tag = sOk_
+                txtCantidad_ND.Tag = sOk_
                 cmbEstado.Tag = sOk_
+
         End Select
         ' Habilita o deshabilita los controles de edición
+        txtCodEmpresa_NE.Enabled = True
         cmbTipo.Enabled = True
-        txtCodClasificacion_NE.Enabled = True
-        txtAbreviado_AN.Enabled = True
-        txtNombre_AN.Enabled = True
+        txtCodMercaderia_AN.Enabled = True
+        txtCodUnidad_AN.Enabled = True
+        txtNomUnidad_AN.Enabled = True
+        txtCantidad_ND.Enabled = True
         cmbEstado.Enabled = True
 
+        txtCodEmpresa_NE.AccessibleName = "codempresa"
         cmbTipo.AccessibleName = "tipo"
-        txtCodClasificacion_NE.AccessibleName = "codigo"
-        txtAbreviado_AN.AccessibleName = "abreviado"
-        txtNombre_AN.AccessibleName = "nombre"
+        txtCodMercaderia_AN.AccessibleName = "codmercaderia"
+        txtCodUnidad_AN.AccessibleName = "codunidad"
+        txtNomUnidad_AN.AccessibleName = "nomunidad"
+        txtCantidad_ND.AccessibleName = "cantidad"
         cmbEstado.AccessibleName = "estado"
-
-        lblListaPrecio.Visible = False
-        cmbListaPrecio.Visible = False
-        cmbListaPrecio.AccessibleName = ""
-        If cmbTipo.Text = sSalida_ Then
-            lblListaPrecio.Visible = True
-            cmbListaPrecio.Visible = True
-            cmbListaPrecio.AccessibleName = "listaprecio"
-        End If
 
         Select Case Me.Tag.ToString
             Case sAGREGAR_
+                txtCodEmpresa_NE.Enabled = False
+                txtCodEmpresa_NE.Tag = sOk_
                 cmbTipo.Enabled = False
                 cmbTipo.Tag = sOk_
-                txtCodClasificacion_NE.Enabled = False
-                txtCodClasificacion_NE.Tag = sOk_
+                txtCodMercaderia_AN.Enabled = False
+                txtCodMercaderia_AN.Tag = sOk_
 
             Case sMODIFICAR_
+                txtCodEmpresa_NE.Enabled = False
+                txtCodEmpresa_NE.Tag = sOk_
                 cmbTipo.Enabled = False
                 cmbTipo.Tag = sOk_
-                txtCodClasificacion_NE.Enabled = False
-                txtCodClasificacion_NE.Tag = sOk_
+                txtCodMercaderia_AN.Enabled = False
+                txtCodMercaderia_AN.Tag = sOk_
+                txtCodUnidad_AN.Enabled = False
+                txtCodUnidad_AN.Tag = sOk_
 
             Case sCONSULTAR_, sBORRAR_
                 For liNDX As Integer = 0 To loControls.Count - 1
@@ -215,29 +220,90 @@ Public Class frmFa060clasmerc
                     End If
                 Next
         End Select
+        LPDespliegaDescripciones()
     End Sub
 
     Private Sub Formulario_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         '--> AQUI DEBE INGRESARSE EL FOCUS DEL PRIMER ELEMENTO DEL FORMULARIO
         Select Case Me.Tag.ToString
             Case sAGREGAR_
-                txtAbreviado_AN.Focus()
+                txtCodUnidad_AN.Focus()
             Case sMODIFICAR_
-                txtAbreviado_AN.Focus()
+                txtNomUnidad_AN.Focus()
         End Select
         LPDespliegaDescripciones()
     End Sub
 
     Private Sub LPDespliegaDescripciones()
+        Dim ldValorInicial As Decimal = 0.00D
+
+        lblNombreEmpresa.Text = ""
+        If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
+            Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+            txtCodEmpresa_NE.Text = liCodEmpresa.ToString("D" & txtCodEmpresa_NE.MaxLength.ToString)
+            txtCodEmpresa_NE.Refresh()
+            Dim loPK As New Ec001empresas
+            loPK.codEmpresa = liCodEmpresa
+            If loPK.GetPK = sOk_ Then
+                lblNombreEmpresa.Text = loPK.nombre
+                lblNombreEmpresa.Refresh()
+            End If
+            loPK.CerrarConexion()
+        End If
+
+        lblNombreMercaderia.Text = ""
+        Dim lsCodUnidad As String = ""
+        Select Case cmbTipo.Text
+            Case sEntrada_
+                Dim loPK As New Ed020mercentrada
+                loPK.codempresa = Integer.Parse(txtCodEmpresa_NE.Text)
+                loPK.codmercaderia = txtCodMercaderia_AN.Text
+                If loPK.GetPK = sOk_ Then
+                    lblNombreMercaderia.Text = loPK.nombre
+                    lsCodUnidad = loPK.codunidad
+                End If
+                loPK.CerrarConexion()
+            Case sSalida_
+                Dim loPK As New Ed030mercsalida
+                loPK.codempresa = Integer.Parse(txtCodEmpresa_NE.Text)
+                loPK.codmercaderia = txtCodMercaderia_AN.Text
+                If loPK.GetPK = sOk_ Then
+                    lblNombreMercaderia.Text = loPK.nombre
+                    lsCodUnidad = loPK.codunidad
+                End If
+                loPK.CerrarConexion()
+        End Select
+        lblNombreMercaderia.Refresh()
+
+        lblUndBasica.Text = ""
+        Dim loFK As New Ea050unidades
+        loFK.codunidad = lsCodUnidad
+        If loFK.GetPK = sOk_ Then
+            lblUndBasica.Text = loFK.nombre
+            lblUndBasica.Refresh()
+        End If
+        loFK.CerrarConexion()
+
+        If txtCantidad_ND.Text.Trim.Length = 0 Then
+            txtCantidad_ND.Text = ldValorInicial.ToString(sFormatF_)
+            txtCantidad_ND.Refresh()
+        End If
+
+        If IsNumeric(txtCantidad_ND.Text) = True Then
+            Dim ldValor As Decimal = Decimal.Parse(txtCantidad_ND.Text)
+            txtCantidad_ND.Text = ldValor.ToString(sFormatF_)
+            txtCantidad_ND.Refresh()
+        End If
     End Sub
 
     Private Sub LPInicializaMaxLength()
+        txtCodEmpresa_NE.MaxLength = 6
         cmbTipo.MaxLength = 15
-        txtCodClasificacion_NE.MaxLength = 6
-        txtAbreviado_AN.MaxLength = 15
-        txtNombre_AN.MaxLength = 45
+        txtCodMercaderia_AN.MaxLength = 20
+        txtCodUnidad_AN.MaxLength = 6
+        txtNomUnidad_AN.MaxLength = 15
+        txtCantidad_ND.MaxLength = 17
         cmbEstado.MaxLength = 15
-        cmbListaPrecio.MaxLength = 2
     End Sub
 
     Private Sub LPInicializaControles()
@@ -295,23 +361,6 @@ Public Class frmFa060clasmerc
         Return lsResultado
     End Function
 
-    Private Sub LPBorrarAlCancelar()
-        If Me.Tag.ToString <> sAGREGAR_ Then Exit Sub
-
-        Dim loDatos As New Ea060clasmerc
-        Dim lsTipo As String = cmbTipo.Text
-        Dim liCodigo As Integer = Integer.Parse(txtCodClasificacion_NE.Text.ToString)
-        loDatos.tipo = lsTipo
-        loDatos.codclasificacion = liCodigo
-        If loDatos.GetPK = sOk_ Then
-            loDatos.tipo = lsTipo
-            loDatos.codclasificacion = liCodigo
-            loDatos.Del(sNo_, sNo_)
-        End If
-        loDatos.CerrarConexion()
-        loDatos = Nothing
-    End Sub
-
     Private Sub LPInicializaParametros()
         Dim lsTipo As String = sGeneral_
         Dim lsClave As String = ""
@@ -330,16 +379,5 @@ Public Class frmFa060clasmerc
             cmbTipo.Items.Add(lsValor)
         Next
 
-        lsClave = "a060clasmerc.listaprecio"
-        lsValor = sSi_ & sSF_ & sNo_
-        lsCodigo = GFsParametroObtener(lsTipo, lsClave)
-        If lsCodigo = sRESERVADO_ Then
-            lsCodigo = lsValor
-            GPParametroGuardar(lsTipo, lsClave, lsCodigo)
-        End If
-        cmbListaPrecio.Items.Clear()
-        For Each lsValor In lsCodigo.Split(sSF_)
-            cmbListaPrecio.Items.Add(lsValor)
-        Next
     End Sub
 End Class

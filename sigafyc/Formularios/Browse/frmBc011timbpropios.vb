@@ -45,6 +45,7 @@
 
         Dim loDataSet As DataSet
         Dim lsCamposConcat As String = "numtimbrado, sucursal, prefijo, desde, hasta"
+        Dim lsCamposOcultos As String = "empresa"
         Dim lsConcatFiltro As String = lsCamposConcat
         Dim lsFiltro As String = sFiltroSentencia_
         lsFiltro = lsFiltro.Replace(sFiltroCampo_, lsConcatFiltro)
@@ -60,6 +61,10 @@
         loDataSet = loDatos.RecuperarTabla(lsSQL)
         DataGridView1.DataSource = loDataSet
         DataGridView1.DataMember = loDatos.tableName
+        Dim lsCampoOculto() As String = lsCamposOcultos.Split(","c)
+        For i As Integer = 0 To lsCampoOculto.Length - 1
+            DataGridView1.Columns(lsCampoOculto(i).Trim).Visible = False
+        Next
         DataGridView1.Refresh()
 
         If msLocalizar IsNot Nothing Then LPLocalizaRegistro(msLocalizar)

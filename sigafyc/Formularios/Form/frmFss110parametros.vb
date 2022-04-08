@@ -114,7 +114,8 @@ Public Class frmFss110parametros
                         Case sFecha_
                             lsValorInicial = Today.ToString(sFormatoFecha1_)
                         Case sModulo_
-                            lsValorInicial = SesionActiva.sistema
+                            Dim lsModulos() As String = SesionActiva.modulos.Split(sSF_)
+                            lsValorInicial = lsModulos(0)
                     End Select
                     e.Cancel = True
             End Select
@@ -216,6 +217,7 @@ Public Class frmFss110parametros
 
     Private Sub Formulario_Load(sender As Object, e As EventArgs) Handles Me.Load
         LPInicializaMaxLength()
+        LPInicializaParametros()
         LPInicializaControles()
         ' Inicializa los controles de edición con los valores pertinentes
         Dim loControls As TabPage.ControlCollection = Me.TabPage1.Controls
@@ -274,6 +276,10 @@ Public Class frmFss110parametros
         Select Case Me.Tag.ToString
             Case sAGREGAR_
                 txtSS010_codigo_AN.Enabled = False
+                cmbTipo.Enabled = False
+                If cmbTipo.Text = sGeneral_ Then
+                    txtPrefijo_AN.Enabled = False
+                End If
 
             Case sMODIFICAR_
                 txtSS010_codigo_AN.Enabled = False
@@ -348,4 +354,22 @@ Public Class frmFss110parametros
         Return lsResultado
     End Function
 
+    Private Sub LPInicializaParametros()
+        Dim lsTipo As String = sGeneral_
+        Dim lsClave As String = ""
+        Dim lsValor As String = ""
+        Dim lsCodigo As String = ""
+
+        lsClave = "ss110parametros.tipo"
+        lsValor = sGeneral_ & sSF_ & sLocal_ & sSF_ & sUsuario_ & sSF_ & sFecha_ & sSF_ & sModulo_
+        lsCodigo = GFsParametroObtener(lsTipo, lsClave)
+        If lsCodigo = sRESERVADO_ Then
+            lsCodigo = lsValor
+            GPParametroGuardar(lsTipo, lsClave, lsCodigo)
+        End If
+        cmbTipo.Items.Clear()
+        For Each lsValor In lsCodigo.Split(sSF_)
+            cmbTipo.Items.Add(lsValor)
+        Next
+    End Sub
 End Class
