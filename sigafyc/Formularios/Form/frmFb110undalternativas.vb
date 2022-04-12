@@ -378,6 +378,15 @@ Public Class frmFb110undalternativas
         For Each lsValor In lsCodigo.Split(sSF_)
             cmbTipo.Items.Add(lsValor)
         Next
+    End Sub
 
+    Private Sub btnDetalle_Click(sender As Object, e As EventArgs) Handles btnDetalle.Click
+        If Not (Me.Tag.ToString = sCONSULTAR_ Or Me.Tag.ToString = sMODIFICAR_) Then Exit Sub
+        Dim loBrowseDetalle As New frmBe020listaprecio
+        loBrowseDetalle.codempresa = Integer.Parse(txtCodEmpresa_NE.Text)
+        loBrowseDetalle.codmercaderia = txtCodMercaderia_AN.Text
+        loBrowseDetalle.codunidad = txtCodUnidad_AN.Text
+        loBrowseDetalle.codmercaderia = txtCodMercaderia_AN.Text
+        GPCargar(loBrowseDetalle)
     End Sub
 End Class

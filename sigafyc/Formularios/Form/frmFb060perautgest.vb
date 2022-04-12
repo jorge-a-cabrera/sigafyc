@@ -294,6 +294,9 @@ Public Class frmFb060perautgest
                 txtCodSucursal_NE.Tag = sOk_
                 cmbEstado.Tag = sOk_
         End Select
+        If cmbTipoPerfil.Text = "PROVEEDORES" Then
+            TabControl1.TabPages.Remove(TabControl1.TabPages.Item(1))
+        End If
         LPInicializaPredeterminado()
         ' Habilita o deshabilita los controles de edición
         txtCodEmpresa_NE.Enabled = True
@@ -320,6 +323,8 @@ Public Class frmFb060perautgest
         Select Case Me.Tag.ToString
             Case sAGREGAR_
                 ' CONDICIONANTE ANTES DE CARGAR EL FORMULARIO CUANDO LA ACCION ES AGREGAR
+                txtCodEmpresa_NE.Enabled = False
+                cmbTipoPerfil.Enabled = False
 
             Case sMODIFICAR_
                 txtCodEmpresa_NE.Enabled = False
@@ -346,7 +351,6 @@ Public Class frmFb060perautgest
                                 Next
                         End Select
                     Next
-
                 Next
         End Select
         lblNombreEmpresa.Text = ""

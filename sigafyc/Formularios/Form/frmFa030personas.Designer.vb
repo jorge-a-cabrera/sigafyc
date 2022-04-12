@@ -42,6 +42,8 @@ Partial Class frmFa030personas : Inherits frmFormulario
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.cmbEstado = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.cmbTipoPersona = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.gbxGrupo1.SuspendLayout()
@@ -74,6 +76,8 @@ Partial Class frmFa030personas : Inherits frmFormulario
         '
         'gbxGrupo1
         '
+        Me.gbxGrupo1.Controls.Add(Me.Label8)
+        Me.gbxGrupo1.Controls.Add(Me.cmbTipoPersona)
         Me.gbxGrupo1.Controls.Add(Me.txtCodigo_SR)
         Me.gbxGrupo1.Controls.Add(Me.Label1)
         Me.gbxGrupo1.Controls.Add(Me.cmbTipoDocumento)
@@ -81,7 +85,7 @@ Partial Class frmFa030personas : Inherits frmFormulario
         Me.gbxGrupo1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbxGrupo1.Location = New System.Drawing.Point(16, 6)
         Me.gbxGrupo1.Name = "gbxGrupo1"
-        Me.gbxGrupo1.Size = New System.Drawing.Size(354, 82)
+        Me.gbxGrupo1.Size = New System.Drawing.Size(500, 82)
         Me.gbxGrupo1.TabIndex = 0
         Me.gbxGrupo1.TabStop = False
         Me.gbxGrupo1.Text = "Documento:"
@@ -292,6 +296,27 @@ Partial Class frmFa030personas : Inherits frmFormulario
         Me.Label9.TabIndex = 25
         Me.Label9.Text = "Estado:"
         '
+        'cmbTipoPersona
+        '
+        Me.cmbTipoPersona.AccessibleDescription = "tipo"
+        Me.cmbTipoPersona.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cmbTipoPersona.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbTipoPersona.FormattingEnabled = True
+        Me.cmbTipoPersona.Items.AddRange(New Object() {"Fijo", "Modificable"})
+        Me.cmbTipoPersona.Location = New System.Drawing.Point(354, 36)
+        Me.cmbTipoPersona.Name = "cmbTipoPersona"
+        Me.cmbTipoPersona.Size = New System.Drawing.Size(133, 28)
+        Me.cmbTipoPersona.TabIndex = 41
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(351, 18)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(63, 15)
+        Me.Label8.TabIndex = 42
+        Me.Label8.Text = "persona:"
+        '
         'frmFa030personas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -336,4 +361,6 @@ Partial Class frmFa030personas : Inherits frmFormulario
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents cmbEstado As ComboBox
     Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents cmbTipoPersona As ComboBox
 End Class

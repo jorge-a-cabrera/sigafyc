@@ -2,7 +2,7 @@
 
 Public Class frmFa030personas
     Private msValidado() As String
-    Private msRequeridos As String() = {"tipodocumento", "nrodocumento", "nombre", "abreviado", "direccion", "ciudad", "telefono", "email"}
+    Private msRequeridos As String() = {"tipodocumento", "nrodocumento", "tipopersona", "nombre", "abreviado", "direccion", "ciudad", "telefono", "email"}
     Private moRequeridos As New ArrayList(msRequeridos)
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -31,6 +31,7 @@ Public Class frmFa030personas
                         loDatos.ciudad = txtCiudad_AN.Text
                         loDatos.telefono = txtTelefono_AN.Text
                         loDatos.email = txtEmail_AN.Text
+                        loDatos.tipopersona = cmbTipoPersona.Text
                         If cmbEstado.Text.Trim.Length > 0 Then
                             loDatos.estado = cmbEstado.Text
                         End If
@@ -51,6 +52,7 @@ Public Class frmFa030personas
                             loDatos.ciudad = txtCiudad_AN.Text
                             loDatos.telefono = txtTelefono_AN.Text
                             loDatos.email = txtEmail_AN.Text
+                            loDatos.tipopersona = cmbTipoPersona.Text
                             If cmbEstado.Text.Trim.Length > 0 Then
                                 loDatos.estado = cmbEstado.Text
                             End If
@@ -120,6 +122,12 @@ Public Class frmFa030personas
                         e.Cancel = True
                         Exit Sub
                     End If
+                Case "tipopersona"
+                    If cmbTipoPersona.Text = "Juridica" And cmbTipoDocumento.Text <> "RUC" Then
+                        GFsAvisar("Una Persona JURIDICA no puede tener como tipo documento " & cmbTipoDocumento.Text.ToUpper & " como identificacion.", sMENSAJE_, "Corrija para poder proseguir con la acción.")
+                        e.Cancel = True
+                        Exit Sub
+                    End If
             End Select
             If CType(sender, Control).Name.Substring(0, 3) = sPrefijoComboBox_ Then
                 If CType(sender, ComboBox).Items.Contains(CType(sender, ComboBox).Text) = False Then
@@ -157,6 +165,7 @@ Public Class frmFa030personas
                 txtCiudad_AN.Text = CType(entidad, Ea030personas).ciudad
                 txtTelefono_AN.Text = CType(entidad, Ea030personas).telefono
                 txtEmail_AN.Text = CType(entidad, Ea030personas).email
+                cmbTipoPersona.Text = CType(entidad, Ea030personas).tipopersona
                 cmbEstado.Text = CType(entidad, Ea030personas).estado
         End Select
         ' Habilita o deshabilita los controles de edición
@@ -168,6 +177,7 @@ Public Class frmFa030personas
         txtCiudad_AN.Enabled = True
         txtTelefono_AN.Enabled = True
         txtEmail_AN.Enabled = True
+        cmbTipoPersona.Enabled = True
         cmbEstado.Enabled = True
 
         cmbTipoDocumento.AccessibleName = "tipodocumento"
@@ -178,6 +188,7 @@ Public Class frmFa030personas
         txtCiudad_AN.AccessibleName = "ciudad"
         txtTelefono_AN.AccessibleName = "telefono"
         txtEmail_AN.AccessibleName = "email"
+        cmbTipoPersona.AccessibleName = "tipopersona"
         cmbEstado.AccessibleName = "estado"
 
         Select Case Me.Tag.ToString
@@ -232,6 +243,18 @@ Public Class frmFa030personas
         For Each lsValor In lsTipoDocumento.Split(sSF_)
             cmbTipoDocumento.Items.Add(lsValor)
         Next
+
+        lsClave = "a030personas.tipopersona"
+        lsValor = "Fisica" & sSF_ & "Juridica"
+        lsTipoDocumento = GFsParametroObtener(lsTipo, lsClave)
+        If lsTipoDocumento = sRESERVADO_ Then
+            lsTipoDocumento = lsValor
+            GPParametroGuardar(lsTipo, lsClave, lsTipoDocumento)
+        End If
+        cmbTipoPersona.Items.Clear()
+        For Each lsValor In lsTipoDocumento.Split(sSF_)
+            cmbTipoPersona.Items.Add(lsValor)
+        Next
     End Sub
 
     Private Sub LPLimpiaControlesEntrada()
@@ -278,6 +301,7 @@ Public Class frmFa030personas
         txtCiudad_AN.MaxLength = 64
         txtTelefono_AN.MaxLength = 64
         txtEmail_AN.MaxLength = 128
+        cmbTipoPersona.MaxLength = 15
         cmbEstado.MaxLength = 15
     End Sub
 

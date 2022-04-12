@@ -304,7 +304,7 @@ Partial Class frmFd020mercentrada
         Me.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDetalle.Image = Global.sigafyc.My.Resources.Resources.icons8_details_32
-        Me.btnDetalle.Location = New System.Drawing.Point(415, 231)
+        Me.btnDetalle.Location = New System.Drawing.Point(415, 260)
         Me.btnDetalle.Name = "btnDetalle"
         Me.btnDetalle.Size = New System.Drawing.Size(225, 78)
         Me.btnDetalle.TabIndex = 45

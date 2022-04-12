@@ -661,3 +661,5 @@ C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBc050mercvinculadas.resour
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFc050mercvinculadas.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBb110undalternativas.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFb110undalternativas.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBe020listaprecio.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFe020listaprecio.resources

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmFb110undalternativas
     Inherits frmFormulario
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,10 @@ Partial Class frmFb110undalternativas
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.gbxVinculada = New System.Windows.Forms.GroupBox()
+        Me.lblUndBasica = New System.Windows.Forms.Label()
         Me.txtNomUnidad_AN = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtCantidad_ND = New System.Windows.Forms.TextBox()
@@ -38,9 +39,9 @@ Partial Class frmFb110undalternativas
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.cmbEstado = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.lblUndBasica = New System.Windows.Forms.Label()
         Me.cmbTipo = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnDetalle = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.gbxVinculada.SuspendLayout()
@@ -50,7 +51,7 @@ Partial Class frmFb110undalternativas
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Size = New System.Drawing.Size(875, 323)
+        Me.TabControl1.Size = New System.Drawing.Size(792, 323)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
@@ -65,7 +66,7 @@ Partial Class frmFb110undalternativas
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.txtCodMercaderia_AN)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Size = New System.Drawing.Size(867, 283)
+        Me.TabPage1.Size = New System.Drawing.Size(784, 283)
         '
         'btnCancelar
         '
@@ -73,11 +74,11 @@ Partial Class frmFb110undalternativas
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(750, 374)
+        Me.btnAceptar.Location = New System.Drawing.Point(667, 374)
         '
         'lblMensaje
         '
-        Me.lblMensaje.Size = New System.Drawing.Size(871, 37)
+        Me.lblMensaje.Size = New System.Drawing.Size(788, 37)
         '
         'gbxVinculada
         '
@@ -89,12 +90,22 @@ Partial Class frmFb110undalternativas
         Me.gbxVinculada.Controls.Add(Me.txtCodUnidad_AN)
         Me.gbxVinculada.Controls.Add(Me.Label8)
         Me.gbxVinculada.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxVinculada.Location = New System.Drawing.Point(161, 121)
+        Me.gbxVinculada.Location = New System.Drawing.Point(161, 122)
         Me.gbxVinculada.Name = "gbxVinculada"
-        Me.gbxVinculada.Size = New System.Drawing.Size(688, 145)
+        Me.gbxVinculada.Size = New System.Drawing.Size(609, 145)
         Me.gbxVinculada.TabIndex = 3
         Me.gbxVinculada.TabStop = False
         Me.gbxVinculada.Text = "cantidad equivalente"
+        '
+        'lblUndBasica
+        '
+        Me.lblUndBasica.AutoSize = True
+        Me.lblUndBasica.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUndBasica.Location = New System.Drawing.Point(309, 102)
+        Me.lblUndBasica.Name = "lblUndBasica"
+        Me.lblUndBasica.Size = New System.Drawing.Size(145, 20)
+        Me.lblUndBasica.TabIndex = 119
+        Me.lblUndBasica.Text = "<unidad_basica>"
         '
         'txtNomUnidad_AN
         '
@@ -213,11 +224,12 @@ Partial Class frmFb110undalternativas
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.btnDetalle)
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label10)
         Me.TabPage2.Location = New System.Drawing.Point(4, 36)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(867, 481)
+        Me.TabPage2.Size = New System.Drawing.Size(784, 283)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -243,16 +255,6 @@ Partial Class frmFb110undalternativas
         Me.Label10.TabIndex = 33
         Me.Label10.Text = "Estado:"
         '
-        'lblUndBasica
-        '
-        Me.lblUndBasica.AutoSize = True
-        Me.lblUndBasica.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUndBasica.Location = New System.Drawing.Point(309, 102)
-        Me.lblUndBasica.Name = "lblUndBasica"
-        Me.lblUndBasica.Size = New System.Drawing.Size(145, 20)
-        Me.lblUndBasica.TabIndex = 119
-        Me.lblUndBasica.Text = "<unidad_basica>"
-        '
         'cmbTipo
         '
         Me.cmbTipo.AccessibleDescription = "tipo"
@@ -275,12 +277,26 @@ Partial Class frmFb110undalternativas
         Me.Label2.TabIndex = 119
         Me.Label2.Text = "Tipo:"
         '
+        'btnDetalle
+        '
+        Me.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDetalle.Image = Global.sigafyc.My.Resources.Resources.icons8_details_32
+        Me.btnDetalle.Location = New System.Drawing.Point(651, 202)
+        Me.btnDetalle.Name = "btnDetalle"
+        Me.btnDetalle.Size = New System.Drawing.Size(130, 78)
+        Me.btnDetalle.TabIndex = 47
+        Me.btnDetalle.Tag = "&lista precio"
+        Me.btnDetalle.Text = "&lista precio"
+        Me.btnDetalle.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnDetalle.UseVisualStyleBackColor = True
+        '
         'frmFb110undalternativas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Nothing
-        Me.ClientSize = New System.Drawing.Size(893, 456)
+        Me.ClientSize = New System.Drawing.Size(809, 456)
         Me.Name = "frmFb110undalternativas"
         Me.Tag = ""
         Me.Text = "Formulario Unidad medida alternativa"
@@ -314,4 +330,5 @@ Partial Class frmFb110undalternativas
     Friend WithEvents lblUndBasica As Label
     Friend WithEvents cmbTipo As ComboBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents btnDetalle As Button
 End Class

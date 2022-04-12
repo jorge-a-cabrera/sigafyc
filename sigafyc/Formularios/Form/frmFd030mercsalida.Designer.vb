@@ -42,9 +42,9 @@ Partial Class frmFd030mercsalida
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnDetalle = New System.Windows.Forms.Button()
         Me.cmbEstado = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.btnDetalle = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -289,6 +289,20 @@ Partial Class frmFd030mercsalida
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'btnDetalle
+        '
+        Me.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDetalle.Image = Global.sigafyc.My.Resources.Resources.icons8_details_32
+        Me.btnDetalle.Location = New System.Drawing.Point(413, 200)
+        Me.btnDetalle.Name = "btnDetalle"
+        Me.btnDetalle.Size = New System.Drawing.Size(225, 78)
+        Me.btnDetalle.TabIndex = 44
+        Me.btnDetalle.Tag = "&unidades"
+        Me.btnDetalle.Text = "&unidades alternativas"
+        Me.btnDetalle.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnDetalle.UseVisualStyleBackColor = True
+        '
         'cmbEstado
         '
         Me.cmbEstado.FlatStyle = System.Windows.Forms.FlatStyle.System
@@ -309,20 +323,6 @@ Partial Class frmFd030mercsalida
         Me.Label10.Size = New System.Drawing.Size(71, 20)
         Me.Label10.TabIndex = 29
         Me.Label10.Text = "Estado:"
-        '
-        'btnDetalle
-        '
-        Me.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDetalle.Image = Global.sigafyc.My.Resources.Resources.icons8_details_32
-        Me.btnDetalle.Location = New System.Drawing.Point(413, 203)
-        Me.btnDetalle.Name = "btnDetalle"
-        Me.btnDetalle.Size = New System.Drawing.Size(225, 78)
-        Me.btnDetalle.TabIndex = 44
-        Me.btnDetalle.Tag = "&unidades"
-        Me.btnDetalle.Text = "&unidades alternativas"
-        Me.btnDetalle.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnDetalle.UseVisualStyleBackColor = True
         '
         'frmFd030mercsalida
         '

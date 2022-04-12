@@ -10,7 +10,8 @@
                                        "direccion" & sString_ & sSF_ &
                                        "ciudad" & sString_ & sSF_ &
                                        "telefono" & sString_ & sSF_ &
-                                       "email" & sString_
+                                       "email" & sString_ & sSF_ &
+                                       "tipopersona" & sString_
 
     Private msCampos_PK() As Integer = {0, 1}
 #End Region
@@ -23,6 +24,7 @@
     Private msDireccion As String
     Private msCiudad As String
     Private msTelefono As String
+    Private msTipoPersona As String
     Private msEmail As String
 #End Region
 
@@ -41,6 +43,15 @@
         End Get
         Set(value As String)
             msNroDocumento = value
+        End Set
+    End Property
+
+    Public Property tipopersona As String
+        Get
+            Return msTipoPersona
+        End Get
+        Set(value As String)
+            msTipoPersona = value
         End Set
     End Property
 

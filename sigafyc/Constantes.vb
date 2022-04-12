@@ -50,6 +50,8 @@
     Public Const sSemisuma_ As String = "Semisuma"
     Public Const sEntrada_ As String = "1-Entrada"
     Public Const sSalida_ As String = "2-Salida"
+    Public Const sTodos_ As String = "TODOS"
+    Public Const sTodas_ As String = "TODAS"
 
     Public Const sBorrado_ As String = "*"
     Public Const sBlanco_ As String = " "

@@ -219,6 +219,7 @@
     <Compile Include="ESistemaPrincipal\Ed020mercentrada.vb" />
     <Compile Include="ESistemaPrincipal\Ed030mercsalida.vb" />
     <Compile Include="ESistemaPrincipal\Ee010asientoscabeceras.vb" />
+    <Compile Include="ESistemaPrincipal\Ee020listaprecio.vb" />
     <Compile Include="FormulariosBases\frmBrowseSinGrid.Designer.vb">
       <DependentUpon>frmBrowseSinGrid.vb</DependentUpon>
     </Compile>
@@ -391,6 +392,12 @@
       <DependentUpon>frmBe010asientoscabeceras.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Browse\frmBe010asientoscabeceras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBe020listaprecio.Designer.vb">
+      <DependentUpon>frmBe020listaprecio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBe020listaprecio.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Browse\frmBMayorCuenta.Designer.vb">
@@ -625,6 +632,12 @@
       <DependentUpon>frmFe010asientoscabeceras.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Form\frmFe010asientoscabeceras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFe020listaprecio.Designer.vb">
+      <DependentUpon>frmFe020listaprecio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFe020listaprecio.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Utilitarios\frmFEnviarMail.Designer.vb">
@@ -1022,6 +1035,9 @@
     <EmbeddedResource Include="Formularios\Browse\frmBe010asientoscabeceras.resx">
       <DependentUpon>frmBe010asientoscabeceras.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Browse\frmBe020listaprecio.resx">
+      <DependentUpon>frmBe020listaprecio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Browse\frmBMayorCuenta.resx">
       <DependentUpon>frmBMayorCuenta.vb</DependentUpon>
     </EmbeddedResource>
@@ -1138,6 +1154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form\frmFe010asientoscabeceras.resx">
       <DependentUpon>frmFe010asientoscabeceras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form\frmFe020listaprecio.resx">
+      <DependentUpon>frmFe020listaprecio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Utilitarios\frmFEnviarMail.resx">
       <DependentUpon>frmFEnviarMail.vb</DependentUpon>
