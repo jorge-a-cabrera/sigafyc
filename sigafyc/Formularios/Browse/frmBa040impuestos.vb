@@ -1,12 +1,49 @@
-﻿Public Class frmBa040impuestos
+﻿Imports System.ComponentModel
+
+Public Class frmBa040impuestos
     Private moFormulario As frmFa040impuestos
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
+    Private mbAgregar As Boolean
+    Private mbModificar As Boolean
+    Private mbBorrar As Boolean
+    Private mbConsultar As Boolean
+    Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
-    Private msCodigo1 As String = "operacion"
     Private msCodigo2 As String = "codimpuesto"
+    Private Shared mbabrirform As Boolean = False
+    Private msOperacion As String = ""
+    Public Property operacion As String
+        Get
+            Return msOperacion
+        End Get
+        Set(value As String)
+            msOperacion = value
+        End Set
+    End Property
 
     Private Sub frmBa040impuestos_Load(sender As Object, e As EventArgs) Handles Me.Load
+        DataGridView1.DefaultCellStyle.Font = New Font("Tahoma", 12, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridView1.AllowUserToResizeColumns = True
+        DataGridView1.RowHeadersVisible = False
+        DataGridView1.AllowUserToResizeRows = False
+        DataGridView1.AllowUserToAddRows = False
+        DataGridView1.AllowUserToDeleteRows = False
+        DataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        DataGridView1.ReadOnly = True
+        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        LPSetDoubleBuffered(DataGridView1)
+
+        LPInicializaParametros()
+        LPInicializaMaxLength()
+
+        mbAgregar = btnAgregar.Enabled
+        mbModificar = btnModificar.Enabled
+        mbBorrar = btnBorrar.Enabled
+        mbConsultar = btnConsultar.Enabled
+        mbAuditoria = btnAuditoria.Enabled
+
         btnAgregar.AccessibleName = sAGREGAR_
         btnModificar.AccessibleName = sMODIFICAR_
         btnBorrar.AccessibleName = sBORRAR_
@@ -17,7 +54,21 @@
         AddHandler btnModificar.Click, AddressOf Botones_Click
         AddHandler btnBorrar.Click, AddressOf Botones_Click
         AddHandler btnConsultar.Click, AddressOf Botones_Click
-        LPCargarDatos()
+        AddHandler cmbOperacion.KeyPress, AddressOf ManejoEvento_KeyPress
+        AddHandler cmbOperacion.KeyDown, AddressOf ManejoEvento_KeyDown
+        AddHandler DataGridView1.KeyDown, AddressOf DataGrid_KeyDown
+        AddHandler DataGridView1.CellContentDoubleClick, AddressOf DataGrid_DoubleClick
+
+        DataGridView1.ContextMenuStrip = mnuExportarExcel
+
+        AddHandler MenuItem_ExportarExcel.Click, AddressOf ExportarExcel_Click
+        AddHandler MenuItem_ExportarTexto.Click, AddressOf ExportarTexto_Click
+
+        If msOperacion.Trim.Length > 0 Then
+            cmbOperacion.Text = msOperacion
+            cmbOperacion.Enabled = False
+            LPCargarDatos()
+        End If
     End Sub
 
     Private Sub BuscarClave(sender As Object, e As EventArgs)
@@ -29,12 +80,11 @@
         Dim datos As New Ea040impuestos
         Dim loDataSet As DataSet = Nothing
         Dim lsWhere As String = ""
-        Dim lsCampos As String = "operacion, codimpuesto, nombre, porcbaseimpo, tipovalor, codmoneda, valor"
+        Dim lsCampos As String = "codimpuesto, nombre, porcbaseimpo, tipovalor, codmoneda, valor"
         Dim lsConcatFiltro As String = lsCampos
         Dim lsFiltro As String = sFiltroSentencia_
-        If entidad IsNot Nothing Then
-            datos.operacion = CType(entidad, Ea040impuestos).operacion
-            lsWhere = "operacion = " & Chr(39) & datos.operacion & Chr(39)
+        If cmbOperacion.Text.Trim.Length > 0 Then
+            lsWhere = "operacion = " & Chr(39) & cmbOperacion.Text & Chr(39)
         End If
         lsFiltro = lsFiltro.Replace(sFiltroCampo_, lsConcatFiltro)
         If txtBuscar.Text = txtBuscar.Tag.ToString Then
@@ -85,7 +135,10 @@
     End Sub
 
     Private Sub Botones_Click(sender As Object, e As EventArgs)
+        If cmbOperacion.Text.Trim.Length = 0 Then Exit Sub
+
         Dim loDatos As New Ea040impuestos
+        loDatos.operacion = cmbOperacion.Text
         Select Case CType(sender, Button).AccessibleName
             Case sAGREGAR_
                 moFormulario = New frmFa040impuestos
@@ -96,9 +149,6 @@
                 moFormulario = Nothing
             Case Else
                 If DataGridView1.CurrentRow Is Nothing Then Exit Sub
-                Dim lsOperacion As String = DataGridView1.Item(msCodigo1, DataGridView1.CurrentRow.Index).Value.ToString
-                If lsOperacion.Trim.Length = 0 Then Exit Sub
-                '---------------------------------------------------------------------------------------------
                 Dim lsCodigo As String = DataGridView1.Item(msCodigo2, DataGridView1.CurrentRow.Index).Value.ToString
                 If lsCodigo.Trim.Length = 0 Then Exit Sub
 
@@ -117,7 +167,7 @@
                 End If
 
                 Try
-                    loDatos.operacion = lsOperacion
+                    loDatos.operacion = cmbOperacion.Text
                     loDatos.codImpuesto = lsCodigo
                     If loDatos.GetPK = sOk_ Then
                         If Me.Tag.ToString = sELEGIR_ And CType(sender, Button).AccessibleName = sCONSULTAR_ Then
@@ -143,8 +193,6 @@
     End Sub
 
     Private Sub btnAuditoria_Click(sender As Object, e As EventArgs) Handles btnAuditoria.Click
-        Dim lsTipoDocumento As String = DataGridView1.Item(msCodigo1, DataGridView1.CurrentRow.Index).Value.ToString
-        If lsTipoDocumento.Trim.Length = 0 Then Exit Sub
         Dim lsCodigo As String = DataGridView1.Item(msCodigo2, DataGridView1.CurrentRow.Index).Value.ToString
         If lsCodigo.Trim.Length = 0 Then Exit Sub
 
@@ -154,10 +202,9 @@
 
     Private Function LFsTablaHashPk(ByVal psCodigo As String) As String
         Dim lsResultado As String = ""
-        Dim lsOperacion As String = DataGridView1.Item(msCodigo1, DataGridView1.CurrentRow.Index).Value.ToString
         If psCodigo.Trim.Length > 0 Then
             Dim loDatos As New Ea040impuestos
-            loDatos.operacion = lsOperacion
+            loDatos.operacion = cmbOperacion.Text
             loDatos.codImpuesto = psCodigo
             Try
                 If loDatos.GetPK(sSi_) = sOk_ Then
@@ -172,8 +219,8 @@
     End Function
 
     Private Function LFiCantidadDetalle(ByVal psCodigo As String) As Integer
-        Dim loDatos As New Ec040docimpuestos
-        Dim lsSQL As String = GFsGeneraSQL("Ec040docimpuestos_conteo")
+        Dim loDatos As New Ec040mercimpuestos
+        Dim lsSQL As String = GFsGeneraSQL("Ec040mercimpuestos_conteo")
         lsSQL = lsSQL.Replace("&codigo", psCodigo)
         loDatos.CrearComando(lsSQL)
         Dim liCantidad As Integer = loDatos.EjecutarEscalar
@@ -181,4 +228,53 @@
         Return liCantidad
     End Function
 
+    Friend Sub LPSinRegistro_AbrirForm()
+        If miCantidad = 0 Then
+            If mbabrirform = False Then
+                mbabrirform = True
+                SendKeys.Send("%(a)")
+            End If
+        End If
+    End Sub
+
+    Private Sub ExportarExcel_Click(sender As Object, e As EventArgs)
+        If GFsPuedeUsar(Me.Name & ":Exportar->Excel", "Permite exportar el contenido de " & Me.Name & " a un archivo Excel") = sSi_ Then
+            GPExportarGridToExcel(DataGridView1, Me.Name)
+        End If
+    End Sub
+
+    Private Sub ExportarTexto_Click(sender As Object, e As EventArgs)
+        If GFsPuedeUsar(Me.Name & ":Exportar->Texto delimitado", "Permite exportar el contenido de " & Me.Name & " a un archivo de texto delimitado") = sSi_ Then
+            GPExportarGridToTexto(DataGridView1, Me.Name)
+        End If
+    End Sub
+
+    Private Sub LPInicializaMaxLength()
+        cmbOperacion.MaxLength = 15
+    End Sub
+
+    Private Sub LPInicializaParametros()
+        Dim lsTipo As String = sGeneral_
+        Dim lsClave As String
+        Dim lsValor As String
+        Dim lsCodigo As String
+
+        lsClave = "c040mercimpuestos.operacion"
+        lsValor = sCompra_ & sSF_ & sVenta_
+        lsCodigo = GFsParametroObtener(lsTipo, lsClave)
+        If lsCodigo = sRESERVADO_ Then
+            lsCodigo = lsValor
+            GPParametroGuardar(lsTipo, lsClave, lsCodigo)
+        End If
+        cmbOperacion.Items.Clear()
+        For Each lsValor In lsCodigo.Split(sSF_)
+            cmbOperacion.Items.Add(lsValor)
+        Next
+    End Sub
+
+    Private Sub cmbOperacion_Validating(sender As Object, e As CancelEventArgs) Handles cmbOperacion.Validating
+        If cmbOperacion.Text.Trim.Length = 0 Then Exit Sub
+
+        LPCargarDatos()
+    End Sub
 End Class

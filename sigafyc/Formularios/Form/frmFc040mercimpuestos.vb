@@ -1,8 +1,8 @@
 ﻿Imports System.ComponentModel
 
-Public Class frmFc040docimpuestos
+Public Class frmFc040mercimpuestos
     Private msValidado() As String
-    Private msRequeridos As String() = {"codempresa", "coddocumento", "operacion", "codimpuesto", "aplicacion"}
+    Private msRequeridos As String() = {"codempresa", "operacion", "codmercaderia", "codimpuesto"}
     Private moRequeridos As New ArrayList(msRequeridos)
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -21,12 +21,11 @@ Public Class frmFc040docimpuestos
             Else
                 Select Case Me.Tag.ToString
                     Case sAGREGAR_
-                        Dim loDatos As New Ec040docimpuestos
+                        Dim loDatos As New Ec040mercimpuestos
                         loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text)
-                        loDatos.codDocumento = Integer.Parse(txtCodDocumento_NE.Text)
                         loDatos.operacion = cmbOperacion.Text
+                        loDatos.codmercaderia = txtCodMercaderia_AN.Text
                         loDatos.codImpuesto = txtCodImpuesto_AN.Text
-                        loDatos.aplicacion = cmbAplicacion.Text
                         If cmbEstado.Text.Trim.Length > 0 Then
                             loDatos.estado = cmbEstado.Text
                         End If
@@ -34,24 +33,22 @@ Public Class frmFc040docimpuestos
                         loDatos.CerrarConexion()
                         loDatos = Nothing
                     Case sMODIFICAR_
-                        Dim loDatos As New Ec040docimpuestos
+                        Dim loDatos As New Ec040mercimpuestos
                         loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text)
-                        loDatos.codDocumento = Integer.Parse(txtCodDocumento_NE.Text)
                         loDatos.operacion = cmbOperacion.Text
+                        loDatos.codmercaderia = txtCodMercaderia_AN.Text
                         loDatos.codImpuesto = txtCodImpuesto_AN.Text
                         If loDatos.GetPK = sOk_ Then
                             loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text)
-                            loDatos.codDocumento = Integer.Parse(txtCodDocumento_NE.Text)
                             loDatos.operacion = cmbOperacion.Text
+                            loDatos.codmercaderia = txtCodMercaderia_AN.Text
                             loDatos.codImpuesto = txtCodImpuesto_AN.Text
-                            loDatos.aplicacion = cmbAplicacion.Text
                             If cmbEstado.Text.Trim.Length > 0 Then
                                 loDatos.estado = cmbEstado.Text
                             End If
                             loDatos.Put()
                         End If
                         loDatos.CerrarConexion()
-                        loDatos = Nothing
                 End Select
                 Me.Tag = sOk_
                 '-->  .AccesibleName envia al Browse la información del codigo que luego deberia 
@@ -62,15 +59,15 @@ Public Class frmFc040docimpuestos
             End If
         Else
             If Me.Tag.ToString = sBORRAR_ Then
-                Dim loDatos As New Ec040docimpuestos
+                Dim loDatos As New Ec040mercimpuestos
                 loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text)
-                loDatos.codDocumento = Integer.Parse(txtCodDocumento_NE.Text)
                 loDatos.operacion = cmbOperacion.Text
+                loDatos.codmercaderia = txtCodMercaderia_AN.Text
                 loDatos.codImpuesto = txtCodImpuesto_AN.Text
                 If loDatos.GetPK = sOk_ Then
                     loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text)
-                    loDatos.codDocumento = Integer.Parse(txtCodDocumento_NE.Text)
                     loDatos.operacion = cmbOperacion.Text
+                    loDatos.codmercaderia = txtCodMercaderia_AN.Text
                     loDatos.codImpuesto = txtCodImpuesto_AN.Text
                     loDatos.Del()
                 End If
@@ -89,8 +86,6 @@ Public Class frmFc040docimpuestos
             Select Case CType(sender, Control).AccessibleName
                 Case "operacion"
                     lsValorInicial = cmbOperacion.Items(0).ToString
-                Case "aplicacion"
-                    lsValorInicial = cmbAplicacion.Items(0).ToString
             End Select
             CType(sender, Control).Text = lsValorInicial
             CType(sender, Control).Tag = sCancelar_
@@ -99,13 +94,13 @@ Public Class frmFc040docimpuestos
         Else
             Select Case CType(sender, Control).AccessibleName
                 Case "codimpuesto"
-                    Dim loPk As New Ec040docimpuestos
+                    Dim loPk As New Ec040mercimpuestos
                     loPk.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text)
-                    loPk.codDocumento = Integer.Parse(txtCodDocumento_NE.Text)
                     loPk.operacion = cmbOperacion.Text
+                    loPk.codmercaderia = txtCodMercaderia_AN.Text
                     loPk.codImpuesto = txtCodImpuesto_AN.Text
                     If loPk.GetPK = sOk_ Then
-                        GFsAvisar("Empresa[" & txtCodEmpresa_NE.Text & "] Documento[" & txtCodDocumento_NE.Text & "] Operacion[" & cmbOperacion.Text & "] Impuesto[" & txtCodDocumento_NE.Text & "]", sMENSAJE_, "ya existe! Y no puede duplicarse.")
+                        GFsAvisar("Empresa[" & txtCodEmpresa_NE.Text & "] Operacion[" & cmbOperacion.Text & "] Mercaderia[" & txtCodMercaderia_AN.Text & "] Impuesto[" & txtCodImpuesto_AN.Text & "]", sMENSAJE_, "ya existe! Y no puede duplicarse.")
                         e.Cancel = True
                         Exit Sub
                     End If
@@ -117,6 +112,7 @@ Public Class frmFc040docimpuestos
                     Dim lsResultado As String = loFK.GetPK
                     If lsResultado = sSinRegistros_ Then
                         Dim loLookUp As New frmBa040impuestos
+                        loLookUp.operacion = cmbOperacion.Text
                         loLookUp.entidad = loFK
                         loLookUp.Tag = sELEGIR_
                         GPCargar(loLookUp)
@@ -127,7 +123,7 @@ Public Class frmFc040docimpuestos
                             Exit Sub
 
                         Else
-                            txtCodDocumento_NE.Tag = sCancelar_
+                            txtCodMercaderia_AN.Tag = sCancelar_
                             e.Cancel = True
                             Exit Sub
                         End If
@@ -165,49 +161,48 @@ Public Class frmFc040docimpuestos
                         loControls.Item(liNDX).Text = ""
                     End If
                 Next
-                txtCodEmpresa_NE.Text = CType(entidad, Ec040docimpuestos).codEmpresa.ToString
-                txtCodDocumento_NE.Text = CType(entidad, Ec040docimpuestos).codDocumento.ToString
+                txtCodEmpresa_NE.Text = CType(entidad, Ec040mercimpuestos).codEmpresa.ToString
+                cmbOperacion.Text = CType(entidad, Ec040mercimpuestos).operacion
+                txtCodMercaderia_AN.Text = CType(entidad, Ec040mercimpuestos).codmercaderia
                 txtCodEmpresa_NE.Tag = sOk_
-                txtCodDocumento_NE.Tag = sOk_
+                cmbOperacion.Tag = sOk_
+                txtCodMercaderia_AN.Tag = sOk_
             Case Else
-                txtCodEmpresa_NE.Text = CType(entidad, Ec040docimpuestos).codEmpresa.ToString
-                txtCodDocumento_NE.Text = CType(entidad, Ec040docimpuestos).codDocumento.ToString
-                cmbOperacion.Text = CType(entidad, Ec040docimpuestos).operacion
-                txtCodImpuesto_AN.Text = CType(entidad, Ec040docimpuestos).codImpuesto
-                cmbAplicacion.Text = CType(entidad, Ec040docimpuestos).aplicacion
-                cmbEstado.Text = CType(entidad, Ec040docimpuestos).estado
+                txtCodEmpresa_NE.Text = CType(entidad, Ec040mercimpuestos).codEmpresa.ToString
+                cmbOperacion.Text = CType(entidad, Ec040mercimpuestos).operacion
+                txtCodMercaderia_AN.Text = CType(entidad, Ec040mercimpuestos).codmercaderia
+                txtCodImpuesto_AN.Text = CType(entidad, Ec040mercimpuestos).codImpuesto
+                cmbEstado.Text = CType(entidad, Ec040mercimpuestos).estado
 
                 txtCodEmpresa_NE.Tag = sOk_
-                txtCodDocumento_NE.Tag = sOk_
                 cmbOperacion.Tag = sOk_
+                txtCodMercaderia_AN.Tag = sOk_
                 txtCodImpuesto_AN.Tag = sOk_
-                cmbAplicacion.Tag = sOk_
                 cmbEstado.Tag = sOk_
         End Select
         ' Habilita o deshabilita los controles de edición
         txtCodEmpresa_NE.Enabled = True
-        txtCodDocumento_NE.Enabled = True
         cmbOperacion.Enabled = True
+        txtCodMercaderia_AN.Enabled = True
         txtCodImpuesto_AN.Enabled = True
-        cmbAplicacion.Enabled = True
         cmbEstado.Enabled = True
 
         txtCodEmpresa_NE.AccessibleName = "codempresa"
-        txtCodDocumento_NE.AccessibleName = "coddocumento"
         cmbOperacion.AccessibleName = "operacion"
+        txtCodMercaderia_AN.AccessibleName = "codmercaderia"
         txtCodImpuesto_AN.AccessibleName = "codimpuesto"
-        cmbAplicacion.AccessibleName = "aplicacion"
         cmbEstado.AccessibleName = "estado"
 
         Select Case Me.Tag.ToString
             Case sAGREGAR_
                 txtCodEmpresa_NE.Enabled = False
-                txtCodDocumento_NE.Enabled = False
+                cmbOperacion.Enabled = False
+                txtCodMercaderia_AN.Enabled = False
 
             Case sMODIFICAR_
                 txtCodEmpresa_NE.Enabled = False
-                txtCodDocumento_NE.Enabled = False
                 cmbOperacion.Enabled = False
+                txtCodMercaderia_AN.Enabled = False
                 txtCodImpuesto_AN.Enabled = False
 
             Case sCONSULTAR_, sBORRAR_
@@ -230,9 +225,7 @@ Public Class frmFc040docimpuestos
         '--> AQUI DEBE INGRESARSE EL FOCUS DEL PRIMER ELEMENTO DEL FORMULARIO
         Select Case Me.Tag.ToString
             Case sAGREGAR_
-                cmbOperacion.Focus()
-            Case sMODIFICAR_
-                cmbAplicacion.Focus()
+                txtCodImpuesto_AN.Focus()
         End Select
     End Sub
 
@@ -249,17 +242,26 @@ Public Class frmFc040docimpuestos
             txtCodEmpresa_NE.Text = liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength)
         End If
 
-        lblNomDocumento.Text = ""
-        If txtCodDocumento_NE.Text.Trim.Length > 0 Then
-            Dim loFK1 As New Ec020documentos
-            loFK1.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text)
-            loFK1.codDocumento = Integer.Parse(txtCodDocumento_NE.Text)
-            If loFK1.GetPK = sOk_ Then
-                lblNomDocumento.Text = loFK1.nombre
-            End If
-            loFK1.CerrarConexion()
-            Dim liCodDocumento As Integer = Integer.Parse(txtCodDocumento_NE.Text.ToString)
-            txtCodDocumento_NE.Text = liCodDocumento.ToString(sFormatD_ & txtCodDocumento_NE.MaxLength)
+        lblNomMercaderia.Text = ""
+        If txtCodMercaderia_AN.Text.Trim.Length > 0 Then
+            Select Case cmbOperacion.Text
+                Case sCompra_
+                    Dim loFK1 As New Ed020mercentrada
+                    loFK1.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text)
+                    loFK1.codmercaderia = txtCodMercaderia_AN.Text
+                    If loFK1.GetPK = sOk_ Then
+                        lblNomMercaderia.Text = loFK1.nombre
+                    End If
+                    loFK1.CerrarConexion()
+                Case sVenta_
+                    Dim loFK1 As New Ed030mercsalida
+                    loFK1.codempresa = Integer.Parse(txtCodEmpresa_NE.Text)
+                    loFK1.codmercaderia = txtCodMercaderia_AN.Text
+                    If loFK1.GetPK = sOk_ Then
+                        lblNomMercaderia.Text = loFK1.nombre
+                    End If
+                    loFK1.CerrarConexion()
+            End Select
         End If
 
         lblNomImpuesto.Text = ""
@@ -276,10 +278,9 @@ Public Class frmFc040docimpuestos
 
     Private Sub LPInicializaMaxLength()
         txtCodEmpresa_NE.MaxLength = 6
-        txtCodDocumento_NE.MaxLength = 3
         cmbOperacion.MaxLength = 15
+        txtCodMercaderia_AN.MaxLength = 20
         txtCodImpuesto_AN.MaxLength = 15
-        cmbAplicacion.MaxLength = 15
         cmbEstado.MaxLength = 15
     End Sub
 
@@ -338,4 +339,22 @@ Public Class frmFc040docimpuestos
         Return lsResultado
     End Function
 
+    Private Sub LPInicializaParametros()
+        Dim lsTipo As String = sGeneral_
+        Dim lsClave As String
+        Dim lsValor As String
+        Dim lsCodigo As String
+
+        lsClave = "c040mercimpuestos.operacion"
+        lsValor = sCompra_ & sSF_ & sVenta_
+        lsCodigo = GFsParametroObtener(lsTipo, lsClave)
+        If lsCodigo = sRESERVADO_ Then
+            lsCodigo = lsValor
+            GPParametroGuardar(lsTipo, lsClave, lsCodigo)
+        End If
+        cmbOperacion.Items.Clear()
+        For Each lsValor In lsCodigo.Split(sSF_)
+            cmbOperacion.Items.Add(lsValor)
+        Next
+    End Sub
 End Class

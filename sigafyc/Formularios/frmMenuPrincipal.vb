@@ -51,6 +51,7 @@ Public Class frmMenuPrincipal
 
         Me.Location = New Point(liX, liY)
         Me.lblStatusUsuario.Text = sUsuario_.ToLower & ": " & SesionActiva.usuario
+        lblDescripcionMenu.Width = Me.Width
 
         Dim loFk As New Ess050usuarios
         loFk.codigo = SesionActiva.usuario

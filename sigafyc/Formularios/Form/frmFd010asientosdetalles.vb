@@ -1,5 +1,4 @@
 ﻿Imports System.ComponentModel
-Imports System.Data.Common
 Imports System.Globalization
 
 Public Class frmFd010asientosdetalles
@@ -106,7 +105,6 @@ Public Class frmFd010asientosdetalles
                             loAnterior = Nothing
                         End If
                         loDatos.CerrarConexion()
-                        loDatos = Nothing
                 End Select
                 Me.Tag = sOk_
                 '-->  .AccesibleName envia al Browse la información del codigo que luego deberia 
@@ -130,7 +128,6 @@ Public Class frmFd010asientosdetalles
                     loDatos.Del(sSi_, sSi_, sSi_)
                 End If
                 loDatos.CerrarConexion()
-                loDatos = Nothing
             Else
                 Me.AccessibleName = txtCodigo_NE.Text
             End If
@@ -574,17 +571,17 @@ Public Class frmFd010asientosdetalles
 
     Private Sub LPDespliegaDescripciones()
         Dim liCodEmpresa As Integer = 0
-        Dim liNroAsiento As Integer = 0
-        Dim lsFecha As String = ""
-        Dim liCodigo As Integer = 0
-        Dim liCodConcepto As Integer = 0
+        Dim liNroAsiento As Integer
+        Dim lsFecha As String
+        Dim liCodigo As Integer
+        Dim liCodConcepto As Integer
         Dim lsDecimales As String = ""
         Dim lsCulture As String = ""
         Dim lsDecimales_b As String = ""
         Dim lsCulture_b As String = ""
         Dim lsMoneda As String = ""
         Dim lsMoneda_b As String = ""
-        Dim lsCotizacion As String = ""
+        Dim lsCotizacion As String
         Dim lsCodCuenta As String = ttxCodCuenta.Text
         If lsCodCuenta.Trim.Length = 0 Then
             ttxCodCuenta.Text = sCero1_ & sSeparador_ & sCero2_ & sSeparador_ & sCero3_ & sSeparador_ & sCero4_ & sSeparador_ & sCero5_ & sSeparador_ & sCero6_
@@ -600,7 +597,6 @@ Public Class frmFd010asientosdetalles
             lblImporte.Text = "Importe en " & lsMoneda & ":"
         End If
         loA010.CerrarConexion()
-        loA010 = Nothing
         lblImporte.Refresh()
 
         lblImporte_mb.Text = ""
@@ -620,10 +616,8 @@ Public Class frmFd010asientosdetalles
                 End If
                 lblImporte_mb.Text = "Importe en " & lsMoneda_b
                 loMoneda.CerrarConexion()
-                loMoneda = Nothing
             End If
             loFK.CerrarConexion()
-            loFK = Nothing
             txtCodEmpresa_NE.Text = liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength)
         End If
         lblImporte_mb.Refresh()

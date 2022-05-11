@@ -417,11 +417,19 @@ Public Class frmFd030mercsalida
     End Sub
 
     Private Sub btnDetalle_Click(sender As Object, e As EventArgs) Handles btnDetalle.Click
-        Dim loBrowseDetalle As New frmBb110undalternativas
-        loBrowseDetalle.codempresa = Integer.Parse(txtCodEmpresa_NE.Text)
-        loBrowseDetalle.tipo = sSalida_
-        loBrowseDetalle.codmercaderia = txtCodMercaderia_AN.Text
-        GPCargar(loBrowseDetalle)
+        Dim loDetalleUnidades As New frmBb110undalternativas
+        loDetalleUnidades.codempresa = Integer.Parse(txtCodEmpresa_NE.Text)
+        loDetalleUnidades.tipo = sSalida_
+        loDetalleUnidades.codmercaderia = txtCodMercaderia_AN.Text
+        GPCargar(loDetalleUnidades)
+    End Sub
+
+    Private Sub btnDetalleImpuestos_Click(sender As Object, e As EventArgs) Handles btnDetalleImpuestos.Click
+        Dim loDetalleImpuestos As New frmBc040mercimpuestos
+        loDetalleImpuestos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text)
+        loDetalleImpuestos.operacion = sVenta_
+        loDetalleImpuestos.codmercaderia = txtCodMercaderia_AN.Text.ToString
+        GPCargar(loDetalleImpuestos)
     End Sub
 
     Private Sub LPAddUnidadesAlternativas()

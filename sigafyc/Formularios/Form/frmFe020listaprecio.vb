@@ -287,7 +287,9 @@ Public Class frmFe020listaprecio
         lblValor_ND.Left = txtValor_ND.Left
         lblValor_ND.Width = txtValor_ND.Width
         lblValor_ND.Height = txtValor_ND.Height
+        lblValor_ND.TextAlign = ContentAlignment.MiddleRight
         lblValor_ND.Visible = False
+        txtValor_ND.TextAlign = HorizontalAlignment.Right
 
         Select Case Me.Tag.ToString
             Case sAGREGAR_
@@ -578,6 +580,13 @@ Public Class frmFe020listaprecio
     End Sub
 
     Private Sub lblValor_ND_Click(sender As Object, e As EventArgs) Handles lblValor_ND.Click
+        If Me.Tag.ToString = sCONSULTAR_ Or Me.Tag.ToString = sBORRAR_ Then Exit Sub
+        lblValor_ND.Visible = False
+        txtValor_ND.Focus()
+        txtValor_ND.SelectAll()
+    End Sub
+
+    Private Sub txtValor_ND_GotFocus(sender As Object, e As EventArgs) Handles txtValor_ND.GotFocus
         If Me.Tag.ToString = sCONSULTAR_ Or Me.Tag.ToString = sBORRAR_ Then Exit Sub
         lblValor_ND.Visible = False
         txtValor_ND.Focus()

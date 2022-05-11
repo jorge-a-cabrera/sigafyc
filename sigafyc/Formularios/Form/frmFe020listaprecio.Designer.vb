@@ -223,16 +223,16 @@ Partial Class frmFe020listaprecio
         '
         Me.txtValor_ND.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtValor_ND.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtValor_ND.Location = New System.Drawing.Point(157, 177)
+        Me.txtValor_ND.Location = New System.Drawing.Point(639, 177)
         Me.txtValor_ND.Name = "txtValor_ND"
-        Me.txtValor_ND.Size = New System.Drawing.Size(120, 26)
+        Me.txtValor_ND.Size = New System.Drawing.Size(169, 26)
         Me.txtValor_ND.TabIndex = 6
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(17, 179)
+        Me.Label7.Location = New System.Drawing.Point(577, 179)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(56, 20)
         Me.Label7.TabIndex = 135
@@ -242,7 +242,7 @@ Partial Class frmFe020listaprecio
         '
         Me.txtCodMoneda_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCodMoneda_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodMoneda_AN.Location = New System.Drawing.Point(425, 144)
+        Me.txtCodMoneda_AN.Location = New System.Drawing.Point(157, 177)
         Me.txtCodMoneda_AN.Name = "txtCodMoneda_AN"
         Me.txtCodMoneda_AN.Size = New System.Drawing.Size(68, 26)
         Me.txtCodMoneda_AN.TabIndex = 5
@@ -251,7 +251,7 @@ Partial Class frmFe020listaprecio
         '
         Me.lblCodMoneda.AutoSize = True
         Me.lblCodMoneda.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCodMoneda.Location = New System.Drawing.Point(341, 146)
+        Me.lblCodMoneda.Location = New System.Drawing.Point(17, 179)
         Me.lblCodMoneda.Name = "lblCodMoneda"
         Me.lblCodMoneda.Size = New System.Drawing.Size(78, 20)
         Me.lblCodMoneda.TabIndex = 137
@@ -261,7 +261,7 @@ Partial Class frmFe020listaprecio
         '
         Me.lblNombreMoneda.AutoSize = True
         Me.lblNombreMoneda.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombreMoneda.Location = New System.Drawing.Point(499, 146)
+        Me.lblNombreMoneda.Location = New System.Drawing.Point(231, 179)
         Me.lblNombreMoneda.Name = "lblNombreMoneda"
         Me.lblNombreMoneda.Size = New System.Drawing.Size(163, 20)
         Me.lblNombreMoneda.TabIndex = 138
@@ -304,7 +304,7 @@ Partial Class frmFe020listaprecio
         Me.lblValor_ND.AutoSize = True
         Me.lblValor_ND.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblValor_ND.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblValor_ND.Location = New System.Drawing.Point(741, 183)
+        Me.lblValor_ND.Location = New System.Drawing.Point(739, 3)
         Me.lblValor_ND.Name = "lblValor_ND"
         Me.lblValor_ND.Size = New System.Drawing.Size(69, 22)
         Me.lblValor_ND.TabIndex = 139

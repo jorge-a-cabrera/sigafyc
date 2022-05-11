@@ -189,14 +189,18 @@
     Public Const sBienCambio_ As String = "BienCambio"
     Public Const sBienServicio_ As String = "BienServicio"
     Public Const sBienUso_ As String = "BienUso"
+    Public Const sPEPS_ As String = "PEPS"
+    Public Const sUEPS_ As String = "UEPS"
+    Public Const sUltimaCompra1_ As String = "UltimaCompra"
+    Public Const sUltimaCompra2_ As String = "UltimaCompraPromedio"
     Public Const sCostoPromedio_ As String = "CostoPromedio"
-    Public Const sUltimaCompra_ As String = "UltimaCompra"
     Public Const sCostoFijo_ As String = "CostoFijo"
 
     Public Const sPorcentaje_ As String = "%-Porcentaje"
     Public Const sImporte_ As String = "I-Importe fijo"
     Public Const sIncluido_ As String = "Incluido"
     Public Const sExcluido_ As String = "Excluido"
+    Public Const sLinea_ As String = "Linea"
 
     Public Enum eTipoValor
         NumeroEntero

@@ -24,7 +24,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <PublisherName>sys.4.ur.</PublisherName>
+    <SupportUrl>https://www.linkedin.com/in/jorge-antonio-cabrera-gonzalez-28319312/</SupportUrl>
+    <TargetCulture>es-PY</TargetCulture>
+    <ProductName>sigafyc</ProductName>
+    <PublisherName>Jorge Antonio Cabrera González</PublisherName>
+    <SuiteName>SIGAFYC</SuiteName>
     <ApplicationRevision>63</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
@@ -213,7 +217,7 @@
     <Compile Include="ESistemaPrincipal\Ec011timbpropios.vb" />
     <Compile Include="ESistemaPrincipal\Ec020documentos.vb" />
     <Compile Include="ESistemaPrincipal\Ec030ubicaciones.vb" />
-    <Compile Include="ESistemaPrincipal\Ec040docimpuestos.vb" />
+    <Compile Include="ESistemaPrincipal\Ec040mercimpuestos.vb" />
     <Compile Include="ESistemaPrincipal\Ec050mercvinculadas.vb" />
     <Compile Include="ESistemaPrincipal\Ed010asientosdetalles.vb" />
     <Compile Include="ESistemaPrincipal\Ed020mercentrada.vb" />
@@ -364,10 +368,10 @@
     <Compile Include="Formularios\Browse\frmBc030ubicaciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBc040docimpuestos.Designer.vb">
-      <DependentUpon>frmBc040docimpuestos.vb</DependentUpon>
+    <Compile Include="Formularios\Browse\frmBc040mercimpuestos.Designer.vb">
+      <DependentUpon>frmBc040mercimpuestos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBc040docimpuestos.vb">
+    <Compile Include="Formularios\Browse\frmBc040mercimpuestos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Browse\frmBc050mercvinculadas.Designer.vb">
@@ -592,10 +596,10 @@
     <Compile Include="Formularios\Form\frmFc030ubicaciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Form\frmFc040docimpuestos.Designer.vb">
-      <DependentUpon>frmFc040docimpuestos.vb</DependentUpon>
+    <Compile Include="Formularios\Form\frmFc040mercimpuestos.Designer.vb">
+      <DependentUpon>frmFc040mercimpuestos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFc040docimpuestos.vb">
+    <Compile Include="Formularios\Form\frmFc040mercimpuestos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Form\frmFc050mercvinculadas.Designer.vb">
@@ -1020,8 +1024,8 @@
     <EmbeddedResource Include="Formularios\Browse\frmBc030ubicaciones.resx">
       <DependentUpon>frmBc030ubicaciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Browse\frmBc040docimpuestos.resx">
-      <DependentUpon>frmBc040docimpuestos.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\Browse\frmBc040mercimpuestos.resx">
+      <DependentUpon>frmBc040mercimpuestos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Browse\frmBc050mercvinculadas.resx">
       <DependentUpon>frmBc050mercvinculadas.vb</DependentUpon>
@@ -1134,8 +1138,8 @@
     <EmbeddedResource Include="Formularios\Form\frmFc030ubicaciones.resx">
       <DependentUpon>frmFc030ubicaciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Form\frmFc040docimpuestos.resx">
-      <DependentUpon>frmFc040docimpuestos.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\Form\frmFc040mercimpuestos.resx">
+      <DependentUpon>frmFc040mercimpuestos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form\frmFc050mercvinculadas.resx">
       <DependentUpon>frmFc050mercvinculadas.vb</DependentUpon>

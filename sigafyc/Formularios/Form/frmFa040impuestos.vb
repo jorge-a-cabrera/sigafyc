@@ -215,6 +215,8 @@ Public Class frmFa040impuestos
         Select Case Me.Tag.ToString
             Case sAGREGAR_
                 LPLimpiaControlesEntrada()
+                cmbOperacion.Text = CType(entidad, Ea040impuestos).operacion
+                cmbOperacion.Tag = sOk_
             Case Else
                 cmbOperacion.Text = CType(entidad, Ea040impuestos).operacion
                 txtCodigo_AN.Text = CType(entidad, Ea040impuestos).codImpuesto
@@ -262,6 +264,7 @@ Public Class frmFa040impuestos
         Select Case Me.Tag.ToString
             Case sAGREGAR_
                 'CONDICIONANTE ANTES DE CARGAR EL FORMULARIO CUANDO LA ACCION ES AGREGAR
+                cmbOperacion.Enabled = False
                 txtCodMoneda_AN.ReadOnly = True
 
             Case sMODIFICAR_

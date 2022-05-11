@@ -304,10 +304,6 @@ Public Class frmBd020mercentrada
         End If
     End Sub
 
-    Private Sub Form_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        txtCodEmpresa_NE.Focus()
-    End Sub
-
     Friend Sub LPSinRegistro_AbrirForm()
         If miCantidad = 0 Then
             If mbabrirform = False Then

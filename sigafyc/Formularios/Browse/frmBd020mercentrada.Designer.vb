@@ -32,9 +32,31 @@ Partial Class frmBd020mercentrada
         'txtBuscar
         '
         Me.txtBuscar.Location = New System.Drawing.Point(8, 44)
+        Me.txtBuscar.TabIndex = 8
+        '
+        'btnSalir
+        '
+        Me.btnSalir.TabIndex = 6
         '
         'btnAuditoria
         '
+        Me.btnAuditoria.TabIndex = 5
+        '
+        'btnConsultar
+        '
+        Me.btnConsultar.TabIndex = 4
+        '
+        'btnBorrar
+        '
+        Me.btnBorrar.TabIndex = 3
+        '
+        'btnModificar
+        '
+        Me.btnModificar.TabIndex = 2
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.TabIndex = 1
         '
         'DataGridView1
         '
@@ -46,7 +68,7 @@ Partial Class frmBd020mercentrada
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(851, 578)
-        Me.DataGridView1.TabIndex = 26
+        Me.DataGridView1.TabIndex = 7
         '
         'lblNombreEmpresa
         '
@@ -65,7 +87,7 @@ Partial Class frmBd020mercentrada
         Me.txtCodEmpresa_NE.Location = New System.Drawing.Point(97, 12)
         Me.txtCodEmpresa_NE.Name = "txtCodEmpresa_NE"
         Me.txtCodEmpresa_NE.Size = New System.Drawing.Size(74, 26)
-        Me.txtCodEmpresa_NE.TabIndex = 40
+        Me.txtCodEmpresa_NE.TabIndex = 0
         '
         'Label1
         '

@@ -382,11 +382,11 @@ Public Class frmFb110undalternativas
 
     Private Sub btnDetalle_Click(sender As Object, e As EventArgs) Handles btnDetalle.Click
         If Not (Me.Tag.ToString = sCONSULTAR_ Or Me.Tag.ToString = sMODIFICAR_) Then Exit Sub
-        Dim loBrowseDetalle As New frmBe020listaprecio
-        loBrowseDetalle.codempresa = Integer.Parse(txtCodEmpresa_NE.Text)
-        loBrowseDetalle.codmercaderia = txtCodMercaderia_AN.Text
-        loBrowseDetalle.codunidad = txtCodUnidad_AN.Text
-        loBrowseDetalle.codmercaderia = txtCodMercaderia_AN.Text
-        GPCargar(loBrowseDetalle)
+        Dim loDetallePrecio As New frmBe020listaprecio
+        loDetallePrecio.codempresa = Integer.Parse(txtCodEmpresa_NE.Text)
+        loDetallePrecio.codmercaderia = txtCodMercaderia_AN.Text.ToString
+        loDetallePrecio.codunidad = txtCodUnidad_AN.Text.ToString
+        loDetallePrecio.codmercaderia = txtCodMercaderia_AN.Text.ToString
+        GPCargar(loDetallePrecio)
     End Sub
 End Class

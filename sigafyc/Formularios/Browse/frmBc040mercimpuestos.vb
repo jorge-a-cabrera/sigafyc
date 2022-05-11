@@ -1,7 +1,7 @@
 ﻿Imports System.ComponentModel
 
-Public Class frmBc020documentos
-    Private moFormulario As frmFc020documentos
+Public Class frmBc040mercimpuestos
+    Private moFormulario As frmFc040mercimpuestos
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
     Private mbAgregar As Boolean
@@ -11,14 +11,34 @@ Public Class frmBc020documentos
     Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
     Private miCodEmpresa As Integer
+    Private msOperacion As String
+    Private msCodMercaderia As String
     Private Shared mbabrirform As Boolean = False
 
-    Public Property codEmpresa As Integer
+    Public Property codempresa As Integer
         Get
             Return miCodEmpresa
         End Get
         Set(value As Integer)
             miCodEmpresa = value
+        End Set
+    End Property
+
+    Public Property operacion As String
+        Get
+            Return msOperacion
+        End Get
+        Set(value As String)
+            msOperacion = value
+        End Set
+    End Property
+
+    Public Property codmercaderia As String
+        Get
+            Return msCodMercaderia
+        End Get
+        Set(value As String)
+            msCodMercaderia = value
         End Set
     End Property
 
@@ -34,7 +54,7 @@ Public Class frmBc020documentos
         DataGridView1.ReadOnly = True
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         LPSetDoubleBuffered(DataGridView1)
-
+        LPInicializaParametros()
         LPInicializaMaxLength()
 
         mbAgregar = btnAgregar.Enabled
@@ -58,18 +78,12 @@ Public Class frmBc020documentos
         AddHandler DataGridView1.KeyDown, AddressOf DataGrid_KeyDown
         AddHandler DataGridView1.CellContentDoubleClick, AddressOf DataGrid_DoubleClick
 
-        DataGridView1.ContextMenuStrip = mnuContextual
-
-        AddHandler ContextualItem_ExportarExcel.Click, AddressOf ExportarExcel_Click
-        AddHandler ContextualItem_ExportarTexto.Click, AddressOf ExportarTexto_Click
-        AddHandler ContextualItem_ImportarTexto.Click, AddressOf ImportarTexto_Click
-
         If Me.Tag.ToString = sELEGIR_ Then
             If Me.Name <> "frmBa010monedas" Then
                 Dim lofrmBase As New frmBa010monedas
                 txtBuscar.Width = lofrmBase.txtBuscar.Width
-                DataGridView1.Location = New Point(lofrmBase.DataGridView1.Location.X, lofrmBase.DataGridView1.Location.Y + txtBuscar.Height + 10)
-                DataGridView1.Height = lofrmBase.DataGridView1.Height - lofrmBase.txtBuscar.Height - 10
+                DataGridView1.Location = New Point(lofrmBase.DataGridView1.Location.X, lofrmBase.DataGridView1.Location.Y + txtBuscar.Location.Y + 5)
+                DataGridView1.Height = lofrmBase.DataGridView1.Height - (txtCodEmpresa_NE.Height + cmbOperacion.Height + txtCodMercaderia_AN.Height + txtBuscar.Height) - 10
                 DataGridView1.Width = lofrmBase.DataGridView1.Width
                 btnAgregar.Location = lofrmBase.btnAgregar.Location
                 btnModificar.Location = lofrmBase.btnModificar.Location
@@ -82,13 +96,21 @@ Public Class frmBc020documentos
                 txtCodEmpresa_NE.Text = miCodEmpresa.ToString
             End If
         End If
-        lblNombreEmpresa.Text = ""
         mbabrirform = False
         If miCodEmpresa > 0 Then
+            txtCodEmpresa_NE.Text = miCodEmpresa.ToString
             txtCodEmpresa_NE.Enabled = False
-            LPCargarDatos()
+            If msOperacion.Trim.Length > 0 Then
+                cmbOperacion.Text = msOperacion
+                cmbOperacion.Enabled = False
+                If msCodMercaderia.Trim.Length > 0 Then
+                    txtCodMercaderia_AN.Text = msCodMercaderia
+                    txtCodMercaderia_AN.Enabled = False
+                    LPCargarDatos()
+                    LPDespliegaDescripciones()
+                End If
+            End If
         End If
-        LPDespliegaDescripciones()
     End Sub
 
     Private Sub BuscarClave(sender As Object, e As EventArgs)
@@ -96,13 +118,17 @@ Public Class frmBc020documentos
     End Sub
 
     Private Sub LPCargarDatos()
-        Dim lsSQL As String
-        Dim loDatos As New Ec020documentos
+        If txtCodEmpresa_NE.Text.Trim.Length = 0 Then Exit Sub
+        If cmbOperacion.Text.Trim.Length = 0 Then Exit Sub
+        If txtCodMercaderia_AN.Text.Trim.Length = 0 Then Exit Sub
+
+        Dim lsSQL As String = GFsGeneraSQL("frmBc040mercimpuestos")
+        Dim loDatos As New Ec040mercimpuestos
         Dim loDataSet As DataSet
-        Dim lsWhere As String = "codempresa = @codempresa and nombre <> " & Chr(39) & sRESERVADO_ & Chr(39)
-        Dim lsCampos As String = "coddocumento as codigo, tipo, abreviado, nombre, timbrado, codmoneda, cotizacion, lineas, aplicacion, tipoperfil, estado, codempresa"
-        Dim lsCamposConcat As String = "coddocumento, tipo, abreviado, nombre, timbrado, codmoneda, cotizacion, lineas, aplicacion, tipoperfil, estado"
+        Dim lsCamposConcat As String = "codigo, nombre, base, tipo, moneda, valor, estado"
+        Dim lsCamposOcultos As String = "codempresa, operacion, codmercaderia"
         Dim lsConcatFiltro As String = lsCamposConcat
+
         Dim lsFiltro As String = sFiltroSentencia_
         lsFiltro = lsFiltro.Replace(sFiltroCampo_, lsConcatFiltro)
         If txtBuscar.Text = txtBuscar.Tag.ToString Then
@@ -110,40 +136,72 @@ Public Class frmBc020documentos
         Else
             lsFiltro = lsFiltro.Replace(sFiltroValor_, txtBuscar.Text)
         End If
-        lsSQL = loDatos.GenerarSQL(lsCampos, lsFiltro, lsWhere)
-        loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+
+        lsSQL = lsSQL.Replace("@filtro", lsFiltro)
+        lsSQL = lsSQL.Replace("&codempresa", Integer.Parse(txtCodEmpresa_NE.Text).ToString)
+        lsSQL = lsSQL.Replace("&operacion", cmbOperacion.Text)
+        lsSQL = lsSQL.Replace("&codmercaderia", txtCodMercaderia_AN.Text)
+
         loDataSet = loDatos.RecuperarTabla(lsSQL)
         DataGridView1.DataSource = loDataSet
         DataGridView1.DataMember = loDatos.tableName
+        Dim lsCampoOculto() As String = lsCamposOcultos.Split(","c)
+        For i As Integer = 0 To lsCampoOculto.Length - 1
+            DataGridView1.Columns(lsCampoOculto(i).Trim).Visible = False
+        Next
 
-        DataGridView1.Columns.Item("codempresa").Visible = False
-        DataGridView1.Sort(DataGridView1.Columns("codigo"), ListSortDirection.Ascending)
+        DataGridView1.Sort(DataGridView1.Columns("nombre"), ListSortDirection.Ascending)
         If msLocalizar IsNot Nothing Then LPLocalizaRegistro(msLocalizar)
 
         msTabla = loDatos.tableName
         miCantidad = loDataSet.Tables.Item(0).Rows.Count
-        loDataSet = Nothing
         loDatos.CerrarConexion()
-        loDatos = Nothing
+
         LPSinRegistro_AbrirForm()
         LPHabilitaControles()
     End Sub
+
     Private Sub LPInicializaMaxLength()
         txtCodEmpresa_NE.MaxLength = 6
+        cmbOperacion.MaxLength = 15
+        txtCodMercaderia_AN.MaxLength = 20
     End Sub
 
     Private Sub LPDespliegaDescripciones()
-        lblNombreEmpresa.Text = ""
+        lblNomEmpresa.Text = ""
         If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
             Dim loFK As New Ec001empresas
             loFK.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
             If loFK.GetPK = sOk_ Then
-                lblNombreEmpresa.Text = loFK.nombre
+                lblNomEmpresa.Text = loFK.nombre
             End If
             loFK.CerrarConexion()
-            loFK = Nothing
             Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
             txtCodEmpresa_NE.Text = liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength)
+        End If
+
+        lblNomMercaderia.Text = ""
+        If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
+            If txtCodMercaderia_AN.Text.Trim.Length > 0 Then
+                Select Case cmbOperacion.Text
+                    Case sCompra_
+                        Dim loFK As New Ed020mercentrada
+                        loFK.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+                        loFK.codmercaderia = txtCodMercaderia_AN.Text
+                        If loFK.GetPK = sOk_ Then
+                            lblNomMercaderia.Text = loFK.nombre
+                        End If
+                        loFK.CerrarConexion()
+                    Case sVenta_
+                        Dim loFK As New Ed030mercsalida
+                        loFK.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+                        loFK.codmercaderia = txtCodMercaderia_AN.Text
+                        If loFK.GetPK = sOk_ Then
+                            lblNomMercaderia.Text = loFK.nombre
+                        End If
+                        loFK.CerrarConexion()
+                End Select
+            End If
         End If
     End Sub
 
@@ -205,17 +263,66 @@ Public Class frmBc020documentos
             e.Cancel = True
             Exit Sub
         End If
+        LPDespliegaDescripciones()
+    End Sub
 
+    Private Sub txtCodMercaderia_AN_Validating(sender As Object, e As CancelEventArgs) Handles txtCodMercaderia_AN.Validating
+        Dim loFK As New Ed030mercsalida
+        If txtCodMercaderia_AN.Text.Trim.Length = 0 Then
+            GFsAvisar("Debe ingresar codigo de mercaderia/servicio valido", sMENSAJE_, "Por favor intentelo de nuevo.")
+            txtCodMercaderia_AN.Text = "0"
+            btnSalir.Focus()
+            Exit Sub
+        End If
+
+        Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text)
+
+        Select Case cmbOperacion.Text
+            Case sCompra_
+                loFK.codempresa = liCodEmpresa
+                loFK.codmercaderia = txtCodMercaderia_AN.Text
+                If loFK.GetPK = sSinRegistros_ Then
+                    Dim loLookUp As New frmBd020mercentrada
+                    loLookUp.codEmpresa = liCodEmpresa
+                    loLookUp.Tag = sELEGIR_
+                    GPCargar(loLookUp)
+                    If loLookUp.entidad IsNot Nothing Then
+                        txtCodMercaderia_AN.Text = CType(loLookUp.entidad, Ed020mercentrada).codmercaderia.ToString
+                    Else
+                        e.Cancel = True
+                        Exit Sub
+                    End If
+                End If
+                loFK.CerrarConexion()
+            Case sVenta_
+                loFK.codempresa = liCodEmpresa
+                loFK.codmercaderia = txtCodMercaderia_AN.Text
+                If loFK.GetPK = sSinRegistros_ Then
+                    Dim loLookUp As New frmBd030mercsalida
+                    loLookUp.codEmpresa = liCodEmpresa
+                    loLookUp.Tag = sELEGIR_
+                    GPCargar(loLookUp)
+                    If loLookUp.entidad IsNot Nothing Then
+                        txtCodMercaderia_AN.Text = CType(loLookUp.entidad, Ed030mercsalida).codmercaderia.ToString
+                    Else
+                        e.Cancel = True
+                        Exit Sub
+                    End If
+                End If
+                loFK.CerrarConexion()
+        End Select
         LPDespliegaDescripciones()
         LPCargarDatos()
     End Sub
 
     Private Sub Botones_Click(sender As Object, e As EventArgs)
-        Dim loDatos As New Ec020documentos
+        Dim loDatos As New Ec040mercimpuestos
         loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+        loDatos.operacion = cmbOperacion.Text
+        loDatos.codmercaderia = txtCodMercaderia_AN.Text
         Select Case CType(sender, Button).AccessibleName
             Case sAGREGAR_
-                moFormulario = New frmFc020documentos
+                moFormulario = New frmFc040mercimpuestos
                 moFormulario.Tag = CType(sender, Button).AccessibleName
                 moFormulario.entidad = loDatos
                 GPCargar(moFormulario)
@@ -236,15 +343,15 @@ Public Class frmBc020documentos
                 Dim lsParte() As String = lsTablaHash.Split(sSF_)
                 If GFbPuedeModificarBorrar(CType(sender, Button).AccessibleName, lsParte(0), lsParte(1), lsCodigo) = False Then Exit Sub
                 Try
-                    loDatos.codDocumento = Integer.Parse(lsCodigo)
+                    loDatos.codImpuesto = lsCodigo
                     If loDatos.GetPK = sOk_ Then
                         If Me.Tag.ToString = sELEGIR_ And CType(sender, Button).AccessibleName = sCONSULTAR_ Then
                             entidad = loDatos
                             SendKeys.Send("%(s)")
                             Exit Sub
                         End If
-                        moFormulario = New frmFc020documentos
-                        moFormulario.AccessibleName = "Empresa: " & loDatos.codEmpresa & ", Documento: " & loDatos.codDocumento
+                        moFormulario = New frmFc040mercimpuestos
+                        moFormulario.AccessibleName = "Empresa: " & loDatos.codEmpresa.ToString & ", Tipo: " & cmbOperacion.Text & ", Merc/Servicio: " & loDatos.codmercaderia
                         moFormulario.Tag = CType(sender, Button).AccessibleName
                         moFormulario.entidad = loDatos
                         GPCargar(moFormulario)
@@ -254,7 +361,7 @@ Public Class frmBc020documentos
                         moFormulario = Nothing
                     End If
                 Catch ex As Exception
-                    GFsAvisar("Error en Browse", sError_, "No existe datos para Documento [" & loDatos.codDocumento & "], Empresa [" & loDatos.codEmpresa & "]" & ControlChars.CrLf & ex.Message)
+                    GFsAvisar("Error en Browse", sError_, "No existe datos para Codigo [" & loDatos.codImpuesto & "], Mercaderia [" & loDatos.codmercaderia & "], Tipo [" & cmbOperacion.Text & "], Empresa [" & loDatos.codEmpresa & "]" & ControlChars.CrLf & ex.Message)
                 End Try
         End Select
         loDatos.CerrarConexion()
@@ -274,12 +381,14 @@ Public Class frmBc020documentos
         Dim lsResultado As String = ""
         If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
             If psCodigo.Trim.Length > 0 Then
-                Dim loDatos As New Ec020documentos
-                loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
-                loDatos.codDocumento = Integer.Parse(psCodigo)
+                Dim loPK As New Ec040mercimpuestos
+                loPK.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+                loPK.operacion = cmbOperacion.Text
+                loPK.codmercaderia = txtCodMercaderia_AN.Text
+                loPK.codImpuesto = psCodigo
                 Try
-                    If loDatos.GetPK(sSi_) = sOk_ Then
-                        lsResultado = loDatos.tableName & sSF_ & loDatos.hash_Pk
+                    If loPK.GetPK(sSi_) = sOk_ Then
+                        lsResultado = loPK.tableName & sSF_ & loPK.hash_Pk
                     End If
                 Catch ex As Exception
                     GFsAvisar("LFsTablaHashPk", sError_, ex.Message)
@@ -301,16 +410,8 @@ Public Class frmBc020documentos
         End If
     End Sub
 
-    Private Sub ImportarTexto_Click(sender As Object, e As EventArgs)
-        If GFsPuedeUsar(Me.Name & ":Importar->Texto delimitado", "Permite importar el contenido de " & Me.Name & " a la tabla DOCUMENTOS") = sSi_ Then
-            Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
-            GPImportarDocumentos(liCodEmpresa)
-        End If
-
-    End Sub
-
     Private Sub Form_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        txtCodEmpresa_NE.Focus()
+        txtCodMercaderia_AN.Focus()
     End Sub
 
     Friend Sub LPSinRegistro_AbrirForm()
@@ -322,4 +423,22 @@ Public Class frmBc020documentos
         End If
     End Sub
 
+    Private Sub LPInicializaParametros()
+        Dim lsTipo As String = sGeneral_
+        Dim lsClave As String
+        Dim lsValor As String
+        Dim lsCodigo As String
+
+        lsClave = "c040mercimpuestos.operacion"
+        lsValor = sCompra_ & sSF_ & sVenta_
+        lsCodigo = GFsParametroObtener(lsTipo, lsClave)
+        If lsCodigo = sRESERVADO_ Then
+            lsCodigo = lsValor
+            GPParametroGuardar(lsTipo, lsClave, lsCodigo)
+        End If
+        cmbOperacion.Items.Clear()
+        For Each lsValor In lsCodigo.Split(sSF_)
+            cmbOperacion.Items.Add(lsValor)
+        Next
+    End Sub
 End Class

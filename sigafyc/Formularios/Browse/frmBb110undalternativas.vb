@@ -54,7 +54,7 @@ Public Class frmBb110undalternativas
         DataGridView1.ReadOnly = True
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         LPSetDoubleBuffered(DataGridView1)
-
+        LPInicializaParametros()
         LPInicializaMaxLength()
 
         mbAgregar = btnAgregar.Enabled
@@ -432,4 +432,22 @@ Public Class frmBb110undalternativas
         End If
     End Sub
 
+    Private Sub LPInicializaParametros()
+        Dim lsTipo As String = sGeneral_
+        Dim lsClave As String
+        Dim lsValor As String
+        Dim lsCodigo As String
+
+        lsClave = "a060clasmerc.tipo"
+        lsValor = sEntrada_ & sSF_ & sSalida_
+        lsCodigo = GFsParametroObtener(lsTipo, lsClave)
+        If lsCodigo = sRESERVADO_ Then
+            lsCodigo = lsValor
+            GPParametroGuardar(lsTipo, lsClave, lsCodigo)
+        End If
+        cmbTipo.Items.Clear()
+        For Each lsValor In lsCodigo.Split(sSF_)
+            cmbTipo.Items.Add(lsValor)
+        Next
+    End Sub
 End Class

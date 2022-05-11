@@ -37,11 +37,11 @@ Partial Class frmFb110undalternativas
         Me.txtCodMercaderia_AN = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnDetalle = New System.Windows.Forms.Button()
         Me.cmbEstado = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.cmbTipo = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnDetalle = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.gbxVinculada.SuspendLayout()
@@ -234,6 +234,20 @@ Partial Class frmFb110undalternativas
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'btnDetalle
+        '
+        Me.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDetalle.Image = Global.sigafyc.My.Resources.Resources.icons8_details_32
+        Me.btnDetalle.Location = New System.Drawing.Point(616, 202)
+        Me.btnDetalle.Name = "btnDetalle"
+        Me.btnDetalle.Size = New System.Drawing.Size(165, 78)
+        Me.btnDetalle.TabIndex = 47
+        Me.btnDetalle.Tag = "&lista precio"
+        Me.btnDetalle.Text = "&lista precio"
+        Me.btnDetalle.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnDetalle.UseVisualStyleBackColor = True
+        '
         'cmbEstado
         '
         Me.cmbEstado.FlatStyle = System.Windows.Forms.FlatStyle.System
@@ -276,20 +290,6 @@ Partial Class frmFb110undalternativas
         Me.Label2.Size = New System.Drawing.Size(48, 20)
         Me.Label2.TabIndex = 119
         Me.Label2.Text = "Tipo:"
-        '
-        'btnDetalle
-        '
-        Me.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDetalle.Image = Global.sigafyc.My.Resources.Resources.icons8_details_32
-        Me.btnDetalle.Location = New System.Drawing.Point(651, 202)
-        Me.btnDetalle.Name = "btnDetalle"
-        Me.btnDetalle.Size = New System.Drawing.Size(130, 78)
-        Me.btnDetalle.TabIndex = 47
-        Me.btnDetalle.Tag = "&lista precio"
-        Me.btnDetalle.Text = "&lista precio"
-        Me.btnDetalle.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnDetalle.UseVisualStyleBackColor = True
         '
         'frmFb110undalternativas
         '

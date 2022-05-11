@@ -432,8 +432,16 @@ Public Class frmFd020mercentrada
             cmbTipoBien.Text = cmbTipoBien.Items(0).ToString
         End If
 
+        '--------------------------------------------------------------------------------------------------------------------------------
+        ' Public Const sPEPS_ As String = "PEPS"
+        ' Public Const sUEPS_ As String = "UEPS"
+        ' Public Const sUltimaCompra1_ As String = "UltimaCompra"
+        ' Public Const sUltimaCompra2_ As String = "UltimaCompraPromedio"
+        ' Public Const sCostoPromedio_ As String = "CostoPromedio"
+        ' Public Const sCostoFijo_ As String = "CostoFijo"
+        '--------------------------------------------------------------------------------------------------------------------------------
         lsClave = "d020mercentrada.tipocosto"
-        lsValor = sUltimaCompra_ & sSF_ & sCostoPromedio_ & sSF_ & sCostoFijo_
+        lsValor = sUltimaCompra1_ & sSF_ & sCostoPromedio_ & sSF_ & sCostoFijo_ & sSF_ & sPEPS_ & sSF_ & sUEPS_ & sSF_ & sUltimaCompra2_
         lsCodigo = GFsParametroObtener(lsTipo, lsClave)
         If lsCodigo = sRESERVADO_ Then
             lsCodigo = lsValor
@@ -464,11 +472,19 @@ Public Class frmFd020mercentrada
     End Sub
 
     Private Sub btnDetalle_Click(sender As Object, e As EventArgs) Handles btnDetalle.Click
-        Dim loBrowseDetalle As New frmBb110undalternativas
-        loBrowseDetalle.codempresa = Integer.Parse(txtCodEmpresa_NE.Text)
-        loBrowseDetalle.tipo = sEntrada_
-        loBrowseDetalle.codmercaderia = txtCodMercaderia_AN.Text
-        GPCargar(loBrowseDetalle)
+        Dim loDetalleUnidades As New frmBb110undalternativas
+        loDetalleUnidades.codempresa = Integer.Parse(txtCodEmpresa_NE.Text)
+        loDetalleUnidades.tipo = sEntrada_
+        loDetalleUnidades.codmercaderia = txtCodMercaderia_AN.Text
+        GPCargar(loDetalleUnidades)
+    End Sub
+
+    Private Sub btnDetalleImpuestos_Click(sender As Object, e As EventArgs) Handles btnDetalleImpuestos.Click
+        Dim loDetalleImpuestos As New frmBc040mercimpuestos
+        loDetalleImpuestos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text)
+        loDetalleImpuestos.operacion = sCompra_
+        loDetalleImpuestos.codmercaderia = txtCodMercaderia_AN.Text.ToString
+        GPCargar(loDetalleImpuestos)
     End Sub
 
     Private Sub LPAddUnidadesAlternativas(Optional ByVal psTipo As String = sEntrada_)

@@ -197,7 +197,7 @@ Public Class frmFb030cotizaciones
 
             Case sCONSULTAR_, sBORRAR_
                 For liNDX As Integer = 0 To loControls.Count - 1
-                    If InStr("txt|cmb", loControls.Item(liNDX).Name.Substring(0, 3)) > 0 Then
+                    If InStr("txt|cmb|gbx", loControls.Item(liNDX).Name.Substring(0, 3)) > 0 Then
                         loControls.Item(liNDX).Enabled = False
                     End If
                 Next

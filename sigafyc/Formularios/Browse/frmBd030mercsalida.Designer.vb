@@ -33,6 +33,7 @@ Partial Class frmBd030mercsalida
         'txtBuscar
         '
         Me.txtBuscar.Location = New System.Drawing.Point(10, 44)
+        Me.txtBuscar.TabIndex = 9
         '
         'btnSalir
         '
@@ -68,7 +69,7 @@ Partial Class frmBd030mercsalida
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(851, 578)
-        Me.DataGridView1.TabIndex = 27
+        Me.DataGridView1.TabIndex = 8
         '
         'lblNombreEmpresa
         '

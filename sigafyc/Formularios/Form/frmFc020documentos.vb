@@ -62,7 +62,7 @@ Public Class frmFc020documentos
                             loDatos.codDocumento = Integer.Parse(txtCodigo_NE.Text.ToString)
                             loDatos.tipo = cmbTipo.Text
                             loDatos.nombre = txtNombre_AN.Text
-                            loDatos.timbrado = cmbTimbrado.Text
+                            loDatos.abreviado = txtAbreviado_AN.Text
                             loDatos.timbrado = cmbTimbrado.Text
                             loDatos.codMoneda = txtCodMoneda_AN.Text
                             loDatos.cotizacion = LFsTipoCotizacion
@@ -109,9 +109,9 @@ Public Class frmFc020documentos
             Dim lsValorInicial As String = ""
             Select Case CType(sender, Control).AccessibleName
                 Case "abreviado"
-                    lsValorInicial = "Abreviado No." & txtCodigo_NE.Text
+                    lsValorInicial = "Abrev. No." & txtCodigo_NE.Text
                 Case "nombre"
-                    lsValorInicial = txtAbreviado_AN.Text
+                    lsValorInicial = "Nombre No." & txtCodigo_NE.Text
                 Case "tipo"
                     lsValorInicial = sDocPropio_
                 Case "timbrado"
@@ -445,7 +445,7 @@ Public Class frmFc020documentos
         Dim lsCodigo As String = ""
 
         lsClave = "c020documentos.aplicacion"
-        lsValor = sIncluido_ & sSF_ & sExcluido_
+        lsValor = sLinea_ & sSF_ & sTotales_
         lsCodigo = GFsParametroObtener(lsTipo, lsClave)
         If lsCodigo = sRESERVADO_ Then
             lsCodigo = lsValor

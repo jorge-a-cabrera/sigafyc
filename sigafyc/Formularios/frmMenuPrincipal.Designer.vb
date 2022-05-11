@@ -124,10 +124,10 @@ Partial Class frmMenuPrincipal
         '
         Me.lblDescripcionMenu.BackColor = System.Drawing.Color.Transparent
         Me.lblDescripcionMenu.Font = New System.Drawing.Font("Microsoft Tai Le", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescripcionMenu.ForeColor = System.Drawing.SystemColors.Control
-        Me.lblDescripcionMenu.Location = New System.Drawing.Point(-4, 566)
+        Me.lblDescripcionMenu.ForeColor = System.Drawing.Color.White
+        Me.lblDescripcionMenu.Location = New System.Drawing.Point(0, 557)
         Me.lblDescripcionMenu.Name = "lblDescripcionMenu"
-        Me.lblDescripcionMenu.Size = New System.Drawing.Size(1482, 34)
+        Me.lblDescripcionMenu.Size = New System.Drawing.Size(1226, 34)
         Me.lblDescripcionMenu.TabIndex = 5
         Me.lblDescripcionMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -139,10 +139,10 @@ Partial Class frmMenuPrincipal
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1226, 629)
         Me.ControlBox = False
-        Me.Controls.Add(Me.lblDescripcionMenu)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.lblDescripcionMenu)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

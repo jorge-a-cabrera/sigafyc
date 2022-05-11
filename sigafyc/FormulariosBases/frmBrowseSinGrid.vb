@@ -28,9 +28,6 @@ Public Class frmBrowseSinGrid
         mbConsultar = btnConsultar.Enabled
         mbAuditoria = btnAuditoria.Enabled
 
-        'Me.BackColor = Color.FromArgb(98, 141, 158)
-        'Me.BackColor = Color.FromArgb(252, 251, 249)
-        'Me.BackColor = Color.FromArgb(112, 149, 167)
         AddHandler btnAgregar.MouseDown, AddressOf Imagen_Click
         AddHandler btnBorrar.MouseDown, AddressOf Imagen_Click
         AddHandler btnModificar.MouseDown, AddressOf Imagen_Click
@@ -41,11 +38,6 @@ Public Class frmBrowseSinGrid
         If Me.Tag.ToString = sELEGIR_ Then
             btnConsultar.Text = sPrefAccesoRapido_ & sELEGIR_.ToLower
             btnConsultar.Tag = btnConsultar.Text
-            'Me.BackColor = Color.LightSteelBlue
-            'Me.BackColor = Color.FromArgb(8, 35, 56) 'color original
-            'Me.BackColor = Color.FromArgb(237, 65, 74) 'color de borrar
-            'Me.BackColor = Color.FromArgb(236, 191, 57) 'color de consultar
-            'Me.BackColor = Color.FromArgb(93, 182, 107) 'color de modificar
             Me.BackColor = Color.FromArgb(85, 130, 232) 'color de agregar
             Me.StartPosition = FormStartPosition.WindowsDefaultLocation
         End If

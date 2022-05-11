@@ -42,6 +42,7 @@ Partial Class frmFd020mercentrada
         Me.txtCodBarra_AN = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnDetalleImpuestos = New System.Windows.Forms.Button()
         Me.btnDetalle = New System.Windows.Forms.Button()
         Me.cmbEstado = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -289,6 +290,7 @@ Partial Class frmFd020mercentrada
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.btnDetalleImpuestos)
         Me.TabPage2.Controls.Add(Me.btnDetalle)
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label10)
@@ -299,15 +301,29 @@ Partial Class frmFd020mercentrada
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'btnDetalleImpuestos
+        '
+        Me.btnDetalleImpuestos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDetalleImpuestos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDetalleImpuestos.Image = Global.sigafyc.My.Resources.Resources.icons8_details_32
+        Me.btnDetalleImpuestos.Location = New System.Drawing.Point(475, 260)
+        Me.btnDetalleImpuestos.Name = "btnDetalleImpuestos"
+        Me.btnDetalleImpuestos.Size = New System.Drawing.Size(165, 78)
+        Me.btnDetalleImpuestos.TabIndex = 3
+        Me.btnDetalleImpuestos.Tag = "&unidades"
+        Me.btnDetalleImpuestos.Text = "&Impuestos"
+        Me.btnDetalleImpuestos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnDetalleImpuestos.UseVisualStyleBackColor = True
+        '
         'btnDetalle
         '
         Me.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDetalle.Image = Global.sigafyc.My.Resources.Resources.icons8_details_32
-        Me.btnDetalle.Location = New System.Drawing.Point(415, 260)
+        Me.btnDetalle.Location = New System.Drawing.Point(304, 260)
         Me.btnDetalle.Name = "btnDetalle"
-        Me.btnDetalle.Size = New System.Drawing.Size(225, 78)
-        Me.btnDetalle.TabIndex = 45
+        Me.btnDetalle.Size = New System.Drawing.Size(165, 78)
+        Me.btnDetalle.TabIndex = 1
         Me.btnDetalle.Tag = "&unidades"
         Me.btnDetalle.Text = "&unidades alternativas"
         Me.btnDetalle.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -421,4 +437,5 @@ Partial Class frmFd020mercentrada
     Friend WithEvents btnDetalle As Button
     Friend WithEvents cmbInventario As ComboBox
     Friend WithEvents Label11 As Label
+    Friend WithEvents btnDetalleImpuestos As Button
 End Class

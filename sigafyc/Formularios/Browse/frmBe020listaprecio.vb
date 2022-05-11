@@ -112,11 +112,11 @@ Public Class frmBe020listaprecio
                 If msCodUnidad.Trim.Length > 0 Then
                     txtCodUnidad_AN.Text = msCodUnidad
                     txtCodUnidad_AN.Enabled = False
+                    LPCargarDatos()
+                    LPDespliegaDescripciones()
                 End If
             End If
-            LPCargarDatos()
         End If
-        LPDespliegaDescripciones()
     End Sub
 
     Private Sub BuscarClave(sender As Object, e As EventArgs)
