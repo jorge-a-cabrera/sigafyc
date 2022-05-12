@@ -82,6 +82,7 @@ Partial Class frmBb050plancuentas : Inherits frmBrowseSinGrid
         '
         Me.lblNombreEmpresa.AutoSize = True
         Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(177, 14)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
         Me.lblNombreEmpresa.Size = New System.Drawing.Size(182, 20)
@@ -111,24 +112,24 @@ Partial Class frmBb050plancuentas : Inherits frmBrowseSinGrid
         '
         Me.mnuExportar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuItem_Exportar1, Me.MenuItem_Exportar2, Me.MenuItem_Importar1})
         Me.mnuExportar.Name = "nnuExportar"
-        Me.mnuExportar.Size = New System.Drawing.Size(218, 70)
+        Me.mnuExportar.Size = New System.Drawing.Size(219, 70)
         '
         'MenuItem_Exportar1
         '
         Me.MenuItem_Exportar1.Name = "MenuItem_Exportar1"
-        Me.MenuItem_Exportar1.Size = New System.Drawing.Size(217, 22)
+        Me.MenuItem_Exportar1.Size = New System.Drawing.Size(218, 22)
         Me.MenuItem_Exportar1.Text = "Exportar a Excel"
         '
         'MenuItem_Exportar2
         '
         Me.MenuItem_Exportar2.Name = "MenuItem_Exportar2"
-        Me.MenuItem_Exportar2.Size = New System.Drawing.Size(217, 22)
+        Me.MenuItem_Exportar2.Size = New System.Drawing.Size(218, 22)
         Me.MenuItem_Exportar2.Text = "Exportar a Texto delimitado"
         '
         'MenuItem_Importar1
         '
         Me.MenuItem_Importar1.Name = "MenuItem_Importar1"
-        Me.MenuItem_Importar1.Size = New System.Drawing.Size(217, 22)
+        Me.MenuItem_Importar1.Size = New System.Drawing.Size(218, 22)
         Me.MenuItem_Importar1.Text = "Importar Texto delimitado"
         '
         'btnImprimir

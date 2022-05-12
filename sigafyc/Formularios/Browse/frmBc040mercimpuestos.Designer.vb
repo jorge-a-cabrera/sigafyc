@@ -78,6 +78,7 @@ Partial Class frmBc040mercimpuestos
         '
         Me.lblNomMercaderia.AutoSize = True
         Me.lblNomMercaderia.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNomMercaderia.ForeColor = System.Drawing.Color.Navy
         Me.lblNomMercaderia.Location = New System.Drawing.Point(258, 75)
         Me.lblNomMercaderia.Name = "lblNomMercaderia"
         Me.lblNomMercaderia.Size = New System.Drawing.Size(188, 20)
@@ -107,6 +108,7 @@ Partial Class frmBc040mercimpuestos
         '
         Me.lblNomEmpresa.AutoSize = True
         Me.lblNomEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNomEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNomEmpresa.Location = New System.Drawing.Point(258, 9)
         Me.lblNomEmpresa.Name = "lblNomEmpresa"
         Me.lblNomEmpresa.Size = New System.Drawing.Size(168, 20)

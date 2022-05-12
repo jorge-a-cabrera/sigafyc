@@ -55,6 +55,7 @@ Partial Class frmBc030ubicaciones
         '
         Me.lblNombreEmpresa.AutoSize = True
         Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(209, 14)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
         Me.lblNombreEmpresa.Size = New System.Drawing.Size(168, 20)
@@ -103,6 +104,7 @@ Partial Class frmBc030ubicaciones
         '
         Me.lblNombreDeposito.AutoSize = True
         Me.lblNombreDeposito.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreDeposito.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreDeposito.Location = New System.Drawing.Point(209, 46)
         Me.lblNombreDeposito.Name = "lblNombreDeposito"
         Me.lblNombreDeposito.Size = New System.Drawing.Size(168, 20)

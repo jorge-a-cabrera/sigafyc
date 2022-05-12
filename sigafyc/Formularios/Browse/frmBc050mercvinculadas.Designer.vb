@@ -55,6 +55,7 @@ Partial Class frmBc050mercvinculadas
         '
         Me.lblNombreEmpresa.AutoSize = True
         Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(304, 16)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
         Me.lblNombreEmpresa.Size = New System.Drawing.Size(168, 20)
@@ -103,6 +104,7 @@ Partial Class frmBc050mercvinculadas
         '
         Me.lblNombreMercaderia.AutoSize = True
         Me.lblNombreMercaderia.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreMercaderia.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreMercaderia.Location = New System.Drawing.Point(304, 48)
         Me.lblNombreMercaderia.Name = "lblNombreMercaderia"
         Me.lblNombreMercaderia.Size = New System.Drawing.Size(188, 20)

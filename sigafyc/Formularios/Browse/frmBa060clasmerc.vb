@@ -160,11 +160,6 @@ Public Class frmBa060clasmerc
         End If
     End Sub
 
-    Private Sub cmbTipo_Validating(sender As Object, e As CancelEventArgs) Handles cmbTipo.Validating
-        LPDespliegaDescripciones()
-        LPCargarDatos()
-    End Sub
-
     Private Sub Botones_Click(sender As Object, e As EventArgs)
         Dim loDatos As New Ea060clasmerc
         loDatos.tipo = cmbTipo.Text
@@ -302,4 +297,9 @@ Public Class frmBa060clasmerc
 
         Return liCantidad
     End Function
+
+    Private Sub cmbTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTipo.SelectedIndexChanged
+        LPDespliegaDescripciones()
+        LPCargarDatos()
+    End Sub
 End Class

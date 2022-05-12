@@ -71,6 +71,7 @@ Partial Class frmBb030cotizaciones : Inherits frmBrowseSinGrid
         'lblNombreMoneda1
         '
         Me.lblNombreMoneda1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreMoneda1.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreMoneda1.Location = New System.Drawing.Point(132, 14)
         Me.lblNombreMoneda1.Name = "lblNombreMoneda1"
         Me.lblNombreMoneda1.Size = New System.Drawing.Size(205, 24)
@@ -99,6 +100,7 @@ Partial Class frmBb030cotizaciones : Inherits frmBrowseSinGrid
         'lblNombreMoneda2
         '
         Me.lblNombreMoneda2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreMoneda2.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreMoneda2.Location = New System.Drawing.Point(132, 45)
         Me.lblNombreMoneda2.Name = "lblNombreMoneda2"
         Me.lblNombreMoneda2.Size = New System.Drawing.Size(205, 24)

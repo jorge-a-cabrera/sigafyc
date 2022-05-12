@@ -48,6 +48,7 @@ Partial Class frmFb050plancuentas : Inherits frmFormulario
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Size = New System.Drawing.Size(896, 291)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
@@ -55,6 +56,7 @@ Partial Class frmFb050plancuentas : Inherits frmFormulario
         '
         'TabPage1
         '
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.lblNombreEmpresa)
         Me.TabPage1.Controls.Add(Me.txtCuenta6_NE)
         Me.TabPage1.Controls.Add(Me.txtCuenta5_NE)
@@ -85,6 +87,7 @@ Partial Class frmFb050plancuentas : Inherits frmFormulario
         'TabPage2
         '
         Me.TabPage2.AccessibleName = "Activo"
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label9)
         Me.TabPage2.Location = New System.Drawing.Point(4, 36)
@@ -262,6 +265,7 @@ Partial Class frmFb050plancuentas : Inherits frmFormulario
         'lblNombreEmpresa
         '
         Me.lblNombreEmpresa.AutoSize = True
+        Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(294, 21)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
         Me.lblNombreEmpresa.Size = New System.Drawing.Size(152, 24)

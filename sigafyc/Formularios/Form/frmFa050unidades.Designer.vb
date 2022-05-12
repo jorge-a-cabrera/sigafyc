@@ -36,18 +36,22 @@ Partial Class frmFa050unidades
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Size = New System.Drawing.Size(432, 141)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.txtNombre_AN)
         Me.TabPage1.Controls.Add(Me.txtCodigo_AN)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Size = New System.Drawing.Size(424, 101)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
+        Me.TabPage1.Size = New System.Drawing.Size(424, 105)
         '
         'btnCancelar
         '
@@ -64,9 +68,9 @@ Partial Class frmFa050unidades
         'txtNombre_AN
         '
         Me.txtNombre_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNombre_AN.Location = New System.Drawing.Point(107, 53)
+        Me.txtNombre_AN.Location = New System.Drawing.Point(107, 50)
         Me.txtNombre_AN.Name = "txtNombre_AN"
-        Me.txtNombre_AN.Size = New System.Drawing.Size(296, 29)
+        Me.txtNombre_AN.Size = New System.Drawing.Size(296, 26)
         Me.txtNombre_AN.TabIndex = 1
         '
         'txtCodigo_AN
@@ -74,15 +78,15 @@ Partial Class frmFa050unidades
         Me.txtCodigo_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCodigo_AN.Location = New System.Drawing.Point(107, 18)
         Me.txtCodigo_AN.Name = "txtCodigo_AN"
-        Me.txtCodigo_AN.Size = New System.Drawing.Size(132, 29)
+        Me.txtCodigo_AN.Size = New System.Drawing.Size(132, 26)
         Me.txtCodigo_AN.TabIndex = 0
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(17, 55)
+        Me.Label2.Location = New System.Drawing.Point(17, 52)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(84, 24)
+        Me.Label2.Size = New System.Drawing.Size(69, 20)
         Me.Label2.TabIndex = 16
         Me.Label2.Text = "Nombre "
         '
@@ -91,17 +95,18 @@ Partial Class frmFa050unidades
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(17, 20)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(76, 24)
+        Me.Label1.Size = New System.Drawing.Size(63, 20)
         Me.Label1.TabIndex = 15
         Me.Label1.Text = "Codigo:"
         '
         'TabPage2
         '
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label9)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 36)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 32)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(424, 118)
+        Me.TabPage2.Size = New System.Drawing.Size(424, 105)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -111,9 +116,9 @@ Partial Class frmFa050unidades
         Me.cmbEstado.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cmbEstado.FormattingEnabled = True
         Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Bloqueado"})
-        Me.cmbEstado.Location = New System.Drawing.Point(89, 15)
+        Me.cmbEstado.Location = New System.Drawing.Point(80, 15)
         Me.cmbEstado.Name = "cmbEstado"
-        Me.cmbEstado.Size = New System.Drawing.Size(196, 32)
+        Me.cmbEstado.Size = New System.Drawing.Size(147, 28)
         Me.cmbEstado.TabIndex = 18
         '
         'Label9
@@ -121,7 +126,7 @@ Partial Class frmFa050unidades
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(10, 18)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(73, 24)
+        Me.Label9.Size = New System.Drawing.Size(64, 20)
         Me.Label9.TabIndex = 17
         Me.Label9.Text = "Estado:"
         '

@@ -67,6 +67,7 @@ Partial Class frmBb020conceptos : Inherits frmBrowseSinGrid
         '
         Me.lblNombreEmpresa.AutoSize = True
         Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(177, 9)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
         Me.lblNombreEmpresa.Size = New System.Drawing.Size(182, 20)
@@ -107,24 +108,24 @@ Partial Class frmBb020conceptos : Inherits frmBrowseSinGrid
         '
         Me.mnuContextual.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContextualItem_ExportarExcel, Me.ContextualItem_ExportarTexto, Me.ContextualItem_ImportarTexto})
         Me.mnuContextual.Name = "mnuContextual"
-        Me.mnuContextual.Size = New System.Drawing.Size(244, 70)
+        Me.mnuContextual.Size = New System.Drawing.Size(245, 70)
         '
         'ContextualItem_ExportarExcel
         '
         Me.ContextualItem_ExportarExcel.Name = "ContextualItem_ExportarExcel"
-        Me.ContextualItem_ExportarExcel.Size = New System.Drawing.Size(243, 22)
+        Me.ContextualItem_ExportarExcel.Size = New System.Drawing.Size(244, 22)
         Me.ContextualItem_ExportarExcel.Text = "Exportar a Excel"
         '
         'ContextualItem_ExportarTexto
         '
         Me.ContextualItem_ExportarTexto.Name = "ContextualItem_ExportarTexto"
-        Me.ContextualItem_ExportarTexto.Size = New System.Drawing.Size(243, 22)
+        Me.ContextualItem_ExportarTexto.Size = New System.Drawing.Size(244, 22)
         Me.ContextualItem_ExportarTexto.Text = "Exportar a Texto delimitado"
         '
         'ContextualItem_ImportarTexto
         '
         Me.ContextualItem_ImportarTexto.Name = "ContextualItem_ImportarTexto"
-        Me.ContextualItem_ImportarTexto.Size = New System.Drawing.Size(243, 22)
+        Me.ContextualItem_ImportarTexto.Size = New System.Drawing.Size(244, 22)
         Me.ContextualItem_ImportarTexto.Text = "Importar desde texto delimitado"
         '
         'frmBb020conceptos

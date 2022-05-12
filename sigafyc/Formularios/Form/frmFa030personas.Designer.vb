@@ -22,6 +22,8 @@ Partial Class frmFa030personas : Inherits frmFormulario
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxGrupo1 = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.cmbTipoPersona = New System.Windows.Forms.ComboBox()
         Me.txtCodigo_SR = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbTipoDocumento = New System.Windows.Forms.ComboBox()
@@ -42,8 +44,6 @@ Partial Class frmFa030personas : Inherits frmFormulario
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.cmbEstado = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.cmbTipoPersona = New System.Windows.Forms.ComboBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.gbxGrupo1.SuspendLayout()
@@ -54,25 +54,33 @@ Partial Class frmFa030personas : Inherits frmFormulario
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Size = New System.Drawing.Size(896, 460)
+        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl1.Size = New System.Drawing.Size(896, 446)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.gbxGrupo3)
         Me.TabPage1.Controls.Add(Me.gbxGrupo2)
         Me.TabPage1.Controls.Add(Me.gbxGrupo1)
-        Me.TabPage1.Size = New System.Drawing.Size(888, 420)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
+        Me.TabPage1.Size = New System.Drawing.Size(888, 410)
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 511)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 497)
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(771, 511)
+        Me.btnAceptar.Location = New System.Drawing.Point(771, 497)
+        '
+        'lblMensaje
+        '
+        Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'gbxGrupo1
         '
@@ -89,6 +97,27 @@ Partial Class frmFa030personas : Inherits frmFormulario
         Me.gbxGrupo1.TabIndex = 0
         Me.gbxGrupo1.TabStop = False
         Me.gbxGrupo1.Text = "Documento:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(351, 18)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(63, 15)
+        Me.Label8.TabIndex = 42
+        Me.Label8.Text = "persona:"
+        '
+        'cmbTipoPersona
+        '
+        Me.cmbTipoPersona.AccessibleDescription = "tipo"
+        Me.cmbTipoPersona.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cmbTipoPersona.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbTipoPersona.FormattingEnabled = True
+        Me.cmbTipoPersona.Items.AddRange(New Object() {"Fijo", "Modificable"})
+        Me.cmbTipoPersona.Location = New System.Drawing.Point(354, 36)
+        Me.cmbTipoPersona.Name = "cmbTipoPersona"
+        Me.cmbTipoPersona.Size = New System.Drawing.Size(133, 28)
+        Me.cmbTipoPersona.TabIndex = 41
         '
         'txtCodigo_SR
         '
@@ -266,11 +295,12 @@ Partial Class frmFa030personas : Inherits frmFormulario
         '
         'TabPage2
         '
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label9)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 36)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 32)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(888, 420)
+        Me.TabPage2.Size = New System.Drawing.Size(888, 410)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -283,7 +313,7 @@ Partial Class frmFa030personas : Inherits frmFormulario
         Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Bloqueado"})
         Me.cmbEstado.Location = New System.Drawing.Point(91, 13)
         Me.cmbEstado.Name = "cmbEstado"
-        Me.cmbEstado.Size = New System.Drawing.Size(196, 28)
+        Me.cmbEstado.Size = New System.Drawing.Size(155, 28)
         Me.cmbEstado.TabIndex = 26
         '
         'Label9
@@ -296,33 +326,12 @@ Partial Class frmFa030personas : Inherits frmFormulario
         Me.Label9.TabIndex = 25
         Me.Label9.Text = "Estado:"
         '
-        'cmbTipoPersona
-        '
-        Me.cmbTipoPersona.AccessibleDescription = "tipo"
-        Me.cmbTipoPersona.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cmbTipoPersona.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbTipoPersona.FormattingEnabled = True
-        Me.cmbTipoPersona.Items.AddRange(New Object() {"Fijo", "Modificable"})
-        Me.cmbTipoPersona.Location = New System.Drawing.Point(354, 36)
-        Me.cmbTipoPersona.Name = "cmbTipoPersona"
-        Me.cmbTipoPersona.Size = New System.Drawing.Size(133, 28)
-        Me.cmbTipoPersona.TabIndex = 41
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(351, 18)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(63, 15)
-        Me.Label8.TabIndex = 42
-        Me.Label8.Text = "persona:"
-        '
         'frmFa030personas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Nothing
-        Me.ClientSize = New System.Drawing.Size(916, 594)
+        Me.ClientSize = New System.Drawing.Size(916, 581)
         Me.Name = "frmFa030personas"
         Me.Tag = ""
         Me.Text = "Formulario de Personas Fisicas o Juridicas"

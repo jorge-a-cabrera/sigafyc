@@ -91,6 +91,7 @@ Partial Class frmBMayorCuenta : Inherits frmBrowseSinGrid
         '
         Me.lblNombreEmpresa.AutoSize = True
         Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(251, 14)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
         Me.lblNombreEmpresa.Size = New System.Drawing.Size(182, 20)
@@ -120,6 +121,7 @@ Partial Class frmBMayorCuenta : Inherits frmBrowseSinGrid
         '
         Me.lblNombreCuenta.AutoSize = True
         Me.lblNombreCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreCuenta.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreCuenta.Location = New System.Drawing.Point(5, 105)
         Me.lblNombreCuenta.Name = "lblNombreCuenta"
         Me.lblNombreCuenta.Size = New System.Drawing.Size(233, 20)
@@ -330,6 +332,7 @@ Partial Class frmBMayorCuenta : Inherits frmBrowseSinGrid
         '
         Me.lblNombreSucursal.AutoSize = True
         Me.lblNombreSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreSucursal.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreSucursal.Location = New System.Drawing.Point(251, 49)
         Me.lblNombreSucursal.Name = "lblNombreSucursal"
         Me.lblNombreSucursal.Size = New System.Drawing.Size(166, 20)

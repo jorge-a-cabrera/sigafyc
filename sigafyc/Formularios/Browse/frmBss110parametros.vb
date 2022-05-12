@@ -174,11 +174,6 @@ Public Class frmBss110parametros
         End If
     End Sub
 
-    Private Sub cmbTipo_Validating(sender As Object, e As CancelEventArgs) Handles cmbTipo.Validating
-        LPDespliegaDescripciones()
-        LPCargarDatos()
-    End Sub
-
     Private Sub Botones_Click(sender As Object, e As EventArgs)
         If cmbTipo.Text.Trim.Length = 0 Then Exit Sub
 
@@ -349,4 +344,8 @@ Public Class frmBss110parametros
         Next
     End Sub
 
+    Private Sub cmbTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTipo.SelectedIndexChanged
+        LPDespliegaDescripciones()
+        LPCargarDatos()
+    End Sub
 End Class

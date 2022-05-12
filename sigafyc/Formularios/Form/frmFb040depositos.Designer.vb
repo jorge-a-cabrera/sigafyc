@@ -45,13 +45,16 @@ Partial Class frmFb040depositos
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Size = New System.Drawing.Size(654, 265)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.cmbUbicaciones)
         Me.TabPage1.Controls.Add(Me.Label3)
         Me.TabPage1.Controls.Add(Me.txtAbreviado_AN)
@@ -65,7 +68,8 @@ Partial Class frmFb040depositos
         Me.TabPage1.Controls.Add(Me.txtCodigo_NE)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Size = New System.Drawing.Size(646, 225)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
+        Me.TabPage1.Size = New System.Drawing.Size(646, 229)
         '
         'btnCancelar
         '
@@ -91,10 +95,10 @@ Partial Class frmFb040depositos
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(17, 116)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(94, 20)
+        Me.Label7.Size = New System.Drawing.Size(84, 20)
         Me.Label7.TabIndex = 65
         Me.Label7.Text = "Abreviado:"
         '
@@ -110,10 +114,10 @@ Partial Class frmFb040depositos
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(17, 83)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(76, 20)
+        Me.Label8.Size = New System.Drawing.Size(69, 20)
         Me.Label8.TabIndex = 64
         Me.Label8.Text = "Nombre "
         '
@@ -121,6 +125,7 @@ Partial Class frmFb040depositos
         '
         Me.lblNombreEmpresa.AutoSize = True
         Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(284, 19)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
         Me.lblNombreEmpresa.Size = New System.Drawing.Size(198, 20)
@@ -151,10 +156,10 @@ Partial Class frmFb040depositos
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(17, 18)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(85, 20)
+        Me.Label4.Size = New System.Drawing.Size(77, 20)
         Me.Label4.TabIndex = 62
         Me.Label4.Text = "Empresa:"
         '
@@ -170,30 +175,31 @@ Partial Class frmFb040depositos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(17, 150)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(48, 20)
+        Me.Label2.Size = New System.Drawing.Size(43, 20)
         Me.Label2.TabIndex = 60
         Me.Label2.Text = "Tipo:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(17, 51)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(118, 20)
+        Me.Label1.Size = New System.Drawing.Size(105, 20)
         Me.Label1.TabIndex = 59
         Me.Label1.Text = "Deposito No.:"
         '
         'TabPage2
         '
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label9)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 36)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 32)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(646, 225)
+        Me.TabPage2.Size = New System.Drawing.Size(646, 229)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -204,18 +210,18 @@ Partial Class frmFb040depositos
         Me.cmbEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbEstado.FormattingEnabled = True
         Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Bloqueado"})
-        Me.cmbEstado.Location = New System.Drawing.Point(163, 17)
+        Me.cmbEstado.Location = New System.Drawing.Point(95, 17)
         Me.cmbEstado.Name = "cmbEstado"
-        Me.cmbEstado.Size = New System.Drawing.Size(225, 28)
+        Me.cmbEstado.Size = New System.Drawing.Size(122, 28)
         Me.cmbEstado.TabIndex = 0
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(18, 20)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(71, 20)
+        Me.Label9.Size = New System.Drawing.Size(64, 20)
         Me.Label9.TabIndex = 25
         Me.Label9.Text = "Estado:"
         '
@@ -234,10 +240,10 @@ Partial Class frmFb040depositos
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(17, 184)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(146, 20)
+        Me.Label3.Size = New System.Drawing.Size(130, 20)
         Me.Label3.TabIndex = 67
         Me.Label3.Text = "Con ubicaciones:"
         '

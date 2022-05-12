@@ -97,6 +97,7 @@ Partial Class frmBss090perusu
         '
         Me.lblNombreUsuario.AutoSize = True
         Me.lblNombreUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreUsuario.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreUsuario.Location = New System.Drawing.Point(387, 15)
         Me.lblNombreUsuario.Name = "lblNombreUsuario"
         Me.lblNombreUsuario.Size = New System.Drawing.Size(182, 20)

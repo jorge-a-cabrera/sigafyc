@@ -43,10 +43,10 @@ Partial Class frmFLoginAcceso
         Me.DatosSysAdmin.Controls.Add(Me.Label1)
         Me.DatosSysAdmin.Controls.Add(Me.Label2)
         Me.DatosSysAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.DatosSysAdmin.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DatosSysAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DatosSysAdmin.Location = New System.Drawing.Point(14, 125)
         Me.DatosSysAdmin.Name = "DatosSysAdmin"
-        Me.DatosSysAdmin.Size = New System.Drawing.Size(417, 181)
+        Me.DatosSysAdmin.Size = New System.Drawing.Size(374, 109)
         Me.DatosSysAdmin.TabIndex = 9
         Me.DatosSysAdmin.TabStop = False
         Me.DatosSysAdmin.Text = "datos para ingresar"
@@ -54,40 +54,40 @@ Partial Class frmFLoginAcceso
         'txtPassword_AN
         '
         Me.txtPassword_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPassword_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword_AN.Location = New System.Drawing.Point(148, 100)
+        Me.txtPassword_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword_AN.Location = New System.Drawing.Point(109, 61)
         Me.txtPassword_AN.Name = "txtPassword_AN"
         Me.txtPassword_AN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword_AN.Size = New System.Drawing.Size(247, 29)
+        Me.txtPassword_AN.Size = New System.Drawing.Size(247, 26)
         Me.txtPassword_AN.TabIndex = 1
         '
         'txtUsuario_AB
         '
         Me.txtUsuario_AB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUsuario_AB.CausesValidation = False
-        Me.txtUsuario_AB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario_AB.Location = New System.Drawing.Point(148, 52)
+        Me.txtUsuario_AB.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario_AB.Location = New System.Drawing.Point(109, 25)
         Me.txtUsuario_AB.Name = "txtUsuario_AB"
-        Me.txtUsuario_AB.Size = New System.Drawing.Size(247, 29)
+        Me.txtUsuario_AB.Size = New System.Drawing.Size(247, 26)
         Me.txtUsuario_AB.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(21, 55)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(21, 28)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 24)
+        Me.Label1.Size = New System.Drawing.Size(68, 20)
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "Usuario:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(21, 103)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(21, 64)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(97, 24)
+        Me.Label2.Size = New System.Drawing.Size(82, 20)
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Password:"
         '
@@ -96,9 +96,9 @@ Partial Class frmFLoginAcceso
         Me.btnCancelar.CausesValidation = False
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.Image = Global.sigafyc.My.Resources.Resources.icons8_blue_cancel_32
-        Me.btnCancelar.Location = New System.Drawing.Point(14, 312)
+        Me.btnCancelar.Location = New System.Drawing.Point(14, 240)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(133, 73)
         Me.btnCancelar.TabIndex = 5
@@ -111,9 +111,9 @@ Partial Class frmFLoginAcceso
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.sigafyc.My.Resources.Resources._7f95204b_37ad_499f_a4b0_83ec7340270c
-        Me.PictureBox1.Location = New System.Drawing.Point(149, -3)
+        Me.PictureBox1.Location = New System.Drawing.Point(136, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(145, 123)
+        Me.PictureBox1.Size = New System.Drawing.Size(127, 107)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 10
         Me.PictureBox1.TabStop = False
@@ -121,9 +121,9 @@ Partial Class frmFLoginAcceso
         'btnAceptar
         '
         Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAceptar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAceptar.Image = Global.sigafyc.My.Resources.Resources.icons8_blue_ok_32
-        Me.btnAceptar.Location = New System.Drawing.Point(298, 312)
+        Me.btnAceptar.Location = New System.Drawing.Point(255, 240)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(133, 73)
         Me.btnAceptar.TabIndex = 4
@@ -137,7 +137,7 @@ Partial Class frmFLoginAcceso
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
-        Me.ClientSize = New System.Drawing.Size(443, 395)
+        Me.ClientSize = New System.Drawing.Size(399, 320)
         Me.ControlBox = False
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.DatosSysAdmin)

@@ -48,6 +48,7 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -58,6 +59,7 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         '
         'TabPage1
         '
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.lblNombreEmpresa)
         Me.TabPage1.Controls.Add(Me.txtCodEmpresa_NE)
         Me.TabPage1.Controls.Add(Me.Label4)
@@ -143,6 +145,7 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         'TabPage2
         '
         Me.TabPage2.AccessibleName = "Activo"
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label9)
         Me.TabPage2.Location = New System.Drawing.Point(4, 32)
@@ -160,7 +163,7 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Bloqueado"})
         Me.cmbEstado.Location = New System.Drawing.Point(90, 13)
         Me.cmbEstado.Name = "cmbEstado"
-        Me.cmbEstado.Size = New System.Drawing.Size(196, 28)
+        Me.cmbEstado.Size = New System.Drawing.Size(144, 28)
         Me.cmbEstado.TabIndex = 20
         '
         'Label9
@@ -195,6 +198,7 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         'TabPage3
         '
         Me.TabPage3.AccessibleName = "Activo"
+        Me.TabPage3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage3.Controls.Add(Me.txtTelefono_AN)
         Me.TabPage3.Controls.Add(Me.Label8)
         Me.TabPage3.Controls.Add(Me.txtCiudad_AN)
@@ -269,6 +273,7 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         '
         Me.lblNombreEmpresa.AutoSize = True
         Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(276, 19)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
         Me.lblNombreEmpresa.Size = New System.Drawing.Size(168, 20)

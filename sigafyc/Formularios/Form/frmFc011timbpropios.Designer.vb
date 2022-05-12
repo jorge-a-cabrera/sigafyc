@@ -46,13 +46,16 @@ Partial Class frmFc011timbpropios
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Size = New System.Drawing.Size(646, 255)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.lblNombreEmpresa)
         Me.TabPage1.Controls.Add(Me.txtPrefijo_AN)
         Me.TabPage1.Controls.Add(Me.Label3)
@@ -62,26 +65,28 @@ Partial Class frmFc011timbpropios
         Me.TabPage1.Controls.Add(Me.lblNombreSucursal)
         Me.TabPage1.Controls.Add(Me.txtCodSucursal_NE)
         Me.TabPage1.Controls.Add(Me.Label4)
-        Me.TabPage1.Size = New System.Drawing.Size(638, 215)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
+        Me.TabPage1.Size = New System.Drawing.Size(638, 219)
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(10, 320)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 306)
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(515, 320)
+        Me.btnAceptar.Location = New System.Drawing.Point(521, 306)
         '
         'lblMensaje
         '
-        Me.lblMensaje.Size = New System.Drawing.Size(642, 37)
+        Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMensaje.Size = New System.Drawing.Size(642, 25)
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(13, 18)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(131, 24)
+        Me.Label2.Size = New System.Drawing.Size(107, 20)
         Me.Label2.TabIndex = 83
         Me.Label2.Text = "Timbrado No.:"
         '
@@ -90,7 +95,7 @@ Partial Class frmFc011timbpropios
         Me.txtNumTimbrado_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNumTimbrado_NE.Location = New System.Drawing.Point(150, 18)
         Me.txtNumTimbrado_NE.Name = "txtNumTimbrado_NE"
-        Me.txtNumTimbrado_NE.Size = New System.Drawing.Size(115, 29)
+        Me.txtNumTimbrado_NE.Size = New System.Drawing.Size(115, 26)
         Me.txtNumTimbrado_NE.TabIndex = 0
         '
         'gbxGrupo1
@@ -99,7 +104,7 @@ Partial Class frmFc011timbpropios
         Me.gbxGrupo1.Controls.Add(Me.Label8)
         Me.gbxGrupo1.Controls.Add(Me.txtDesdeNumero_NE)
         Me.gbxGrupo1.Controls.Add(Me.Label7)
-        Me.gbxGrupo1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbxGrupo1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbxGrupo1.Location = New System.Drawing.Point(12, 128)
         Me.gbxGrupo1.Name = "gbxGrupo1"
         Me.gbxGrupo1.Size = New System.Drawing.Size(617, 77)
@@ -120,7 +125,7 @@ Partial Class frmFc011timbpropios
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(324, 30)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(62, 20)
+        Me.Label8.Size = New System.Drawing.Size(56, 20)
         Me.Label8.TabIndex = 67
         Me.Label8.Text = "Hasta:"
         '
@@ -137,16 +142,17 @@ Partial Class frmFc011timbpropios
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(79, 30)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(66, 20)
+        Me.Label7.Size = New System.Drawing.Size(60, 20)
         Me.Label7.TabIndex = 65
         Me.Label7.Text = "Desde:"
         '
         'lblNombreSucursal
         '
         Me.lblNombreSucursal.AutoSize = True
+        Me.lblNombreSucursal.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreSucursal.Location = New System.Drawing.Point(271, 54)
         Me.lblNombreSucursal.Name = "lblNombreSucursal"
-        Me.lblNombreSucursal.Size = New System.Drawing.Size(178, 24)
+        Me.lblNombreSucursal.Size = New System.Drawing.Size(149, 20)
         Me.lblNombreSucursal.TabIndex = 82
         Me.lblNombreSucursal.Text = "<nombre_sucursal>"
         '
@@ -155,7 +161,7 @@ Partial Class frmFc011timbpropios
         Me.txtCodSucursal_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCodSucursal_NE.Location = New System.Drawing.Point(150, 52)
         Me.txtCodSucursal_NE.Name = "txtCodSucursal_NE"
-        Me.txtCodSucursal_NE.Size = New System.Drawing.Size(115, 29)
+        Me.txtCodSucursal_NE.Size = New System.Drawing.Size(115, 26)
         Me.txtCodSucursal_NE.TabIndex = 1
         '
         'Label4
@@ -163,17 +169,18 @@ Partial Class frmFc011timbpropios
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(13, 54)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(83, 24)
+        Me.Label4.Size = New System.Drawing.Size(71, 20)
         Me.Label4.TabIndex = 81
         Me.Label4.Text = "Sucursal"
         '
         'TabPage2
         '
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label1)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 36)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 32)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(638, 215)
+        Me.TabPage2.Size = New System.Drawing.Size(638, 219)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -184,9 +191,9 @@ Partial Class frmFc011timbpropios
         Me.cmbEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbEstado.FormattingEnabled = True
         Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Bloqueado"})
-        Me.cmbEstado.Location = New System.Drawing.Point(147, 13)
+        Me.cmbEstado.Location = New System.Drawing.Point(90, 13)
         Me.cmbEstado.Name = "cmbEstado"
-        Me.cmbEstado.Size = New System.Drawing.Size(196, 28)
+        Me.cmbEstado.Size = New System.Drawing.Size(133, 28)
         Me.cmbEstado.TabIndex = 0
         '
         'Label1
@@ -204,7 +211,7 @@ Partial Class frmFc011timbpropios
         Me.txtPrefijo_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPrefijo_AN.Location = New System.Drawing.Point(150, 87)
         Me.txtPrefijo_AN.Name = "txtPrefijo_AN"
-        Me.txtPrefijo_AN.Size = New System.Drawing.Size(115, 29)
+        Me.txtPrefijo_AN.Size = New System.Drawing.Size(115, 26)
         Me.txtPrefijo_AN.TabIndex = 2
         '
         'Label3
@@ -212,16 +219,17 @@ Partial Class frmFc011timbpropios
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(13, 89)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(62, 24)
+        Me.Label3.Size = New System.Drawing.Size(53, 20)
         Me.Label3.TabIndex = 85
         Me.Label3.Text = "Prefijo"
         '
         'lblNombreEmpresa
         '
         Me.lblNombreEmpresa.AutoSize = True
+        Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(271, 18)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
-        Me.lblNombreEmpresa.Size = New System.Drawing.Size(182, 24)
+        Me.lblNombreEmpresa.Size = New System.Drawing.Size(152, 20)
         Me.lblNombreEmpresa.TabIndex = 86
         Me.lblNombreEmpresa.Text = "<nombre_empresa>"
         '
@@ -230,7 +238,7 @@ Partial Class frmFc011timbpropios
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Nothing
-        Me.ClientSize = New System.Drawing.Size(662, 405)
+        Me.ClientSize = New System.Drawing.Size(662, 387)
         Me.Name = "frmFc011timbpropios"
         Me.Tag = ""
         Me.Text = "Formulario Formulario Timbrados propios (por sucursal y punto expedición)"

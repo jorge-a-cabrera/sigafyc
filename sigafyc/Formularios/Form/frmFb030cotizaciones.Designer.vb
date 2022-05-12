@@ -45,44 +45,50 @@ Partial Class frmFb030cotizaciones : Inherits frmFormulario
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Size = New System.Drawing.Size(708, 243)
+        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl1.Location = New System.Drawing.Point(16, 45)
+        Me.TabControl1.Size = New System.Drawing.Size(614, 210)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.gbxGrupo)
         Me.TabPage1.Controls.Add(Me.txtValido_FE)
         Me.TabPage1.Controls.Add(Me.Label5)
-        Me.TabPage1.Controls.Add(Me.lblNombreMoneda2)
         Me.TabPage1.Controls.Add(Me.txtCodMoneda2_AN)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.lblNombreMoneda1)
         Me.TabPage1.Controls.Add(Me.txtCodMoneda1_AN)
         Me.TabPage1.Controls.Add(Me.Label4)
-        Me.TabPage1.Size = New System.Drawing.Size(700, 203)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
+        Me.TabPage1.Size = New System.Drawing.Size(606, 174)
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 294)
+        Me.btnCancelar.Location = New System.Drawing.Point(20, 257)
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(583, 294)
+        Me.btnAceptar.Location = New System.Drawing.Point(493, 257)
         '
         'lblMensaje
         '
-        Me.lblMensaje.Size = New System.Drawing.Size(704, 37)
+        Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMensaje.Size = New System.Drawing.Size(614, 26)
         '
         'TabPage2
         '
         Me.TabPage2.AccessibleName = "Activo"
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label9)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 36)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 32)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(700, 203)
+        Me.TabPage2.Size = New System.Drawing.Size(606, 174)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -94,7 +100,7 @@ Partial Class frmFb030cotizaciones : Inherits frmFormulario
         Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Bloqueado"})
         Me.cmbEstado.Location = New System.Drawing.Point(94, 15)
         Me.cmbEstado.Name = "cmbEstado"
-        Me.cmbEstado.Size = New System.Drawing.Size(196, 32)
+        Me.cmbEstado.Size = New System.Drawing.Size(131, 28)
         Me.cmbEstado.TabIndex = 18
         '
         'Label9
@@ -102,7 +108,7 @@ Partial Class frmFb030cotizaciones : Inherits frmFormulario
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(15, 18)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(73, 24)
+        Me.Label9.Size = New System.Drawing.Size(64, 20)
         Me.Label9.TabIndex = 17
         Me.Label9.Text = "Estado:"
         '
@@ -117,9 +123,9 @@ Partial Class frmFb030cotizaciones : Inherits frmFormulario
         'txtCodMoneda1_AN
         '
         Me.txtCodMoneda1_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodMoneda1_AN.Location = New System.Drawing.Point(62, 20)
+        Me.txtCodMoneda1_AN.Location = New System.Drawing.Point(57, 20)
         Me.txtCodMoneda1_AN.Name = "txtCodMoneda1_AN"
-        Me.txtCodMoneda1_AN.Size = New System.Drawing.Size(64, 29)
+        Me.txtCodMoneda1_AN.Size = New System.Drawing.Size(64, 26)
         Me.txtCodMoneda1_AN.TabIndex = 0
         '
         'Label4
@@ -127,13 +133,13 @@ Partial Class frmFb030cotizaciones : Inherits frmFormulario
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(17, 20)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 24)
+        Me.Label4.Size = New System.Drawing.Size(34, 20)
         Me.Label4.TabIndex = 25
         Me.Label4.Text = "De:"
         '
         'lblNombreMoneda2
         '
-        Me.lblNombreMoneda2.Location = New System.Drawing.Point(494, 89)
+        Me.lblNombreMoneda2.Location = New System.Drawing.Point(364, 54)
         Me.lblNombreMoneda2.Name = "lblNombreMoneda2"
         Me.lblNombreMoneda2.Size = New System.Drawing.Size(187, 24)
         Me.lblNombreMoneda2.TabIndex = 29
@@ -142,9 +148,9 @@ Partial Class frmFb030cotizaciones : Inherits frmFormulario
         'txtCodMoneda2_AN
         '
         Me.txtCodMoneda2_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodMoneda2_AN.Location = New System.Drawing.Point(184, 20)
+        Me.txtCodMoneda2_AN.Location = New System.Drawing.Point(180, 20)
         Me.txtCodMoneda2_AN.Name = "txtCodMoneda2_AN"
-        Me.txtCodMoneda2_AN.Size = New System.Drawing.Size(64, 29)
+        Me.txtCodMoneda2_AN.Size = New System.Drawing.Size(64, 26)
         Me.txtCodMoneda2_AN.TabIndex = 1
         '
         'Label2
@@ -152,25 +158,25 @@ Partial Class frmFb030cotizaciones : Inherits frmFormulario
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(150, 20)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(28, 24)
+        Me.Label2.Size = New System.Drawing.Size(24, 20)
         Me.Label2.TabIndex = 28
         Me.Label2.Text = "A:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(399, 20)
+        Me.Label5.Location = New System.Drawing.Point(305, 22)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(89, 24)
+        Me.Label5.Size = New System.Drawing.Size(74, 20)
         Me.Label5.TabIndex = 34
         Me.Label5.Text = "Vigencia:"
         '
         'txtValido_FE
         '
         Me.txtValido_FE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtValido_FE.Location = New System.Drawing.Point(494, 18)
+        Me.txtValido_FE.Location = New System.Drawing.Point(385, 20)
         Me.txtValido_FE.Name = "txtValido_FE"
-        Me.txtValido_FE.Size = New System.Drawing.Size(187, 29)
+        Me.txtValido_FE.Size = New System.Drawing.Size(187, 26)
         Me.txtValido_FE.TabIndex = 2
         '
         'gbxGrupo
@@ -178,10 +184,11 @@ Partial Class frmFb030cotizaciones : Inherits frmFormulario
         Me.gbxGrupo.Controls.Add(Me.Label6)
         Me.gbxGrupo.Controls.Add(Me.txtVenta_ND)
         Me.gbxGrupo.Controls.Add(Me.Label3)
+        Me.gbxGrupo.Controls.Add(Me.lblNombreMoneda2)
         Me.gbxGrupo.Controls.Add(Me.txtCompra_ND)
         Me.gbxGrupo.Location = New System.Drawing.Point(21, 69)
         Me.gbxGrupo.Name = "gbxGrupo"
-        Me.gbxGrupo.Size = New System.Drawing.Size(660, 115)
+        Me.gbxGrupo.Size = New System.Drawing.Size(574, 89)
         Me.gbxGrupo.TabIndex = 3
         Me.gbxGrupo.TabStop = False
         Me.gbxGrupo.Text = "factor de conversión"
@@ -189,36 +196,36 @@ Partial Class frmFb030cotizaciones : Inherits frmFormulario
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(360, 44)
+        Me.Label6.Location = New System.Drawing.Point(302, 27)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(64, 24)
+        Me.Label6.Size = New System.Drawing.Size(56, 20)
         Me.Label6.TabIndex = 42
         Me.Label6.Text = "Venta:"
         '
         'txtVenta_ND
         '
         Me.txtVenta_ND.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtVenta_ND.Location = New System.Drawing.Point(430, 44)
+        Me.txtVenta_ND.Location = New System.Drawing.Point(364, 25)
         Me.txtVenta_ND.Name = "txtVenta_ND"
-        Me.txtVenta_ND.Size = New System.Drawing.Size(187, 29)
+        Me.txtVenta_ND.Size = New System.Drawing.Size(187, 26)
         Me.txtVenta_ND.TabIndex = 1
         Me.txtVenta_ND.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(44, 44)
+        Me.Label3.Location = New System.Drawing.Point(15, 27)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(82, 24)
+        Me.Label3.Size = New System.Drawing.Size(69, 20)
         Me.Label3.TabIndex = 40
         Me.Label3.Text = "Compra:"
         '
         'txtCompra_ND
         '
         Me.txtCompra_ND.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCompra_ND.Location = New System.Drawing.Point(132, 42)
+        Me.txtCompra_ND.Location = New System.Drawing.Point(90, 25)
         Me.txtCompra_ND.Name = "txtCompra_ND"
-        Me.txtCompra_ND.Size = New System.Drawing.Size(187, 29)
+        Me.txtCompra_ND.Size = New System.Drawing.Size(187, 26)
         Me.txtCompra_ND.TabIndex = 0
         Me.txtCompra_ND.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -227,10 +234,8 @@ Partial Class frmFb030cotizaciones : Inherits frmFormulario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Nothing
-        Me.ClientSize = New System.Drawing.Size(726, 377)
+        Me.ClientSize = New System.Drawing.Size(634, 338)
         Me.Name = "frmFb030cotizaciones"
-        Me.ShowIcon = False
-        Me.ShowInTaskbar = False
         Me.Tag = ""
         Me.Text = "Formulario de Cotización"
         Me.TabControl1.ResumeLayout(False)

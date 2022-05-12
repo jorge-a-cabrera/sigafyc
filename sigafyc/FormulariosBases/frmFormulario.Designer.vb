@@ -32,9 +32,9 @@ Partial Class frmFormulario : Inherits Form
         '
         'TabControl1
         '
-        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Location = New System.Drawing.Point(12, 49)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -44,20 +44,21 @@ Partial Class frmFormulario : Inherits Form
         'TabPage1
         '
         Me.TabPage1.AccessibleName = "Activo"
-        Me.TabPage1.Location = New System.Drawing.Point(4, 36)
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(888, 481)
+        Me.TabPage1.Size = New System.Drawing.Size(888, 485)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Datos requeridos"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'lblMensaje
         '
-        Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMensaje.Location = New System.Drawing.Point(12, 9)
         Me.lblMensaje.Name = "lblMensaje"
-        Me.lblMensaje.Size = New System.Drawing.Size(892, 37)
+        Me.lblMensaje.Size = New System.Drawing.Size(892, 25)
         Me.lblMensaje.TabIndex = 3
         Me.lblMensaje.Text = "Label1"
         Me.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -67,7 +68,7 @@ Partial Class frmFormulario : Inherits Form
         Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAceptar.Image = Global.sigafyc.My.Resources.Resources.icons8_ok_32
-        Me.btnAceptar.Location = New System.Drawing.Point(771, 576)
+        Me.btnAceptar.Location = New System.Drawing.Point(771, 572)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(133, 73)
         Me.btnAceptar.TabIndex = 1
@@ -83,7 +84,7 @@ Partial Class frmFormulario : Inherits Form
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.Image = Global.sigafyc.My.Resources.Resources.icons8_cancel_32
-        Me.btnCancelar.Location = New System.Drawing.Point(12, 576)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 572)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(133, 73)
         Me.btnCancelar.TabIndex = 2
@@ -97,7 +98,7 @@ Partial Class frmFormulario : Inherits Form
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
-        Me.ClientSize = New System.Drawing.Size(920, 661)
+        Me.ClientSize = New System.Drawing.Size(913, 653)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblMensaje)
         Me.Controls.Add(Me.btnAceptar)

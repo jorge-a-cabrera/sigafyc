@@ -58,6 +58,7 @@ Partial Class frmBe020listaprecio
         '
         Me.lblNombreEmpresa.AutoSize = True
         Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(309, 14)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
         Me.lblNombreEmpresa.Size = New System.Drawing.Size(182, 20)
@@ -87,6 +88,7 @@ Partial Class frmBe020listaprecio
         '
         Me.lblNombreMercaderia.AutoSize = True
         Me.lblNombreMercaderia.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreMercaderia.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreMercaderia.Location = New System.Drawing.Point(309, 46)
         Me.lblNombreMercaderia.Name = "lblNombreMercaderia"
         Me.lblNombreMercaderia.Size = New System.Drawing.Size(188, 20)
@@ -116,6 +118,7 @@ Partial Class frmBe020listaprecio
         '
         Me.lblNombreUnidad.AutoSize = True
         Me.lblNombreUnidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreUnidad.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreUnidad.Location = New System.Drawing.Point(309, 78)
         Me.lblNombreUnidad.Name = "lblNombreUnidad"
         Me.lblNombreUnidad.Size = New System.Drawing.Size(153, 20)

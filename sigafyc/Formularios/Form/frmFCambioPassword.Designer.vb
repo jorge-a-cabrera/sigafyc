@@ -34,81 +34,86 @@ Partial Class frmFCambioPassword
         '
         'TabControl1
         '
-        Me.TabControl1.Size = New System.Drawing.Size(588, 212)
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
+        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl1.Size = New System.Drawing.Size(515, 185)
         '
         'TabPage1
         '
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.txtPasswordActual_AN)
         Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.Label9)
         Me.TabPage1.Controls.Add(Me.txtPasswordNuevo2_AN)
         Me.TabPage1.Controls.Add(Me.txtPasswordNuevo_AN)
         Me.TabPage1.Controls.Add(Me.Label8)
-        Me.TabPage1.Size = New System.Drawing.Size(580, 172)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
+        Me.TabPage1.Size = New System.Drawing.Size(507, 149)
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 267)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 236)
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(463, 267)
+        Me.btnAceptar.Location = New System.Drawing.Point(390, 236)
         '
         'lblMensaje
         '
-        Me.lblMensaje.Size = New System.Drawing.Size(584, 37)
+        Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMensaje.Size = New System.Drawing.Size(511, 37)
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(34, 113)
+        Me.Label9.Location = New System.Drawing.Point(19, 105)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(276, 24)
+        Me.Label9.Size = New System.Drawing.Size(233, 20)
         Me.Label9.TabIndex = 17
         Me.Label9.Text = "Reingrese la nueva contraseña:"
         '
         'txtPasswordNuevo2_AN
         '
         Me.txtPasswordNuevo2_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPasswordNuevo2_AN.Location = New System.Drawing.Point(316, 108)
+        Me.txtPasswordNuevo2_AN.Location = New System.Drawing.Point(258, 103)
         Me.txtPasswordNuevo2_AN.Name = "txtPasswordNuevo2_AN"
         Me.txtPasswordNuevo2_AN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPasswordNuevo2_AN.Size = New System.Drawing.Size(230, 29)
+        Me.txtPasswordNuevo2_AN.Size = New System.Drawing.Size(230, 26)
         Me.txtPasswordNuevo2_AN.TabIndex = 2
         '
         'txtPasswordNuevo_AN
         '
         Me.txtPasswordNuevo_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPasswordNuevo_AN.Location = New System.Drawing.Point(316, 67)
+        Me.txtPasswordNuevo_AN.Location = New System.Drawing.Point(258, 62)
         Me.txtPasswordNuevo_AN.Name = "txtPasswordNuevo_AN"
         Me.txtPasswordNuevo_AN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPasswordNuevo_AN.Size = New System.Drawing.Size(230, 29)
+        Me.txtPasswordNuevo_AN.Size = New System.Drawing.Size(230, 26)
         Me.txtPasswordNuevo_AN.TabIndex = 1
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(34, 72)
+        Me.Label8.Location = New System.Drawing.Point(19, 64)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(233, 24)
+        Me.Label8.Size = New System.Drawing.Size(198, 20)
         Me.Label8.TabIndex = 15
         Me.Label8.Text = "Ingrese nueva contraseña:"
         '
         'txtPasswordActual_AN
         '
         Me.txtPasswordActual_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPasswordActual_AN.Location = New System.Drawing.Point(316, 22)
+        Me.txtPasswordActual_AN.Location = New System.Drawing.Point(258, 17)
         Me.txtPasswordActual_AN.Name = "txtPasswordActual_AN"
         Me.txtPasswordActual_AN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPasswordActual_AN.Size = New System.Drawing.Size(230, 29)
+        Me.txtPasswordActual_AN.Size = New System.Drawing.Size(230, 26)
         Me.txtPasswordActual_AN.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(34, 27)
+        Me.Label1.Location = New System.Drawing.Point(19, 19)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(230, 24)
+        Me.Label1.Size = New System.Drawing.Size(198, 20)
         Me.Label1.TabIndex = 19
         Me.Label1.Text = "Ingrese contraseña actual:"
         '
@@ -117,7 +122,7 @@ Partial Class frmFCambioPassword
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Nothing
-        Me.ClientSize = New System.Drawing.Size(613, 353)
+        Me.ClientSize = New System.Drawing.Size(534, 320)
         Me.Name = "frmFCambioPassword"
         Me.Tag = ""
         Me.Text = "Formulario para Cambiar Contraseña"

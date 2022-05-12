@@ -1,5 +1,4 @@
 ﻿Imports System.ComponentModel
-
 Public Class frmFss070perfiles
     Private msValidado As String = ""
     Private msRequeridos As String() = {"codigo", "nombre", "valido", "expira"}
@@ -261,4 +260,11 @@ Public Class frmFss070perfiles
         Return lsResultado
     End Function
 
+    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
+
+    End Sub
+
+    Private Sub cmbEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEstado.SelectedIndexChanged
+
+    End Sub
 End Class

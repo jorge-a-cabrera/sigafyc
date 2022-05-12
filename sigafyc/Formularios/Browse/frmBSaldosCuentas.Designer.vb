@@ -78,6 +78,7 @@ Partial Class frmBSaldosCuentas : Inherits frmBrowseSinGrid
         '
         Me.lblNombreEmpresa.AutoSize = True
         Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(179, 9)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
         Me.lblNombreEmpresa.Size = New System.Drawing.Size(182, 20)
@@ -139,6 +140,7 @@ Partial Class frmBSaldosCuentas : Inherits frmBrowseSinGrid
         '
         Me.lblNombreSucursal.AutoSize = True
         Me.lblNombreSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreSucursal.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreSucursal.Location = New System.Drawing.Point(178, 44)
         Me.lblNombreSucursal.Name = "lblNombreSucursal"
         Me.lblNombreSucursal.Size = New System.Drawing.Size(166, 20)

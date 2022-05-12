@@ -51,13 +51,16 @@ Partial Class frmFss100habilitaciones2
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Size = New System.Drawing.Size(862, 521)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.ListBox1)
         Me.TabPage1.Controls.Add(Me.txtBuscar)
         Me.TabPage1.Controls.Add(Me.Label5)
@@ -76,11 +79,12 @@ Partial Class frmFss100habilitaciones2
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.txtSS010_codigo_AN)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Size = New System.Drawing.Size(854, 481)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
+        Me.TabPage1.Size = New System.Drawing.Size(854, 485)
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(12, 572)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 572)
         '
         'btnAceptar
         '
@@ -88,7 +92,8 @@ Partial Class frmFss100habilitaciones2
         '
         'lblMensaje
         '
-        Me.lblMensaje.Size = New System.Drawing.Size(858, 37)
+        Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMensaje.Size = New System.Drawing.Size(858, 23)
         Me.lblMensaje.TabIndex = 2
         '
         'cmbTipo
@@ -98,17 +103,17 @@ Partial Class frmFss100habilitaciones2
         Me.cmbTipo.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cmbTipo.FormattingEnabled = True
         Me.cmbTipo.Items.AddRange(New Object() {"Usuario", "Perfil"})
-        Me.cmbTipo.Location = New System.Drawing.Point(141, 58)
+        Me.cmbTipo.Location = New System.Drawing.Point(75, 38)
         Me.cmbTipo.Name = "cmbTipo"
-        Me.cmbTipo.Size = New System.Drawing.Size(225, 32)
+        Me.cmbTipo.Size = New System.Drawing.Size(225, 28)
         Me.cmbTipo.TabIndex = 1
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 61)
+        Me.Label4.Location = New System.Drawing.Point(6, 41)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(53, 24)
+        Me.Label4.Size = New System.Drawing.Size(43, 20)
         Me.Label4.TabIndex = 36
         Me.Label4.Text = "Tipo:"
         '
@@ -116,17 +121,17 @@ Partial Class frmFss100habilitaciones2
         '
         Me.txtCodigo_AN.AccessibleDescription = "codigo"
         Me.txtCodigo_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodigo_AN.Location = New System.Drawing.Point(141, 96)
+        Me.txtCodigo_AN.Location = New System.Drawing.Point(75, 72)
         Me.txtCodigo_AN.Name = "txtCodigo_AN"
-        Me.txtCodigo_AN.Size = New System.Drawing.Size(225, 29)
+        Me.txtCodigo_AN.Size = New System.Drawing.Size(225, 26)
         Me.txtCodigo_AN.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 98)
+        Me.Label2.Location = New System.Drawing.Point(6, 74)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(76, 24)
+        Me.Label2.Size = New System.Drawing.Size(63, 20)
         Me.Label2.TabIndex = 35
         Me.Label2.Text = "Código:"
         '
@@ -134,69 +139,71 @@ Partial Class frmFss100habilitaciones2
         '
         Me.txtSS010_codigo_AN.AccessibleDescription = "ss010_codigo"
         Me.txtSS010_codigo_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtSS010_codigo_AN.Location = New System.Drawing.Point(141, 23)
+        Me.txtSS010_codigo_AN.Location = New System.Drawing.Point(75, 6)
         Me.txtSS010_codigo_AN.Name = "txtSS010_codigo_AN"
-        Me.txtSS010_codigo_AN.Size = New System.Drawing.Size(225, 29)
+        Me.txtSS010_codigo_AN.Size = New System.Drawing.Size(225, 26)
         Me.txtSS010_codigo_AN.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 25)
+        Me.Label1.Location = New System.Drawing.Point(6, 8)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 24)
+        Me.Label1.Size = New System.Drawing.Size(71, 20)
         Me.Label1.TabIndex = 34
         Me.Label1.Text = "Sistema:"
         '
         'lblNombreUsuario
         '
-        Me.lblNombreUsuario.Location = New System.Drawing.Point(378, 101)
+        Me.lblNombreUsuario.ForeColor = System.Drawing.Color.Navy
+        Me.lblNombreUsuario.Location = New System.Drawing.Point(306, 74)
         Me.lblNombreUsuario.Name = "lblNombreUsuario"
-        Me.lblNombreUsuario.Size = New System.Drawing.Size(467, 24)
+        Me.lblNombreUsuario.Size = New System.Drawing.Size(538, 24)
         Me.lblNombreUsuario.TabIndex = 38
         '
         'txtExpira_FE
         '
         Me.txtExpira_FE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtExpira_FE.Location = New System.Drawing.Point(610, 59)
+        Me.txtExpira_FE.Location = New System.Drawing.Point(610, 38)
         Me.txtExpira_FE.Name = "txtExpira_FE"
-        Me.txtExpira_FE.Size = New System.Drawing.Size(235, 29)
+        Me.txtExpira_FE.Size = New System.Drawing.Size(235, 26)
         Me.txtExpira_FE.TabIndex = 4
         '
         'txtValido_FE
         '
         Me.txtValido_FE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtValido_FE.Location = New System.Drawing.Point(610, 23)
+        Me.txtValido_FE.Location = New System.Drawing.Point(609, 6)
         Me.txtValido_FE.Name = "txtValido_FE"
-        Me.txtValido_FE.Size = New System.Drawing.Size(235, 29)
+        Me.txtValido_FE.Size = New System.Drawing.Size(235, 26)
         Me.txtValido_FE.TabIndex = 3
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(475, 61)
+        Me.Label8.Location = New System.Drawing.Point(502, 40)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(96, 24)
+        Me.Label8.Size = New System.Drawing.Size(79, 20)
         Me.Label8.TabIndex = 42
         Me.Label8.Text = "Expira en:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(475, 25)
+        Me.Label7.Location = New System.Drawing.Point(502, 8)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(126, 24)
+        Me.Label7.Size = New System.Drawing.Size(105, 20)
         Me.Label7.TabIndex = 41
         Me.Label7.Text = "Valido desde:"
         '
         'TabPage2
         '
         Me.TabPage2.AccessibleName = "Activo"
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label9)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 36)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 32)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(854, 481)
+        Me.TabPage2.Size = New System.Drawing.Size(854, 485)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -206,19 +213,19 @@ Partial Class frmFss100habilitaciones2
         Me.cmbEstado.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cmbEstado.FormattingEnabled = True
         Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Bloqueado"})
-        Me.cmbEstado.Location = New System.Drawing.Point(238, 19)
+        Me.cmbEstado.Location = New System.Drawing.Point(81, 12)
         Me.cmbEstado.Name = "cmbEstado"
-        Me.cmbEstado.Size = New System.Drawing.Size(196, 32)
+        Me.cmbEstado.Size = New System.Drawing.Size(129, 28)
         Me.cmbEstado.TabIndex = 16
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(18, 22)
+        Me.Label9.Location = New System.Drawing.Point(11, 15)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(155, 24)
+        Me.Label9.Size = New System.Drawing.Size(64, 20)
         Me.Label9.TabIndex = 17
-        Me.Label9.Text = "Estado operativo:"
+        Me.Label9.Text = "Estado:"
         '
         'DataGridView1
         '
@@ -262,7 +269,7 @@ Partial Class frmFss100habilitaciones2
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(2, 159)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(217, 24)
+        Me.Label3.Size = New System.Drawing.Size(181, 20)
         Me.Label3.TabIndex = 45
         Me.Label3.Text = "restricciones disponibles"
         '
@@ -271,7 +278,7 @@ Partial Class frmFss100habilitaciones2
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(481, 159)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(201, 24)
+        Me.Label5.Size = New System.Drawing.Size(170, 20)
         Me.Label5.TabIndex = 46
         Me.Label5.Text = "restricciones a agregar"
         '
@@ -279,9 +286,9 @@ Partial Class frmFss100habilitaciones2
         '
         Me.txtBuscar.AccessibleDescription = "codigo"
         Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtBuscar.Location = New System.Drawing.Point(6, 131)
+        Me.txtBuscar.Location = New System.Drawing.Point(6, 130)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(360, 29)
+        Me.txtBuscar.Size = New System.Drawing.Size(360, 26)
         Me.txtBuscar.TabIndex = 47
         Me.txtBuscar.Tag = "ingrese su busqueda"
         Me.txtBuscar.Text = "ingrese su busqueda"
@@ -289,11 +296,11 @@ Partial Class frmFss100habilitaciones2
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.ItemHeight = 24
+        Me.ListBox1.ItemHeight = 20
         Me.ListBox1.Location = New System.Drawing.Point(485, 187)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
-        Me.ListBox1.Size = New System.Drawing.Size(360, 292)
+        Me.ListBox1.Size = New System.Drawing.Size(360, 284)
         Me.ListBox1.TabIndex = 6
         '
         'frmFss100habilitaciones2

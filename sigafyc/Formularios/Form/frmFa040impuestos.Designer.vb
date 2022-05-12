@@ -50,6 +50,7 @@ Partial Class frmFa040impuestos : Inherits frmFormulario
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Size = New System.Drawing.Size(896, 255)
@@ -58,6 +59,7 @@ Partial Class frmFa040impuestos : Inherits frmFormulario
         '
         'TabPage1
         '
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.gbxGrupo3)
         Me.TabPage1.Controls.Add(Me.gbxGrupo1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 32)
@@ -162,7 +164,7 @@ Partial Class frmFa040impuestos : Inherits frmFormulario
         Me.gbxGrupo3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbxGrupo3.Location = New System.Drawing.Point(130, 106)
         Me.gbxGrupo3.Name = "gbxGrupo3"
-        Me.gbxGrupo3.Size = New System.Drawing.Size(628, 92)
+        Me.gbxGrupo3.Size = New System.Drawing.Size(628, 107)
         Me.gbxGrupo3.TabIndex = 1
         Me.gbxGrupo3.TabStop = False
         Me.gbxGrupo3.Text = "Datos implementación"
@@ -261,6 +263,7 @@ Partial Class frmFa040impuestos : Inherits frmFormulario
         '
         'TabPage2
         '
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label9)
         Me.TabPage2.Location = New System.Drawing.Point(4, 32)
@@ -278,7 +281,7 @@ Partial Class frmFa040impuestos : Inherits frmFormulario
         Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Bloqueado"})
         Me.cmbEstado.Location = New System.Drawing.Point(91, 13)
         Me.cmbEstado.Name = "cmbEstado"
-        Me.cmbEstado.Size = New System.Drawing.Size(196, 28)
+        Me.cmbEstado.Size = New System.Drawing.Size(144, 28)
         Me.cmbEstado.TabIndex = 28
         '
         'Label9

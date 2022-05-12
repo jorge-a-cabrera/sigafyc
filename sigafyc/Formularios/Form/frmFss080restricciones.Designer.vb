@@ -38,44 +38,53 @@ Partial Class frmFss080restricciones
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Size = New System.Drawing.Size(896, 221)
+        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl1.Size = New System.Drawing.Size(595, 164)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.txtNombre_AN)
         Me.TabPage1.Controls.Add(Me.Label3)
         Me.TabPage1.Controls.Add(Me.txtCodigo_AN)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.txtSS010_codigo_AN)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Size = New System.Drawing.Size(888, 181)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
+        Me.TabPage1.Size = New System.Drawing.Size(587, 128)
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 276)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 215)
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(771, 276)
+        Me.btnAceptar.Location = New System.Drawing.Point(470, 215)
+        '
+        'lblMensaje
+        '
+        Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMensaje.Size = New System.Drawing.Size(591, 24)
         '
         'txtNombre_AN
         '
         Me.txtNombre_AN.AccessibleDescription = "nombre"
         Me.txtNombre_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNombre_AN.Location = New System.Drawing.Point(155, 126)
+        Me.txtNombre_AN.Location = New System.Drawing.Point(97, 83)
         Me.txtNombre_AN.Name = "txtNombre_AN"
-        Me.txtNombre_AN.Size = New System.Drawing.Size(716, 29)
+        Me.txtNombre_AN.Size = New System.Drawing.Size(474, 26)
         Me.txtNombre_AN.TabIndex = 2
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(20, 129)
+        Me.Label3.Location = New System.Drawing.Point(20, 85)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(84, 24)
+        Me.Label3.Size = New System.Drawing.Size(69, 20)
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "Nombre:"
         '
@@ -83,17 +92,17 @@ Partial Class frmFss080restricciones
         '
         Me.txtCodigo_AN.AccessibleDescription = "codigo"
         Me.txtCodigo_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodigo_AN.Location = New System.Drawing.Point(155, 73)
+        Me.txtCodigo_AN.Location = New System.Drawing.Point(97, 51)
         Me.txtCodigo_AN.Name = "txtCodigo_AN"
-        Me.txtCodigo_AN.Size = New System.Drawing.Size(225, 29)
+        Me.txtCodigo_AN.Size = New System.Drawing.Size(225, 26)
         Me.txtCodigo_AN.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(20, 76)
+        Me.Label2.Location = New System.Drawing.Point(20, 53)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(71, 24)
+        Me.Label2.Size = New System.Drawing.Size(59, 20)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Codigo"
         '
@@ -101,9 +110,9 @@ Partial Class frmFss080restricciones
         '
         Me.txtSS010_codigo_AN.AccessibleDescription = "ss010_codigo"
         Me.txtSS010_codigo_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtSS010_codigo_AN.Location = New System.Drawing.Point(155, 20)
+        Me.txtSS010_codigo_AN.Location = New System.Drawing.Point(97, 19)
         Me.txtSS010_codigo_AN.Name = "txtSS010_codigo_AN"
-        Me.txtSS010_codigo_AN.Size = New System.Drawing.Size(225, 29)
+        Me.txtSS010_codigo_AN.Size = New System.Drawing.Size(225, 26)
         Me.txtSS010_codigo_AN.TabIndex = 0
         '
         'Label1
@@ -111,18 +120,19 @@ Partial Class frmFss080restricciones
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(20, 23)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 24)
+        Me.Label1.Size = New System.Drawing.Size(71, 20)
         Me.Label1.TabIndex = 11
         Me.Label1.Text = "Sistema:"
         '
         'TabPage2
         '
         Me.TabPage2.AccessibleName = "Activo"
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label9)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 36)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 32)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(888, 181)
+        Me.TabPage2.Size = New System.Drawing.Size(888, 185)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -132,17 +142,17 @@ Partial Class frmFss080restricciones
         Me.cmbEstado.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cmbEstado.FormattingEnabled = True
         Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Bloqueado"})
-        Me.cmbEstado.Location = New System.Drawing.Point(154, 22)
+        Me.cmbEstado.Location = New System.Drawing.Point(82, 13)
         Me.cmbEstado.Name = "cmbEstado"
-        Me.cmbEstado.Size = New System.Drawing.Size(219, 32)
+        Me.cmbEstado.Size = New System.Drawing.Size(125, 28)
         Me.cmbEstado.TabIndex = 0
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(17, 25)
+        Me.Label9.Location = New System.Drawing.Point(12, 16)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(73, 24)
+        Me.Label9.Size = New System.Drawing.Size(64, 20)
         Me.Label9.TabIndex = 15
         Me.Label9.Text = "Estado:"
         '
@@ -151,7 +161,7 @@ Partial Class frmFss080restricciones
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Nothing
-        Me.ClientSize = New System.Drawing.Size(919, 362)
+        Me.ClientSize = New System.Drawing.Size(612, 300)
         Me.Name = "frmFss080restricciones"
         Me.Tag = ""
         Me.Text = "Formulario de Restriccion"

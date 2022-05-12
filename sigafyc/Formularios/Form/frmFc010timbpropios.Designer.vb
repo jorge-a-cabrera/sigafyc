@@ -42,8 +42,9 @@ Partial Class frmFc010timbpropios : Inherits frmFormulario
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Size = New System.Drawing.Size(656, 205)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
@@ -63,23 +64,25 @@ Partial Class frmFc010timbpropios : Inherits frmFormulario
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 260)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 256)
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(531, 260)
+        Me.btnAceptar.Location = New System.Drawing.Point(531, 256)
         '
         'lblMensaje
         '
-        Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMensaje.Size = New System.Drawing.Size(652, 37)
+        Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMensaje.Size = New System.Drawing.Size(652, 27)
         '
         'lblNombreEmpresa
         '
         Me.lblNombreEmpresa.AutoSize = True
+        Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(263, 51)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
-        Me.lblNombreEmpresa.Size = New System.Drawing.Size(198, 20)
+        Me.lblNombreEmpresa.Size = New System.Drawing.Size(179, 20)
         Me.lblNombreEmpresa.TabIndex = 54
         Me.lblNombreEmpresa.Text = "<nombre_de_empresa>"
         '
@@ -94,9 +97,10 @@ Partial Class frmFc010timbpropios : Inherits frmFormulario
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(12, 51)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(85, 20)
+        Me.Label4.Size = New System.Drawing.Size(77, 20)
         Me.Label4.TabIndex = 53
         Me.Label4.Text = "Empresa:"
         '
@@ -106,7 +110,7 @@ Partial Class frmFc010timbpropios : Inherits frmFormulario
         Me.gbxGrupo1.Controls.Add(Me.Label8)
         Me.gbxGrupo1.Controls.Add(Me.txtValido_FE)
         Me.gbxGrupo1.Controls.Add(Me.Label7)
-        Me.gbxGrupo1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbxGrupo1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbxGrupo1.Location = New System.Drawing.Point(14, 81)
         Me.gbxGrupo1.Name = "gbxGrupo1"
         Me.gbxGrupo1.Size = New System.Drawing.Size(617, 77)
@@ -127,7 +131,7 @@ Partial Class frmFc010timbpropios : Inherits frmFormulario
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(324, 30)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(62, 20)
+        Me.Label8.Size = New System.Drawing.Size(56, 20)
         Me.Label8.TabIndex = 67
         Me.Label8.Text = "Hasta:"
         '
@@ -144,12 +148,13 @@ Partial Class frmFc010timbpropios : Inherits frmFormulario
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(79, 30)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(66, 20)
+        Me.Label7.Size = New System.Drawing.Size(60, 20)
         Me.Label7.TabIndex = 65
         Me.Label7.Text = "Desde:"
         '
         'TabPage2
         '
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label1)
         Me.TabPage2.Location = New System.Drawing.Point(4, 32)
@@ -165,27 +170,28 @@ Partial Class frmFc010timbpropios : Inherits frmFormulario
         Me.cmbEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbEstado.FormattingEnabled = True
         Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Bloqueado"})
-        Me.cmbEstado.Location = New System.Drawing.Point(150, 19)
+        Me.cmbEstado.Location = New System.Drawing.Point(86, 19)
         Me.cmbEstado.Name = "cmbEstado"
-        Me.cmbEstado.Size = New System.Drawing.Size(196, 28)
+        Me.cmbEstado.Size = New System.Drawing.Size(150, 28)
         Me.cmbEstado.TabIndex = 22
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(16, 22)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(71, 20)
+        Me.Label1.Size = New System.Drawing.Size(64, 20)
         Me.Label1.TabIndex = 23
         Me.Label1.Text = "Estado:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(12, 15)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(120, 20)
+        Me.Label2.Size = New System.Drawing.Size(107, 20)
         Me.Label2.TabIndex = 77
         Me.Label2.Text = "Timbrado No.:"
         '
@@ -202,7 +208,7 @@ Partial Class frmFc010timbpropios : Inherits frmFormulario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Nothing
-        Me.ClientSize = New System.Drawing.Size(678, 343)
+        Me.ClientSize = New System.Drawing.Size(676, 337)
         Me.Name = "frmFc010timbpropios"
         Me.Tag = ""
         Me.Text = "Formulario Timbrados propios (Por Empresa)"

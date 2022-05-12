@@ -45,6 +45,7 @@ Partial Class frmFb081timbotros
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Size = New System.Drawing.Size(663, 253)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
@@ -52,6 +53,7 @@ Partial Class frmFb081timbotros
         '
         'TabPage1
         '
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.cmbTipo)
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.lblNombreTercero)
@@ -77,6 +79,7 @@ Partial Class frmFb081timbotros
         'lblNombreTercero
         '
         Me.lblNombreTercero.AutoSize = True
+        Me.lblNombreTercero.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreTercero.Location = New System.Drawing.Point(272, 20)
         Me.lblNombreTercero.Name = "lblNombreTercero"
         Me.lblNombreTercero.Size = New System.Drawing.Size(167, 24)
@@ -167,6 +170,7 @@ Partial Class frmFb081timbotros
         '
         'TabPage2
         '
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label1)
         Me.TabPage2.Location = New System.Drawing.Point(4, 36)

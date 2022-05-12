@@ -40,14 +40,16 @@ Partial Class frmFb020conceptos : Inherits frmFormulario
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Size = New System.Drawing.Size(855, 343)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.lblNombreEmpresa)
         Me.TabPage1.Controls.Add(Me.cmbTipo)
         Me.TabPage1.Controls.Add(Me.txtCodEmpresa_NE)
@@ -71,11 +73,12 @@ Partial Class frmFb020conceptos : Inherits frmFormulario
         'lblMensaje
         '
         Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMensaje.Size = New System.Drawing.Size(851, 37)
+        Me.lblMensaje.Size = New System.Drawing.Size(851, 30)
         '
         'TabPage2
         '
         Me.TabPage2.AccessibleName = "Activo"
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label9)
         Me.TabPage2.Location = New System.Drawing.Point(4, 32)
@@ -93,7 +96,7 @@ Partial Class frmFb020conceptos : Inherits frmFormulario
         Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Bloqueado"})
         Me.cmbEstado.Location = New System.Drawing.Point(90, 14)
         Me.cmbEstado.Name = "cmbEstado"
-        Me.cmbEstado.Size = New System.Drawing.Size(196, 28)
+        Me.cmbEstado.Size = New System.Drawing.Size(133, 28)
         Me.cmbEstado.TabIndex = 22
         '
         'Label9
@@ -118,10 +121,10 @@ Partial Class frmFb020conceptos : Inherits frmFormulario
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(12, 17)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(85, 20)
+        Me.Label4.Size = New System.Drawing.Size(77, 20)
         Me.Label4.TabIndex = 34
         Me.Label4.Text = "Empresa:"
         '
@@ -138,10 +141,10 @@ Partial Class frmFb020conceptos : Inherits frmFormulario
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(12, 115)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(108, 20)
+        Me.Label3.Size = New System.Drawing.Size(96, 20)
         Me.Label3.TabIndex = 33
         Me.Label3.Text = "Descripcion:"
         '
@@ -157,20 +160,20 @@ Partial Class frmFb020conceptos : Inherits frmFormulario
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(12, 82)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(48, 20)
+        Me.Label2.Size = New System.Drawing.Size(43, 20)
         Me.Label2.TabIndex = 32
         Me.Label2.Text = "Tipo:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(12, 49)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(91, 20)
+        Me.Label1.Size = New System.Drawing.Size(82, 20)
         Me.Label1.TabIndex = 31
         Me.Label1.Text = "Concepto:"
         '

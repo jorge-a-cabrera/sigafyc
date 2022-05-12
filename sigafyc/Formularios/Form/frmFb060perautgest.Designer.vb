@@ -76,6 +76,7 @@ Partial Class frmFb060perautgest : Inherits frmFormulario
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Size = New System.Drawing.Size(896, 534)
@@ -85,6 +86,7 @@ Partial Class frmFb060perautgest : Inherits frmFormulario
         '
         'TabPage1
         '
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.gbxGrupo0)
         Me.TabPage1.Controls.Add(Me.Grupo3)
         Me.TabPage1.Controls.Add(Me.Grupo2)
@@ -316,6 +318,7 @@ Partial Class frmFb060perautgest : Inherits frmFormulario
         '
         Me.TabPage2.AccessibleDescription = ""
         Me.TabPage2.AccessibleName = "Activo"
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.gbxGrupo21)
         Me.TabPage2.Location = New System.Drawing.Point(4, 36)
         Me.TabPage2.Name = "TabPage2"
@@ -352,6 +355,7 @@ Partial Class frmFb060perautgest : Inherits frmFormulario
         '
         Me.lblNombreMoneda.AutoSize = True
         Me.lblNombreMoneda.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreMoneda.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreMoneda.Location = New System.Drawing.Point(162, 65)
         Me.lblNombreMoneda.Name = "lblNombreMoneda"
         Me.lblNombreMoneda.Size = New System.Drawing.Size(93, 20)
@@ -404,6 +408,7 @@ Partial Class frmFb060perautgest : Inherits frmFormulario
         '
         Me.lblNombreSucursal.AutoSize = True
         Me.lblNombreSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreSucursal.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreSucursal.Location = New System.Drawing.Point(95, 108)
         Me.lblNombreSucursal.Name = "lblNombreSucursal"
         Me.lblNombreSucursal.Size = New System.Drawing.Size(166, 20)
@@ -490,6 +495,7 @@ Partial Class frmFb060perautgest : Inherits frmFormulario
         'TabPage3
         '
         Me.TabPage3.AccessibleName = "Activo"
+        Me.TabPage3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage3.Controls.Add(Me.cmbEstado)
         Me.TabPage3.Controls.Add(Me.Label9)
         Me.TabPage3.Location = New System.Drawing.Point(4, 36)
@@ -534,6 +540,7 @@ Partial Class frmFb060perautgest : Inherits frmFormulario
         '
         Me.lblNombreEmpresa.AutoSize = True
         Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(133, 22)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
         Me.lblNombreEmpresa.Size = New System.Drawing.Size(198, 20)

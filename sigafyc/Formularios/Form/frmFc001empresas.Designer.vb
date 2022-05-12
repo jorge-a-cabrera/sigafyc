@@ -66,10 +66,11 @@ Partial Class frmFc001empresas
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Size = New System.Drawing.Size(896, 322)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage3, 0)
@@ -78,6 +79,7 @@ Partial Class frmFc001empresas
         '
         'TabPage1
         '
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.txtPeriodoFinal_FE)
         Me.TabPage1.Controls.Add(Me.Label14)
         Me.TabPage1.Controls.Add(Me.txtPeriodoInicio_FE)
@@ -111,6 +113,7 @@ Partial Class frmFc001empresas
         'TabPage2
         '
         Me.TabPage2.AccessibleName = "Activo"
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label9)
         Me.TabPage2.Location = New System.Drawing.Point(4, 32)
@@ -128,22 +131,23 @@ Partial Class frmFc001empresas
         Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Bloqueado"})
         Me.cmbEstado.Location = New System.Drawing.Point(90, 14)
         Me.cmbEstado.Name = "cmbEstado"
-        Me.cmbEstado.Size = New System.Drawing.Size(196, 28)
+        Me.cmbEstado.Size = New System.Drawing.Size(126, 28)
         Me.cmbEstado.TabIndex = 18
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(11, 17)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(71, 20)
+        Me.Label9.Size = New System.Drawing.Size(64, 20)
         Me.Label9.TabIndex = 17
         Me.Label9.Text = "Estado:"
         '
         'TabPage3
         '
         Me.TabPage3.AccessibleName = "Activo"
+        Me.TabPage3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage3.Controls.Add(Me.lblNombreResultado3)
         Me.TabPage3.Controls.Add(Me.lblNombreResultado2)
         Me.TabPage3.Controls.Add(Me.lblNombreResultado1)
@@ -163,6 +167,7 @@ Partial Class frmFc001empresas
         'lblNombreResultado3
         '
         Me.lblNombreResultado3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreResultado3.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreResultado3.Location = New System.Drawing.Point(132, 175)
         Me.lblNombreResultado3.Name = "lblNombreResultado3"
         Me.lblNombreResultado3.Size = New System.Drawing.Size(718, 24)
@@ -171,6 +176,7 @@ Partial Class frmFc001empresas
         'lblNombreResultado2
         '
         Me.lblNombreResultado2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreResultado2.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreResultado2.Location = New System.Drawing.Point(132, 115)
         Me.lblNombreResultado2.Name = "lblNombreResultado2"
         Me.lblNombreResultado2.Size = New System.Drawing.Size(718, 24)
@@ -179,6 +185,7 @@ Partial Class frmFc001empresas
         'lblNombreResultado1
         '
         Me.lblNombreResultado1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreResultado1.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreResultado1.Location = New System.Drawing.Point(132, 56)
         Me.lblNombreResultado1.Name = "lblNombreResultado1"
         Me.lblNombreResultado1.Size = New System.Drawing.Size(718, 24)
@@ -196,10 +203,10 @@ Partial Class frmFc001empresas
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.Location = New System.Drawing.Point(17, 147)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(103, 20)
+        Me.Label12.Size = New System.Drawing.Size(93, 20)
         Me.Label12.TabIndex = 33
         Me.Label12.Text = "Acumulado:"
         '
@@ -215,10 +222,10 @@ Partial Class frmFc001empresas
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.Location = New System.Drawing.Point(18, 85)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(78, 20)
+        Me.Label11.Size = New System.Drawing.Size(69, 20)
         Me.Label11.TabIndex = 31
         Me.Label11.Text = "Anterior:"
         '
@@ -234,16 +241,17 @@ Partial Class frmFc001empresas
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(18, 26)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(65, 20)
+        Me.Label10.Size = New System.Drawing.Size(58, 20)
         Me.Label10.TabIndex = 29
         Me.Label10.Text = "Actual:"
         '
         'TabPage4
         '
         Me.TabPage4.AccessibleName = "Activo"
+        Me.TabPage4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage4.Controls.Add(Me.txtTelefono_AN)
         Me.TabPage4.Controls.Add(Me.Label8)
         Me.TabPage4.Controls.Add(Me.txtCiudad_AN)
@@ -269,10 +277,10 @@ Partial Class frmFc001empresas
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(16, 99)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(93, 20)
+        Me.Label8.Size = New System.Drawing.Size(83, 20)
         Me.Label8.TabIndex = 35
         Me.Label8.Text = "Telefonos:"
         '
@@ -288,10 +296,10 @@ Partial Class frmFc001empresas
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(16, 60)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(70, 20)
+        Me.Label7.Size = New System.Drawing.Size(63, 20)
         Me.Label7.TabIndex = 33
         Me.Label7.Text = "Ciudad:"
         '
@@ -307,30 +315,30 @@ Partial Class frmFc001empresas
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(16, 21)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(89, 20)
+        Me.Label6.Size = New System.Drawing.Size(79, 20)
         Me.Label6.TabIndex = 31
         Me.Label6.Text = "Direccion:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(14, 21)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(70, 20)
+        Me.Label1.Size = New System.Drawing.Size(63, 20)
         Me.Label1.TabIndex = 15
         Me.Label1.Text = "Codigo:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(14, 58)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(76, 20)
+        Me.Label2.Size = New System.Drawing.Size(69, 20)
         Me.Label2.TabIndex = 16
         Me.Label2.Text = "Nombre "
         '
@@ -355,10 +363,10 @@ Partial Class frmFc001empresas
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(14, 95)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(94, 20)
+        Me.Label3.Size = New System.Drawing.Size(84, 20)
         Me.Label3.TabIndex = 18
         Me.Label3.Text = "Abreviado:"
         '
@@ -374,10 +382,10 @@ Partial Class frmFc001empresas
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(13, 132)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(78, 20)
+        Me.Label4.Size = New System.Drawing.Size(71, 20)
         Me.Label4.TabIndex = 20
         Me.Label4.Text = "Moneda:"
         '
@@ -393,10 +401,10 @@ Partial Class frmFc001empresas
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(14, 169)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(67, 20)
+        Me.Label5.Size = New System.Drawing.Size(60, 20)
         Me.Label5.TabIndex = 22
         Me.Label5.Text = "R.U.C.:"
         '
@@ -411,6 +419,7 @@ Partial Class frmFc001empresas
         '
         'lblNombreMoneda
         '
+        Me.lblNombreMoneda.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreMoneda.Location = New System.Drawing.Point(223, 130)
         Me.lblNombreMoneda.Name = "lblNombreMoneda"
         Me.lblNombreMoneda.Size = New System.Drawing.Size(259, 24)
@@ -420,10 +429,10 @@ Partial Class frmFc001empresas
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.Location = New System.Drawing.Point(14, 206)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(125, 20)
+        Me.Label13.Size = New System.Drawing.Size(109, 20)
         Me.Label13.TabIndex = 25
         Me.Label13.Text = "Periodo inicial:"
         '
@@ -439,10 +448,10 @@ Partial Class frmFc001empresas
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.Location = New System.Drawing.Point(13, 243)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(114, 20)
+        Me.Label14.Size = New System.Drawing.Size(100, 20)
         Me.Label14.TabIndex = 27
         Me.Label14.Text = "Periodo final:"
         '
