@@ -723,4 +723,8 @@ Public Class frmFb050plancuentas
         loDatos.CerrarConexion()
         loDatos = Nothing
     End Sub
+
+    Private Sub cmbEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEstado.SelectedIndexChanged
+
+    End Sub
 End Class

@@ -58,7 +58,6 @@ Public Class RBase : Inherits Ebase
             MessageBox.Show("RBase.SiguienteNumero.Read" & ControlChars.CrLf & ex.Message)
         End Try
         loDatos.Close()
-        loDatos = Nothing
         liResultado += 1
         Return liResultado
     End Function
@@ -78,5 +77,41 @@ Public Class RBase : Inherits Ebase
         Next
         Return lsResultado
     End Function
+
+    Public Sub ConteoRegistros(ByVal psTableName As String)
+        Dim lsKey As String = "ConteoRegistros"
+        Dim liResultado As Integer = 0
+        Dim lsSQL As String = GFsGeneraSQL(lsKey)
+        lsSQL = lsSQL.Replace("&tablename", psTableName)
+        Dim loDatos As DbDataReader = Nothing
+        Try
+            loDatos = RecuperarConsulta(lsSQL)
+            If loDatos.Read Then
+                If Not loDatos.Item("rowcount") Is DBNull.Value Then
+                    liResultado = Integer.Parse(loDatos.Item("rowcount").ToString)
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show("RBase.SiguienteNumero.Read" & ControlChars.CrLf & ex.Message)
+        End Try
+        loDatos.Close()
+
+        Dim lsValor As String = GFsParametroObtener(sGeneral_, lsKey & "_" & psTableName)
+        If lsValor = sRESERVADO_ Then
+            GPParametroGuardar(sGeneral_, lsKey & "_" & psTableName, liResultado.ToString)
+        Else
+            If IsNumeric(lsValor) Then
+                If liResultado > Integer.Parse(lsValor) Then
+                    GPParametroGuardar(sGeneral_, lsKey & "_" & psTableName, liResultado.ToString)
+                Else
+                    If liResultado < Integer.Parse(lsValor) Then
+                        Dim liDiferencia As Integer = Integer.Parse(lsValor) - liResultado
+                        GFsAvisar(sError_, "Ha sido eliminada de la tabla " & psTableName.ToUpper & " " & liDiferencia.ToString & " registros fuera del sistema.")
+                    End If
+                End If
+            End If
+        End If
+    End Sub
+
 
 End Class

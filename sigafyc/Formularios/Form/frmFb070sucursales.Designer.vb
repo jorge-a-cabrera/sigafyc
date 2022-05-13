@@ -48,18 +48,16 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         '
         'TabControl1
         '
-        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl1.Size = New System.Drawing.Size(832, 199)
+        Me.TabControl1.Size = New System.Drawing.Size(805, 199)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage3, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
-        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.lblNombreEmpresa)
         Me.TabPage1.Controls.Add(Me.txtCodEmpresa_NE)
         Me.TabPage1.Controls.Add(Me.Label4)
@@ -69,8 +67,7 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         Me.TabPage1.Controls.Add(Me.txtCodigo_NE)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
-        Me.TabPage1.Size = New System.Drawing.Size(824, 163)
+        Me.TabPage1.Size = New System.Drawing.Size(797, 163)
         '
         'btnCancelar
         '
@@ -78,12 +75,12 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(707, 250)
+        Me.btnAceptar.Location = New System.Drawing.Point(680, 250)
         '
         'lblMensaje
         '
         Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMensaje.Size = New System.Drawing.Size(828, 37)
+        Me.lblMensaje.Size = New System.Drawing.Size(801, 37)
         '
         'txtAbreviado_AN
         '
@@ -97,10 +94,10 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(16, 115)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(94, 20)
+        Me.Label3.Size = New System.Drawing.Size(84, 20)
         Me.Label3.TabIndex = 24
         Me.Label3.Text = "Abreviado:"
         '
@@ -110,7 +107,7 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         Me.txtNombre_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre_AN.Location = New System.Drawing.Point(155, 81)
         Me.txtNombre_AN.Name = "txtNombre_AN"
-        Me.txtNombre_AN.Size = New System.Drawing.Size(644, 26)
+        Me.txtNombre_AN.Size = New System.Drawing.Size(617, 26)
         Me.txtNombre_AN.TabIndex = 2
         '
         'txtCodigo_NE
@@ -125,20 +122,20 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(16, 83)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(76, 20)
+        Me.Label2.Size = New System.Drawing.Size(69, 20)
         Me.Label2.TabIndex = 22
         Me.Label2.Text = "Nombre "
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(16, 51)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(84, 20)
+        Me.Label1.Size = New System.Drawing.Size(75, 20)
         Me.Label1.TabIndex = 21
         Me.Label1.Text = "Sucursal:"
         '
@@ -161,7 +158,7 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         Me.cmbEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbEstado.FormattingEnabled = True
         Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Bloqueado"})
-        Me.cmbEstado.Location = New System.Drawing.Point(90, 13)
+        Me.cmbEstado.Location = New System.Drawing.Point(81, 13)
         Me.cmbEstado.Name = "cmbEstado"
         Me.cmbEstado.Size = New System.Drawing.Size(144, 28)
         Me.cmbEstado.TabIndex = 20
@@ -169,10 +166,10 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(11, 16)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(71, 20)
+        Me.Label9.Size = New System.Drawing.Size(64, 20)
         Me.Label9.TabIndex = 19
         Me.Label9.Text = "Estado:"
         '
@@ -188,10 +185,10 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(16, 19)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(85, 20)
+        Me.Label4.Size = New System.Drawing.Size(77, 20)
         Me.Label4.TabIndex = 26
         Me.Label4.Text = "Empresa:"
         '
@@ -207,7 +204,7 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         Me.TabPage3.Controls.Add(Me.Label6)
         Me.TabPage3.Location = New System.Drawing.Point(4, 32)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(824, 163)
+        Me.TabPage3.Size = New System.Drawing.Size(797, 163)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Ubicación"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -216,7 +213,7 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         '
         Me.txtTelefono_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTelefono_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTelefono_AN.Location = New System.Drawing.Point(119, 84)
+        Me.txtTelefono_AN.Location = New System.Drawing.Point(99, 84)
         Me.txtTelefono_AN.Name = "txtTelefono_AN"
         Me.txtTelefono_AN.Size = New System.Drawing.Size(519, 26)
         Me.txtTelefono_AN.TabIndex = 40
@@ -224,10 +221,10 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(14, 86)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(93, 20)
+        Me.Label8.Size = New System.Drawing.Size(83, 20)
         Me.Label8.TabIndex = 41
         Me.Label8.Text = "Telefonos:"
         '
@@ -235,7 +232,7 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         '
         Me.txtCiudad_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCiudad_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCiudad_AN.Location = New System.Drawing.Point(119, 52)
+        Me.txtCiudad_AN.Location = New System.Drawing.Point(99, 52)
         Me.txtCiudad_AN.Name = "txtCiudad_AN"
         Me.txtCiudad_AN.Size = New System.Drawing.Size(519, 26)
         Me.txtCiudad_AN.TabIndex = 38
@@ -243,10 +240,10 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(14, 54)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(70, 20)
+        Me.Label7.Size = New System.Drawing.Size(63, 20)
         Me.Label7.TabIndex = 39
         Me.Label7.Text = "Ciudad:"
         '
@@ -254,29 +251,29 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         '
         Me.txtDireccion_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDireccion_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDireccion_AN.Location = New System.Drawing.Point(119, 20)
+        Me.txtDireccion_AN.Location = New System.Drawing.Point(99, 20)
         Me.txtDireccion_AN.Name = "txtDireccion_AN"
-        Me.txtDireccion_AN.Size = New System.Drawing.Size(744, 26)
+        Me.txtDireccion_AN.Size = New System.Drawing.Size(684, 26)
         Me.txtDireccion_AN.TabIndex = 36
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(14, 22)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(89, 20)
+        Me.Label6.Size = New System.Drawing.Size(79, 20)
         Me.Label6.TabIndex = 37
         Me.Label6.Text = "Direccion:"
         '
         'lblNombreEmpresa
         '
         Me.lblNombreEmpresa.AutoSize = True
-        Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(276, 19)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
-        Me.lblNombreEmpresa.Size = New System.Drawing.Size(168, 20)
+        Me.lblNombreEmpresa.Size = New System.Drawing.Size(152, 20)
         Me.lblNombreEmpresa.TabIndex = 27
         Me.lblNombreEmpresa.Text = "<nombre_empresa>"
         '
@@ -285,7 +282,7 @@ Partial Class frmFb070sucursales : Inherits frmFormulario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Nothing
-        Me.ClientSize = New System.Drawing.Size(854, 336)
+        Me.ClientSize = New System.Drawing.Size(821, 331)
         Me.Name = "frmFb070sucursales"
         Me.Tag = ""
         Me.Text = "Formulario de Sucurusal"

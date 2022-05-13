@@ -48,15 +48,13 @@ Partial Class frmFb050plancuentas : Inherits frmFormulario
         '
         'TabControl1
         '
-        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Size = New System.Drawing.Size(896, 291)
+        Me.TabControl1.Size = New System.Drawing.Size(896, 225)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
-        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.lblNombreEmpresa)
         Me.TabPage1.Controls.Add(Me.txtCuenta6_NE)
         Me.TabPage1.Controls.Add(Me.txtCuenta5_NE)
@@ -74,15 +72,15 @@ Partial Class frmFb050plancuentas : Inherits frmFormulario
         Me.TabPage1.Controls.Add(Me.ttxCodigo_NE)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Size = New System.Drawing.Size(888, 251)
+        Me.TabPage1.Size = New System.Drawing.Size(888, 189)
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 346)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 276)
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(771, 346)
+        Me.btnAceptar.Location = New System.Drawing.Point(771, 276)
         '
         'TabPage2
         '
@@ -90,9 +88,9 @@ Partial Class frmFb050plancuentas : Inherits frmFormulario
         Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label9)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 36)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 32)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(888, 251)
+        Me.TabPage2.Size = New System.Drawing.Size(888, 189)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -102,9 +100,9 @@ Partial Class frmFb050plancuentas : Inherits frmFormulario
         Me.cmbEstado.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cmbEstado.FormattingEnabled = True
         Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Bloqueado"})
-        Me.cmbEstado.Location = New System.Drawing.Point(92, 15)
+        Me.cmbEstado.Location = New System.Drawing.Point(83, 15)
         Me.cmbEstado.Name = "cmbEstado"
-        Me.cmbEstado.Size = New System.Drawing.Size(196, 32)
+        Me.cmbEstado.Size = New System.Drawing.Size(125, 28)
         Me.cmbEstado.TabIndex = 24
         '
         'Label9
@@ -112,7 +110,7 @@ Partial Class frmFb050plancuentas : Inherits frmFormulario
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(13, 18)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(73, 24)
+        Me.Label9.Size = New System.Drawing.Size(64, 20)
         Me.Label9.TabIndex = 23
         Me.Label9.Text = "Estado:"
         '
@@ -122,9 +120,9 @@ Partial Class frmFb050plancuentas : Inherits frmFormulario
         Me.cmbTipo.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cmbTipo.FormattingEnabled = True
         Me.cmbTipo.Items.AddRange(New Object() {"Totales", "Imputable"})
-        Me.cmbTipo.Location = New System.Drawing.Point(171, 148)
+        Me.cmbTipo.Location = New System.Drawing.Point(173, 115)
         Me.cmbTipo.Name = "cmbTipo"
-        Me.cmbTipo.Size = New System.Drawing.Size(185, 32)
+        Me.cmbTipo.Size = New System.Drawing.Size(185, 28)
         Me.cmbTipo.TabIndex = 8
         '
         'txtCodEmpresa_NE
@@ -132,7 +130,7 @@ Partial Class frmFb050plancuentas : Inherits frmFormulario
         Me.txtCodEmpresa_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCodEmpresa_NE.Location = New System.Drawing.Point(173, 19)
         Me.txtCodEmpresa_NE.Name = "txtCodEmpresa_NE"
-        Me.txtCodEmpresa_NE.Size = New System.Drawing.Size(115, 29)
+        Me.txtCodEmpresa_NE.Size = New System.Drawing.Size(115, 26)
         Me.txtCodEmpresa_NE.TabIndex = 0
         '
         'Label4
@@ -140,60 +138,61 @@ Partial Class frmFb050plancuentas : Inherits frmFormulario
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(15, 21)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(91, 24)
+        Me.Label4.Size = New System.Drawing.Size(77, 20)
         Me.Label4.TabIndex = 42
         Me.Label4.Text = "Empresa:"
         '
         'txtNombre_AN
         '
         Me.txtNombre_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNombre_AN.Location = New System.Drawing.Point(171, 104)
+        Me.txtNombre_AN.Location = New System.Drawing.Point(173, 83)
         Me.txtNombre_AN.Name = "txtNombre_AN"
-        Me.txtNombre_AN.Size = New System.Drawing.Size(709, 29)
+        Me.txtNombre_AN.Size = New System.Drawing.Size(697, 26)
         Me.txtNombre_AN.TabIndex = 7
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(13, 104)
+        Me.Label3.Location = New System.Drawing.Point(15, 85)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(138, 24)
+        Me.Label3.Size = New System.Drawing.Size(115, 20)
         Me.Label3.TabIndex = 41
         Me.Label3.Text = "Denominación:"
         '
         'ttxCodigo_NE
         '
         Me.ttxCodigo_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ttxCodigo_NE.Location = New System.Drawing.Point(534, 59)
+        Me.ttxCodigo_NE.ForeColor = System.Drawing.Color.Navy
+        Me.ttxCodigo_NE.Location = New System.Drawing.Point(522, 51)
         Me.ttxCodigo_NE.Name = "ttxCodigo_NE"
         Me.ttxCodigo_NE.ReadOnly = True
-        Me.ttxCodigo_NE.Size = New System.Drawing.Size(348, 29)
+        Me.ttxCodigo_NE.Size = New System.Drawing.Size(348, 26)
         Me.ttxCodigo_NE.TabIndex = 36
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(13, 151)
+        Me.Label2.Location = New System.Drawing.Point(15, 118)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(53, 24)
+        Me.Label2.Size = New System.Drawing.Size(43, 20)
         Me.Label2.TabIndex = 40
         Me.Label2.Text = "Tipo:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 61)
+        Me.Label1.Location = New System.Drawing.Point(15, 53)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(152, 24)
+        Me.Label1.Size = New System.Drawing.Size(130, 20)
         Me.Label1.TabIndex = 39
         Me.Label1.Text = "Cuenta contable:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(13, 199)
+        Me.Label5.Location = New System.Drawing.Point(15, 152)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(57, 24)
+        Me.Label5.Size = New System.Drawing.Size(46, 20)
         Me.Label5.TabIndex = 43
         Me.Label5.Text = "Nivel:"
         '
@@ -203,62 +202,62 @@ Partial Class frmFb050plancuentas : Inherits frmFormulario
         Me.cmbNivel.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cmbNivel.FormattingEnabled = True
         Me.cmbNivel.Items.AddRange(New Object() {"2", "3", "4", "5", "6"})
-        Me.cmbNivel.Location = New System.Drawing.Point(171, 196)
+        Me.cmbNivel.Location = New System.Drawing.Point(173, 149)
         Me.cmbNivel.Name = "cmbNivel"
-        Me.cmbNivel.Size = New System.Drawing.Size(73, 32)
+        Me.cmbNivel.Size = New System.Drawing.Size(73, 28)
         Me.cmbNivel.TabIndex = 9
         '
         'txtCuenta1_NE
         '
         Me.txtCuenta1_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCuenta1_NE.Location = New System.Drawing.Point(171, 59)
+        Me.txtCuenta1_NE.Location = New System.Drawing.Point(173, 51)
         Me.txtCuenta1_NE.Name = "txtCuenta1_NE"
-        Me.txtCuenta1_NE.Size = New System.Drawing.Size(28, 29)
+        Me.txtCuenta1_NE.Size = New System.Drawing.Size(28, 26)
         Me.txtCuenta1_NE.TabIndex = 1
         Me.txtCuenta1_NE.Text = "0"
         '
         'txtCuenta2_NE
         '
         Me.txtCuenta2_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCuenta2_NE.Location = New System.Drawing.Point(205, 59)
+        Me.txtCuenta2_NE.Location = New System.Drawing.Point(207, 51)
         Me.txtCuenta2_NE.Name = "txtCuenta2_NE"
-        Me.txtCuenta2_NE.Size = New System.Drawing.Size(39, 29)
+        Me.txtCuenta2_NE.Size = New System.Drawing.Size(39, 26)
         Me.txtCuenta2_NE.TabIndex = 2
         Me.txtCuenta2_NE.Text = "00"
         '
         'txtCuenta3_NE
         '
         Me.txtCuenta3_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCuenta3_NE.Location = New System.Drawing.Point(250, 59)
+        Me.txtCuenta3_NE.Location = New System.Drawing.Point(252, 51)
         Me.txtCuenta3_NE.Name = "txtCuenta3_NE"
-        Me.txtCuenta3_NE.Size = New System.Drawing.Size(48, 29)
+        Me.txtCuenta3_NE.Size = New System.Drawing.Size(48, 26)
         Me.txtCuenta3_NE.TabIndex = 3
         Me.txtCuenta3_NE.Text = "000"
         '
         'txtCuenta4_NE
         '
         Me.txtCuenta4_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCuenta4_NE.Location = New System.Drawing.Point(304, 59)
+        Me.txtCuenta4_NE.Location = New System.Drawing.Point(306, 51)
         Me.txtCuenta4_NE.Name = "txtCuenta4_NE"
-        Me.txtCuenta4_NE.Size = New System.Drawing.Size(58, 29)
+        Me.txtCuenta4_NE.Size = New System.Drawing.Size(58, 26)
         Me.txtCuenta4_NE.TabIndex = 4
         Me.txtCuenta4_NE.Text = "0000"
         '
         'txtCuenta5_NE
         '
         Me.txtCuenta5_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCuenta5_NE.Location = New System.Drawing.Point(368, 59)
+        Me.txtCuenta5_NE.Location = New System.Drawing.Point(370, 51)
         Me.txtCuenta5_NE.Name = "txtCuenta5_NE"
-        Me.txtCuenta5_NE.Size = New System.Drawing.Size(65, 29)
+        Me.txtCuenta5_NE.Size = New System.Drawing.Size(65, 26)
         Me.txtCuenta5_NE.TabIndex = 5
         Me.txtCuenta5_NE.Text = "00000"
         '
         'txtCuenta6_NE
         '
         Me.txtCuenta6_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCuenta6_NE.Location = New System.Drawing.Point(439, 59)
+        Me.txtCuenta6_NE.Location = New System.Drawing.Point(441, 51)
         Me.txtCuenta6_NE.Name = "txtCuenta6_NE"
-        Me.txtCuenta6_NE.Size = New System.Drawing.Size(75, 29)
+        Me.txtCuenta6_NE.Size = New System.Drawing.Size(75, 26)
         Me.txtCuenta6_NE.TabIndex = 6
         Me.txtCuenta6_NE.Text = "000000"
         '
@@ -268,7 +267,7 @@ Partial Class frmFb050plancuentas : Inherits frmFormulario
         Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(294, 21)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
-        Me.lblNombreEmpresa.Size = New System.Drawing.Size(152, 24)
+        Me.lblNombreEmpresa.Size = New System.Drawing.Size(130, 20)
         Me.lblNombreEmpresa.TabIndex = 52
         Me.lblNombreEmpresa.Text = "Cuenta contable:"
         '
@@ -277,7 +276,7 @@ Partial Class frmFb050plancuentas : Inherits frmFormulario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Nothing
-        Me.ClientSize = New System.Drawing.Size(919, 433)
+        Me.ClientSize = New System.Drawing.Size(919, 358)
         Me.Name = "frmFb050plancuentas"
         Me.Tag = ""
         Me.Text = "Formulario Cuenta Contable"

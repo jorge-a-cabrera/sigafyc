@@ -44,12 +44,12 @@ Partial Class frmBBitacoraSesion
         '
         'TabControl1
         '
-        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.ContextMenuStrip = Me.mnuExportarExcel
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl1.Location = New System.Drawing.Point(11, 12)
+        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1134, 558)
@@ -59,28 +59,29 @@ Partial Class frmBBitacoraSesion
         '
         Me.mnuExportarExcel.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuItem_ExportarExcel, Me.MenuItem_ExportarTexto})
         Me.mnuExportarExcel.Name = "mnuExportarExcel"
-        Me.mnuExportarExcel.Size = New System.Drawing.Size(209, 48)
+        Me.mnuExportarExcel.Size = New System.Drawing.Size(210, 48)
         '
         'MenuItem_ExportarExcel
         '
         Me.MenuItem_ExportarExcel.Name = "MenuItem_ExportarExcel"
-        Me.MenuItem_ExportarExcel.Size = New System.Drawing.Size(208, 22)
+        Me.MenuItem_ExportarExcel.Size = New System.Drawing.Size(209, 22)
         Me.MenuItem_ExportarExcel.Text = "Exportar a Excel"
         '
         'MenuItem_ExportarTexto
         '
         Me.MenuItem_ExportarTexto.Name = "MenuItem_ExportarTexto"
-        Me.MenuItem_ExportarTexto.Size = New System.Drawing.Size(208, 22)
+        Me.MenuItem_ExportarTexto.Size = New System.Drawing.Size(209, 22)
         Me.MenuItem_ExportarTexto.Text = "Exportar Texto delimitado"
         '
         'TabPage1
         '
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.txtBuscar)
         Me.TabPage1.Controls.Add(Me.DataGridView1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 36)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1126, 518)
+        Me.TabPage1.Size = New System.Drawing.Size(1126, 522)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Tag = "Sesiones"
         Me.TabPage1.Text = "Sesiones"
@@ -89,10 +90,10 @@ Partial Class frmBBitacoraSesion
         'txtBuscar
         '
         Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscar.Location = New System.Drawing.Point(6, 6)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(1114, 29)
+        Me.txtBuscar.Size = New System.Drawing.Size(1114, 26)
         Me.txtBuscar.TabIndex = 16
         Me.txtBuscar.Tag = "ingrese su busqueda"
         Me.txtBuscar.Text = "ingrese su busqueda"
@@ -115,11 +116,12 @@ Partial Class frmBBitacoraSesion
         '
         'TabPage2
         '
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.txtBuscarDetalle)
         Me.TabPage2.Controls.Add(Me.DataGridView2)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 36)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 32)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(1126, 518)
+        Me.TabPage2.Size = New System.Drawing.Size(1126, 522)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Tag = "DetalleSesiones"
         Me.TabPage2.Text = "Detalle de lo realizado"
@@ -128,10 +130,10 @@ Partial Class frmBBitacoraSesion
         'txtBuscarDetalle
         '
         Me.txtBuscarDetalle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtBuscarDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscarDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscarDetalle.Location = New System.Drawing.Point(3, 3)
         Me.txtBuscarDetalle.Name = "txtBuscarDetalle"
-        Me.txtBuscarDetalle.Size = New System.Drawing.Size(1120, 29)
+        Me.txtBuscarDetalle.Size = New System.Drawing.Size(1120, 26)
         Me.txtBuscarDetalle.TabIndex = 17
         Me.txtBuscarDetalle.Tag = "ingrese su busqueda"
         Me.txtBuscarDetalle.Text = "ingrese su busqueda"
@@ -157,7 +159,7 @@ Partial Class frmBBitacoraSesion
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalir.Image = Global.sigafyc.My.Resources.Resources.icons8_exit_32
-        Me.btnSalir.Location = New System.Drawing.Point(1012, 576)
+        Me.btnSalir.Location = New System.Drawing.Point(1009, 572)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(133, 73)
         Me.btnSalir.TabIndex = 7

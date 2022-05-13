@@ -118,8 +118,7 @@
 
     Public Sub New()
         MyBase.New()
-
-        Call SetParametros(msRama, msTableName, msRequeridos, msCampos_PK, Me)
+        SetParametros(msRama, msTableName, msRequeridos, msCampos_PK, Me)
         Conectar(msTableName)
     End Sub
 
@@ -194,77 +193,6 @@
             lbResultado = True
             Return lbResultado
         End If
-
-        'Dim ss8 As New ss8PUSU
-
-        'ss8.CODUSR = CODUSR
-        'liPuedeusar = ss8.PuedeUsar(strCODSYS, strCODRES)
-        'If Not (liPuedeusar = NoHayRegistros_) Then
-        '    If liPuedeusar = Si_ Then
-        '        PuedeUsar = Si_
-        '    Else
-        '        PuedeUsar = No_
-        '    End If
-        '    Exit Function
-        'End If
-        ''>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-        'Dim ss4 As New ss4HABI
-
-        'Dim lrs As New ADODB.Recordset
-
-        'lrs.LockType = adLockOptimistic
-        'lrs.CursorType = adOpenForwardOnly
-        'lrs.ActiveConnection = gcSECURITY
-
-        'lrs.Source = "select * " &
-        '        "from " & msTABLE &
-        '        "where CODUSR = '" & CODUSR & "'"
-
-        'lrs.MaxRecords = 1
-        'lrs.Open
-
-        'If lrs.EOF = True And lrs.BOF = True Then
-        '    GPMensaje "El usuario no esta habiltado para trabajar, consulte con el Administrador del Sistema."
-        'PuedeUsar = No_
-        '    Exit Function
-        'End If
-
-        'ss4.TIPCOD = Usuario_
-        'ss4.CODIGO = CODUSR
-        'ss4.CODSYS = strCODSYS
-        'ss4.CODRES = UCase(GFvGetClave(Security_ & "_ManagerName_", General_))
-        'ss4.GetPK
-        'If ss4.ERROR = OK_ Then
-        '    If ss4.PuedeUsar() = Si_ Then
-        '        PuedeUsar = Si_
-        '    Else
-        '        PuedeUsar = No_
-        '    End If
-        '    Exit Function
-        'End If
-
-        'ss4.TIPCOD = Usuario_
-        'ss4.CODIGO = CODUSR
-        'ss4.CODSYS = strCODSYS
-        'ss4.CODRES = strCODRES
-        'ss4.GetPK
-        'If ss4.ERROR = OK_ Then
-        '    If ss4.PuedeUsar() = Si_ Then
-        '        PuedeUsar = Si_
-        '    Else
-        '        PuedeUsar = No_
-        '    End If
-        'Else
-        '    GPMensaje "Sistema/Restricción: " & strCODSYS & " / " & strCODRES & " no se encuentra habilitado para su uso."
-        'PuedeUsar = No_
-        'End If
-
-        'Set ss4 = Nothing
-
-        'lrs.Close
-        'Set lrs = Nothing
-
         Return lbResultado
     End Function
 

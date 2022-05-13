@@ -101,14 +101,12 @@ Public Module Herramientas
         If lsResultado.Trim.Length > 0 Then
             If lsResultado.Last = ControlChars.CrLf Then lsResultado.Substring(0, lsResultado.Length - 1)
         End If
-        loParametroSistema = Nothing
         Return lsResultado
     End Function
 
     Public Sub GPParametroGuardar(ByVal psTipo As String, ByVal psClave As String, ByVal psValor As String, Optional ByVal psEscalando As String = sSi_)
         Dim loParametroSistema As New ParametroSistema
         loParametroSistema.Guardar(psTipo, psClave, psValor, psEscalando)
-        loParametroSistema = Nothing
     End Sub
 
     Public Function GFsGeneraSQL(ByVal psCodigo As String, Optional ByVal psTipo As String = sGeneral_) As String

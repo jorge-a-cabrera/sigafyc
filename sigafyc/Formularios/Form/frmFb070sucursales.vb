@@ -191,15 +191,14 @@ Public Class frmFb070sucursales
                 txtCodigo_NE.Tag = sOk_
 
             Case sCONSULTAR_, sBORRAR_
-                For liNDX As Integer = 0 To loControls.Count - 1
-                    If InStr("txt|cmb", loControls.Item(liNDX).Name.Substring(0, 3)) > 0 Then
-                        loControls.Item(liNDX).Enabled = False
-                    End If
-                Next
-                loControls = Me.TabPage2.Controls
-                For liNDX As Integer = 0 To loControls.Count - 1
-                    If InStr("txt|cmb", loControls.Item(liNDX).Name.Substring(0, 3)) > 0 Then
-                        loControls.Item(liNDX).Enabled = False
+                For Each loTabPage As TabPage In TabControl1.TabPages
+                    If loTabPage.AccessibleName = sActivo_ Then
+                        loControls = loTabPage.Controls
+                        For liNDX As Integer = 0 To loControls.Count - 1
+                            If InStr("txt|cmb", loControls.Item(liNDX).Name.Substring(0, 3)) > 0 Then
+                                loControls.Item(liNDX).Enabled = False
+                            End If
+                        Next
                     End If
                 Next
         End Select
