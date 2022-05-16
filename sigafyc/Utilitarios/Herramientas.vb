@@ -95,7 +95,7 @@ Public Module Herramientas
     End Sub
 
     Public Function GFsParametroObtener(ByVal psTipo As String, ByVal psClave As String, Optional ByVal psEscalando As String = sSi_) As String
-        Dim lsResultado As String = ""
+        Dim lsResultado As String
         Dim loParametroSistema As New ParametroSistema
         lsResultado = loParametroSistema.Obtener(psTipo, psClave, psEscalando)
         If lsResultado.Trim.Length > 0 Then

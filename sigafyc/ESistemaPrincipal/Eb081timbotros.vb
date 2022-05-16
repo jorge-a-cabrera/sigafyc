@@ -69,9 +69,11 @@
         MyBase.New()
         SetParametros(msRama, msTableName, msRequeridos, msCampos_PK, Me)
         Conectar(msTableName)
+        ConteoRegistros(msTableName)
     End Sub
 
     Public Sub CerrarConexion()
+        ConteoRegistros(msTableName)
         Desconectar(msTableName)
     End Sub
 

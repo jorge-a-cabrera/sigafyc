@@ -62,10 +62,10 @@ Public Class Correo
     End Sub
 
     Public Sub Enviar(Optional psBitacora As String = sSi_)
-        Dim lsClave As String = ""
-        Dim lsValor As String = ""
-        Dim lsValor2 As String = ""
-        Dim lsBody As String = ""
+        Dim lsClave As String
+        Dim lsValor As String
+        Dim lsValor2 As String
+        Dim lsBody As String
 
         moMailMessage.Subject = asunto
         lsClave = "Mail - Address - From Cuenta"
@@ -99,9 +99,6 @@ Public Class Correo
     End Sub
 
     Public Sub Enviar(ByVal psAsunto As String, ByVal psBody As String)
-        Dim lsClave As String
-        Dim lsValor As String
-        Dim lsValor2 As String
         Dim lsSeparador As String = "----------------------------------------------------------------------------------"
 
         moMailMessage.Subject = psAsunto

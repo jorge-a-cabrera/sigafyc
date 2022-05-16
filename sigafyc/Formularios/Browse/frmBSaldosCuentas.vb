@@ -327,7 +327,7 @@ Public Class frmBSaldosCuentas
         ' Aqui es donde se mueve el DataGridView para que se pueda visualizar 
         ' la fila seleccionada.
         If liIndex > -1 Then
-            DataGridView1.CurrentCell = DataGridView1.Rows(liIndex).Cells(0)
+            DataGridView1.CurrentCell = DataGridView1.Rows(liIndex).Cells("orden")
         End If
     End Sub
 

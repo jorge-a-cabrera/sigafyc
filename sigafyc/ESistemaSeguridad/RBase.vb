@@ -106,12 +106,10 @@ Public Class RBase : Inherits Ebase
                 Else
                     If liResultado < Integer.Parse(lsValor) Then
                         Dim liDiferencia As Integer = Integer.Parse(lsValor) - liResultado
-                        GFsAvisar(sError_, "Ha sido eliminada de la tabla " & psTableName.ToUpper & " " & liDiferencia.ToString & " registros fuera del sistema.")
+                        GFsAvisar("Ha sido eliminada de la tabla " & psTableName.ToUpper & ", " & liDiferencia.ToString & " registros fuera del sistema.", sViolacion_, "Esta sesión no podrá continuar, hasta que este problema sea esclarecido y subsanado.")
                     End If
                 End If
             End If
         End If
     End Sub
-
-
 End Class

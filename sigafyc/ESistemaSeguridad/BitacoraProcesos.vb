@@ -24,7 +24,6 @@ Public Class BitacoraProceso
     Public Sub Inicializa()
         If msArchivoBitacora.Trim.Length > 0 Then Exit Sub
 
-        Dim loParametroSistema As New ParametroSistema
         Dim lsFechaHora As String = Now.ToString(sFormatoFechaHora2_)
         msUbicacion = GFsGetRegistry(sSeguridad_, sUbicacionBitacora_)
         msFileName = SesionActiva.sessionId & sExtensionBitacora_
@@ -78,8 +77,6 @@ Public Class BitacoraProceso
         End If
         ss060.CerrarConexion()
         ss060 = Nothing
-
-        loParametroSistema = Nothing
 
         Dim lsTipo As String = sLocal_
         Dim lsClave As String = "Tabla general - Registro Envio Bitacora"

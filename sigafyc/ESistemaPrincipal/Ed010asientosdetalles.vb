@@ -129,6 +129,7 @@ Public Class Ed010asientosdetalles : Inherits RBase
         MyBase.New()
         SetParametros(msRama, msTableName, msRequeridos, msCampos_PK, Me)
         Conectar(msTableName)
+        ConteoRegistros(msTableName)
     End Sub
 
     Public Function ReservarRegistro(ByVal piCodEmpresa As Integer, ByVal piNroAsiento As Integer) As Integer
@@ -247,6 +248,7 @@ Public Class Ed010asientosdetalles : Inherits RBase
         Call ConfirmarTransaccion()
     End Sub
     Public Sub CerrarConexion()
+        ConteoRegistros(msTableName)
         Desconectar(msTableName)
     End Sub
 

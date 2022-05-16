@@ -398,20 +398,6 @@ Module modMain
         'TODO: AQUI DEBEN INDICARSE LAS INICIALIZACIONES DE PARAMETROS PARA
         '      UN MODULO ESPECIFICO.
         '---------------------------------------------------------------------------
-        'Dim loParametroSistema As New ParametroSistema
-        'Dim lsProcedureName As String = "Parametros Modulos"
-        'Dim lsTipo As String = sModulo_
-        'Dim lsClave As String
-        'Dim lsValor As String
-        'BitacoraProceso.Registrar(sENTRO_, lsProcedureName)
-
-        'lsClave = "Caja - Hora de cierre"
-        'lsValor = "15:59:59"
-        'If loParametroSistema.Obtener(lsTipo, lsClave) = sRESERVADO_ Then
-        '    loParametroSistema.Guardar(lsTipo, lsClave, lsValor)
-        'End If
-
-        'BitacoraProceso.Registrar(sSALIO_, lsProcedureName)
     End Sub
 
     Private Function LFsEstableceConexion(ByVal psRama As String, ByVal psTitulo As String) As String
