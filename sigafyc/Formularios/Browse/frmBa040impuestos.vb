@@ -272,9 +272,8 @@ Public Class frmBa040impuestos
         Next
     End Sub
 
-    Private Sub cmbOperacion_Validating(sender As Object, e As CancelEventArgs) Handles cmbOperacion.Validating
+    Private Sub cmbOperacion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbOperacion.SelectedIndexChanged
         If cmbOperacion.Text.Trim.Length = 0 Then Exit Sub
-
         LPCargarDatos()
     End Sub
 End Class

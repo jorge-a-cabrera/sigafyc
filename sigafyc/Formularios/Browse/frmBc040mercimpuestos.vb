@@ -75,6 +75,10 @@ Public Class frmBc040mercimpuestos
         AddHandler btnConsultar.Click, AddressOf Botones_Click
         AddHandler txtCodEmpresa_NE.KeyPress, AddressOf ManejoEvento_KeyPress
         AddHandler txtCodEmpresa_NE.KeyDown, AddressOf ManejoEvento_KeyDown
+        AddHandler cmbOperacion.KeyPress, AddressOf ManejoEvento_KeyPress
+        AddHandler cmbOperacion.KeyDown, AddressOf ManejoEvento_KeyDown
+        AddHandler txtCodMercaderia_AN.KeyPress, AddressOf ManejoEvento_KeyPress
+        AddHandler txtCodMercaderia_AN.KeyDown, AddressOf ManejoEvento_KeyDown
         AddHandler DataGridView1.KeyDown, AddressOf DataGrid_KeyDown
         AddHandler DataGridView1.CellContentDoubleClick, AddressOf DataGrid_DoubleClick
 
@@ -411,7 +415,7 @@ Public Class frmBc040mercimpuestos
     End Sub
 
     Private Sub Form_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        txtCodMercaderia_AN.Focus()
+        txtCodEmpresa_NE.Focus()
     End Sub
 
     Friend Sub LPSinRegistro_AbrirForm()

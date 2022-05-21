@@ -78,7 +78,7 @@ Public Class RBase : Inherits Ebase
         Return lsResultado
     End Function
 
-    Public Sub ConteoRegistros(ByVal psTableName As String)
+    Public Sub ConteoRegistros(ByVal psTableName As String, Optional ByVal psMomento As String = "Conectar")
         Dim lsKey As String = "ConteoRegistros"
         Dim liResultado As Integer = 0
         Dim lsSQL As String = GFsGeneraSQL(lsKey)
@@ -96,20 +96,25 @@ Public Class RBase : Inherits Ebase
         End Try
         loDatos.Close()
 
-        Dim lsValor As String = GFsParametroObtener(sGeneral_, lsKey & "_" & psTableName)
-        If lsValor = sRESERVADO_ Then
-            GPParametroGuardar(sGeneral_, lsKey & "_" & psTableName, liResultado.ToString)
-        Else
-            If IsNumeric(lsValor) Then
-                If liResultado > Integer.Parse(lsValor) Then
+        Select Case psMomento
+            Case "Conectar"
+                Dim lsValor As String = GFsParametroObtener(sGeneral_, lsKey & "_" & psTableName)
+                If lsValor = sRESERVADO_ Then
                     GPParametroGuardar(sGeneral_, lsKey & "_" & psTableName, liResultado.ToString)
                 Else
-                    If liResultado < Integer.Parse(lsValor) Then
-                        Dim liDiferencia As Integer = Integer.Parse(lsValor) - liResultado
-                        GFsAvisar("Ha sido eliminada de la tabla " & psTableName.ToUpper & ", " & liDiferencia.ToString & " registros fuera del sistema.", sViolacion_, "Esta sesión no podrá continuar, hasta que este problema sea esclarecido y subsanado.")
+                    If IsNumeric(lsValor) Then
+                        If liResultado > Integer.Parse(lsValor) Then
+                            GPParametroGuardar(sGeneral_, lsKey & "_" & psTableName, liResultado.ToString)
+                        Else
+                            If liResultado < Integer.Parse(lsValor) Then
+                                Dim liDiferencia As Integer = Integer.Parse(lsValor) - liResultado
+                                GFsAvisar("Ha sido eliminada de la tabla " & psTableName.ToUpper & ", " & liDiferencia.ToString & " registros fuera del sistema.", sViolacion_, "Esta sesión no podrá continuar, hasta que este problema sea esclarecido y subsanado.")
+                            End If
+                        End If
                     End If
                 End If
-            End If
-        End If
+            Case Else
+                GPParametroGuardar(sGeneral_, lsKey & "_" & psTableName, liResultado.ToString)
+        End Select
     End Sub
 End Class

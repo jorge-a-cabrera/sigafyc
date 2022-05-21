@@ -248,12 +248,11 @@ Public Class Ed010asientosdetalles : Inherits RBase
         Call ConfirmarTransaccion()
     End Sub
     Public Sub CerrarConexion()
-        ConteoRegistros(msTableName)
+        ConteoRegistros(msTableName, "CerrarConexion")
         Desconectar(msTableName)
     End Sub
 
     Protected Overloads Sub Finalize()
         MyBase.Finalize()
     End Sub
-
 End Class

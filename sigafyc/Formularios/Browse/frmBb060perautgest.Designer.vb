@@ -77,7 +77,7 @@ Partial Class frmBb060perautgest : Inherits frmBrowseSinGrid
         Me.cmbTipoPerfil.FormattingEnabled = True
         Me.cmbTipoPerfil.Location = New System.Drawing.Point(156, 44)
         Me.cmbTipoPerfil.Name = "cmbTipoPerfil"
-        Me.cmbTipoPerfil.Size = New System.Drawing.Size(348, 28)
+        Me.cmbTipoPerfil.Size = New System.Drawing.Size(186, 28)
         Me.cmbTipoPerfil.TabIndex = 1
         '
         'Label1
@@ -124,7 +124,7 @@ Partial Class frmBb060perautgest : Inherits frmBrowseSinGrid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(965, 662)
+        Me.ClientSize = New System.Drawing.Size(961, 658)
         Me.Controls.Add(Me.lblNombreEmpresa)
         Me.Controls.Add(Me.txtCodEmpresa_NE)
         Me.Controls.Add(Me.Label2)

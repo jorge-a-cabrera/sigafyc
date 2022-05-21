@@ -252,7 +252,6 @@ Public Class frmBb060perautgest
             e.Cancel = True
             Exit Sub
         End If
-        LPCargarDatos()
     End Sub
 
     Private Sub Botones_Click(sender As Object, e As EventArgs)
@@ -402,5 +401,9 @@ Public Class frmBb060perautgest
         For Each lsValor In lsCodigo.Split(sSF_)
             cmbTipoPerfil.Items.Add(lsValor)
         Next
+    End Sub
+
+    Private Sub cmbTipoPerfil_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTipoPerfil.SelectedIndexChanged
+        LPCargarDatos()
     End Sub
 End Class

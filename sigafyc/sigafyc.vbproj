@@ -29,7 +29,7 @@
     <ProductName>sigafyc</ProductName>
     <PublisherName>Jorge Antonio Cabrera González</PublisherName>
     <SuiteName>SIGAFYC</SuiteName>
-    <ApplicationRevision>63</ApplicationRevision>
+    <ApplicationRevision>66</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -227,567 +227,379 @@
     <Compile Include="FormulariosBases\frmBrowseSinGrid.Designer.vb">
       <DependentUpon>frmBrowseSinGrid.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosBases\frmBrowseSinGrid.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormulariosBases\frmBrowseSinGrid.vb" />
     <Compile Include="FormulariosBases\frmFVisualizadorReporte.Designer.vb">
       <DependentUpon>frmFVisualizadorReporte.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosBases\frmFVisualizadorReporte.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormulariosBases\frmFVisualizadorReporte.vb" />
     <Compile Include="FormulariosBases\frmProcesamiento.Designer.vb">
       <DependentUpon>frmProcesamiento.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosBases\frmProcesamiento.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormulariosBases\frmProcesamiento.vb" />
     <Compile Include="Formularios\Browse\frmBa010monedas.Designer.vb">
       <DependentUpon>frmBa010monedas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBa010monedas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBa010monedas.vb" />
     <Compile Include="Formularios\Browse\frmBa030personas.Designer.vb">
       <DependentUpon>frmBa030personas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBa030personas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBa030personas.vb" />
     <Compile Include="Formularios\Browse\frmBa040impuestos.Designer.vb">
       <DependentUpon>frmBa040impuestos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBa040impuestos.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBa040impuestos.vb" />
     <Compile Include="Formularios\Browse\frmBa050unidades.Designer.vb">
       <DependentUpon>frmBa050unidades.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBa050unidades.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBa050unidades.vb" />
     <Compile Include="Formularios\Browse\frmBa060clasmerc.Designer.vb">
       <DependentUpon>frmBa060clasmerc.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBa060clasmerc.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBa060clasmerc.vb" />
     <Compile Include="Formularios\Browse\frmBb020conceptos.Designer.vb">
       <DependentUpon>frmBb020conceptos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBb020conceptos.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBb020conceptos.vb" />
     <Compile Include="Formularios\Browse\frmBb030cotizaciones.Designer.vb">
       <DependentUpon>frmBb030cotizaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBb030cotizaciones.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBb030cotizaciones.vb" />
     <Compile Include="Formularios\Browse\frmBb040depositos.Designer.vb">
       <DependentUpon>frmBb040depositos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBb040depositos.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBb040depositos.vb" />
     <Compile Include="Formularios\Browse\frmBb050plancuentas.Designer.vb">
       <DependentUpon>frmBb050plancuentas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBb050plancuentas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBb050plancuentas.vb" />
     <Compile Include="Formularios\Browse\frmBb060perautgest.Designer.vb">
       <DependentUpon>frmBb060perautgest.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBb060perautgest.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBb060perautgest.vb" />
     <Compile Include="Formularios\Browse\frmBb070sucursales.Designer.vb">
       <DependentUpon>frmBb070sucursales.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBb070sucursales.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBb070sucursales.vb" />
     <Compile Include="Formularios\Browse\frmBb080timbotros.Designer.vb">
       <DependentUpon>frmBb080timbotros.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBb080timbotros.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBb080timbotros.vb" />
     <Compile Include="Formularios\Browse\frmBb081timbotros.Designer.vb">
       <DependentUpon>frmBb081timbotros.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBb081timbotros.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBb081timbotros.vb" />
     <Compile Include="Formularios\Browse\frmBb100vendedores.Designer.vb">
       <DependentUpon>frmBb100vendedores.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBb100vendedores.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBb100vendedores.vb" />
     <Compile Include="Formularios\Browse\frmBb110undalternativas.Designer.vb">
       <DependentUpon>frmBb110undalternativas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBb110undalternativas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBb110undalternativas.vb" />
     <Compile Include="Formularios\Browse\frmBc001empresas.Designer.vb">
       <DependentUpon>frmBc001empresas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBc001empresas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBc001empresas.vb" />
     <Compile Include="Formularios\Browse\frmBBitacoraSesion.Designer.vb">
       <DependentUpon>frmBBitacoraSesion.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBBitacoraSesion.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBBitacoraSesion.vb" />
     <Compile Include="Formularios\Browse\frmBc010timbpropios.Designer.vb">
       <DependentUpon>frmBc010timbpropios.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBc010timbpropios.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBc010timbpropios.vb" />
     <Compile Include="Formularios\Browse\frmBc011timbpropios.Designer.vb">
       <DependentUpon>frmBc011timbpropios.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBc011timbpropios.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBc011timbpropios.vb" />
     <Compile Include="Formularios\Browse\frmBc020documentos.Designer.vb">
       <DependentUpon>frmBc020documentos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBc020documentos.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBc020documentos.vb" />
     <Compile Include="Formularios\Browse\frmBc030ubicaciones.Designer.vb">
       <DependentUpon>frmBc030ubicaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBc030ubicaciones.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBc030ubicaciones.vb" />
     <Compile Include="Formularios\Browse\frmBc040mercimpuestos.Designer.vb">
       <DependentUpon>frmBc040mercimpuestos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBc040mercimpuestos.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBc040mercimpuestos.vb" />
     <Compile Include="Formularios\Browse\frmBc050mercvinculadas.Designer.vb">
       <DependentUpon>frmBc050mercvinculadas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBc050mercvinculadas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBc050mercvinculadas.vb" />
     <Compile Include="Formularios\Browse\frmBd020mercentrada.Designer.vb">
       <DependentUpon>frmBd020mercentrada.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBd020mercentrada.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBd020mercentrada.vb" />
     <Compile Include="Formularios\Browse\frmBd030mercsalida.Designer.vb">
       <DependentUpon>frmBd030mercsalida.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBd030mercsalida.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBd030mercsalida.vb" />
     <Compile Include="Formularios\Browse\frmBe010asientoscabeceras.Designer.vb">
       <DependentUpon>frmBe010asientoscabeceras.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBe010asientoscabeceras.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBe010asientoscabeceras.vb" />
     <Compile Include="Formularios\Browse\frmBe020listaprecio.Designer.vb">
       <DependentUpon>frmBe020listaprecio.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBe020listaprecio.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBe020listaprecio.vb" />
     <Compile Include="Formularios\Browse\frmBMayorCuenta.Designer.vb">
       <DependentUpon>frmBMayorCuenta.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBMayorCuenta.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBMayorCuenta.vb" />
     <Compile Include="Formularios\Browse\frmBSaldosCuentas.Designer.vb">
       <DependentUpon>frmBSaldosCuentas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBSaldosCuentas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBSaldosCuentas.vb" />
     <Compile Include="Formularios\Browse\frmBss010sistemas.Designer.vb">
       <DependentUpon>frmBss010sistemas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBss010sistemas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBss010sistemas.vb" />
     <Compile Include="Formularios\Browse\frmBss030tabcab.Designer.vb">
       <DependentUpon>frmBss030tabcab.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBss030tabcab.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBss030tabcab.vb" />
     <Compile Include="Formularios\Browse\frmBss040tabdet.Designer.vb">
       <DependentUpon>frmBss040tabdet.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBss040tabdet.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBss040tabdet.vb" />
     <Compile Include="Formularios\Browse\frmBss060equipos.Designer.vb">
       <DependentUpon>frmBss060equipos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBss060equipos.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBss060equipos.vb" />
     <Compile Include="Formularios\Browse\frmBss070perfiles.Designer.vb">
       <DependentUpon>frmBss070perfiles.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBss070perfiles.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBss070perfiles.vb" />
     <Compile Include="Formularios\Browse\frmBss080restricciones.Designer.vb">
       <DependentUpon>frmBss080restricciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBss080restricciones.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBss080restricciones.vb" />
     <Compile Include="Formularios\Browse\frmBss090perusu.Designer.vb">
       <DependentUpon>frmBss090perusu.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBss090perusu.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBss090perusu.vb" />
     <Compile Include="Formularios\Browse\frmBss100habilitaciones.Designer.vb">
       <DependentUpon>frmBss100habilitaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBss100habilitaciones.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBss100habilitaciones.vb" />
     <Compile Include="Formularios\Browse\frmBss110parametros.Designer.vb">
       <DependentUpon>frmBss110parametros.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBss110parametros.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBss110parametros.vb" />
     <Compile Include="Formularios\Browse\frmBBitacoraDatos.Designer.vb">
       <DependentUpon>frmBBitacoraDatos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBBitacoraDatos.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBBitacoraDatos.vb" />
     <Compile Include="Formularios\Form\frmFa010monedas.Designer.vb">
       <DependentUpon>frmFa010monedas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFa010monedas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFa010monedas.vb" />
     <Compile Include="Formularios\Form\frmFa030personas.Designer.vb">
       <DependentUpon>frmFa030personas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFa030personas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFa030personas.vb" />
     <Compile Include="Formularios\Form\frmFa040impuestos.Designer.vb">
       <DependentUpon>frmFa040impuestos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFa040impuestos.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFa040impuestos.vb" />
     <Compile Include="Formularios\Form\frmFa050unidades.Designer.vb">
       <DependentUpon>frmFa050unidades.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFa050unidades.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFa050unidades.vb" />
     <Compile Include="Formularios\Form\frmFa060clasmerc.Designer.vb">
       <DependentUpon>frmFa060clasmerc.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFa060clasmerc.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFa060clasmerc.vb" />
     <Compile Include="Formularios\Form\frmFb020conceptos.Designer.vb">
       <DependentUpon>frmFb020conceptos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFb020conceptos.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFb020conceptos.vb" />
     <Compile Include="Formularios\Form\frmFb030cotizaciones.Designer.vb">
       <DependentUpon>frmFb030cotizaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFb030cotizaciones.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFb030cotizaciones.vb" />
     <Compile Include="Formularios\Form\frmFb040depositos.Designer.vb">
       <DependentUpon>frmFb040depositos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFb040depositos.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFb040depositos.vb" />
     <Compile Include="Formularios\Form\frmFb050plancuentas.Designer.vb">
       <DependentUpon>frmFb050plancuentas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFb050plancuentas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFb050plancuentas.vb" />
     <Compile Include="Formularios\Form\frmFb060perautgest.Designer.vb">
       <DependentUpon>frmFb060perautgest.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFb060perautgest.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFb060perautgest.vb" />
     <Compile Include="Formularios\Form\frmFb070sucursales.Designer.vb">
       <DependentUpon>frmFb070sucursales.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFb070sucursales.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFb070sucursales.vb" />
     <Compile Include="Formularios\Form\frmFb080timbotros.Designer.vb">
       <DependentUpon>frmFb080timbotros.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFb080timbotros.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFb080timbotros.vb" />
     <Compile Include="Formularios\Form\frmFb081timbotros.Designer.vb">
       <DependentUpon>frmFb081timbotros.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFb081timbotros.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFb081timbotros.vb" />
     <Compile Include="Formularios\Form\frmFb100vendedores.Designer.vb">
       <DependentUpon>frmFb100vendedores.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFb100vendedores.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFb100vendedores.vb" />
     <Compile Include="Formularios\Form\frmFb110undalternativas.Designer.vb">
       <DependentUpon>frmFb110undalternativas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFb110undalternativas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFb110undalternativas.vb" />
     <Compile Include="Formularios\Form\frmFc001empresas.Designer.vb">
       <DependentUpon>frmFc001empresas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFc001empresas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFc001empresas.vb" />
     <Compile Include="Formularios\Form\frmFc010timbpropios.Designer.vb">
       <DependentUpon>frmFc010timbpropios.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFc010timbpropios.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFc010timbpropios.vb" />
     <Compile Include="Formularios\Form\frmFc011timbpropios.Designer.vb">
       <DependentUpon>frmFc011timbpropios.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFc011timbpropios.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFc011timbpropios.vb" />
     <Compile Include="Formularios\Form\frmFc020documentos.Designer.vb">
       <DependentUpon>frmFc020documentos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFc020documentos.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFc020documentos.vb" />
     <Compile Include="Formularios\Form\frmFc030ubicaciones.Designer.vb">
       <DependentUpon>frmFc030ubicaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFc030ubicaciones.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFc030ubicaciones.vb" />
     <Compile Include="Formularios\Form\frmFc040mercimpuestos.Designer.vb">
       <DependentUpon>frmFc040mercimpuestos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFc040mercimpuestos.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFc040mercimpuestos.vb" />
     <Compile Include="Formularios\Form\frmFc050mercvinculadas.Designer.vb">
       <DependentUpon>frmFc050mercvinculadas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFc050mercvinculadas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFc050mercvinculadas.vb" />
     <Compile Include="Formularios\Form\frmFCambioPassword.Designer.vb">
       <DependentUpon>frmFCambioPassword.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFCambioPassword.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFCambioPassword.vb" />
     <Compile Include="Formularios\Form\frmFd010asientosdetalles.Designer.vb">
       <DependentUpon>frmFd010asientosdetalles.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFd010asientosdetalles.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFd010asientosdetalles.vb" />
     <Compile Include="Formularios\Form\frmFd020mercentrada.Designer.vb">
       <DependentUpon>frmFd020mercentrada.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFd020mercentrada.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFd020mercentrada.vb" />
     <Compile Include="Formularios\Form\frmFd030mercsalida.Designer.vb">
       <DependentUpon>frmFd030mercsalida.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFd030mercsalida.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFd030mercsalida.vb" />
     <Compile Include="Formularios\Form\frmFe010asientoscabeceras.Designer.vb">
       <DependentUpon>frmFe010asientoscabeceras.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFe010asientoscabeceras.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFe010asientoscabeceras.vb" />
     <Compile Include="Formularios\Form\frmFe020listaprecio.Designer.vb">
       <DependentUpon>frmFe020listaprecio.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFe020listaprecio.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFe020listaprecio.vb" />
     <Compile Include="Formularios\Utilitarios\frmFEnviarMail.Designer.vb">
       <DependentUpon>frmFEnviarMail.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Utilitarios\frmFEnviarMail.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Utilitarios\frmFEnviarMail.vb" />
     <Compile Include="Formularios\Utilitarios\frmFCierreEjercicio.Designer.vb">
       <DependentUpon>frmFCierreEjercicio.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Utilitarios\frmFCierreEjercicio.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Utilitarios\frmFCierreEjercicio.vb" />
     <Compile Include="Formularios\Utilitarios\frmFReaperturaEjercicio.Designer.vb">
       <DependentUpon>frmFReaperturaEjercicio.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Utilitarios\frmFReaperturaEjercicio.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Utilitarios\frmFReaperturaEjercicio.vb" />
     <Compile Include="Formularios\Utilitarios\frmFReconstruccionSaldos.Designer.vb">
       <DependentUpon>frmFReconstruccionSaldos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Utilitarios\frmFReconstruccionSaldos.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Utilitarios\frmFReconstruccionSaldos.vb" />
     <Compile Include="Formularios\Form\frmFss010sistemas.Designer.vb">
       <DependentUpon>frmFss010sistemas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFss010sistemas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFss010sistemas.vb" />
     <Compile Include="Formularios\Form\frmFss030tabcab.Designer.vb">
       <DependentUpon>frmFss030tabcab.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFss030tabcab.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFss030tabcab.vb" />
     <Compile Include="Formularios\Form\frmFss040tabdet.Designer.vb">
       <DependentUpon>frmFss040tabdet.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFss040tabdet.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFss040tabdet.vb" />
     <Compile Include="Formularios\Form\frmFss050usuarios.Designer.vb">
       <DependentUpon>frmFss050usuarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFss050usuarios.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFss050usuarios.vb" />
     <Compile Include="Formularios\Form\frmFss060equipos.Designer.vb">
       <DependentUpon>frmFss060equipos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFss060equipos.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFss060equipos.vb" />
     <Compile Include="Formularios\Form\frmFss070perfiles.Designer.vb">
       <DependentUpon>frmFss070perfiles.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFss070perfiles.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFss070perfiles.vb" />
     <Compile Include="Formularios\Form\frmFss080restricciones.Designer.vb">
       <DependentUpon>frmFss080restricciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFss080restricciones.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFss080restricciones.vb" />
     <Compile Include="Formularios\Form\frmFss090perusu.Designer.vb">
       <DependentUpon>frmFss090perusu.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFss090perusu.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFss090perusu.vb" />
     <Compile Include="Formularios\Form\frmFss100habilitaciones.Designer.vb">
       <DependentUpon>frmFss100habilitaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFss100habilitaciones.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFss100habilitaciones.vb" />
     <Compile Include="Formularios\Form\frmFss100habilitaciones2.Designer.vb">
       <DependentUpon>frmFss100habilitaciones2.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFss100habilitaciones2.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFss100habilitaciones2.vb" />
     <Compile Include="Formularios\Form\frmFss110parametros.Designer.vb">
       <DependentUpon>frmFss110parametros.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFss110parametros.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFss110parametros.vb" />
     <Compile Include="Formularios\Utilitarios\frmFExportacionAsiento.Designer.vb">
       <DependentUpon>frmFExportacionAsiento.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Utilitarios\frmFExportacionAsiento.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Utilitarios\frmFExportacionAsiento.vb" />
     <Compile Include="Formularios\Informes\frmMBalances.Designer.vb">
       <DependentUpon>frmMBalances.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Informes\frmMBalances.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Informes\frmMBalances.vb" />
     <Compile Include="Formularios\Informes\frmRAsientoDiario.Designer.vb">
       <DependentUpon>frmRAsientoDiario.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Informes\frmRAsientoDiario.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Informes\frmRAsientoDiario.vb" />
     <Compile Include="Formularios\Informes\frmRBalance8Columnas.Designer.vb">
       <DependentUpon>frmRBalance8Columnas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Informes\frmRBalance8Columnas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Informes\frmRBalance8Columnas.vb" />
     <Compile Include="Formularios\Informes\frmRCuadroPatrimonial.Designer.vb">
       <DependentUpon>frmRCuadroPatrimonial.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Informes\frmRCuadroPatrimonial.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Informes\frmRCuadroPatrimonial.vb" />
     <Compile Include="Formularios\Informes\frmRCuadroResultado.Designer.vb">
       <DependentUpon>frmRCuadroResultado.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Informes\frmRCuadroResultado.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Informes\frmRCuadroResultado.vb" />
     <Compile Include="Formularios\Informes\frmRMayorCuenta.Designer.vb">
       <DependentUpon>frmRMayorCuenta.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Informes\frmRMayorCuenta.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Informes\frmRMayorCuenta.vb" />
     <Compile Include="Formularios\Informes\frmRPlanCuentas.Designer.vb">
       <DependentUpon>frmRPlanCuentas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Informes\frmRPlanCuentas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Informes\frmRPlanCuentas.vb" />
     <Compile Include="Formularios\Utilitarios\frmFImportacionAsiento.Designer.vb">
       <DependentUpon>frmFImportacionAsiento.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Utilitarios\frmFImportacionAsiento.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Utilitarios\frmFImportacionAsiento.vb" />
     <Compile Include="Informes\modGRAsientoDiario.vb" />
     <Compile Include="Informes\modGRBalance8Columnas.vb" />
     <Compile Include="Informes\modGRCuadroPatrimonial.vb" />
@@ -806,15 +618,11 @@
     <Compile Include="Formularios\frmAviso.Designer.vb">
       <DependentUpon>frmAviso.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmAviso.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\frmAviso.vb" />
     <Compile Include="Formularios\frmConfirmacion.Designer.vb">
       <DependentUpon>frmConfirmacion.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmConfirmacion.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\frmConfirmacion.vb" />
     <Compile Include="AccesoDatos\ParametrosAviso.vb" />
     <Compile Include="AccesoDatos\ParametrosConexion.vb" />
     <Compile Include="ESistemaSeguridad\BitacoraDatos.vb" />
@@ -840,57 +648,39 @@
     <Compile Include="FormulariosBases\frmBrowse.Designer.vb">
       <DependentUpon>frmBrowse.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosBases\frmBrowse.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormulariosBases\frmBrowse.vb" />
     <Compile Include="FormulariosBases\frmConfirmar.Designer.vb">
       <DependentUpon>frmConfirmar.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosBases\frmConfirmar.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormulariosBases\frmConfirmar.vb" />
     <Compile Include="FormulariosBases\frmFormulario.Designer.vb">
       <DependentUpon>frmFormulario.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosBases\frmFormulario.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormulariosBases\frmFormulario.vb" />
     <Compile Include="FormulariosBases\frmMensaje.Designer.vb">
       <DependentUpon>frmMensaje.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosBases\frmMensaje.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormulariosBases\frmMensaje.vb" />
     <Compile Include="Formularios\Browse\frmBss020modulos.Designer.vb">
       <DependentUpon>frmBss020modulos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBss020modulos.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBss020modulos.vb" />
     <Compile Include="Formularios\Browse\frmBss050usuarios.Designer.vb">
       <DependentUpon>frmBss050usuarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBss050usuarios.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Browse\frmBss050usuarios.vb" />
     <Compile Include="Formularios\Form\frmFLoginAcceso.Designer.vb">
       <DependentUpon>frmFLoginAcceso.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFLoginAcceso.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFLoginAcceso.vb" />
     <Compile Include="Formularios\Form\frmFss020modulos.Designer.vb">
       <DependentUpon>frmFss020modulos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFss020modulos.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFss020modulos.vb" />
     <Compile Include="Formularios\frmMenuPrincipal.Designer.vb">
       <DependentUpon>frmMenuPrincipal.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmMenuPrincipal.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\frmMenuPrincipal.vb" />
     <Compile Include="modGPCargar.vb" />
     <Compile Include="modMain.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -917,9 +707,7 @@
     <Compile Include="Formularios\Form\frmFGeneraArchivoControl.Designer.vb">
       <DependentUpon>frmFGeneraArchivoControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form\frmFGeneraArchivoControl.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Form\frmFGeneraArchivoControl.vb" />
     <Compile Include="Utilitarios\Herramientas.vb" />
     <Compile Include="Utilitarios\modGFbPuedeModificarBorrar.vb" />
     <Compile Include="Utilitarios\modGFiCotizacion.vb" />

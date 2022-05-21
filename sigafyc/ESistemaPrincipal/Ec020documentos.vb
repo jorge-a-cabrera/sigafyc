@@ -160,7 +160,7 @@
     End Function
 
     Public Sub CerrarConexion()
-        ConteoRegistros(msTableName)
+        ConteoRegistros(msTableName, "CerrarConexion")
         Desconectar(msTableName)
     End Sub
 

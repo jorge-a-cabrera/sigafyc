@@ -172,7 +172,7 @@ Public Class frmBb050plancuentas
         ' Aqui es donde se mueve el DataGridView para que se pueda visualizar 
         ' la fila seleccionada.
         If liIndex > -1 Then
-            DataGridView1.CurrentCell = DataGridView1.Rows(liIndex).Cells("codigo")
+            DataGridView1.CurrentCell = DataGridView1.Rows(liIndex).Cells("cuenta")
         End If
     End Sub
 
