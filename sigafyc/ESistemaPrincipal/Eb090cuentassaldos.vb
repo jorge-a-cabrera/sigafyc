@@ -93,11 +93,9 @@ Public Class Eb090cuentassaldos : Inherits RBase
         MyBase.New()
         SetParametros(msRama, msTableName, msRequeridos, msCampos_PK, Me)
         Conectar(msTableName)
-        ConteoRegistros(msTableName)
     End Sub
 
     Public Sub CerrarConexion()
-        ConteoRegistros(msTableName, "CerrarConexion")
         Desconectar(msTableName)
     End Sub
 

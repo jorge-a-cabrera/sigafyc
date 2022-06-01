@@ -92,7 +92,7 @@ Public Class RBase : Inherits Ebase
                 End If
             End If
         Catch ex As Exception
-            MessageBox.Show("RBase.SiguienteNumero.Read" & ControlChars.CrLf & ex.Message)
+            MessageBox.Show("RBase.ConteoRegistros.Read [" & lsSQL & "]" & ControlChars.CrLf & ex.Message)
         End Try
         loDatos.Close()
 
@@ -108,7 +108,7 @@ Public Class RBase : Inherits Ebase
                         Else
                             If liResultado < Integer.Parse(lsValor) Then
                                 Dim liDiferencia As Integer = Integer.Parse(lsValor) - liResultado
-                                GFsAvisar("Ha sido eliminada de la tabla " & psTableName.ToUpper & ", " & liDiferencia.ToString & " registros fuera del sistema.", sViolacion_, "Esta sesión no podrá continuar, hasta que este problema sea esclarecido y subsanado.")
+                                GFsAvisar("Ha(n) sido eliminada(s) de la tabla " & psTableName.ToUpper & ", " & liDiferencia.ToString & " registro(s) fuera del sistema.", sViolacion_, "Esta sesión no podrá continuar, hasta que este problema sea esclarecido y subsanado.")
                             End If
                         End If
                     End If

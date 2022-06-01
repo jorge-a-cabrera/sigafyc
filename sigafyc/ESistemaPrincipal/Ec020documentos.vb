@@ -138,7 +138,6 @@
         MyBase.New()
         SetParametros(msRama, msTableName, msRequeridos, msCampos_PK, Me)
         Conectar(msTableName)
-        ConteoRegistros(msTableName)
     End Sub
 
     Public Function ReservarRegistro(Optional ByVal piCodEmpresa As Integer = 0) As Integer
@@ -160,7 +159,6 @@
     End Function
 
     Public Sub CerrarConexion()
-        ConteoRegistros(msTableName, "CerrarConexion")
         Desconectar(msTableName)
     End Sub
 

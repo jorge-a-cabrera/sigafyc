@@ -53,7 +53,6 @@
     Private mdCredito_b As Decimal
 
 #End Region
-
     Public Property codEmpresa As Integer
         Get
             Return miCodEmpresa
@@ -238,7 +237,6 @@
         MyBase.New()
         SetParametros(msRama, msTableName, msRequeridos, msCampos_PK, Me)
         Conectar(msTableName)
-        ConteoRegistros(msTableName)
     End Sub
 
     Public Function ReservarRegistro(ByVal piCodEmpresa As Integer) As Integer
@@ -268,7 +266,6 @@
     End Function
 
     Public Sub CerrarConexion()
-        ConteoRegistros(msTableName, "CerrarConexion")
         Desconectar(msTableName)
     End Sub
 

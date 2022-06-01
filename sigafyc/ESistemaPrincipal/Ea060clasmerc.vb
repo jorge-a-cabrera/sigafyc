@@ -71,7 +71,6 @@
         MyBase.New()
         SetParametros(msRama, msTableName, msRequeridos, msCampos_PK, Me)
         Conectar(msTableName)
-        ConteoRegistros(msTableName)
     End Sub
 
     Public Function ReservarRegistro(Optional ByVal psTipo As String = sEntrada_) As Integer
@@ -93,7 +92,6 @@
     End Function
 
     Public Sub CerrarConexion()
-        ConteoRegistros(msTableName, "CerrarConexion")
         Desconectar(msTableName)
     End Sub
 

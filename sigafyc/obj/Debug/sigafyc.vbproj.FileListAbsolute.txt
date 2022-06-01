@@ -545,6 +545,7 @@ C:\Mis Proyectos\sigafyc\sigafyc\bin\Debug\Npgsql.xml
 C:\Mis Proyectos\sigafyc\sigafyc\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Mis Proyectos\sigafyc\sigafyc\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Mis Proyectos\sigafyc\sigafyc\bin\Debug\System.ValueTuple.xml
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.vbproj.AssemblyReference.cache
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\Interop.ADOX.dll
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.vbproj.ResolveComReference.cache
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBrowseSinGrid.resources

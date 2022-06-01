@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xrml="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <assemblyIdentity name="sigafyc.application" version="1.0.0.66" publicKeyToken="0000000000000000" language="es-PY" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <assemblyIdentity name="sigafyc.application" version="1.0.0.67" publicKeyToken="0000000000000000" language="es-PY" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <description asmv2:publisher="Jorge Antonio Cabrera González" co.v1:suiteName="SIGAFYC" asmv2:product="sigafyc" asmv2:supportUrl="https://www.linkedin.com/in/jorge-antonio-cabrera-gonzalez-28319312/" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
@@ -8,13 +8,13 @@
   </compatibleFrameworks>
   <dependency>
     <dependentAssembly dependencyType="install" codebase="sigafyc.exe.manifest" size="23689">
-      <assemblyIdentity name="sigafyc.exe" version="1.0.0.66" publicKeyToken="0000000000000000" language="es-PY" processorArchitecture="msil" type="win32" />
+      <assemblyIdentity name="sigafyc.exe" version="1.0.0.67" publicKeyToken="0000000000000000" language="es-PY" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MiYheu8AG8R+nAQyFbts0zodrkQko3e4wCumZXY5aVQ=</dsig:DigestValue>
+        <dsig:DigestValue>TDy5ao3dYWIK0uS9SUTChNGt5whh5cBA1mFmszu54s4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
