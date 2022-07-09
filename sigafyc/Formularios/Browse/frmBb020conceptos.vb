@@ -13,7 +13,6 @@ Public Class frmBb020conceptos
     Private msCodEmpresa As String = ""
     Private miCodEmpresa As Integer
     Private Shared mbabrirform As Boolean = False
-
     Public Property codEmpresa As Integer
         Get
             Return miCodEmpresa
@@ -22,7 +21,6 @@ Public Class frmBb020conceptos
             miCodEmpresa = value
         End Set
     End Property
-
     Private Sub Formulario_Load(sender As Object, e As EventArgs) Handles Me.Load
         DataGridView1.DefaultCellStyle.Font = New Font("Tahoma", 12, FontStyle.Regular, GraphicsUnit.Point)
         DataGridView1.AllowUserToResizeColumns = True
@@ -94,7 +92,6 @@ Public Class frmBb020conceptos
     Private Sub BuscarClave(sender As Object, e As EventArgs)
         LPCargarDatos()
     End Sub
-
     Private Sub LPCargarDatos()
         Dim lsSQL As String
         Dim loDatos As New Eb020conceptos
@@ -132,7 +129,6 @@ Public Class frmBb020conceptos
     Private Sub LPInicializaMaxLength()
         txtCodEmpresa_NE.MaxLength = 6
     End Sub
-
     Private Sub LPDespliegaDescripciones()
         lblNombreEmpresa.Text = ""
         If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
@@ -147,7 +143,6 @@ Public Class frmBb020conceptos
             txtCodEmpresa_NE.Text = liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength)
         End If
     End Sub
-
     Private Sub LPLocalizaRegistro(ByVal psCodigo As String)
         ' Este procedimiento realiza la busqueda del parametro
         ' a fin de ubicarlo dentro del DataGridView
@@ -170,7 +165,6 @@ Public Class frmBb020conceptos
             DataGridView1.CurrentCell = DataGridView1.Rows(liIndex).Cells("codigo")
         End If
     End Sub
-
     Private Sub txtCodEmpresa_NE_Validating(sender As Object, e As CancelEventArgs) Handles txtCodEmpresa_NE.Validating
         Dim loFK As New Ec001empresas
         If txtCodEmpresa_NE.Text.Trim.Length = 0 Then

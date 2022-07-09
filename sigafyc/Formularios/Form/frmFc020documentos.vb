@@ -1,23 +1,19 @@
 ﻿Imports System.ComponentModel
-
 Public Class frmFc020documentos
     Private msValidado() As String
     Private msRequeridos As String() = {"codempresa", "coddocumento", "tipo", "abreviado", "nombre", "timbrado", "codmoneda", "lineas"}
     Private moRequeridos As New ArrayList(msRequeridos)
     Private msCodMoneda As String = ""
     Private moColor As Color
-
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         LPOperacionCancelada()
     End Sub
-
     Private Sub LPOperacionCancelada()
         LPBorrarAlCancelar()
         Me.Tag = sCancelar_
         GPBitacoraRegistrar(sSALIO_, Me.Text & ", haciendo click en CANCELAR.")
         Me.Close()
     End Sub
-
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         If InStr(sAGREGAR_ & sMODIFICAR_, Me.Tag.ToString) > 0 Then
             msValidado = GFsValidacionFinal(TabControl1).Split(sSF_)
@@ -30,20 +26,19 @@ Public Class frmFc020documentos
                     Case sAGREGAR_
                         Dim loDatos As New Ec020documentos
                         LPTruncaSegunLongitud()
-                        loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
-                        loDatos.codDocumento = Integer.Parse(txtCodigo_NE.Text.ToString)
+                        loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+                        loDatos.coddocumento = Integer.Parse(txtCodigo_NE.Text.ToString)
                         loDatos.tipo = cmbTipo.Text
                         loDatos.abreviado = txtAbreviado_AN.Text
                         loDatos.nombre = txtNombre_AN.Text
                         loDatos.timbrado = cmbTimbrado.Text
-                        loDatos.codMoneda = txtCodMoneda_AN.Text
+                        loDatos.codmoneda = txtCodMoneda_AN.Text
                         loDatos.cotizacion = LFsTipoCotizacion()
                         loDatos.lineas = Integer.Parse(txtLineas_NE.Text.ToString)
                         If cmbEstado.Text.Trim.Length > 0 Then
                             loDatos.estado = cmbEstado.Text
                         End If
                         loDatos.aplicacion = cmbAplicacion.Text
-                        loDatos.tipoPerfil = cmbTipoPerfil.Text
                         Try
                             loDatos.Put(sSi_, sSi_, sAGREGAR_)
                         Catch ex As Exception
@@ -54,24 +49,23 @@ Public Class frmFc020documentos
                         loDatos = Nothing
                     Case sMODIFICAR_
                         Dim loDatos As New Ec020documentos
-                        loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
-                        loDatos.codDocumento = Integer.Parse(txtCodigo_NE.Text.ToString)
+                        loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+                        loDatos.coddocumento = Integer.Parse(txtCodigo_NE.Text.ToString)
                         If loDatos.GetPK = sOk_ Then
                             LPTruncaSegunLongitud()
-                            loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
-                            loDatos.codDocumento = Integer.Parse(txtCodigo_NE.Text.ToString)
+                            loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+                            loDatos.coddocumento = Integer.Parse(txtCodigo_NE.Text.ToString)
                             loDatos.tipo = cmbTipo.Text
                             loDatos.nombre = txtNombre_AN.Text
                             loDatos.abreviado = txtAbreviado_AN.Text
                             loDatos.timbrado = cmbTimbrado.Text
-                            loDatos.codMoneda = txtCodMoneda_AN.Text
-                            loDatos.cotizacion = LFsTipoCotizacion
+                            loDatos.codmoneda = txtCodMoneda_AN.Text
+                            loDatos.cotizacion = LFsTipoCotizacion()
                             loDatos.lineas = Integer.Parse(txtLineas_NE.Text.ToString)
                             If cmbEstado.Text.Trim.Length > 0 Then
                                 loDatos.estado = cmbEstado.Text
                             End If
                             loDatos.aplicacion = cmbAplicacion.Text
-                            loDatos.tipoPerfil = cmbTipoPerfil.Text
                             loDatos.Put()
                         End If
                         loDatos.CerrarConexion()
@@ -87,11 +81,11 @@ Public Class frmFc020documentos
         Else
             If Me.Tag.ToString = sBORRAR_ Then
                 Dim loDatos As New Ec020documentos
-                loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
-                loDatos.codDocumento = Integer.Parse(txtCodigo_NE.Text.ToString)
+                loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+                loDatos.coddocumento = Integer.Parse(txtCodigo_NE.Text.ToString)
                 If loDatos.GetPK = sOk_ Then
-                    loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
-                    loDatos.codDocumento = Integer.Parse(txtCodigo_NE.Text.ToString)
+                    loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+                    loDatos.coddocumento = Integer.Parse(txtCodigo_NE.Text.ToString)
                     loDatos.Del()
                 End If
                 loDatos.CerrarConexion()
@@ -102,7 +96,6 @@ Public Class frmFc020documentos
             Me.Close()
         End If
     End Sub
-
     Private Sub ManejoEvento_Validating(sender As Object, e As CancelEventArgs)
         If CType(sender, Control).Text.Trim.Length = 0 Then
             If LFsExiste(CType(sender, Control).AccessibleName) = sNo_ Then Exit Sub
@@ -155,13 +148,11 @@ Public Class frmFc020documentos
         End If
         LPDespliegaDescripciones()
     End Sub
-
     Private Sub ManejoEvento_Validated(sender As Object, e As EventArgs)
         CType(sender, Control).Tag = sOk_
         Select Case CType(sender, Control).Name
         End Select
     End Sub
-
     Private Sub Formulario_Load(sender As Object, e As EventArgs) Handles Me.Load
         LPInicializaParametros()
         LPInicializaMaxLength()
@@ -181,20 +172,19 @@ Public Class frmFc020documentos
                     End If
                 Next
                 Dim loDatos As New Ec020documentos
-                txtCodEmpresa_NE.Text = CType(entidad, Ec020documentos).codEmpresa.ToString
+                txtCodEmpresa_NE.Text = CType(entidad, Ec020documentos).codempresa.ToString
                 txtCodigo_NE.Text = loDatos.ReservarRegistro(Integer.Parse(txtCodEmpresa_NE.Text.ToString)).ToString
-                txtCodEmpresa_NE.Tag = sOk_
-                txtCodigo_NE.Tag = sOk_
+                cmbTipo.Text = CType(entidad, Ec020documentos).tipo
                 loDatos.CerrarConexion()
                 loDatos = Nothing
             Case Else
-                txtCodEmpresa_NE.Text = CType(entidad, Ec020documentos).codEmpresa.ToString
-                txtCodigo_NE.Text = CType(entidad, Ec020documentos).codDocumento.ToString
+                txtCodEmpresa_NE.Text = CType(entidad, Ec020documentos).codempresa.ToString
+                txtCodigo_NE.Text = CType(entidad, Ec020documentos).coddocumento.ToString
                 cmbTipo.Text = CType(entidad, Ec020documentos).tipo
                 txtAbreviado_AN.Text = CType(entidad, Ec020documentos).abreviado
                 txtNombre_AN.Text = CType(entidad, Ec020documentos).nombre
                 cmbTimbrado.Text = CType(entidad, Ec020documentos).timbrado
-                txtCodMoneda_AN.Text = CType(entidad, Ec020documentos).codMoneda
+                txtCodMoneda_AN.Text = CType(entidad, Ec020documentos).codmoneda
                 Select Case CType(entidad, Ec020documentos).cotizacion
                     Case sCompra_
                         rbtCompra.Checked = True
@@ -205,7 +195,6 @@ Public Class frmFc020documentos
                 End Select
                 txtLineas_NE.Text = CType(entidad, Ec020documentos).lineas.ToString
                 cmbAplicacion.Text = CType(entidad, Ec020documentos).aplicacion.ToString
-                cmbTipoPerfil.Text = CType(entidad, Ec020documentos).tipoPerfil.ToString
                 cmbEstado.Text = CType(entidad, Ec020documentos).estado
                 txtCodEmpresa_NE.Tag = sOk_
                 txtCodigo_NE.Tag = sOk_
@@ -216,7 +205,6 @@ Public Class frmFc020documentos
                 txtCodMoneda_AN.Tag = sOk_
                 txtLineas_NE.Tag = sOk_
                 cmbAplicacion.Tag = sOk_
-                cmbTipoPerfil.Tag = sOk_
                 cmbEstado.Tag = sOk_
         End Select
         ' Habilita o deshabilita los controles de edición
@@ -230,7 +218,6 @@ Public Class frmFc020documentos
         gbxCotizacion.Enabled = True
         txtLineas_NE.Enabled = True
         cmbAplicacion.Enabled = True
-        cmbTipoPerfil.Enabled = True
         cmbEstado.Enabled = True
 
         txtCodEmpresa_NE.AccessibleName = "codEmpresa"
@@ -243,21 +230,24 @@ Public Class frmFc020documentos
         gbxCotizacion.AccessibleName = "cotizacion"
         txtLineas_NE.AccessibleName = "lineas"
         cmbAplicacion.AccessibleName = "aplicacion"
-        cmbTipoPerfil.AccessibleName = "tipoperfil"
         cmbEstado.AccessibleName = "estado"
 
         Select Case Me.Tag.ToString
             Case sAGREGAR_
                 txtCodEmpresa_NE.Enabled = False
-                txtCodEmpresa_NE.Tag = sOk_
                 txtCodigo_NE.Enabled = False
+                cmbTipo.Enabled = False
+                txtCodEmpresa_NE.Tag = sOk_
                 txtCodigo_NE.Tag = sOk_
+                cmbTipo.Tag = sOk_
 
             Case sMODIFICAR_
                 txtCodEmpresa_NE.Enabled = False
-                txtCodEmpresa_NE.Tag = sOk_
                 txtCodigo_NE.Enabled = False
+                cmbTipo.Enabled = False
+                txtCodEmpresa_NE.Tag = sOk_
                 txtCodigo_NE.Tag = sOk_
+                cmbTipo.Tag = sOk_
 
             Case sCONSULTAR_, sBORRAR_
                 For liNDX As Integer = 0 To loControls.Count - 1
@@ -274,7 +264,6 @@ Public Class frmFc020documentos
         End Select
 
     End Sub
-
     Private Sub Formulario_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         '--> AQUI DEBE INGRESARSE EL FOCUS DEL PRIMER ELEMENTO DEL FORMULARIO
         Select Case Me.Tag.ToString
@@ -285,7 +274,6 @@ Public Class frmFc020documentos
         End Select
         LPDespliegaDescripciones()
     End Sub
-
     Private Sub LPDespliegaDescripciones()
         Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
         Dim liCodigo As Integer = Integer.Parse(txtCodigo_NE.Text.ToString)
@@ -317,7 +305,6 @@ Public Class frmFc020documentos
         LPDespliegaTipoCotizacion()
 
     End Sub
-
     Private Sub LPInicializaMaxLength()
         txtCodEmpresa_NE.MaxLength = 6
         txtCodigo_NE.MaxLength = 3
@@ -329,7 +316,6 @@ Public Class frmFc020documentos
         txtLineas_NE.MaxLength = 4
         cmbEstado.MaxLength = 15
     End Sub
-
     Private Sub LPInicializaControles()
         For Each loTabPage As TabPage In TabControl1.TabPages
             If loTabPage.AccessibleName = sActivo_ Then
@@ -373,7 +359,6 @@ Public Class frmFc020documentos
             End If
         Next
     End Sub
-
     Private Function LFsExiste(ByVal psCampo As String) As String
         Dim lsResultado As String = sNo_
         For Each lsCampo As String In moRequeridos
@@ -384,24 +369,22 @@ Public Class frmFc020documentos
         Next
         Return lsResultado
     End Function
-
     Private Sub LPBorrarAlCancelar()
         If Me.Tag.ToString <> sAGREGAR_ Then Exit Sub
 
         Dim loDatos As New Ec020documentos
         Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
         Dim liCodigo As Integer = Integer.Parse(txtCodigo_NE.Text.ToString)
-        loDatos.codEmpresa = liCodEmpresa
-        loDatos.codDocumento = liCodigo
+        loDatos.codempresa = liCodEmpresa
+        loDatos.coddocumento = liCodigo
         If loDatos.GetPK = sOk_ Then
-            loDatos.codEmpresa = liCodEmpresa
-            loDatos.codDocumento = liCodigo
+            loDatos.codempresa = liCodEmpresa
+            loDatos.coddocumento = liCodigo
             loDatos.Del(sNo_, sNo_)
         End If
         loDatos.CerrarConexion()
         loDatos = Nothing
     End Sub
-
     Private Function LFsTipoCotizacion() As String
         Dim lsResultado As String = rbtCompra.Text
 
@@ -417,11 +400,9 @@ Public Class frmFc020documentos
 
         Return lsResultado
     End Function
-
     Private Sub TipoCotizacion_CheckedChanged(sender As Object, e As EventArgs) Handles rbtCompra.CheckedChanged, rbtVenta.CheckedChanged, rbtSemisuma.CheckedChanged
         LPDespliegaTipoCotizacion()
     End Sub
-
     Private Sub LPDespliegaTipoCotizacion()
         rbtCompra.BackColor = moColor
         rbtVenta.BackColor = moColor
@@ -437,7 +418,6 @@ Public Class frmFc020documentos
             rbtSemisuma.BackColor = Color.LightBlue
         End If
     End Sub
-
     Private Sub LPInicializaParametros()
         Dim lsTipo As String = sGeneral_
         Dim lsClave As String = ""
@@ -458,21 +438,5 @@ Public Class frmFc020documentos
         If Me.Tag.ToString = sAGREGAR_ Then
             cmbAplicacion.Text = cmbAplicacion.Items(0).ToString
         End If
-
-        lsClave = "b060perautgest.tipoperfil"
-        lsValor = "CLIENTES" & sSF_ & "PROVEEDORES"
-        lsCodigo = GFsParametroObtener(lsTipo, lsClave)
-        If lsCodigo = sRESERVADO_ Then
-            lsCodigo = lsValor
-            GPParametroGuardar(lsTipo, lsClave, lsCodigo)
-        End If
-        cmbTipoPerfil.Items.Clear()
-        For Each lsValor In lsCodigo.Split(sSF_)
-            cmbTipoPerfil.Items.Add(lsValor)
-        Next
-        If Me.Tag.ToString = sAGREGAR_ Then
-            cmbTipoPerfil.Text = cmbTipoPerfil.Items(0).ToString
-        End If
-
     End Sub
 End Class

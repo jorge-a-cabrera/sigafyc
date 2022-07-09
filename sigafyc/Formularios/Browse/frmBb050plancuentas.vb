@@ -339,7 +339,7 @@ Public Class frmBb050plancuentas
 
     Private Sub Form_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         LPHabilitaControles2()
-        txtCodEmpresa_NE.Focus()
+        'txtCodEmpresa_NE.Focus()
     End Sub
 
     Private Sub ImportarTexto_Click(sender As Object, e As EventArgs)

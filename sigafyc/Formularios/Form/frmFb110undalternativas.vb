@@ -1,20 +1,16 @@
 ﻿Imports System.ComponentModel
-
 Public Class frmFb110undalternativas
     Private msValidado() As String
     Private msRequeridos As String() = {"codempresa", "codmercaderia", "codunidad", "nomunidad", "cantidad", "estado"}
     Private moRequeridos As New ArrayList(msRequeridos)
-
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         LPOperacionCancelada()
     End Sub
-
     Private Sub LPOperacionCancelada()
         Me.Tag = sCancelar_
         GPBitacoraRegistrar(sSALIO_, Me.Text & ", haciendo click en CANCELAR.")
         Me.Close()
     End Sub
-
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         If InStr(sAGREGAR_ & sMODIFICAR_, Me.Tag.ToString) > 0 Then
             msValidado = GFsValidacionFinal(TabControl1).Split(sSF_)
@@ -94,7 +90,6 @@ Public Class frmFb110undalternativas
             Me.Close()
         End If
     End Sub
-
     Private Sub ManejoEvento_Validating(sender As Object, e As CancelEventArgs)
         If CType(sender, Control).Text.Trim.Length = 0 Then
             If LFsExiste(CType(sender, Control).AccessibleName) = sNo_ Then Exit Sub
@@ -124,13 +119,11 @@ Public Class frmFb110undalternativas
         End If
         LPDespliegaDescripciones()
     End Sub
-
     Private Sub ManejoEvento_Validated(sender As Object, e As EventArgs)
         CType(sender, Control).Tag = sOk_
         Select Case CType(sender, Control).Name
         End Select
     End Sub
-
     Private Sub Formulario_Load(sender As Object, e As EventArgs) Handles Me.Load
         LPInicializaParametros()
         LPInicializaMaxLength()
@@ -222,7 +215,6 @@ Public Class frmFb110undalternativas
         End Select
         LPDespliegaDescripciones()
     End Sub
-
     Private Sub Formulario_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         '--> AQUI DEBE INGRESARSE EL FOCUS DEL PRIMER ELEMENTO DEL FORMULARIO
         Select Case Me.Tag.ToString
@@ -233,7 +225,6 @@ Public Class frmFb110undalternativas
         End Select
         LPDespliegaDescripciones()
     End Sub
-
     Private Sub LPDespliegaDescripciones()
         Dim ldValorInicial As Decimal = 0.00D
 
@@ -277,6 +268,7 @@ Public Class frmFb110undalternativas
 
         lblUndBasica.Text = ""
         Dim loFK As New Ea050unidades
+        loFK.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
         loFK.codunidad = lsCodUnidad
         If loFK.GetPK = sOk_ Then
             lblUndBasica.Text = loFK.nombre
@@ -295,7 +287,6 @@ Public Class frmFb110undalternativas
             txtCantidad_ND.Refresh()
         End If
     End Sub
-
     Private Sub LPInicializaMaxLength()
         txtCodEmpresa_NE.MaxLength = 6
         cmbTipo.MaxLength = 15
@@ -305,7 +296,6 @@ Public Class frmFb110undalternativas
         txtCantidad_ND.MaxLength = 17
         cmbEstado.MaxLength = 15
     End Sub
-
     Private Sub LPInicializaControles()
         For Each loTabPage As TabPage In TabControl1.TabPages
             If loTabPage.AccessibleName = sActivo_ Then
@@ -349,7 +339,6 @@ Public Class frmFb110undalternativas
             End If
         Next
     End Sub
-
     Private Function LFsExiste(ByVal psCampo As String) As String
         Dim lsResultado As String = sNo_
         For Each lsCampo As String In moRequeridos
@@ -360,7 +349,6 @@ Public Class frmFb110undalternativas
         Next
         Return lsResultado
     End Function
-
     Private Sub LPInicializaParametros()
         Dim lsTipo As String = sGeneral_
         Dim lsClave As String = ""
@@ -379,7 +367,6 @@ Public Class frmFb110undalternativas
             cmbTipo.Items.Add(lsValor)
         Next
     End Sub
-
     Private Sub btnDetalle_Click(sender As Object, e As EventArgs) Handles btnDetalle.Click
         If Not (Me.Tag.ToString = sCONSULTAR_ Or Me.Tag.ToString = sMODIFICAR_) Then Exit Sub
         Dim loDetallePrecio As New frmBe020listaprecio

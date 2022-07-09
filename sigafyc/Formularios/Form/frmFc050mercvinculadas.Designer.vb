@@ -49,16 +49,13 @@ Partial Class frmFc050mercvinculadas
         '
         'TabControl1
         '
-        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Size = New System.Drawing.Size(783, 276)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
-        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.gbxVinculada)
         Me.TabPage1.Controls.Add(Me.lblNombreSalida)
         Me.TabPage1.Controls.Add(Me.lblNombreEmpresa)
@@ -66,7 +63,6 @@ Partial Class frmFc050mercvinculadas
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.txtCodSalida_AN)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
         Me.TabPage1.Size = New System.Drawing.Size(775, 240)
         '
         'btnCancelar
@@ -79,17 +75,16 @@ Partial Class frmFc050mercvinculadas
         '
         'lblMensaje
         '
-        Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMensaje.Size = New System.Drawing.Size(779, 28)
         '
         'lblNombreEmpresa
         '
         Me.lblNombreEmpresa.AutoSize = True
-        Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(254, 21)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
-        Me.lblNombreEmpresa.Size = New System.Drawing.Size(152, 20)
+        Me.lblNombreEmpresa.Size = New System.Drawing.Size(168, 20)
         Me.lblNombreEmpresa.TabIndex = 106
         Me.lblNombreEmpresa.Text = "<nombre_empresa>"
         '
@@ -134,11 +129,11 @@ Partial Class frmFc050mercvinculadas
         'lblNombreSalida
         '
         Me.lblNombreSalida.AutoSize = True
-        Me.lblNombreSalida.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreSalida.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreSalida.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreSalida.Location = New System.Drawing.Point(254, 53)
         Me.lblNombreSalida.Name = "lblNombreSalida"
-        Me.lblNombreSalida.Size = New System.Drawing.Size(131, 20)
+        Me.lblNombreSalida.Size = New System.Drawing.Size(146, 20)
         Me.lblNombreSalida.TabIndex = 111
         Me.lblNombreSalida.Text = "<nombre_salida>"
         '
@@ -164,33 +159,33 @@ Partial Class frmFc050mercvinculadas
         'lblCantidadReal
         '
         Me.lblCantidadReal.AutoSize = True
-        Me.lblCantidadReal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCantidadReal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCantidadReal.ForeColor = System.Drawing.Color.Navy
         Me.lblCantidadReal.Location = New System.Drawing.Point(288, 102)
         Me.lblCantidadReal.Name = "lblCantidadReal"
-        Me.lblCantidadReal.Size = New System.Drawing.Size(138, 20)
+        Me.lblCantidadReal.Size = New System.Drawing.Size(153, 20)
         Me.lblCantidadReal.TabIndex = 121
         Me.lblCantidadReal.Text = "<nombre_unidad>"
         '
         'lblNombreEntrada
         '
         Me.lblNombreEntrada.AutoSize = True
-        Me.lblNombreEntrada.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEntrada.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreEntrada.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEntrada.Location = New System.Drawing.Point(288, 38)
         Me.lblNombreEntrada.Name = "lblNombreEntrada"
-        Me.lblNombreEntrada.Size = New System.Drawing.Size(145, 20)
+        Me.lblNombreEntrada.Size = New System.Drawing.Size(161, 20)
         Me.lblNombreEntrada.TabIndex = 120
         Me.lblNombreEntrada.Text = "<nombre_entrada>"
         '
         'lblNombreUnidad
         '
         Me.lblNombreUnidad.AutoSize = True
-        Me.lblNombreUnidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreUnidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreUnidad.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreUnidad.Location = New System.Drawing.Point(288, 70)
         Me.lblNombreUnidad.Name = "lblNombreUnidad"
-        Me.lblNombreUnidad.Size = New System.Drawing.Size(138, 20)
+        Me.lblNombreUnidad.Size = New System.Drawing.Size(153, 20)
         Me.lblNombreUnidad.TabIndex = 119
         Me.lblNombreUnidad.Text = "<nombre_unidad>"
         '
@@ -258,7 +253,7 @@ Partial Class frmFc050mercvinculadas
         Me.TabPage2.Controls.Add(Me.Label10)
         Me.TabPage2.Location = New System.Drawing.Point(4, 32)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(864, 240)
+        Me.TabPage2.Size = New System.Drawing.Size(775, 240)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True

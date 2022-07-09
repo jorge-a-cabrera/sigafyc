@@ -50,16 +50,13 @@ Partial Class frmFb110undalternativas
         '
         'TabControl1
         '
-        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Size = New System.Drawing.Size(792, 323)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
-        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.cmbTipo)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.gbxVinculada)
@@ -69,7 +66,6 @@ Partial Class frmFb110undalternativas
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.txtCodMercaderia_AN)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
         Me.TabPage1.Size = New System.Drawing.Size(784, 287)
         '
         'btnCancelar
@@ -104,11 +100,11 @@ Partial Class frmFb110undalternativas
         'lblUndBasica
         '
         Me.lblUndBasica.AutoSize = True
-        Me.lblUndBasica.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUndBasica.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUndBasica.ForeColor = System.Drawing.Color.Navy
         Me.lblUndBasica.Location = New System.Drawing.Point(309, 102)
         Me.lblUndBasica.Name = "lblUndBasica"
-        Me.lblUndBasica.Size = New System.Drawing.Size(130, 20)
+        Me.lblUndBasica.Size = New System.Drawing.Size(145, 20)
         Me.lblUndBasica.TabIndex = 119
         Me.lblUndBasica.Text = "<unidad_basica>"
         '
@@ -172,22 +168,22 @@ Partial Class frmFb110undalternativas
         'lblNombreMercaderia
         '
         Me.lblNombreMercaderia.AutoSize = True
-        Me.lblNombreMercaderia.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreMercaderia.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreMercaderia.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreMercaderia.Location = New System.Drawing.Point(282, 83)
         Me.lblNombreMercaderia.Name = "lblNombreMercaderia"
-        Me.lblNombreMercaderia.Size = New System.Drawing.Size(169, 20)
+        Me.lblNombreMercaderia.Size = New System.Drawing.Size(188, 20)
         Me.lblNombreMercaderia.TabIndex = 118
         Me.lblNombreMercaderia.Text = "<nombre_mercaderia>"
         '
         'lblNombreEmpresa
         '
         Me.lblNombreEmpresa.AutoSize = True
-        Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(282, 17)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
-        Me.lblNombreEmpresa.Size = New System.Drawing.Size(152, 20)
+        Me.lblNombreEmpresa.Size = New System.Drawing.Size(168, 20)
         Me.lblNombreEmpresa.TabIndex = 117
         Me.lblNombreEmpresa.Text = "<nombre_empresa>"
         '

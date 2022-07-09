@@ -160,6 +160,7 @@ C:\Mis Proyectos\sigafyc\sigafyc\bin\x64\Release\Npgsql.xml
 C:\Mis Proyectos\sigafyc\sigafyc\bin\x64\Release\System.Runtime.CompilerServices.Unsafe.xml
 C:\Mis Proyectos\sigafyc\sigafyc\bin\x64\Release\System.Threading.Tasks.Extensions.xml
 C:\Mis Proyectos\sigafyc\sigafyc\bin\x64\Release\System.ValueTuple.xml
+C:\Mis Proyectos\sigafyc\sigafyc\obj\x64\Release\sigafyc.vbproj.AssemblyReference.cache
 C:\Mis Proyectos\sigafyc\sigafyc\obj\x64\Release\Interop.ADOX.dll
 C:\Mis Proyectos\sigafyc\sigafyc\obj\x64\Release\sigafyc.vbproj.ResolveComReference.cache
 C:\Mis Proyectos\sigafyc\sigafyc\obj\x64\Release\sigafyc.frmBrowseSinGrid.resources

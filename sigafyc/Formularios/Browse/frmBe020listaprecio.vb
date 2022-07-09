@@ -208,7 +208,7 @@ Public Class frmBe020listaprecio
             Else
                 Dim loFK As New Eb110undalternativas
                 loFK.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text)
-                loFK.tipo = sEntrada_
+                loFK.tipo = sSalida_
                 loFK.codmercaderia = txtCodMercaderia_AN.Text
                 loFK.codunidad = txtCodUnidad_AN.Text
                 If loFK.GetPK = sOk_ Then

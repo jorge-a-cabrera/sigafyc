@@ -109,7 +109,7 @@ Partial Class frmBe010asientoscabeceras : Inherits frmBrowseSinGrid
         '
         'TabControl1
         '
-        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -123,6 +123,7 @@ Partial Class frmBe010asientoscabeceras : Inherits frmBrowseSinGrid
         'TabPage1
         '
         Me.TabPage1.AccessibleName = "Activo"
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.DataGridView1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 36)
         Me.TabPage1.Name = "TabPage1"
@@ -148,6 +149,7 @@ Partial Class frmBe010asientoscabeceras : Inherits frmBrowseSinGrid
         'TabPage2
         '
         Me.TabPage2.AccessibleName = "Activo"
+        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.lblTotalCreditos)
         Me.TabPage2.Controls.Add(Me.lblTotalDebitos)
         Me.TabPage2.Controls.Add(Me.Label2)

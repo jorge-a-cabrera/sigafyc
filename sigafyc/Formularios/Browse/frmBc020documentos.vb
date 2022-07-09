@@ -1,5 +1,4 @@
 ﻿Imports System.ComponentModel
-
 Public Class frmBc020documentos
     Private moFormulario As frmFc020documentos
     Private msTabla As String = ""
@@ -10,10 +9,10 @@ Public Class frmBc020documentos
     Private mbConsultar As Boolean
     Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
-    Private miCodEmpresa As Integer
+    Private miCodEmpresa As Integer = 0
+    Private msTipo As String = ""
     Private Shared mbabrirform As Boolean = False
-
-    Public Property codEmpresa As Integer
+    Public Property codempresa As Integer
         Get
             Return miCodEmpresa
         End Get
@@ -21,7 +20,14 @@ Public Class frmBc020documentos
             miCodEmpresa = value
         End Set
     End Property
-
+    Public Property tipo As String
+        Get
+            Return msTipo
+        End Get
+        Set(value As String)
+            msTipo = value
+        End Set
+    End Property
     Private Sub Formulario_Load(sender As Object, e As EventArgs) Handles Me.Load
         DataGridView1.DefaultCellStyle.Font = New Font("Tahoma", 12, FontStyle.Regular, GraphicsUnit.Point)
         DataGridView1.AllowUserToResizeColumns = True
@@ -55,6 +61,7 @@ Public Class frmBc020documentos
         AddHandler btnConsultar.Click, AddressOf Botones_Click
         AddHandler txtCodEmpresa_NE.KeyPress, AddressOf ManejoEvento_KeyPress
         AddHandler txtCodEmpresa_NE.KeyDown, AddressOf ManejoEvento_KeyDown
+        AddHandler cmbTipo.KeyPress, AddressOf ManejoEvento_KeyPress
         AddHandler DataGridView1.KeyDown, AddressOf DataGrid_KeyDown
         AddHandler DataGridView1.CellContentDoubleClick, AddressOf DataGrid_DoubleClick
 
@@ -80,28 +87,30 @@ Public Class frmBc020documentos
                 Me.Size = lofrmBase.Size
                 lofrmBase = Nothing
                 txtCodEmpresa_NE.Text = miCodEmpresa.ToString
+                cmbTipo.Text = msTipo
             End If
         End If
         lblNombreEmpresa.Text = ""
         mbabrirform = False
         If miCodEmpresa > 0 Then
             txtCodEmpresa_NE.Enabled = False
+            If msTipo.Trim.Length > 0 Then
+                cmbTipo.Enabled = False
+            End If
             LPCargarDatos()
         End If
         LPDespliegaDescripciones()
     End Sub
-
     Private Sub BuscarClave(sender As Object, e As EventArgs)
         LPCargarDatos()
     End Sub
-
     Private Sub LPCargarDatos()
         Dim lsSQL As String
         Dim loDatos As New Ec020documentos
         Dim loDataSet As DataSet
-        Dim lsWhere As String = "codempresa = @codempresa and nombre <> " & Chr(39) & sRESERVADO_ & Chr(39)
-        Dim lsCampos As String = "coddocumento as codigo, tipo, abreviado, nombre, timbrado, codmoneda, cotizacion, lineas, aplicacion, tipoperfil, estado, codempresa"
-        Dim lsCamposConcat As String = "coddocumento, tipo, abreviado, nombre, timbrado, codmoneda, cotizacion, lineas, aplicacion, tipoperfil, estado"
+        Dim lsWhere As String = "codempresa = @codempresa and tipo = @tipo and nombre <> " & Chr(39) & sRESERVADO_ & Chr(39)
+        Dim lsCampos As String = "coddocumento as codigo, tipo, abreviado, nombre, timbrado, codmoneda, cotizacion, lineas, aplicacion, estado, codempresa"
+        Dim lsCamposConcat As String = "coddocumento, tipo, abreviado, nombre, timbrado, codmoneda, cotizacion, lineas, aplicacion, estado"
         Dim lsConcatFiltro As String = lsCamposConcat
         Dim lsFiltro As String = sFiltroSentencia_
         lsFiltro = lsFiltro.Replace(sFiltroCampo_, lsConcatFiltro)
@@ -112,6 +121,7 @@ Public Class frmBc020documentos
         End If
         lsSQL = loDatos.GenerarSQL(lsCampos, lsFiltro, lsWhere)
         loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+        loDatos.tipo = cmbTipo.Text.ToString
         loDataSet = loDatos.RecuperarTabla(lsSQL)
         DataGridView1.DataSource = loDataSet
         DataGridView1.DataMember = loDatos.tableName
@@ -131,7 +141,6 @@ Public Class frmBc020documentos
     Private Sub LPInicializaMaxLength()
         txtCodEmpresa_NE.MaxLength = 6
     End Sub
-
     Private Sub LPDespliegaDescripciones()
         lblNombreEmpresa.Text = ""
         If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
@@ -146,7 +155,6 @@ Public Class frmBc020documentos
             txtCodEmpresa_NE.Text = liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength)
         End If
     End Sub
-
     Private Sub LPLocalizaRegistro(ByVal psCodigo As String)
         ' Este procedimiento realiza la busqueda del parametro
         ' a fin de ubicarlo dentro del DataGridView
@@ -169,7 +177,6 @@ Public Class frmBc020documentos
             DataGridView1.CurrentCell = DataGridView1.Rows(liIndex).Cells("codigo")
         End If
     End Sub
-
     Private Sub txtCodEmpresa_NE_Validating(sender As Object, e As CancelEventArgs) Handles txtCodEmpresa_NE.Validating
         Dim loFK As New Ec001empresas
         If txtCodEmpresa_NE.Text.Trim.Length = 0 Then
@@ -207,12 +214,11 @@ Public Class frmBc020documentos
         End If
 
         LPDespliegaDescripciones()
-        LPCargarDatos()
     End Sub
-
     Private Sub Botones_Click(sender As Object, e As EventArgs)
         Dim loDatos As New Ec020documentos
-        loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+        loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+        loDatos.tipo = cmbTipo.Text
         Select Case CType(sender, Button).AccessibleName
             Case sAGREGAR_
                 moFormulario = New frmFc020documentos
@@ -261,7 +267,6 @@ Public Class frmBc020documentos
         loDatos = Nothing
         LPCargarDatos()
     End Sub
-
     Private Sub btnAuditoria_Click(sender As Object, e As EventArgs) Handles btnAuditoria.Click
         Dim lsCodigo As String = DataGridView1.Item("codigo", DataGridView1.CurrentRow.Index).Value.ToString
         If lsCodigo.Trim.Length = 0 Then Exit Sub
@@ -269,7 +274,6 @@ Public Class frmBc020documentos
         Dim lsTablaHash() As String = LFsTablaHashPk(lsCodigo).Split(sSF_)
         GPDespliegaBitacoraDatos(lsTablaHash(0), lsTablaHash(1))
     End Sub
-
     Private Function LFsTablaHashPk(ByVal psCodigo As String) As String
         Dim lsResultado As String = ""
         If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
@@ -288,31 +292,25 @@ Public Class frmBc020documentos
         End If
         Return lsResultado
     End Function
-
     Private Sub ExportarExcel_Click(sender As Object, e As EventArgs)
         If GFsPuedeUsar(Me.Name & ":Exportar->Excel", "Permite exportar el contenido de " & Me.Name & " a un archivo Excel") = sSi_ Then
             GPExportarGridToExcel(DataGridView1, Me.Name)
         End If
     End Sub
-
     Private Sub ExportarTexto_Click(sender As Object, e As EventArgs)
         If GFsPuedeUsar(Me.Name & ":Exportar->Texto delimitado", "Permite exportar el contenido de " & Me.Name & " a un archivo de texto delimitado") = sSi_ Then
             GPExportarGridToTexto(DataGridView1, Me.Name)
         End If
     End Sub
-
     Private Sub ImportarTexto_Click(sender As Object, e As EventArgs)
         If GFsPuedeUsar(Me.Name & ":Importar->Texto delimitado", "Permite importar el contenido de " & Me.Name & " a la tabla DOCUMENTOS") = sSi_ Then
             Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
             GPImportarDocumentos(liCodEmpresa)
         End If
-
     End Sub
-
     Private Sub Form_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         txtCodEmpresa_NE.Focus()
     End Sub
-
     Friend Sub LPSinRegistro_AbrirForm()
         If miCantidad = 0 Then
             If mbabrirform = False Then
@@ -321,5 +319,16 @@ Public Class frmBc020documentos
             End If
         End If
     End Sub
+    Private Sub cmbTipo_Validating(sender As Object, e As CancelEventArgs) Handles cmbTipo.Validating
+        If cmbTipo.Text.Trim.Length = 0 Then Exit Sub
 
+        LPDespliegaDescripciones()
+        LPCargarDatos()
+    End Sub
+    Private Sub cmbTipo_TextChanged(sender As Object, e As EventArgs) Handles cmbTipo.TextChanged
+        If cmbTipo.Text.Trim.Length = 0 Then Exit Sub
+
+        LPDespliegaDescripciones()
+        LPCargarDatos()
+    End Sub
 End Class

@@ -37,27 +37,27 @@ Partial Class frmBb040depositos
         '
         'btnSalir
         '
-        Me.btnSalir.TabIndex = 8
+        Me.btnSalir.TabIndex = 7
         '
         'btnAuditoria
         '
-        Me.btnAuditoria.TabIndex = 7
+        Me.btnAuditoria.TabIndex = 6
         '
         'btnConsultar
         '
-        Me.btnConsultar.TabIndex = 5
+        Me.btnConsultar.TabIndex = 4
         '
         'btnBorrar
         '
-        Me.btnBorrar.TabIndex = 4
+        Me.btnBorrar.TabIndex = 3
         '
         'btnModificar
         '
-        Me.btnModificar.TabIndex = 3
+        Me.btnModificar.TabIndex = 2
         '
         'btnAgregar
         '
-        Me.btnAgregar.TabIndex = 2
+        Me.btnAgregar.TabIndex = 1
         '
         'lblNombreEmpresa
         '
@@ -99,7 +99,7 @@ Partial Class frmBb040depositos
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(849, 578)
-        Me.DataGridView1.TabIndex = 1
+        Me.DataGridView1.TabIndex = 8
         '
         'btnDetalle
         '
@@ -109,7 +109,7 @@ Partial Class frmBb040depositos
         Me.btnDetalle.Location = New System.Drawing.Point(867, 362)
         Me.btnDetalle.Name = "btnDetalle"
         Me.btnDetalle.Size = New System.Drawing.Size(86, 81)
-        Me.btnDetalle.TabIndex = 6
+        Me.btnDetalle.TabIndex = 5
         Me.btnDetalle.Tag = "&ubicaciones"
         Me.btnDetalle.Text = "&Ubicaciones"
         Me.btnDetalle.TextAlign = System.Drawing.ContentAlignment.BottomCenter

@@ -1,17 +1,14 @@
 ﻿Imports System.ComponentModel
 Imports System.Globalization
-
 Public Class frmFa010monedas
     Private msValidado As String = ""
     Private msRequeridos As String() = {"codigo", "nombre", "decimales", "culture"}
     Private moRequeridos As New ArrayList(msRequeridos)
-
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Tag = sCancelar_
         GPBitacoraRegistrar(sSALIO_, Me.Text & ", haciendo click en CANCELAR.")
         Me.Close()
     End Sub
-
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         If InStr(sAGREGAR_ & sMODIFICAR_, Me.Tag.ToString) > 0 Then
             msValidado = ""
@@ -77,7 +74,6 @@ Public Class frmFa010monedas
             Me.Close()
         End If
     End Sub
-
     Private Sub ManejoEvento_Validating(sender As Object, e As CancelEventArgs)
 
         If CType(sender, Control).Text.Trim.Length = 0 Then
@@ -118,13 +114,11 @@ Public Class frmFa010monedas
             End If
         End If
     End Sub
-
     Private Sub ManejoEvento_Validated(sender As Object, e As EventArgs)
         CType(sender, Control).Tag = sOk_
         Select Case CType(sender, Control).Name
         End Select
     End Sub
-
     Private Sub Formulario_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim loControls As TabPage.ControlCollection = Me.TabPage1.Controls
         LPInicializaMaxLength()
@@ -182,7 +176,6 @@ Public Class frmFa010monedas
         End Select
         LPInicializaCultureCode()
     End Sub
-
     Private Sub Formulario_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         '--> AQUI DEBE INGRESARSE EL FOCUS DEL PRIMER ELEMENTO DEL FORMULARIO
         Select Case Me.Tag.ToString
@@ -192,14 +185,12 @@ Public Class frmFa010monedas
                 txtNombre_AN.Focus()
         End Select
     End Sub
-
     Private Sub LPInicializaMaxLength()
         txtCodigo_AN.MaxLength = 3
         txtNombre_AN.MaxLength = 20
         txtDecimales_NE.MaxLength = 1
         cmbEstado.MaxLength = 15
     End Sub
-
     Private Sub LPInicializaControles()
         For Each loTabPage As TabPage In TabControl1.TabPages
             If loTabPage.AccessibleName = sActivo_ Then
@@ -225,7 +216,6 @@ Public Class frmFa010monedas
             End If
         Next
     End Sub
-
     Private Function LFsExiste(ByVal psCampo As String) As String
         Dim lsResultado As String = sNo_
         For Each lsCampo As String In moRequeridos
@@ -236,7 +226,6 @@ Public Class frmFa010monedas
         Next
         Return lsResultado
     End Function
-
     Private Sub LPInicializaCultureCode()
         Dim loCultureCodes() As CultureInfo = CultureInfo.GetCultures(CultureTypes.AllCultures And Not CultureTypes.NeutralCultures)
 
@@ -248,5 +237,4 @@ Public Class frmFa010monedas
             End If
         Next
     End Sub
-
 End Class

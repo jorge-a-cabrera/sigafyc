@@ -72,7 +72,6 @@ Module modGPImportarDocumentos
                     loTabla.cotizacion = loDato.Item("cotizacion").ToString
                     loTabla.lineas = Integer.Parse(loDato.Item("lineas").ToString)
                     loTabla.aplicacion = loDato.Item("aplicacion").ToString
-                    loTabla.tipoPerfil = loDato.Item("tipoperfil").ToString
                     loTabla.estado = sImportado_
                     loTabla.Add(sNo_)
                 Else

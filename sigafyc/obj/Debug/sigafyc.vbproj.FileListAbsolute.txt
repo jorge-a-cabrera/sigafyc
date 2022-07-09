@@ -545,7 +545,6 @@ C:\Mis Proyectos\sigafyc\sigafyc\bin\Debug\Npgsql.xml
 C:\Mis Proyectos\sigafyc\sigafyc\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Mis Proyectos\sigafyc\sigafyc\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Mis Proyectos\sigafyc\sigafyc\bin\Debug\System.ValueTuple.xml
-C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.vbproj.AssemblyReference.cache
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\Interop.ADOX.dll
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.vbproj.ResolveComReference.cache
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBrowseSinGrid.resources
@@ -553,7 +552,6 @@ C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFVisualizadorReporte.resou
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmProcesamiento.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBa010monedas.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBa030personas.resources
-C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBa040impuestos.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBa050unidades.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBa060clasmerc.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBb020conceptos.resources
@@ -572,7 +570,6 @@ C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBc010timbpropios.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBc011timbpropios.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBc020documentos.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBc030ubicaciones.resources
-C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBc040mercimpuestos.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBc050mercvinculadas.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBd020mercentrada.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBd030mercsalida.resources
@@ -592,7 +589,6 @@ C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBss110parametros.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBBitacoraDatos.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFa010monedas.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFa030personas.resources
-C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFa040impuestos.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFa050unidades.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFa060clasmerc.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFb020conceptos.resources
@@ -610,7 +606,6 @@ C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFc010timbpropios.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFc011timbpropios.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFc020documentos.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFc030ubicaciones.resources
-C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFc040mercimpuestos.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFc050mercvinculadas.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFCambioPassword.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFd010asientosdetalles.resources
@@ -663,3 +658,10 @@ C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.vbproj.CopyComplete
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.exe
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.xml
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.pdb
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.vbproj.AssemblyReference.cache
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBe030notapedido.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBe050compras.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFe030notapedido.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFe050compras.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBe051compras.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFe051compras.resources

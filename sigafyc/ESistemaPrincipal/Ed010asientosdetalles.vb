@@ -169,7 +169,6 @@ Public Class Ed010asientosdetalles : Inherits RBase
                 loCabecera.Put(sNo_, sNo_)
             End If
             loCabecera.CerrarConexion()
-            loCabecera = Nothing
             Call ConfirmarTransaccion()
         End If
     End Sub

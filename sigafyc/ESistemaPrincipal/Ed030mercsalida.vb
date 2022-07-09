@@ -1,9 +1,7 @@
 ﻿Public Class Ed030mercsalida : Inherits RBase
-
 #Region "Campos de control"
     Private msRama As String = sRegistryTablasPrincipal_
     Private msTableName As String = "d030mercsalida"
-
     Private msRequeridos As String = "codempresa" & sInteger_ & sSF_ &
                                        "codmercaderia" & sString_ & sSF_ &
                                        "nombre" & sString_ & sSF_ &
@@ -11,11 +9,10 @@
                                        "codunidad" & sString_ & sSF_ &
                                        "codclasificacion" & sInteger_ & sSF_ &
                                        "listaprecio" & sString_ & sSF_ &
+                                       "iva" & sString_ & sSF_ &
                                        "codbarra" & sString_
-
     Private msCampos_PK() As Integer = {0, 1}
 #End Region
-
 #Region "Campos requeridos"
     Private miCodEmpresa As Integer
     Private msCodMercaderia As String
@@ -24,9 +21,9 @@
     Private msCodUnidad As String
     Private miCodClasificacion As Integer
     Private msListaPrecio As String
+    Private msIva As String
     Private msCodBarra As String
 #End Region
-
     Public Property codempresa As Integer
         Get
             Return miCodEmpresa
@@ -43,7 +40,6 @@
             msCodMercaderia = value
         End Set
     End Property
-
     Public Property nombre As String
         Get
             Return msNombre
@@ -52,7 +48,6 @@
             msNombre = value
         End Set
     End Property
-
     Public Property abreviado As String
         Get
             Return msAbreviado
@@ -61,7 +56,6 @@
             msAbreviado = value
         End Set
     End Property
-
     Public Property codunidad As String
         Get
             Return msCodUnidad
@@ -70,7 +64,6 @@
             msCodUnidad = value
         End Set
     End Property
-
     Public Property codclasificacion As Integer
         Get
             Return miCodClasificacion
@@ -79,7 +72,6 @@
             miCodClasificacion = value
         End Set
     End Property
-
     Public Property listaprecio As String
         Get
             Return msListaPrecio
@@ -88,7 +80,14 @@
             msListaPrecio = value
         End Set
     End Property
-
+    Public Property iva As String
+        Get
+            Return msIva
+        End Get
+        Set(value As String)
+            msIva = value
+        End Set
+    End Property
     Public Property codbarra As String
         Get
             Return msCodBarra
@@ -97,13 +96,11 @@
             msCodBarra = value
         End Set
     End Property
-
     Public Sub New()
         MyBase.New()
         SetParametros(msRama, msTableName, msRequeridos, msCampos_PK, Me)
         Conectar(msTableName)
     End Sub
-
     Public Sub CerrarConexion()
         Desconectar(msTableName)
     End Sub

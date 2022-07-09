@@ -1,5 +1,4 @@
 ﻿Imports System.ComponentModel
-
 Public Class frmBb110undalternativas
     Private moFormulario As frmFb110undalternativas
     Private msTabla As String = ""
@@ -14,7 +13,6 @@ Public Class frmBb110undalternativas
     Private msTipo As String
     Private msCodMercaderia As String
     Private Shared mbabrirform As Boolean = False
-
     Public Property codempresa As Integer
         Get
             Return miCodEmpresa
@@ -23,7 +21,6 @@ Public Class frmBb110undalternativas
             miCodEmpresa = value
         End Set
     End Property
-
     Public Property tipo As String
         Get
             Return msTipo
@@ -32,7 +29,6 @@ Public Class frmBb110undalternativas
             msTipo = value
         End Set
     End Property
-
     Public Property codmercaderia As String
         Get
             Return msCodMercaderia
@@ -41,7 +37,6 @@ Public Class frmBb110undalternativas
             msCodMercaderia = value
         End Set
     End Property
-
     Private Sub Formulario_Load(sender As Object, e As EventArgs) Handles Me.Load
         DataGridView1.DefaultCellStyle.Font = New Font("Tahoma", 12, FontStyle.Regular, GraphicsUnit.Point)
         DataGridView1.AllowUserToResizeColumns = True
@@ -113,11 +108,9 @@ Public Class frmBb110undalternativas
         LPCargarDatos()
         LPDespliegaDescripciones()
     End Sub
-
     Private Sub BuscarClave(sender As Object, e As EventArgs)
         LPCargarDatos()
     End Sub
-
     Private Sub LPCargarDatos()
         If txtCodEmpresa_NE.Text.Trim.Length = 0 Then Exit Sub
         If cmbTipo.Text.Trim.Length = 0 Then Exit Sub
@@ -169,13 +162,11 @@ Public Class frmBb110undalternativas
         LPSinRegistro_AbrirForm()
         LPHabilitaControles()
     End Sub
-
     Private Sub LPInicializaMaxLength()
         txtCodEmpresa_NE.MaxLength = 6
         cmbTipo.MaxLength = 15
         txtCodMercaderia_AN.MaxLength = 20
     End Sub
-
     Private Sub LPDespliegaDescripciones()
         lblNombreEmpresa.Text = ""
         If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
@@ -213,7 +204,6 @@ Public Class frmBb110undalternativas
             End If
         End If
     End Sub
-
     Private Sub LPLocalizaRegistro(ByVal psCodigo As String)
         ' Este procedimiento realiza la busqueda del parametro
         ' a fin de ubicarlo dentro del DataGridView
@@ -236,7 +226,6 @@ Public Class frmBb110undalternativas
             DataGridView1.CurrentCell = DataGridView1.Rows(liIndex).Cells("codigo")
         End If
     End Sub
-
     Private Sub txtCodEmpresa_NE_Validating(sender As Object, e As CancelEventArgs) Handles txtCodEmpresa_NE.Validating
         Dim loFK As New Ec001empresas
         If txtCodEmpresa_NE.Text.Trim.Length = 0 Then
@@ -274,7 +263,6 @@ Public Class frmBb110undalternativas
         End If
         LPDespliegaDescripciones()
     End Sub
-
     Private Sub txtCodMercaderia_AN_Validating(sender As Object, e As CancelEventArgs) Handles txtCodMercaderia_AN.Validating
         Dim loFK As New Ed030mercsalida
         If txtCodMercaderia_AN.Text.Trim.Length = 0 Then
@@ -323,7 +311,6 @@ Public Class frmBb110undalternativas
         LPDespliegaDescripciones()
         LPCargarDatos()
     End Sub
-
     Private Sub Botones_Click(sender As Object, e As EventArgs)
         Dim loDatos As New Eb110undalternativas
         loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
@@ -359,6 +346,44 @@ Public Class frmBb110undalternativas
                             SendKeys.Send("%(s)")
                             Exit Sub
                         End If
+                        If CType(sender, Button).AccessibleName = sBORRAR_ Then
+                            Dim lbParar As Boolean = False
+                            Dim lsCodMercaderia As String = ""
+                            Dim lsNomMercaderia As String = ""
+                            Select Case cmbTipo.Text
+                                Case sEntrada_
+                                    Dim loPK As New Ed020mercentrada
+                                    loPK.codempresa = loDatos.codEmpresa
+                                    loPK.codmercaderia = loDatos.codmercaderia
+                                    If loPK.GetPK = sOk_ Then
+                                        lsCodMercaderia = loPK.codmercaderia
+                                        lsNomMercaderia = loPK.nombre
+                                        If lsCodigo = loPK.codunidad Then
+                                            lbParar = True
+                                        End If
+                                    End If
+                                Case sSalida_
+                                    Dim loPK As New Ed030mercsalida
+                                    loPK.codempresa = loDatos.codEmpresa
+                                    loPK.codmercaderia = loDatos.codmercaderia
+                                    If loPK.GetPK = sOk_ Then
+                                        lsCodMercaderia = loPK.codmercaderia
+                                        lsNomMercaderia = loPK.nombre
+                                        If lsCodigo = loPK.codunidad Then
+                                            lbParar = True
+                                        End If
+                                    End If
+                            End Select
+                            If lbParar Then
+                                Dim loParametros As New Dictionary(Of String, String)
+                                loParametros.Add("&codigo", lsCodigo)
+                                loParametros.Add("&codmercaderia", lsCodMercaderia)
+                                loParametros.Add("&nommercaderia", lsNomMercaderia)
+                                Dim lsMensaje As String = GFsGeneraMSG("msg_frmBb110undalternativas_error_borrar", loParametros)
+                                GFsAvisar(lsMensaje, sMENSAJE_, "Por favor verifique si es esto lo que desea realizar.")
+                                Exit Sub
+                            End If
+                        End If
                         moFormulario = New frmFb110undalternativas
                         moFormulario.AccessibleName = "Empresa: " & loDatos.codEmpresa.ToString & ", Tipo: " & cmbTipo.Text & ", Merc/Servicio: " & loDatos.codmercaderia
                         moFormulario.Tag = CType(sender, Button).AccessibleName
@@ -377,7 +402,6 @@ Public Class frmBb110undalternativas
         loDatos = Nothing
         LPCargarDatos()
     End Sub
-
     Private Sub btnAuditoria_Click(sender As Object, e As EventArgs) Handles btnAuditoria.Click
         Dim lsCodigo As String = DataGridView1.Item("codigo", DataGridView1.CurrentRow.Index).Value.ToString
         If lsCodigo.Trim.Length = 0 Then Exit Sub
@@ -385,7 +409,6 @@ Public Class frmBb110undalternativas
         Dim lsTablaHash() As String = LFsTablaHashPk(lsCodigo).Split(sSF_)
         GPDespliegaBitacoraDatos(lsTablaHash(0), lsTablaHash(1))
     End Sub
-
     Private Function LFsTablaHashPk(ByVal psCodigo As String) As String
         Dim lsResultado As String = ""
         If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
@@ -406,23 +429,19 @@ Public Class frmBb110undalternativas
         End If
         Return lsResultado
     End Function
-
     Private Sub ExportarExcel_Click(sender As Object, e As EventArgs)
         If GFsPuedeUsar(Me.Name & ":Exportar->Excel", "Permite exportar el contenido de " & Me.Name & " a un archivo Excel") = sSi_ Then
             GPExportarGridToExcel(DataGridView1, Me.Name)
         End If
     End Sub
-
     Private Sub ExportarTexto_Click(sender As Object, e As EventArgs)
         If GFsPuedeUsar(Me.Name & ":Exportar->Texto delimitado", "Permite exportar el contenido de " & Me.Name & " a un archivo de texto delimitado") = sSi_ Then
             GPExportarGridToTexto(DataGridView1, Me.Name)
         End If
     End Sub
-
     Private Sub Form_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         txtCodMercaderia_AN.Focus()
     End Sub
-
     Friend Sub LPSinRegistro_AbrirForm()
         If miCantidad = 0 Then
             If mbabrirform = False Then
@@ -431,7 +450,6 @@ Public Class frmBb110undalternativas
             End If
         End If
     End Sub
-
     Private Sub LPInicializaParametros()
         Dim lsTipo As String = sGeneral_
         Dim lsClave As String

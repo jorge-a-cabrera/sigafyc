@@ -117,4 +117,37 @@ Public Class RBase : Inherits Ebase
                 GPParametroGuardar(sGeneral_, lsKey & "_" & psTableName, liResultado.ToString)
         End Select
     End Sub
+    Public Function CantidadRegistro(ByVal psSQL As String, Optional ByVal psCampo As String = "cantidad") As Integer
+        Dim liResultado As Integer = 0
+        Dim loDatos As DbDataReader = Nothing
+        Try
+            loDatos = RecuperarConsulta(psSQL)
+            If loDatos.Read Then
+                If Not loDatos.Item(psCampo) Is DBNull.Value Then
+                    liResultado = Integer.Parse(loDatos.Item(psCampo).ToString)
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show("RBase.CantidadRegistro.Read [" & psSQL & "]" & ControlChars.CrLf & ex.Message)
+        End Try
+        loDatos.Close()
+        Return liResultado
+    End Function
+    Public Function RecuperaRegistro(ByVal psSQL As String) As Dictionary(Of String, String)
+        Dim loResultado As New Dictionary(Of String, String)
+        Dim loDatos As DbDataReader = Nothing
+        Try
+            loDatos = RecuperarConsulta(psSQL)
+            If loDatos.Read Then
+                For liNDX As Integer = 0 To loDatos.FieldCount - 1
+                    loResultado.Add("&" & loDatos.GetName(liNDX), loDatos.Item(loDatos.GetName(liNDX)).ToString)
+                Next
+            End If
+        Catch ex As Exception
+            MessageBox.Show("RBase.CantidadRegistro.Read [" & psSQL & "]" & ControlChars.CrLf & ex.Message)
+        End Try
+        loDatos.Close()
+        Return loResultado
+    End Function
 End Class
+

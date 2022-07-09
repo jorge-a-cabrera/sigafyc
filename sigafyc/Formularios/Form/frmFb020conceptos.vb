@@ -207,13 +207,14 @@ Public Class frmFb020conceptos
         txtCodigo_NE.Text = liCodigo.ToString(sFormatD_ & txtCodigo_NE.MaxLength.ToString)
 
         lblNombreEmpresa.Text = ""
-        Dim loFK As New Ec001empresas
-        loFK.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
-        If loFK.GetPK = sOk_ Then
-            lblNombreEmpresa.Text = loFK.nombre
+        If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
+            Dim loFK As New Ec001empresas
+            loFK.codEmpresa = liCodEmpresa
+            If loFK.GetPK = sOk_ Then
+                lblNombreEmpresa.Text = loFK.nombre
+            End If
+            loFK.CerrarConexion()
         End If
-        loFK.CerrarConexion()
-        loFK = Nothing
     End Sub
 
     Private Sub LPInicializaMaxLength()

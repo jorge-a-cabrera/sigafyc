@@ -302,6 +302,12 @@ Module modMain
         If GFsParametroObtener(lsTipo, lsClave) = sRESERVADO_ Then
             GPParametroGuardar(lsTipo, lsClave, lsValor)
         End If
+
+        lsClave = "Sistema en Producción"
+        lsValor = sNo_
+        If GFsParametroObtener(lsTipo, lsClave) = sRESERVADO_ Then
+            GPParametroGuardar(lsTipo, lsClave, lsValor)
+        End If
     End Sub
 
     Private Sub LPParametrosLocales()
@@ -375,6 +381,11 @@ Module modMain
             GPParametroGuardar(lsTipo, lsClave, lsValor)
         End If
 
+        lsClave = "Dias anteriores para carga de Compras"
+        lsValor = "30"
+        If GFsParametroObtener(lsTipo, lsClave) = sRESERVADO_ Then
+            GPParametroGuardar(lsTipo, lsClave, lsValor, sNo_)
+        End If
     End Sub
 
     Private Sub LPParametrosFechas()

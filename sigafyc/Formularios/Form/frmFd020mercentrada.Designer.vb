@@ -22,7 +22,7 @@ Partial Class frmFd020mercentrada
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.cmbTipoBien = New System.Windows.Forms.ComboBox()
+        Me.cmbTipoBien_AN = New System.Windows.Forms.ComboBox()
         Me.txtCodEmpresa_NE = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtCodMercaderia_AN = New System.Windows.Forms.TextBox()
@@ -37,19 +37,20 @@ Partial Class frmFd020mercentrada
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtCodClasificacion_NE = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.cmbTipoCosto = New System.Windows.Forms.ComboBox()
+        Me.cmbTipoCosto_AN = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtCodBarra_AN = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.btnDetalleImpuestos = New System.Windows.Forms.Button()
         Me.btnDetalle = New System.Windows.Forms.Button()
         Me.cmbEstado = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblNombreUnidad = New System.Windows.Forms.Label()
         Me.lblNombreClasificacion = New System.Windows.Forms.Label()
-        Me.cmbInventario = New System.Windows.Forms.ComboBox()
+        Me.cmbInventario_AN = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.cmbIva_AN = New System.Windows.Forms.ComboBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -57,23 +58,22 @@ Partial Class frmFd020mercentrada
         '
         'TabControl1
         '
-        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl1.Size = New System.Drawing.Size(651, 381)
+        Me.TabControl1.Size = New System.Drawing.Size(651, 424)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
-        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TabPage1.Controls.Add(Me.cmbInventario)
+        Me.TabPage1.Controls.Add(Me.cmbIva_AN)
+        Me.TabPage1.Controls.Add(Me.Label12)
+        Me.TabPage1.Controls.Add(Me.cmbInventario_AN)
         Me.TabPage1.Controls.Add(Me.Label11)
         Me.TabPage1.Controls.Add(Me.lblNombreClasificacion)
         Me.TabPage1.Controls.Add(Me.lblNombreUnidad)
         Me.TabPage1.Controls.Add(Me.txtCodBarra_AN)
         Me.TabPage1.Controls.Add(Me.Label9)
-        Me.TabPage1.Controls.Add(Me.cmbTipoCosto)
+        Me.TabPage1.Controls.Add(Me.cmbTipoCosto_AN)
         Me.TabPage1.Controls.Add(Me.Label6)
         Me.TabPage1.Controls.Add(Me.txtCodClasificacion_NE)
         Me.TabPage1.Controls.Add(Me.Label5)
@@ -84,44 +84,42 @@ Partial Class frmFd020mercentrada
         Me.TabPage1.Controls.Add(Me.txtNombre_AN)
         Me.TabPage1.Controls.Add(Me.Label8)
         Me.TabPage1.Controls.Add(Me.lblNombreEmpresa)
-        Me.TabPage1.Controls.Add(Me.cmbTipoBien)
+        Me.TabPage1.Controls.Add(Me.cmbTipoBien_AN)
         Me.TabPage1.Controls.Add(Me.txtCodEmpresa_NE)
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.txtCodMercaderia_AN)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
-        Me.TabPage1.Size = New System.Drawing.Size(643, 345)
+        Me.TabPage1.Size = New System.Drawing.Size(643, 388)
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 432)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 475)
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(525, 432)
+        Me.btnAceptar.Location = New System.Drawing.Point(526, 475)
         '
         'lblMensaje
         '
-        Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMensaje.Size = New System.Drawing.Size(647, 27)
         '
-        'cmbTipoBien
+        'cmbTipoBien_AN
         '
-        Me.cmbTipoBien.AccessibleDescription = "tipo"
-        Me.cmbTipoBien.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cmbTipoBien.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbTipoBien.FormattingEnabled = True
-        Me.cmbTipoBien.Items.AddRange(New Object() {"Fijo", "Modificable"})
-        Me.cmbTipoBien.Location = New System.Drawing.Point(163, 207)
-        Me.cmbTipoBien.Name = "cmbTipoBien"
-        Me.cmbTipoBien.Size = New System.Drawing.Size(225, 28)
-        Me.cmbTipoBien.TabIndex = 6
+        Me.cmbTipoBien_AN.AccessibleDescription = "tipo"
+        Me.cmbTipoBien_AN.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cmbTipoBien_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbTipoBien_AN.FormattingEnabled = True
+        Me.cmbTipoBien_AN.Items.AddRange(New Object() {"Fijo", "Modificable"})
+        Me.cmbTipoBien_AN.Location = New System.Drawing.Point(163, 207)
+        Me.cmbTipoBien_AN.Name = "cmbTipoBien_AN"
+        Me.cmbTipoBien_AN.Size = New System.Drawing.Size(178, 28)
+        Me.cmbTipoBien_AN.TabIndex = 6
         '
         'txtCodEmpresa_NE
         '
         Me.txtCodEmpresa_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodEmpresa_NE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodEmpresa_NE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodEmpresa_NE.Location = New System.Drawing.Point(163, 15)
         Me.txtCodEmpresa_NE.Name = "txtCodEmpresa_NE"
         Me.txtCodEmpresa_NE.Size = New System.Drawing.Size(115, 26)
@@ -140,7 +138,7 @@ Partial Class frmFd020mercentrada
         'txtCodMercaderia_AN
         '
         Me.txtCodMercaderia_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodMercaderia_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodMercaderia_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodMercaderia_AN.Location = New System.Drawing.Point(163, 47)
         Me.txtCodMercaderia_AN.Name = "txtCodMercaderia_AN"
         Me.txtCodMercaderia_AN.Size = New System.Drawing.Size(115, 26)
@@ -169,18 +167,18 @@ Partial Class frmFd020mercentrada
         'lblNombreEmpresa
         '
         Me.lblNombreEmpresa.AutoSize = True
-        Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
         Me.lblNombreEmpresa.Location = New System.Drawing.Point(284, 17)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
-        Me.lblNombreEmpresa.Size = New System.Drawing.Size(152, 20)
+        Me.lblNombreEmpresa.Size = New System.Drawing.Size(168, 20)
         Me.lblNombreEmpresa.TabIndex = 64
         Me.lblNombreEmpresa.Text = "<nombre_empresa>"
         '
         'txtNombre_AN
         '
         Me.txtNombre_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNombre_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombre_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre_AN.Location = New System.Drawing.Point(163, 79)
         Me.txtNombre_AN.Name = "txtNombre_AN"
         Me.txtNombre_AN.Size = New System.Drawing.Size(462, 26)
@@ -199,7 +197,7 @@ Partial Class frmFd020mercentrada
         'txtAbreviado_AN
         '
         Me.txtAbreviado_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtAbreviado_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAbreviado_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAbreviado_AN.Location = New System.Drawing.Point(163, 111)
         Me.txtAbreviado_AN.Name = "txtAbreviado_AN"
         Me.txtAbreviado_AN.Size = New System.Drawing.Size(225, 26)
@@ -218,10 +216,10 @@ Partial Class frmFd020mercentrada
         'txtCodUnidad_AN
         '
         Me.txtCodUnidad_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodUnidad_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodUnidad_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodUnidad_AN.Location = New System.Drawing.Point(163, 143)
         Me.txtCodUnidad_AN.Name = "txtCodUnidad_AN"
-        Me.txtCodUnidad_AN.Size = New System.Drawing.Size(115, 26)
+        Me.txtCodUnidad_AN.Size = New System.Drawing.Size(83, 26)
         Me.txtCodUnidad_AN.TabIndex = 4
         '
         'Label3
@@ -237,10 +235,10 @@ Partial Class frmFd020mercentrada
         'txtCodClasificacion_NE
         '
         Me.txtCodClasificacion_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodClasificacion_NE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodClasificacion_NE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodClasificacion_NE.Location = New System.Drawing.Point(163, 175)
         Me.txtCodClasificacion_NE.Name = "txtCodClasificacion_NE"
-        Me.txtCodClasificacion_NE.Size = New System.Drawing.Size(87, 26)
+        Me.txtCodClasificacion_NE.Size = New System.Drawing.Size(65, 26)
         Me.txtCodClasificacion_NE.TabIndex = 5
         '
         'Label5
@@ -253,17 +251,17 @@ Partial Class frmFd020mercentrada
         Me.Label5.TabIndex = 72
         Me.Label5.Text = "Clasificación:"
         '
-        'cmbTipoCosto
+        'cmbTipoCosto_AN
         '
-        Me.cmbTipoCosto.AccessibleDescription = "tipo"
-        Me.cmbTipoCosto.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cmbTipoCosto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbTipoCosto.FormattingEnabled = True
-        Me.cmbTipoCosto.Items.AddRange(New Object() {"Fijo", "Modificable"})
-        Me.cmbTipoCosto.Location = New System.Drawing.Point(163, 241)
-        Me.cmbTipoCosto.Name = "cmbTipoCosto"
-        Me.cmbTipoCosto.Size = New System.Drawing.Size(225, 28)
-        Me.cmbTipoCosto.TabIndex = 7
+        Me.cmbTipoCosto_AN.AccessibleDescription = "tipo"
+        Me.cmbTipoCosto_AN.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cmbTipoCosto_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbTipoCosto_AN.FormattingEnabled = True
+        Me.cmbTipoCosto_AN.Items.AddRange(New Object() {"Fijo", "Modificable"})
+        Me.cmbTipoCosto_AN.Location = New System.Drawing.Point(163, 241)
+        Me.cmbTipoCosto_AN.Name = "cmbTipoCosto_AN"
+        Me.cmbTipoCosto_AN.Size = New System.Drawing.Size(178, 28)
+        Me.cmbTipoCosto_AN.TabIndex = 7
         '
         'Label6
         '
@@ -278,17 +276,17 @@ Partial Class frmFd020mercentrada
         'txtCodBarra_AN
         '
         Me.txtCodBarra_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodBarra_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodBarra_AN.Location = New System.Drawing.Point(163, 309)
+        Me.txtCodBarra_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodBarra_AN.Location = New System.Drawing.Point(163, 343)
         Me.txtCodBarra_AN.Name = "txtCodBarra_AN"
         Me.txtCodBarra_AN.Size = New System.Drawing.Size(380, 26)
-        Me.txtCodBarra_AN.TabIndex = 9
+        Me.txtCodBarra_AN.TabIndex = 10
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(18, 311)
+        Me.Label9.Location = New System.Drawing.Point(18, 345)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(89, 20)
         Me.Label9.TabIndex = 76
@@ -297,37 +295,22 @@ Partial Class frmFd020mercentrada
         'TabPage2
         '
         Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TabPage2.Controls.Add(Me.btnDetalleImpuestos)
         Me.TabPage2.Controls.Add(Me.btnDetalle)
         Me.TabPage2.Controls.Add(Me.cmbEstado)
         Me.TabPage2.Controls.Add(Me.Label10)
         Me.TabPage2.Location = New System.Drawing.Point(4, 32)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(643, 345)
+        Me.TabPage2.Size = New System.Drawing.Size(643, 388)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'btnDetalleImpuestos
-        '
-        Me.btnDetalleImpuestos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDetalleImpuestos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDetalleImpuestos.Image = Global.sigafyc.My.Resources.Resources.icons8_details_32
-        Me.btnDetalleImpuestos.Location = New System.Drawing.Point(475, 260)
-        Me.btnDetalleImpuestos.Name = "btnDetalleImpuestos"
-        Me.btnDetalleImpuestos.Size = New System.Drawing.Size(165, 78)
-        Me.btnDetalleImpuestos.TabIndex = 3
-        Me.btnDetalleImpuestos.Tag = "&unidades"
-        Me.btnDetalleImpuestos.Text = "&Impuestos"
-        Me.btnDetalleImpuestos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnDetalleImpuestos.UseVisualStyleBackColor = True
         '
         'btnDetalle
         '
         Me.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDetalle.Image = Global.sigafyc.My.Resources.Resources.icons8_details_32
-        Me.btnDetalle.Location = New System.Drawing.Point(304, 260)
+        Me.btnDetalle.Location = New System.Drawing.Point(473, 305)
         Me.btnDetalle.Name = "btnDetalle"
         Me.btnDetalle.Size = New System.Drawing.Size(165, 78)
         Me.btnDetalle.TabIndex = 1
@@ -339,10 +322,10 @@ Partial Class frmFd020mercentrada
         'cmbEstado
         '
         Me.cmbEstado.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cmbEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbEstado.FormattingEnabled = True
         Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Bloqueado"})
-        Me.cmbEstado.Location = New System.Drawing.Point(86, 14)
+        Me.cmbEstado.Location = New System.Drawing.Point(163, 15)
         Me.cmbEstado.Name = "cmbEstado"
         Me.cmbEstado.Size = New System.Drawing.Size(147, 28)
         Me.cmbEstado.TabIndex = 0
@@ -351,7 +334,7 @@ Partial Class frmFd020mercentrada
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(16, 17)
+        Me.Label10.Location = New System.Drawing.Point(18, 17)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(64, 20)
         Me.Label10.TabIndex = 27
@@ -360,36 +343,36 @@ Partial Class frmFd020mercentrada
         'lblNombreUnidad
         '
         Me.lblNombreUnidad.AutoSize = True
-        Me.lblNombreUnidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreUnidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreUnidad.ForeColor = System.Drawing.Color.Navy
-        Me.lblNombreUnidad.Location = New System.Drawing.Point(284, 145)
+        Me.lblNombreUnidad.Location = New System.Drawing.Point(252, 145)
         Me.lblNombreUnidad.Name = "lblNombreUnidad"
-        Me.lblNombreUnidad.Size = New System.Drawing.Size(138, 20)
+        Me.lblNombreUnidad.Size = New System.Drawing.Size(153, 20)
         Me.lblNombreUnidad.TabIndex = 77
         Me.lblNombreUnidad.Text = "<nombre_unidad>"
         '
         'lblNombreClasificacion
         '
         Me.lblNombreClasificacion.AutoSize = True
-        Me.lblNombreClasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreClasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreClasificacion.ForeColor = System.Drawing.Color.Navy
-        Me.lblNombreClasificacion.Location = New System.Drawing.Point(284, 177)
+        Me.lblNombreClasificacion.Location = New System.Drawing.Point(234, 177)
         Me.lblNombreClasificacion.Name = "lblNombreClasificacion"
-        Me.lblNombreClasificacion.Size = New System.Drawing.Size(175, 20)
+        Me.lblNombreClasificacion.Size = New System.Drawing.Size(197, 20)
         Me.lblNombreClasificacion.TabIndex = 78
         Me.lblNombreClasificacion.Text = "<nombre_clasificacion>"
         '
-        'cmbInventario
+        'cmbInventario_AN
         '
-        Me.cmbInventario.AccessibleDescription = "tipo"
-        Me.cmbInventario.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cmbInventario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbInventario.FormattingEnabled = True
-        Me.cmbInventario.Items.AddRange(New Object() {"Si", "No"})
-        Me.cmbInventario.Location = New System.Drawing.Point(163, 275)
-        Me.cmbInventario.Name = "cmbInventario"
-        Me.cmbInventario.Size = New System.Drawing.Size(47, 28)
-        Me.cmbInventario.TabIndex = 8
+        Me.cmbInventario_AN.AccessibleDescription = "tipo"
+        Me.cmbInventario_AN.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cmbInventario_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbInventario_AN.FormattingEnabled = True
+        Me.cmbInventario_AN.Items.AddRange(New Object() {"Si", "No"})
+        Me.cmbInventario_AN.Location = New System.Drawing.Point(163, 275)
+        Me.cmbInventario_AN.Name = "cmbInventario_AN"
+        Me.cmbInventario_AN.Size = New System.Drawing.Size(54, 28)
+        Me.cmbInventario_AN.TabIndex = 8
         '
         'Label11
         '
@@ -401,12 +384,34 @@ Partial Class frmFd020mercentrada
         Me.Label11.TabIndex = 80
         Me.Label11.Text = "Inventario:"
         '
+        'cmbIva_AN
+        '
+        Me.cmbIva_AN.AccessibleDescription = "tipo"
+        Me.cmbIva_AN.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cmbIva_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbIva_AN.FormattingEnabled = True
+        Me.cmbIva_AN.Items.AddRange(New Object() {"Si", "No"})
+        Me.cmbIva_AN.Location = New System.Drawing.Point(163, 309)
+        Me.cmbIva_AN.Name = "cmbIva_AN"
+        Me.cmbIva_AN.Size = New System.Drawing.Size(164, 28)
+        Me.cmbIva_AN.TabIndex = 9
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(18, 312)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(40, 20)
+        Me.Label12.TabIndex = 82
+        Me.Label12.Text = "IVA:"
+        '
         'frmFd020mercentrada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Nothing
-        Me.ClientSize = New System.Drawing.Size(670, 514)
+        Me.ClientSize = New System.Drawing.Size(670, 556)
         Me.Name = "frmFd020mercentrada"
         Me.Tag = ""
         Me.Text = "Formulario bienes de cambio/uso"
@@ -419,7 +424,7 @@ Partial Class frmFd020mercentrada
 
     End Sub
 
-    Friend WithEvents cmbTipoBien As ComboBox
+    Friend WithEvents cmbTipoBien_AN As ComboBox
     Friend WithEvents txtCodEmpresa_NE As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents txtCodMercaderia_AN As TextBox
@@ -432,7 +437,7 @@ Partial Class frmFd020mercentrada
     Friend WithEvents Label3 As Label
     Friend WithEvents txtAbreviado_AN As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents cmbTipoCosto As ComboBox
+    Friend WithEvents cmbTipoCosto_AN As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtCodClasificacion_NE As TextBox
     Friend WithEvents Label5 As Label
@@ -444,7 +449,8 @@ Partial Class frmFd020mercentrada
     Friend WithEvents lblNombreClasificacion As Label
     Friend WithEvents lblNombreUnidad As Label
     Friend WithEvents btnDetalle As Button
-    Friend WithEvents cmbInventario As ComboBox
+    Friend WithEvents cmbInventario_AN As ComboBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents btnDetalleImpuestos As Button
+    Friend WithEvents cmbIva_AN As ComboBox
+    Friend WithEvents Label12 As Label
 End Class

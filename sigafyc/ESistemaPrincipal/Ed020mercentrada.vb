@@ -1,9 +1,7 @@
 ﻿Public Class Ed020mercentrada : Inherits RBase
-
 #Region "Campos de control"
     Private msRama As String = sRegistryTablasPrincipal_
     Private msTableName As String = "d020mercentrada"
-
     Private msRequeridos As String = "codempresa" & sInteger_ & sSF_ &
                                        "codmercaderia" & sString_ & sSF_ &
                                        "nombre" & sString_ & sSF_ &
@@ -13,11 +11,10 @@
                                        "tipobien" & sString_ & sSF_ &
                                        "tipocosto" & sString_ & sSF_ &
                                        "inventario" & sString_ & sSF_ &
+                                       "iva" & sString_ & sSF_ &
                                        "codbarra" & sString_
-
     Private msCampos_PK() As Integer = {0, 1}
 #End Region
-
 #Region "Campos requeridos"
     Private miCodEmpresa As Integer
     Private msCodMercaderia As String
@@ -28,9 +25,9 @@
     Private msTipoBien As String
     Private msTipoCosto As String
     Private msInventario As String
+    Private msIva As String
     Private msCodBarra As String
 #End Region
-
     Public Property codempresa As Integer
         Get
             Return miCodEmpresa
@@ -47,7 +44,6 @@
             msCodMercaderia = value
         End Set
     End Property
-
     Public Property nombre As String
         Get
             Return msNombre
@@ -56,7 +52,6 @@
             msNombre = value
         End Set
     End Property
-
     Public Property abreviado As String
         Get
             Return msAbreviado
@@ -65,7 +60,6 @@
             msAbreviado = value
         End Set
     End Property
-
     Public Property codunidad As String
         Get
             Return msCodUnidad
@@ -74,7 +68,6 @@
             msCodUnidad = value
         End Set
     End Property
-
     Public Property codclasificacion As Integer
         Get
             Return miCodClasificacion
@@ -83,16 +76,14 @@
             miCodClasificacion = value
         End Set
     End Property
-
     Public Property tipobien As String
         Get
-            Return mstipobien
+            Return msTipoBien
         End Get
         Set(value As String)
-            mstipobien = value
+            msTipoBien = value
         End Set
     End Property
-
     Public Property tipocosto As String
         Get
             Return msTipoCosto
@@ -101,7 +92,6 @@
             msTipoCosto = value
         End Set
     End Property
-
     Public Property inventario As String
         Get
             Return msInventario
@@ -110,7 +100,14 @@
             msInventario = value
         End Set
     End Property
-
+    Public Property iva As String
+        Get
+            Return msIva
+        End Get
+        Set(value As String)
+            msIva = value
+        End Set
+    End Property
     Public Property codbarra As String
         Get
             Return msCodBarra
@@ -119,17 +116,14 @@
             msCodBarra = value
         End Set
     End Property
-
     Public Sub New()
         MyBase.New()
         SetParametros(msRama, msTableName, msRequeridos, msCampos_PK, Me)
         Conectar(msTableName)
     End Sub
-
     Public Sub CerrarConexion()
         Desconectar(msTableName)
     End Sub
-
     Protected Overloads Sub Finalize()
         MyBase.Finalize()
     End Sub

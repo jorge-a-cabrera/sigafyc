@@ -1,6 +1,5 @@
 ﻿Imports System.Data.Common
 Imports System.Reflection
-
 Public Class Ebase : Inherits BaseDatos
 #Region "Propiedades Publicas"
     Private Const sVerifica_ As String = "Verifica"
@@ -18,7 +17,6 @@ Public Class Ebase : Inherits BaseDatos
     Private msHashid As String
     Private msHash_Pk As String
 #End Region
-
     Public Property estado As String
         Get
             Return msEstado
@@ -27,7 +25,6 @@ Public Class Ebase : Inherits BaseDatos
             msEstado = value
         End Set
     End Property
-
     Public Property borrado As String
         Get
             Return msBorrado
@@ -36,7 +33,6 @@ Public Class Ebase : Inherits BaseDatos
             msBorrado = value
         End Set
     End Property
-
     Public Property hashid As String
         Get
             Return msHashid
@@ -45,26 +41,22 @@ Public Class Ebase : Inherits BaseDatos
             msHashid = value
         End Set
     End Property
-
     Public ReadOnly Property tableName As String
         Get
             Return msTableName
         End Get
     End Property
-
     Public ReadOnly Property hash_Pk As String
         Get
             Return msHash_Pk
         End Get
     End Property
-
     Public Sub New()
         MyBase.New
         estado = sActivo_
         borrado = sBlanco_
         hashid = ""
     End Sub
-
     Public Sub SetParametros(ByVal psRama As String, ByVal psTableName As String, ByVal psRequeridos As String, ByVal piCampos_PK() As Integer, ByVal poObjeto As Object)
         msTableName = psTableName
         msSQL = "SELECT * FROM " & psTableName & ControlChars.CrLf
@@ -74,7 +66,6 @@ Public Class Ebase : Inherits BaseDatos
         miCampos_PK = piCampos_PK
         Call SetearParametrosConexion(psRama, psTableName, psRequeridos, piCampos_PK, poObjeto)
     End Sub
-
     Public Function ProcHashid(ByVal poDataRow As DataRow, Optional ByVal psAccion As String = sVerifica_, Optional ByVal psTipo As String = sTipoMsgLargo_) As String
         Dim lsHashid As String = ""
         Dim lsVerificado As String = ""
@@ -106,7 +97,6 @@ Public Class Ebase : Inherits BaseDatos
 
         Return lsResultado
     End Function
-
     Public Function GetPK(Optional ByVal psHash_Pk As String = sNo_) As String
         Dim lsAccion As String = sCONSULTAR_
         Dim lsResultado As String = sOk_
@@ -163,7 +153,6 @@ Public Class Ebase : Inherits BaseDatos
         End Try
         Return lsResultado
     End Function
-
     Public Sub Add(Optional ByVal psConfirmar As String = sSi_, Optional ByVal psBitacora As String = sSi_, Optional psDesplegarRegistro As String = sNo_, Optional psMensaje As String = "")
         Dim lsResultado As String = sOk_
         Dim lsSQL As String
@@ -213,7 +202,6 @@ Public Class Ebase : Inherits BaseDatos
         End Try
 
     End Sub
-
     Public Sub Del(Optional ByVal psConfirmar As String = sSi_, Optional ByVal psBitacora As String = sSi_)
         Dim lsSQL As String
         Dim lsAccion As String = sBORRAR_
@@ -260,7 +248,6 @@ Public Class Ebase : Inherits BaseDatos
             GFsAvisar(lsAccion, sError_, loDataRow.Item(0), ex.Message)
         End Try
     End Sub
-
     Public Sub Put(Optional ByVal psConfirmar As String = sSi_, Optional ByVal psBitacora As String = sSi_, Optional ByVal psAccion As String = "")
         Dim lsSQL As String
         Dim lsAccion As String = sMODIFICAR_
@@ -272,8 +259,8 @@ Public Class Ebase : Inherits BaseDatos
 
         lsSQL = LFsAsignaParametros(lsSQL)
 
-        Dim loDataTable As DataTable = Nothing
-        Dim loBackTable As DataTable = Nothing
+        Dim loDataTable As DataTable
+        Dim loBackTable As DataTable
         Dim loDataRow As DataRowCollection = Nothing
         Try
             Call CrearComando(lsSQL)
@@ -323,7 +310,6 @@ Public Class Ebase : Inherits BaseDatos
             GFsAvisar(lsAccion, sError_, loDataRow.Item(0), ex.Message)
         End Try
     End Sub
-
     Public Function GenerarSQL(ByVal psCampos As String, ByVal psConcat As String, Optional ByVal psWhere As String = "", Optional ByVal psTablesNames As String = "", Optional ByVal psJoin As String = "") As String
         Dim lsResultado As String = "SELECT" & ControlChars.CrLf
         lsResultado &= psCampos & ControlChars.CrLf
@@ -344,7 +330,6 @@ Public Class Ebase : Inherits BaseDatos
         lsResultado &= " AND " & ControlChars.CrLf & psConcat
         Return lsResultado
     End Function
-
     Public Function RecuperarTabla(ByVal psSQL As String) As DataSet
         Dim lsSQL As String = psSQL
         Dim loDataSet As DataSet
@@ -356,11 +341,9 @@ Public Class Ebase : Inherits BaseDatos
 
         Catch ex As DbException
             Throw New BaseDatosException(ex.Message)
-
         End Try
         Return loDataSet
     End Function
-
     Public Function RecuperarTabla2(ByVal psSQL As String) As DataSet
         Dim lsSQL As String = psSQL
         Dim loDataSet As DataSet
@@ -376,7 +359,6 @@ Public Class Ebase : Inherits BaseDatos
         End Try
         Return loDataSet
     End Function
-
     Public Function RecuperarConsulta(ByVal psSQL As String) As DbDataReader
         Dim lsSQL As String = psSQL
         Dim loDataReader As DbDataReader
@@ -392,20 +374,17 @@ Public Class Ebase : Inherits BaseDatos
         End Try
         Return loDataReader
     End Function
-
     Private Function LFsReemplazarParametros(ByVal psSQL As String) As String
         Dim lsResultado As String = psSQL
 
         lsResultado = LFsReemplazaPropiedades(lsResultado)
         Return lsResultado
     End Function
-
     Private Function LFsAsignaParametros(ByVal psSQL As String, Optional ByVal psAccion As String = "") As String
         Dim lsResultado As String = psSQL
         lsResultado &= LFsCrearWhere(psAccion)
         Return lsResultado
     End Function
-
     Private Function LFsCrearWhere(ByVal psAccion As String) As String
         Dim lsResultado As String = "WHERE" & sFiltroBorrado_
         Dim liNDX As Integer
@@ -429,7 +408,6 @@ Public Class Ebase : Inherits BaseDatos
 
         Return lsResultado
     End Function
-
     Private Function LFsWherePK(ByVal psSQL As String) As String
         Dim lsResultado As String = psSQL
         For liNDX = 0 To miCampos_PK.Length - 1
@@ -438,7 +416,6 @@ Public Class Ebase : Inherits BaseDatos
         Next
         Return lsResultado
     End Function
-
     Private Function LFsReemplazaPropiedades(ByVal psSQL As String) As String
         Dim loPropiedadInfo As PropertyInfo
         Dim lsResultado As String = psSQL
@@ -457,7 +434,6 @@ Public Class Ebase : Inherits BaseDatos
         Next
         Return lsResultado
     End Function
-
     Private Function LFsObtienePrimaryKey(ByVal poDataTable As DataTable) As String
         Dim lsResultado As String = ""
         Dim loColumns() As DataColumn
@@ -469,7 +445,6 @@ Public Class Ebase : Inherits BaseDatos
         Next
         Return lsResultado
     End Function
-
     Private Function LFsExisteModificaciones(ByVal poAntesRow As DataTable, ByVal poDespuesRow As DataTable) As String
         Dim lsResultado As String = sNo_
         For Each loColumn As DataColumn In poDespuesRow.Rows.Item(0).Table.Columns
@@ -480,7 +455,6 @@ Public Class Ebase : Inherits BaseDatos
         Next
         Return lsResultado
     End Function
-
     Private Function LFsExisteAtributo(ByVal psRequeridos As String, ByVal psAtributo As String) As String
         Dim lsResultado = sNo_
         Dim lsCampos() As String = psRequeridos.Split(sSF_)
@@ -495,7 +469,6 @@ Public Class Ebase : Inherits BaseDatos
 
         Return lsResultado
     End Function
-
     Protected Overrides Sub Finalize()
         MyBase.Finalize()
     End Sub

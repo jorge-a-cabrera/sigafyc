@@ -446,7 +446,6 @@ Public Class frmFe010asientoscabeceras
                 msCodMoneda = loFK.codMoneda
             End If
             loFK.CerrarConexion()
-            loFK = Nothing
         End If
 
         lblNombreSucursal.Text = ""
@@ -461,7 +460,6 @@ Public Class frmFe010asientoscabeceras
                 lblNombreSucursal.Text = loFK.nombre
             End If
             loFK.CerrarConexion()
-            loFK = Nothing
         End If
 
         lblNombreDocumento.Text = ""
@@ -478,7 +476,6 @@ Public Class frmFe010asientoscabeceras
                 msCotizacion = loFK.cotizacion
             End If
             loFK.CerrarConexion()
-            loFK = Nothing
         End If
 
         lblNombreMoneda.Text = ""
@@ -489,7 +486,6 @@ Public Class frmFe010asientoscabeceras
                 lblNombreMoneda.Text = loFK1.nombre
             End If
             loFK1.CerrarConexion()
-            loFK1 = Nothing
         End If
 
         liCodConcepto = 0
@@ -561,7 +557,6 @@ Public Class frmFe010asientoscabeceras
             End If
         Next
     End Sub
-
 
     Private Function LFsExiste(ByVal psCampo As String) As String
         Dim lsResultado As String = sNo_

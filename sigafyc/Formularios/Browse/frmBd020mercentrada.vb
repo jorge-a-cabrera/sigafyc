@@ -1,5 +1,4 @@
 ﻿Imports System.ComponentModel
-
 Public Class frmBd020mercentrada
     Private moFormulario As frmFd020mercentrada
     Private msTabla As String = ""
@@ -12,7 +11,6 @@ Public Class frmBd020mercentrada
     Private msLocalizar As String = ""
     Private miCodEmpresa As Integer
     Private Shared mbabrirform As Boolean = False
-
     Public Property codEmpresa As Integer
         Get
             Return miCodEmpresa
@@ -21,7 +19,6 @@ Public Class frmBd020mercentrada
             miCodEmpresa = value
         End Set
     End Property
-
     Private Sub Formulario_Load(sender As Object, e As EventArgs) Handles Me.Load
         DataGridView1.DefaultCellStyle.Font = New Font("Tahoma", 12, FontStyle.Regular, GraphicsUnit.Point)
         DataGridView1.AllowUserToResizeColumns = True
@@ -86,7 +83,6 @@ Public Class frmBd020mercentrada
         End If
         LPDespliegaDescripciones()
     End Sub
-
     Private Sub BuscarClave(sender As Object, e As EventArgs)
         LPCargarDatos()
     End Sub
@@ -96,7 +92,7 @@ Public Class frmBd020mercentrada
         Dim lsSQL As String = GFsGeneraSQL("frmBd020mercentrada")
         Dim loDatos As New Ed020mercentrada
         Dim loDataSet As DataSet
-        Dim lsCamposConcat As String = "codigo, nombre, abreviado, nomunidad, nomclasificacion, tipobien, tipocosto, codbarra, estado"
+        Dim lsCamposConcat As String = "codigo, nombre, abreviado, nomunidad, nomclasificacion, tipobien, tipocosto, codbarra, iva, estado"
         Dim lsCamposOcultos As String = "codunidad, codclasificacion"
         Dim lsConcatFiltro As String = lsCamposConcat
         Dim lsFiltro As String = sFiltroSentencia_
@@ -130,11 +126,9 @@ Public Class frmBd020mercentrada
         LPSinRegistro_AbrirForm()
         LPHabilitaControles()
     End Sub
-
     Private Sub LPInicializaMaxLength()
         txtCodEmpresa_NE.MaxLength = 6
     End Sub
-
     Private Sub LPDespliegaDescripciones()
         lblNombreEmpresa.Text = ""
         If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
@@ -149,7 +143,6 @@ Public Class frmBd020mercentrada
             txtCodEmpresa_NE.Text = liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength)
         End If
     End Sub
-
     Private Sub LPLocalizaRegistro(ByVal psCodigo As String)
         ' Este procedimiento realiza la busqueda del parametro
         ' a fin de ubicarlo dentro del DataGridView
@@ -172,7 +165,6 @@ Public Class frmBd020mercentrada
             DataGridView1.CurrentCell = DataGridView1.Rows(liIndex).Cells("codigo")
         End If
     End Sub
-
     Private Sub txtCodEmpresa_NE_Validating(sender As Object, e As CancelEventArgs) Handles txtCodEmpresa_NE.Validating
         Dim loFK As New Ec001empresas
         If txtCodEmpresa_NE.Text.Trim.Length = 0 Then
@@ -212,10 +204,9 @@ Public Class frmBd020mercentrada
         LPDespliegaDescripciones()
         LPCargarDatos()
     End Sub
-
     Private Sub Botones_Click(sender As Object, e As EventArgs)
         Dim loDatos As New Ed020mercentrada
-        loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+        loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
         Select Case CType(sender, Button).AccessibleName
             Case sAGREGAR_
                 moFormulario = New frmFd020mercentrada
@@ -247,7 +238,7 @@ Public Class frmBd020mercentrada
                             Exit Sub
                         End If
                         moFormulario = New frmFd020mercentrada
-                        moFormulario.AccessibleName = "Empresa: " & loDatos.codEmpresa & ", Mercaderia/Servicio: " & loDatos.codmercaderia
+                        moFormulario.AccessibleName = "Empresa: " & loDatos.codempresa & ", Mercaderia/Servicio: " & loDatos.codmercaderia
                         moFormulario.Tag = CType(sender, Button).AccessibleName
                         moFormulario.entidad = loDatos
                         GPCargar(moFormulario)
@@ -257,14 +248,13 @@ Public Class frmBd020mercentrada
                         moFormulario = Nothing
                     End If
                 Catch ex As Exception
-                    GFsAvisar("Error en Browse", sError_, "No existe datos para Mercaderia/servicio [" & loDatos.codmercaderia & "], Empresa [" & loDatos.codEmpresa & "]" & ControlChars.CrLf & ex.Message)
+                    GFsAvisar("Error en Browse", sError_, "No existe datos para Mercaderia/servicio [" & loDatos.codmercaderia & "], Empresa [" & loDatos.codempresa & "]" & ControlChars.CrLf & ex.Message)
                 End Try
         End Select
         loDatos.CerrarConexion()
         loDatos = Nothing
         LPCargarDatos()
     End Sub
-
     Private Sub btnAuditoria_Click(sender As Object, e As EventArgs) Handles btnAuditoria.Click
         Dim lsCodigo As String = DataGridView1.Item("codigo", DataGridView1.CurrentRow.Index).Value.ToString
         If lsCodigo.Trim.Length = 0 Then Exit Sub
@@ -272,13 +262,12 @@ Public Class frmBd020mercentrada
         Dim lsTablaHash() As String = LFsTablaHashPk(lsCodigo).Split(sSF_)
         GPDespliegaBitacoraDatos(lsTablaHash(0), lsTablaHash(1))
     End Sub
-
     Private Function LFsTablaHashPk(ByVal psCodigo As String) As String
         Dim lsResultado As String = ""
         If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
             If psCodigo.Trim.Length > 0 Then
                 Dim loDatos As New Ed020mercentrada
-                loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+                loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                 loDatos.codmercaderia = psCodigo
                 Try
                     If loDatos.GetPK(sSi_) = sOk_ Then
@@ -291,19 +280,16 @@ Public Class frmBd020mercentrada
         End If
         Return lsResultado
     End Function
-
     Private Sub ExportarExcel_Click(sender As Object, e As EventArgs)
         If GFsPuedeUsar(Me.Name & ":Exportar->Excel", "Permite exportar el contenido de " & Me.Name & " a un archivo Excel") = sSi_ Then
             GPExportarGridToExcel(DataGridView1, Me.Name)
         End If
     End Sub
-
     Private Sub ExportarTexto_Click(sender As Object, e As EventArgs)
         If GFsPuedeUsar(Me.Name & ":Exportar->Texto delimitado", "Permite exportar el contenido de " & Me.Name & " a un archivo de texto delimitado") = sSi_ Then
             GPExportarGridToTexto(DataGridView1, Me.Name)
         End If
     End Sub
-
     Friend Sub LPSinRegistro_AbrirForm()
         If miCantidad = 0 Then
             If mbabrirform = False Then
@@ -312,5 +298,4 @@ Public Class frmBd020mercentrada
             End If
         End If
     End Sub
-
 End Class

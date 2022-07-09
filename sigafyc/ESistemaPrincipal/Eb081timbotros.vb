@@ -21,7 +21,7 @@
     Private miHastaNumero As Integer
 #End Region
 
-    Public Property numTimbrado As String
+    Public Property numtimbrado As String
         Get
             Return msNumTimbrado
         End Get
@@ -48,7 +48,7 @@
         End Set
     End Property
 
-    Public Property desdeNumero As Integer
+    Public Property desdenumero As Integer
         Get
             Return miDesdeNumero
         End Get
@@ -56,7 +56,7 @@
             miDesdeNumero = value
         End Set
     End Property
-    Public Property hastaNumero As Integer
+    Public Property hastanumero As Integer
         Get
             Return miHastaNumero
         End Get
@@ -64,19 +64,15 @@
             miHastaNumero = value
         End Set
     End Property
-
     Public Sub New()
         MyBase.New()
         SetParametros(msRama, msTableName, msRequeridos, msCampos_PK, Me)
         Conectar(msTableName)
     End Sub
-
     Public Sub CerrarConexion()
         Desconectar(msTableName)
     End Sub
-
     Protected Overloads Sub Finalize()
         MyBase.Finalize()
     End Sub
-
 End Class

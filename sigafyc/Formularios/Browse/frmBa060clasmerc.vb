@@ -1,5 +1,4 @@
 ﻿Imports System.ComponentModel
-
 Public Class frmBa060clasmerc
     Private moFormulario As frmFa060clasmerc
     Private msTabla As String = ""
@@ -10,9 +9,17 @@ Public Class frmBa060clasmerc
     Private mbConsultar As Boolean
     Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
+    Private miCodEmpresa As Integer
     Private msTipo As String = ""
     Private Shared mbabrirform As Boolean = False
-
+    Public Property codEmpresa As Integer
+        Get
+            Return miCodEmpresa
+        End Get
+        Set(value As Integer)
+            miCodEmpresa = value
+        End Set
+    End Property
     Public Property tipo As String
         Get
             Return msTipo
@@ -53,6 +60,8 @@ Public Class frmBa060clasmerc
         AddHandler btnModificar.Click, AddressOf Botones_Click
         AddHandler btnBorrar.Click, AddressOf Botones_Click
         AddHandler btnConsultar.Click, AddressOf Botones_Click
+        AddHandler txtCodEmpresa_NE.KeyPress, AddressOf ManejoEvento_KeyPress
+        AddHandler txtCodEmpresa_NE.KeyDown, AddressOf ManejoEvento_KeyDown
         AddHandler cmbTipo.KeyPress, AddressOf ManejoEvento_KeyPress
         AddHandler cmbTipo.KeyDown, AddressOf ManejoEvento_KeyDown
         AddHandler DataGridView1.KeyDown, AddressOf DataGrid_KeyDown
@@ -76,23 +85,30 @@ Public Class frmBa060clasmerc
                 cmbTipo.Text = msTipo
             End If
         End If
-        mbabrirform = False
-        If msTipo.Trim.Length > 0 Then
-            cmbTipo.Enabled = False
-            LPCargarDatos()
+        lblNombreEmpresa.Text = ""
+        If miCodEmpresa > 0 Then
+            txtCodEmpresa_NE.Text = miCodEmpresa.ToString
+            txtCodEmpresa_NE.Enabled = False
+            If msTipo.Trim.Length > 0 Then
+                cmbTipo.Enabled = False
+                LPCargarDatos()
+                LPDespliegaDescripciones()
+            End If
         End If
-        LPDespliegaDescripciones()
     End Sub
-
     Private Sub BuscarClave(sender As Object, e As EventArgs)
         LPCargarDatos()
+        LPDespliegaDescripciones()
     End Sub
-
     Private Sub LPCargarDatos()
+        If txtCodEmpresa_NE.Text.Trim.Length = 0 Then Exit Sub
+        If cmbTipo.Text.Trim.Length = 0 Then Exit Sub
+
         Dim lsSQL As String
         Dim loDatos As New Ea060clasmerc
         Dim loDataSet As DataSet
-        Dim lsWhere As String = "tipo = '&tipo' and nombre <> " & Chr(39) & sRESERVADO_ & Chr(39)
+        Dim lsWhere As String = "codempresa = &codempresa and tipo = '&tipo' and nombre <> " & Chr(39) & sRESERVADO_ & Chr(39)
+        lsWhere = lsWhere.Replace("&codempresa", Integer.Parse(txtCodEmpresa_NE.Text.ToString).ToString)
         lsWhere = lsWhere.Replace("&tipo", cmbTipo.Text)
         Dim lsCampos As String = ""
         Dim lsCamposConcat As String = ""
@@ -124,19 +140,62 @@ Public Class frmBa060clasmerc
 
         msTabla = loDatos.tableName
         miCantidad = loDataSet.Tables.Item(0).Rows.Count
-        loDataSet = Nothing
         loDatos.CerrarConexion()
-        loDatos = Nothing
+
         LPSinRegistro_AbrirForm()
         LPHabilitaControles()
     End Sub
     Private Sub LPInicializaMaxLength()
-        cmbTipo.MaxLength = 1
+        txtCodEmpresa_NE.MaxLength = 6
+        cmbTipo.MaxLength = 15
     End Sub
+    Private Sub txtCodEmpresa_NE_Validating(sender As Object, e As CancelEventArgs) Handles txtCodEmpresa_NE.Validating
+        Dim loFK As New Ec001empresas
+        If txtCodEmpresa_NE.Text.Trim.Length = 0 Then
+            GFsAvisar("Debe ingresar codigo de empresa valido", sMENSAJE_, "Por favor intentelo de nuevo.")
+            txtCodEmpresa_NE.Text = "0"
+            e.Cancel = True
+            Exit Sub
+        End If
+        If Not IsNumeric(txtCodEmpresa_NE.Text) Then
+            txtCodEmpresa_NE.Text = "0"
+            e.Cancel = True
+            Exit Sub
+        End If
+        Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
 
+        loFK.codEmpresa = liCodEmpresa
+        If loFK.GetPK = sSinRegistros_ Then
+            Dim loLookUp As New frmBc001empresas
+            loLookUp.Tag = sELEGIR_
+            GPCargar(loLookUp)
+            If loLookUp.entidad IsNot Nothing Then
+                txtCodEmpresa_NE.Text = CType(loLookUp.entidad, Ec001empresas).codEmpresa.ToString
+                e.Cancel = True
+                Exit Sub
+            End If
+        End If
+        loFK.CerrarConexion()
+
+        If GFsPuedeUsar("Empresa No." & liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength), "Puede gestionar la Empresa No." & liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength)) <> sSi_ Then
+            e.Cancel = True
+            Exit Sub
+        End If
+        LPDespliegaDescripciones()
+    End Sub
     Private Sub LPDespliegaDescripciones()
+        lblNombreEmpresa.Text = ""
+        If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
+            Dim loFK As New Ec001empresas
+            loFK.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+            If loFK.GetPK = sOk_ Then
+                lblNombreEmpresa.Text = loFK.nombre
+            End If
+            loFK.CerrarConexion()
+            Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+            txtCodEmpresa_NE.Text = liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength)
+        End If
     End Sub
-
     Private Sub LPLocalizaRegistro(ByVal psCodigo As String)
         ' Este procedimiento realiza la busqueda del parametro
         ' a fin de ubicarlo dentro del DataGridView
@@ -159,9 +218,9 @@ Public Class frmBa060clasmerc
             DataGridView1.CurrentCell = DataGridView1.Rows(liIndex).Cells("codigo")
         End If
     End Sub
-
     Private Sub Botones_Click(sender As Object, e As EventArgs)
         Dim loDatos As New Ea060clasmerc
+        loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
         loDatos.tipo = cmbTipo.Text
         Select Case CType(sender, Button).AccessibleName
             Case sAGREGAR_
@@ -220,10 +279,8 @@ Public Class frmBa060clasmerc
                 End Try
         End Select
         loDatos.CerrarConexion()
-        loDatos = Nothing
         LPCargarDatos()
     End Sub
-
     Private Sub btnAuditoria_Click(sender As Object, e As EventArgs) Handles btnAuditoria.Click
         Dim lsCodigo As String = DataGridView1.Item("codigo", DataGridView1.CurrentRow.Index).Value.ToString
         If lsCodigo.Trim.Length = 0 Then Exit Sub
@@ -231,12 +288,12 @@ Public Class frmBa060clasmerc
         Dim lsTablaHash() As String = LFsTablaHashPk(lsCodigo).Split(sSF_)
         GPDespliegaBitacoraDatos(lsTablaHash(0), lsTablaHash(1))
     End Sub
-
     Private Function LFsTablaHashPk(ByVal psCodigo As String) As String
         Dim lsResultado As String = ""
         If cmbTipo.Text.Trim.Length > 0 Then
             If psCodigo.Trim.Length > 0 Then
                 Dim loDatos As New Ea060clasmerc
+                loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                 loDatos.tipo = cmbTipo.Text
                 loDatos.codclasificacion = Integer.Parse(psCodigo)
                 Try
@@ -250,23 +307,16 @@ Public Class frmBa060clasmerc
         End If
         Return lsResultado
     End Function
-
     Private Sub ExportarExcel_Click(sender As Object, e As EventArgs)
         If GFsPuedeUsar(Me.Name & ":Exportar->Excel", "Permite exportar el contenido de " & Me.Name & " a un archivo Excel") = sSi_ Then
             GPExportarGridToExcel(DataGridView1, Me.Name)
         End If
     End Sub
-
     Private Sub ExportarTexto_Click(sender As Object, e As EventArgs)
         If GFsPuedeUsar(Me.Name & ":Exportar->Texto delimitado", "Permite exportar el contenido de " & Me.Name & " a un archivo de texto delimitado") = sSi_ Then
             GPExportarGridToTexto(DataGridView1, Me.Name)
         End If
     End Sub
-
-    Private Sub Form_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        cmbTipo.Focus()
-    End Sub
-
     Friend Sub LPSinRegistro_AbrirForm()
         If miCantidad = 0 Then
             If mbabrirform = False Then
@@ -275,7 +325,6 @@ Public Class frmBa060clasmerc
             End If
         End If
     End Sub
-
     Private Function LFiCantidadDetalle(ByVal psTipo As String, ByVal piCodigo As Integer) As Integer
         Dim liCantidad As Integer = 0
         Select Case psTipo
@@ -294,12 +343,11 @@ Public Class frmBa060clasmerc
                 liCantidad = loDatos.EjecutarEscalar
                 loDatos.CerrarConexion()
         End Select
-
         Return liCantidad
     End Function
-
     Private Sub cmbTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTipo.SelectedIndexChanged
         LPDespliegaDescripciones()
+        mbabrirform = False
         LPCargarDatos()
     End Sub
 End Class

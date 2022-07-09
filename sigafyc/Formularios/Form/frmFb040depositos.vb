@@ -1,22 +1,18 @@
 ﻿Imports System.ComponentModel
-
 Public Class frmFb040depositos
     Private msValidado() As String
     Private msRequeridos As String() = {"codempresa", "coddeposito", "nombre", "abreviado", "tipdeposito", "ubicaciones", "estado"}
     Private moRequeridos As New ArrayList(msRequeridos)
     Private msCodMoneda As String = ""
-
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         LPOperacionCancelada()
     End Sub
-
     Private Sub LPOperacionCancelada()
         LPBorrarAlCancelar()
         Me.Tag = sCancelar_
         GPBitacoraRegistrar(sSALIO_, Me.Text & ", haciendo click en CANCELAR.")
         Me.Close()
     End Sub
-
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         If InStr(sAGREGAR_ & sMODIFICAR_, Me.Tag.ToString) > 0 Then
             msValidado = GFsValidacionFinal(TabControl1).Split(sSF_)
@@ -91,7 +87,6 @@ Public Class frmFb040depositos
             Me.Close()
         End If
     End Sub
-
     Private Sub ManejoEvento_Validating(sender As Object, e As CancelEventArgs)
         If CType(sender, Control).Text.Trim.Length = 0 Then
             If LFsExiste(CType(sender, Control).AccessibleName) = sNo_ Then Exit Sub
@@ -100,7 +95,11 @@ Public Class frmFb040depositos
                 Case "nombre"
                     lsValorInicial = "Deposito No. " & txtCodigo_NE.Text
                 Case "abreviado"
-                    lsValorInicial = txtNombre_AN.Text
+                    If txtNombre_AN.Text.Trim.Length > txtAbreviado_AN.MaxLength Then
+                        lsValorInicial = txtNombre_AN.Text.ToString.Substring(0, txtAbreviado_AN.MaxLength)
+                    Else
+                        lsValorInicial = txtNombre_AN.Text
+                    End If
                 Case "tipdeposito"
                     lsValorInicial = sFijo_
             End Select
@@ -119,13 +118,11 @@ Public Class frmFb040depositos
         End If
         LPDespliegaDescripciones()
     End Sub
-
     Private Sub ManejoEvento_Validated(sender As Object, e As EventArgs)
         CType(sender, Control).Tag = sOk_
         Select Case CType(sender, Control).Name
         End Select
     End Sub
-
     Private Sub Formulario_Load(sender As Object, e As EventArgs) Handles Me.Load
         LPInicializaParametros()
         LPInicializaMaxLength()
@@ -175,7 +172,7 @@ Public Class frmFb040depositos
         cmbUbicaciones.Enabled = True
         cmbEstado.Enabled = True
 
-        txtCodEmpresa_NE.AccessibleName = "codEmpresa"
+        txtCodEmpresa_NE.AccessibleName = "codempresa"
         txtCodigo_NE.AccessibleName = "codigo"
         txtNombre_AN.AccessibleName = "nombre"
         txtAbreviado_AN.AccessibleName = "abreviado"
@@ -209,9 +206,7 @@ Public Class frmFb040depositos
                     End If
                 Next
         End Select
-
     End Sub
-
     Private Sub Formulario_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         '--> AQUI DEBE INGRESARSE EL FOCUS DEL PRIMER ELEMENTO DEL FORMULARIO
         Select Case Me.Tag.ToString
@@ -222,7 +217,6 @@ Public Class frmFb040depositos
         End Select
         LPDespliegaDescripciones()
     End Sub
-
     Private Sub LPDespliegaDescripciones()
         Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
         Dim liCodigo As Integer = Integer.Parse(txtCodigo_NE.Text.ToString)
@@ -241,7 +235,6 @@ Public Class frmFb040depositos
             loFK = Nothing
         End If
     End Sub
-
     Private Sub LPInicializaMaxLength()
         txtCodEmpresa_NE.MaxLength = 6
         txtCodigo_NE.MaxLength = 3
@@ -251,7 +244,6 @@ Public Class frmFb040depositos
         cmbUbicaciones.MaxLength = 2
         cmbEstado.MaxLength = 15
     End Sub
-
     Private Sub LPInicializaControles()
         For Each loTabPage As TabPage In TabControl1.TabPages
             If loTabPage.AccessibleName = sActivo_ Then
@@ -268,6 +260,7 @@ Public Class frmFb040depositos
                             AddHandler loControl.Validating, AddressOf ManejoEvento_Validating
                             AddHandler loControl.Validated, AddressOf ManejoEvento_Validated
                             AddHandler loControl.KeyDown, AddressOf ManejoEvento_KeyDown
+                            AddHandler loControl.KeyPress, AddressOf ManejoEvento_KeyPress
                         Case sPrefijoRadioButton_
                             AddHandler loControl.Validated, AddressOf ManejoEvento_Validated
                             AddHandler loControl.KeyDown, AddressOf ManejoEvento_KeyDown
@@ -285,6 +278,7 @@ Public Class frmFb040depositos
                                         AddHandler loControl1.Validating, AddressOf ManejoEvento_Validating
                                         AddHandler loControl1.Validated, AddressOf ManejoEvento_Validated
                                         AddHandler loControl1.KeyDown, AddressOf ManejoEvento_KeyDown
+                                        AddHandler loControl1.KeyPress, AddressOf ManejoEvento_KeyPress
                                     Case sPrefijoRadioButton_
                                         AddHandler loControl1.Validated, AddressOf ManejoEvento_Validated
                                         AddHandler loControl1.KeyDown, AddressOf ManejoEvento_KeyDown
@@ -295,7 +289,6 @@ Public Class frmFb040depositos
             End If
         Next
     End Sub
-
     Private Function LFsExiste(ByVal psCampo As String) As String
         Dim lsResultado As String = sNo_
         For Each lsCampo As String In moRequeridos
@@ -306,7 +299,6 @@ Public Class frmFb040depositos
         Next
         Return lsResultado
     End Function
-
     Private Sub LPBorrarAlCancelar()
         If Me.Tag.ToString <> sAGREGAR_ Then Exit Sub
 
@@ -323,7 +315,6 @@ Public Class frmFb040depositos
         loDatos.CerrarConexion()
         loDatos = Nothing
     End Sub
-
     Private Sub LPInicializaParametros()
         Dim lsTipo As String = sGeneral_
         Dim lsClave As String = ""

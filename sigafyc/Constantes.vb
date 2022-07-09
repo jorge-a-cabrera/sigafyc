@@ -201,7 +201,16 @@
     Public Const sIncluido_ As String = "Incluido"
     Public Const sExcluido_ As String = "Excluido"
     Public Const sLinea_ As String = "Linea"
+    Public Const sExenta_ As String = "Exenta"
+    Public Const sGravada05_ As String = "Gravada5%"
+    Public Const sGravada10_ As String = "Gravada10%"
+    Public Const iCantDecimal_ As Integer = 2
 
+    Public Const d010_ As Decimal = 0.1D
+    Public Const d005_ As Decimal = 0.05D
+    Public Const d100_ As Decimal = 100D
+    Public Const d110_ As Decimal = 110D
+    Public Const d105_ As Decimal = 105D
     Public Enum eTipoValor
         NumeroEntero
         NumeroDecimal
@@ -210,14 +219,12 @@
         Fecha
         Ruc
     End Enum
-
     Public Enum eTipoHoja
         A4 = 9
         Executive = 7
         Legal = 5
         Letter = 1
     End Enum
-
     Public Enum eOrientacion
         Horizontal = 2
         Vertical = 1

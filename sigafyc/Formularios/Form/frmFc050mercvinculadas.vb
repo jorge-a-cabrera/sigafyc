@@ -113,7 +113,6 @@ Public Class frmFc050mercvinculadas
                     loFK.codmercaderia = txtCodEntrada_AN.Text
                     loFK.codunidad = txtCodUnidad_AN.Text
                     lsResultado = loFK.GetPK
-                    loFK.CerrarConexion()
                     If lsResultado = sSinRegistros_ Then
                         Dim loLookUp As New frmBb110undalternativas
                         loLookUp.Tag = sELEGIR_
@@ -138,7 +137,6 @@ Public Class frmFc050mercvinculadas
                     loFK.codempresa = Integer.Parse(txtCodEmpresa_NE.Text)
                     loFK.codmercaderia = txtCodEntrada_AN.Text
                     lsResultado = loFK.GetPK
-                    loFK.CerrarConexion()
                     If lsResultado = sSinRegistros_ Then
                         Dim loLookUp As New frmBd020mercentrada
                         loLookUp.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text)

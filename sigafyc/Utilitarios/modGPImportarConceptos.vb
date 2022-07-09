@@ -1,7 +1,5 @@
 ﻿Imports System.IO
-
 Module modGPImportarConceptos
-
     Public Sub GPImportarConceptos(ByVal piCodEmpresa As Integer)
         Dim loElegirArchivo As New OpenFileDialog
         Dim lsFileName As String = ""

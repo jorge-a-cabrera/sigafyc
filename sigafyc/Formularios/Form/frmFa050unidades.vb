@@ -1,16 +1,13 @@
 ﻿Imports System.ComponentModel
-
 Public Class frmFa050unidades
     Private msValidado As String = ""
-    Private msRequeridos As String() = {"codigo", "nombre"}
+    Private msRequeridos As String() = {"codempresa", "codigo", "nombre"}
     Private moRequeridos As New ArrayList(msRequeridos)
-
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Tag = sCancelar_
         GPBitacoraRegistrar(sSALIO_, Me.Text & ", haciendo click en CANCELAR.")
         Me.Close()
     End Sub
-
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         If InStr(sAGREGAR_ & sMODIFICAR_, Me.Tag.ToString) > 0 Then
             msValidado = ""
@@ -27,6 +24,7 @@ Public Class frmFa050unidades
                 Select Case Me.Tag.ToString
                     Case sAGREGAR_
                         Dim loDatos As New Ea050unidades
+                        loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                         loDatos.codunidad = txtCodigo_AN.Text
                         loDatos.nombre = txtNombre_AN.Text
                         If cmbEstado.Text.Trim.Length > 0 Then
@@ -36,8 +34,10 @@ Public Class frmFa050unidades
                         loDatos.CerrarConexion()
                     Case sMODIFICAR_
                         Dim loDatos As New Ea050unidades
+                        loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                         loDatos.codunidad = txtCodigo_AN.Text
                         If loDatos.GetPK = sOk_ Then
+                            loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                             loDatos.codunidad = txtCodigo_AN.Text
                             loDatos.nombre = txtNombre_AN.Text
                             If cmbEstado.Text.Trim.Length > 0 Then
@@ -58,8 +58,10 @@ Public Class frmFa050unidades
         Else
             If Me.Tag.ToString = sBORRAR_ Then
                 Dim loDatos As New Ea050unidades
+                loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                 loDatos.codunidad = txtCodigo_AN.Text
                 If loDatos.GetPK = sOk_ Then
+                    loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                     loDatos.codunidad = txtCodigo_AN.Text
                     loDatos.Del()
                 End If
@@ -88,9 +90,10 @@ Public Class frmFa050unidades
             Select Case CType(sender, Control).AccessibleName
                 Case "codigo"
                     Dim loPk As New Ea050unidades
+                    loPk.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                     loPk.codunidad = txtCodigo_AN.Text
                     If loPk.GetPK = sOk_ Then
-                        GFsAvisar("Codigo [" & txtCodigo_AN.Text & "]", sMENSAJE_, "ya existe! Y no puede duplicarse.")
+                        GFsAvisar("Codigo unidad [" & txtCodigo_AN.Text & "], Empresa [" & txtCodEmpresa_NE.Text.ToString & "]", sMENSAJE_, "ya existe! Y no puede duplicarse.")
                         e.Cancel = True
                     End If
                     loPk = Nothing
@@ -102,14 +105,13 @@ Public Class frmFa050unidades
                 End If
             End If
         End If
+        LPDespliegaDescripciones()
     End Sub
-
     Private Sub ManejoEvento_Validated(sender As Object, e As EventArgs)
         CType(sender, Control).Tag = sOk_
         Select Case CType(sender, Control).Name
         End Select
     End Sub
-
     Private Sub Formulario_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim loControls As TabPage.ControlCollection = Me.TabPage1.Controls
         LPInicializaMaxLength()
@@ -125,24 +127,32 @@ Public Class frmFa050unidades
                         loControls.Item(liNDX).Text = ""
                     End If
                 Next
+                txtCodEmpresa_NE.Text = CType(entidad, Ea050unidades).codempresa.ToString
             Case Else
+                txtCodEmpresa_NE.Text = CType(entidad, Ea050unidades).codempresa.ToString
                 txtCodigo_AN.Text = CType(entidad, Ea050unidades).codunidad
                 txtNombre_AN.Text = CType(entidad, Ea050unidades).nombre
                 cmbEstado.Text = CType(entidad, Ea050unidades).estado
         End Select
         ' Habilita o deshabilita los controles de edición
+        txtCodEmpresa_NE.Enabled = True
         txtCodigo_AN.Enabled = True
         txtNombre_AN.Enabled = True
         cmbEstado.Enabled = True
 
+        txtCodEmpresa_NE.AccessibleName = "codempresa"
         txtCodigo_AN.AccessibleName = "codigo"
         txtNombre_AN.AccessibleName = "nombre"
         cmbEstado.AccessibleName = "estado"
 
         Select Case Me.Tag.ToString
             Case sAGREGAR_
+                txtCodEmpresa_NE.Enabled = False
+                txtCodEmpresa_NE.Tag = sOk_
 
             Case sMODIFICAR_
+                txtCodEmpresa_NE.Enabled = False
+                txtCodEmpresa_NE.Tag = sOk_
                 txtCodigo_AN.Enabled = False
 
             Case sCONSULTAR_, sBORRAR_
@@ -158,8 +168,8 @@ Public Class frmFa050unidades
                     End If
                 Next
         End Select
+        LPDespliegaDescripciones()
     End Sub
-
     Private Sub Formulario_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         '--> AQUI DEBE INGRESARSE EL FOCUS DEL PRIMER ELEMENTO DEL FORMULARIO
         Select Case Me.Tag.ToString
@@ -169,13 +179,12 @@ Public Class frmFa050unidades
                 txtNombre_AN.Focus()
         End Select
     End Sub
-
     Private Sub LPInicializaMaxLength()
+        txtCodEmpresa_NE.MaxLength = 6
         txtCodigo_AN.MaxLength = 6
         txtNombre_AN.MaxLength = 15
         cmbEstado.MaxLength = 15
     End Sub
-
     Private Sub LPInicializaControles()
         For Each loTabPage As TabPage In TabControl1.TabPages
             If loTabPage.AccessibleName = sActivo_ Then
@@ -201,7 +210,22 @@ Public Class frmFa050unidades
             End If
         Next
     End Sub
+    Private Sub LPDespliegaDescripciones()
+        If txtCodEmpresa_NE.Text.Trim.Length = 0 Then Exit Sub
 
+        Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+        txtCodEmpresa_NE.Text = liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength.ToString)
+
+        lblNombreEmpresa.Text = ""
+        If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
+            Dim loFK As New Ec001empresas
+            loFK.codEmpresa = liCodEmpresa
+            If loFK.GetPK = sOk_ Then
+                lblNombreEmpresa.Text = loFK.nombre
+            End If
+            loFK.CerrarConexion()
+        End If
+    End Sub
     Private Function LFsExiste(ByVal psCampo As String) As String
         Dim lsResultado As String = sNo_
         For Each lsCampo As String In moRequeridos
@@ -212,5 +236,4 @@ Public Class frmFa050unidades
         Next
         Return lsResultado
     End Function
-
 End Class

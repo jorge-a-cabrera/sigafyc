@@ -22,8 +22,6 @@ Partial Class frmFc020documentos : Inherits frmFormulario
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.cmbTipoPerfil = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.cmbAplicacion = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.cmbEstado = New System.Windows.Forms.ComboBox()
@@ -58,16 +56,13 @@ Partial Class frmFc020documentos : Inherits frmFormulario
         '
         'TabControl1
         '
-        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Size = New System.Drawing.Size(835, 341)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
-        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.gbxCotizacion)
         Me.TabPage1.Controls.Add(Me.txtAbreviado_AN)
         Me.TabPage1.Controls.Add(Me.Label7)
@@ -87,7 +82,6 @@ Partial Class frmFc020documentos : Inherits frmFormulario
         Me.TabPage1.Controls.Add(Me.txtCodigo_NE)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
         Me.TabPage1.Size = New System.Drawing.Size(827, 305)
         '
         'btnCancelar
@@ -100,15 +94,12 @@ Partial Class frmFc020documentos : Inherits frmFormulario
         '
         'lblMensaje
         '
-        Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMensaje.Size = New System.Drawing.Size(831, 37)
         '
         'TabPage2
         '
         Me.TabPage2.AccessibleName = "Activo"
         Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TabPage2.Controls.Add(Me.cmbTipoPerfil)
-        Me.TabPage2.Controls.Add(Me.Label11)
         Me.TabPage2.Controls.Add(Me.cmbAplicacion)
         Me.TabPage2.Controls.Add(Me.Label10)
         Me.TabPage2.Controls.Add(Me.cmbEstado)
@@ -119,28 +110,6 @@ Partial Class frmFc020documentos : Inherits frmFormulario
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'cmbTipoPerfil
-        '
-        Me.cmbTipoPerfil.AccessibleDescription = "tipo"
-        Me.cmbTipoPerfil.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cmbTipoPerfil.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbTipoPerfil.FormattingEnabled = True
-        Me.cmbTipoPerfil.Items.AddRange(New Object() {"Propio", "Tercero"})
-        Me.cmbTipoPerfil.Location = New System.Drawing.Point(203, 52)
-        Me.cmbTipoPerfil.Name = "cmbTipoPerfil"
-        Me.cmbTipoPerfil.Size = New System.Drawing.Size(225, 28)
-        Me.cmbTipoPerfil.TabIndex = 1
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(15, 55)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(116, 20)
-        Me.Label11.TabIndex = 44
-        Me.Label11.Text = "Perfil asociado:"
         '
         'cmbAplicacion
         '
@@ -170,7 +139,7 @@ Partial Class frmFc020documentos : Inherits frmFormulario
         Me.cmbEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbEstado.FormattingEnabled = True
         Me.cmbEstado.Items.AddRange(New Object() {"Activo", "Bloqueado"})
-        Me.cmbEstado.Location = New System.Drawing.Point(203, 86)
+        Me.cmbEstado.Location = New System.Drawing.Point(203, 52)
         Me.cmbEstado.Name = "cmbEstado"
         Me.cmbEstado.Size = New System.Drawing.Size(225, 28)
         Me.cmbEstado.TabIndex = 2
@@ -179,7 +148,7 @@ Partial Class frmFc020documentos : Inherits frmFormulario
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(15, 89)
+        Me.Label9.Location = New System.Drawing.Point(15, 55)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(64, 20)
         Me.Label9.TabIndex = 23
@@ -194,7 +163,7 @@ Partial Class frmFc020documentos : Inherits frmFormulario
         Me.cmbTipo.Items.AddRange(New Object() {"Propio", "Tercero"})
         Me.cmbTipo.Location = New System.Drawing.Point(165, 84)
         Me.cmbTipo.Name = "cmbTipo"
-        Me.cmbTipo.Size = New System.Drawing.Size(225, 28)
+        Me.cmbTipo.Size = New System.Drawing.Size(115, 28)
         Me.cmbTipo.TabIndex = 2
         '
         'txtCodEmpresa_NE
@@ -461,8 +430,6 @@ Partial Class frmFc020documentos : Inherits frmFormulario
     Friend WithEvents rbtVenta As RadioButton
     Friend WithEvents rbtCompra As RadioButton
     Friend WithEvents rbtSemisuma As RadioButton
-    Friend WithEvents cmbTipoPerfil As ComboBox
-    Friend WithEvents Label11 As Label
     Friend WithEvents cmbAplicacion As ComboBox
     Friend WithEvents Label10 As Label
 End Class

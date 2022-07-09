@@ -129,14 +129,39 @@ Public Module Herramientas
             Catch ex As Exception
                 GFsAvisar("Herramientas.GfsGeneraSQL", sMENSAJE_, ex.Message)
             End Try
+        Else
+            lsClave = "Sistema en Producción"
+            Dim lsParametro As String = GFsParametroObtener(sGeneral_, lsClave)
+            If lsParametro <> sSi_ Then
+                Dim lsSQLActual As String = GFsSHA512(loDatos.detalle)
+                Dim lsSQLArchivo As String = GFsSHA512(GFsRecuperaSQLArchivo(psCodigo))
+                If lsSQLActual <> lsSQLArchivo Then
+                    loDatos.ss010_codigo = SesionActiva.sistema
+                    loDatos.ss030_codigo = lsSS030_codigo
+                    loDatos.codigo = psCodigo
+                    loDatos.nombre = "Descripcion " & psCodigo
+                    loDatos.detalle = GFsRecuperaSQLArchivo(psCodigo)
+                    Try
+                        loDatos.Put(sNo_, sNo_)
+                    Catch ex As Exception
+                        GFsAvisar("Herramientas.GfsGeneraSQL", sMENSAJE_, ex.Message)
+                    End Try
+                End If
+            End If
         End If
 
         lsResultado = loDatos.detalle
         loDatos.CerrarConexion()
-        loDatos = Nothing
         Return lsResultado
     End Function
-
+    Public Function GFsGeneraMSG(ByVal psMSG As String, ByVal poParametros As Dictionary(Of String, String)) As String
+        Dim lsRetorno As String
+        lsRetorno = GFsGeneraSQL(psMSG)
+        For Each loParametro As KeyValuePair(Of String, String) In poParametros
+            lsRetorno = lsRetorno.Replace(loParametro.Key, loParametro.Value)
+        Next
+        Return lsRetorno
+    End Function
     Public Sub GPTablaGeneralObtener(ByVal psCodigo As String, Optional ByVal psSS010_codigo As String = "")
         Dim lsResultado As String = ""
         Dim loSS030 As New Ess030tabcab

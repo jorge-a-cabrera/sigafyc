@@ -108,7 +108,7 @@ Partial Class frmBb020conceptos : Inherits frmBrowseSinGrid
         '
         Me.mnuContextual.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContextualItem_ExportarExcel, Me.ContextualItem_ExportarTexto, Me.ContextualItem_ImportarTexto})
         Me.mnuContextual.Name = "mnuContextual"
-        Me.mnuContextual.Size = New System.Drawing.Size(245, 70)
+        Me.mnuContextual.Size = New System.Drawing.Size(245, 92)
         '
         'ContextualItem_ExportarExcel
         '

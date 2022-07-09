@@ -8,7 +8,7 @@
 
         If psAccesoSistema < lsUltimoAcceso Then
             lsMensaje = "Violacion de Seguridad!!! " &
-                        "El sistema a detectado un cambio de fecha/hora [" & psAccesoSistema.Substring(0, 19) & "] " &
+                        "El sistema ha detectado un cambio de fecha/hora [" & psAccesoSistema.Substring(0, 19) & "] " &
                         "Ultima fecha/hora registrada [" & lsUltimoAcceso.Substring(0, 19) & "] "
 
             GFsAvisar(lsMensaje, sErrorHashid_, lsResultado)

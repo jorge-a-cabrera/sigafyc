@@ -1,21 +1,17 @@
 ﻿Imports System.ComponentModel
-
 Public Class frmFa060clasmerc
     Private msValidado() As String
-    Private msRequeridos As String() = {"tipo", "codclasificacion", "abreviado", "nombre", "listaprecio", "estado"}
+    Private msRequeridos As String() = {"codempresa", "tipo", "codclasificacion", "abreviado", "nombre", "listaprecio", "estado"}
     Private moRequeridos As New ArrayList(msRequeridos)
-
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         LPOperacionCancelada()
     End Sub
-
     Private Sub LPOperacionCancelada()
         LPBorrarAlCancelar()
         Me.Tag = sCancelar_
         GPBitacoraRegistrar(sSALIO_, Me.Text & ", haciendo click en CANCELAR.")
         Me.Close()
     End Sub
-
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         If InStr(sAGREGAR_ & sMODIFICAR_, Me.Tag.ToString) > 0 Then
             msValidado = GFsValidacionFinal(TabControl1).Split(sSF_)
@@ -28,6 +24,7 @@ Public Class frmFa060clasmerc
                     Case sAGREGAR_
                         Dim loDatos As New Ea060clasmerc
                         LPTruncaSegunLongitud()
+                        loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                         loDatos.tipo = cmbTipo.Text
                         loDatos.codclasificacion = Integer.Parse(txtCodClasificacion_NE.Text.ToString)
                         loDatos.abreviado = txtAbreviado_AN.Text
@@ -43,13 +40,14 @@ Public Class frmFa060clasmerc
                             Exit Sub
                         End Try
                         loDatos.CerrarConexion()
-                        loDatos = Nothing
                     Case sMODIFICAR_
                         Dim loDatos As New Ea060clasmerc
+                        loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                         loDatos.tipo = cmbTipo.Text
                         loDatos.codclasificacion = Integer.Parse(txtCodClasificacion_NE.Text.ToString)
                         If loDatos.GetPK = sOk_ Then
                             LPTruncaSegunLongitud()
+                            loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                             loDatos.tipo = cmbTipo.Text
                             loDatos.codclasificacion = Integer.Parse(txtCodClasificacion_NE.Text.ToString)
                             loDatos.nombre = txtNombre_AN.Text
@@ -72,9 +70,11 @@ Public Class frmFa060clasmerc
         Else
             If Me.Tag.ToString = sBORRAR_ Then
                 Dim loDatos As New Ea060clasmerc
+                loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                 loDatos.tipo = cmbTipo.Text
                 loDatos.codclasificacion = Integer.Parse(txtCodClasificacion_NE.Text.ToString)
                 If loDatos.GetPK = sOk_ Then
+                    loDatos.codempresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
                     loDatos.tipo = cmbTipo.Text
                     loDatos.codclasificacion = Integer.Parse(txtCodClasificacion_NE.Text.ToString)
                     loDatos.Del()
@@ -86,7 +86,6 @@ Public Class frmFa060clasmerc
             Me.Close()
         End If
     End Sub
-
     Private Sub ManejoEvento_Validating(sender As Object, e As CancelEventArgs)
         If CType(sender, Control).Text.Trim.Length = 0 Then
             If LFsExiste(CType(sender, Control).AccessibleName) = sNo_ Then Exit Sub
@@ -94,10 +93,14 @@ Public Class frmFa060clasmerc
             Select Case CType(sender, Control).AccessibleName
                 Case "tipo"
                     lsValorInicial = sEntrada_
-                Case "abreviado"
-                    lsValorInicial = "Abreviado No." & txtCodClasificacion_NE.Text
                 Case "nombre"
                     lsValorInicial = txtAbreviado_AN.Text
+                Case "abreviado"
+                    If txtNombre_AN.Text.Trim.Length > txtAbreviado_AN.MaxLength Then
+                        lsValorInicial = txtNombre_AN.Text.ToString.Substring(0, txtAbreviado_AN.MaxLength)
+                    Else
+                        lsValorInicial = txtNombre_AN.Text
+                    End If
                 Case "listaprecio"
                     lsValorInicial = cmbListaPrecio.Items(1).ToString
                     If cmbTipo.Text = sSalida_ Then
@@ -119,13 +122,11 @@ Public Class frmFa060clasmerc
         End If
         LPDespliegaDescripciones()
     End Sub
-
     Private Sub ManejoEvento_Validated(sender As Object, e As EventArgs)
         CType(sender, Control).Tag = sOk_
         Select Case CType(sender, Control).Name
         End Select
     End Sub
-
     Private Sub Formulario_Load(sender As Object, e As EventArgs) Handles Me.Load
         LPInicializaParametros()
         LPInicializaMaxLength()
@@ -144,8 +145,10 @@ Public Class frmFa060clasmerc
                     End If
                 Next
                 Dim loDatos As New Ea060clasmerc
+                txtCodEmpresa_NE.Text = CType(entidad, Ea060clasmerc).codempresa.ToString
                 cmbTipo.Text = CType(entidad, Ea060clasmerc).tipo
-                txtCodClasificacion_NE.Text = loDatos.ReservarRegistro(cmbTipo.Text).ToString
+                txtCodClasificacion_NE.Text = loDatos.ReservarRegistro(Integer.Parse(txtCodEmpresa_NE.Text.ToString), cmbTipo.Text).ToString
+                txtCodEmpresa_NE.Tag = sOk_
                 cmbTipo.Tag = sOk_
                 txtCodClasificacion_NE.Tag = sOk_
                 cmbListaPrecio.Text = cmbListaPrecio.Items(1).ToString
@@ -154,12 +157,14 @@ Public Class frmFa060clasmerc
                 End If
                 loDatos.CerrarConexion()
             Case Else
+                txtCodEmpresa_NE.Text = CType(entidad, Ea060clasmerc).codempresa.ToString
                 cmbTipo.Text = CType(entidad, Ea060clasmerc).tipo
                 txtCodClasificacion_NE.Text = CType(entidad, Ea060clasmerc).codclasificacion.ToString
                 txtAbreviado_AN.Text = CType(entidad, Ea060clasmerc).abreviado
                 txtNombre_AN.Text = CType(entidad, Ea060clasmerc).nombre
                 cmbEstado.Text = CType(entidad, Ea060clasmerc).estado
                 cmbListaPrecio.Text = CType(entidad, Ea060clasmerc).listaprecio
+                txtCodEmpresa_NE.Tag = sOk_
                 cmbTipo.Tag = sOk_
                 txtCodClasificacion_NE.Tag = sOk_
                 txtAbreviado_AN.Tag = sOk_
@@ -168,12 +173,14 @@ Public Class frmFa060clasmerc
                 cmbEstado.Tag = sOk_
         End Select
         ' Habilita o deshabilita los controles de edición
+        txtCodEmpresa_NE.Enabled = True
         cmbTipo.Enabled = True
         txtCodClasificacion_NE.Enabled = True
         txtAbreviado_AN.Enabled = True
         txtNombre_AN.Enabled = True
         cmbEstado.Enabled = True
 
+        txtCodEmpresa_NE.AccessibleName = "codempresa"
         cmbTipo.AccessibleName = "tipo"
         txtCodClasificacion_NE.AccessibleName = "codigo"
         txtAbreviado_AN.AccessibleName = "abreviado"
@@ -191,12 +198,16 @@ Public Class frmFa060clasmerc
 
         Select Case Me.Tag.ToString
             Case sAGREGAR_
+                txtCodEmpresa_NE.Enabled = False
+                txtCodEmpresa_NE.Tag = sOk_
                 cmbTipo.Enabled = False
                 cmbTipo.Tag = sOk_
                 txtCodClasificacion_NE.Enabled = False
                 txtCodClasificacion_NE.Tag = sOk_
 
             Case sMODIFICAR_
+                txtCodEmpresa_NE.Enabled = False
+                txtCodEmpresa_NE.Tag = sOk_
                 cmbTipo.Enabled = False
                 cmbTipo.Tag = sOk_
                 txtCodClasificacion_NE.Enabled = False
@@ -216,24 +227,41 @@ Public Class frmFa060clasmerc
                 Next
         End Select
     End Sub
-
     Private Sub Formulario_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         '--> AQUI DEBE INGRESARSE EL FOCUS DEL PRIMER ELEMENTO DEL FORMULARIO
         Select Case Me.Tag.ToString
             Case sAGREGAR_
-                txtAbreviado_AN.Focus()
+                txtNombre_AN.Select()
             Case sMODIFICAR_
-                txtAbreviado_AN.Focus()
+                txtNombre_AN.Select()
         End Select
         LPDespliegaDescripciones()
     End Sub
 
     Private Sub LPDespliegaDescripciones()
+        If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
+            Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+            txtCodEmpresa_NE.Text = liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength.ToString)
+            lblNombreEmpresa.Text = ""
+            If txtCodEmpresa_NE.Text.Trim.Length > 0 Then
+                Dim loFK As New Ec001empresas
+                loFK.codEmpresa = liCodEmpresa
+                If loFK.GetPK = sOk_ Then
+                    lblNombreEmpresa.Text = loFK.nombre
+                End If
+                loFK.CerrarConexion()
+            End If
+        End If
+        If txtCodClasificacion_NE.Text.Trim.Length > 0 Then
+            Dim liCodClasificacion As Integer = Integer.Parse(txtCodClasificacion_NE.Text.ToString)
+            txtCodClasificacion_NE.Text = liCodClasificacion.ToString(sFormatD_ & txtCodClasificacion_NE.MaxLength.ToString)
+        End If
     End Sub
 
     Private Sub LPInicializaMaxLength()
+        txtCodEmpresa_NE.MaxLength = 6
         cmbTipo.MaxLength = 15
-        txtCodClasificacion_NE.MaxLength = 6
+        txtCodClasificacion_NE.MaxLength = 4
         txtAbreviado_AN.MaxLength = 15
         txtNombre_AN.MaxLength = 45
         cmbEstado.MaxLength = 15
@@ -297,13 +325,15 @@ Public Class frmFa060clasmerc
 
     Private Sub LPBorrarAlCancelar()
         If Me.Tag.ToString <> sAGREGAR_ Then Exit Sub
-
         Dim loDatos As New Ea060clasmerc
+        Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
         Dim lsTipo As String = cmbTipo.Text
         Dim liCodigo As Integer = Integer.Parse(txtCodClasificacion_NE.Text.ToString)
+        loDatos.codempresa = liCodEmpresa
         loDatos.tipo = lsTipo
         loDatos.codclasificacion = liCodigo
         If loDatos.GetPK = sOk_ Then
+            loDatos.codempresa = liCodEmpresa
             loDatos.tipo = lsTipo
             loDatos.codclasificacion = liCodigo
             loDatos.Del(sNo_, sNo_)

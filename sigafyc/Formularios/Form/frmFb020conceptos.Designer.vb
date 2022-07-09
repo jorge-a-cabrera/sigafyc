@@ -33,6 +33,7 @@ Partial Class frmFb020conceptos : Inherits frmFormulario
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbTipo = New System.Windows.Forms.ComboBox()
         Me.lblNombreEmpresa = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -40,16 +41,14 @@ Partial Class frmFb020conceptos : Inherits frmFormulario
         '
         'TabControl1
         '
-        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Size = New System.Drawing.Size(855, 343)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
-        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TabPage1.Controls.Add(Me.Label5)
         Me.TabPage1.Controls.Add(Me.lblNombreEmpresa)
         Me.TabPage1.Controls.Add(Me.cmbTipo)
         Me.TabPage1.Controls.Add(Me.txtCodEmpresa_NE)
@@ -59,7 +58,6 @@ Partial Class frmFb020conceptos : Inherits frmFormulario
         Me.TabPage1.Controls.Add(Me.txtCodigo_NE)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
         Me.TabPage1.Size = New System.Drawing.Size(847, 307)
         '
         'btnCancelar
@@ -197,6 +195,17 @@ Partial Class frmFb020conceptos : Inherits frmFormulario
         Me.lblNombreEmpresa.Size = New System.Drawing.Size(0, 20)
         Me.lblNombreEmpresa.TabIndex = 35
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Navy
+        Me.Label5.Location = New System.Drawing.Point(247, 17)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(198, 20)
+        Me.Label5.TabIndex = 65
+        Me.Label5.Text = "<nombre_de_empresa>"
+        '
         'frmFb020conceptos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -227,4 +236,5 @@ Partial Class frmFb020conceptos : Inherits frmFormulario
     Friend WithEvents Label1 As Label
     Friend WithEvents cmbTipo As ComboBox
     Friend WithEvents lblNombreEmpresa As Label
+    Friend WithEvents Label5 As Label
 End Class

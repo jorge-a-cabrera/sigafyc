@@ -29,7 +29,7 @@
     <ProductName>sigafyc</ProductName>
     <PublisherName>Jorge Antonio Cabrera González</PublisherName>
     <SuiteName>SIGAFYC</SuiteName>
-    <ApplicationRevision>67</ApplicationRevision>
+    <ApplicationRevision>72</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -78,10 +78,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>BE2ED0F7276B33FC609E125AFB9BF5074E2DC73E</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>4F46444B997055571D0EE41BC9905744DD2C730B</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>sigafyc_ClaveTemporal.pfx</ManifestKeyFile>
+    <ManifestKeyFile>sigafyc_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -134,6 +134,12 @@
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>sigafyc_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -198,7 +204,6 @@
     <Compile Include="ESistemaPrincipal\Dd010asientosdetalles.vb" />
     <Compile Include="ESistemaPrincipal\Ea010monedas.vb" />
     <Compile Include="ESistemaPrincipal\Ea030personas.vb" />
-    <Compile Include="ESistemaPrincipal\Ea040impuestos.vb" />
     <Compile Include="ESistemaPrincipal\Ea050unidades.vb" />
     <Compile Include="ESistemaPrincipal\Ea060clasmerc.vb" />
     <Compile Include="ESistemaPrincipal\Eb030cotizaciones.vb" />
@@ -217,13 +222,30 @@
     <Compile Include="ESistemaPrincipal\Ec011timbpropios.vb" />
     <Compile Include="ESistemaPrincipal\Ec020documentos.vb" />
     <Compile Include="ESistemaPrincipal\Ec030ubicaciones.vb" />
-    <Compile Include="ESistemaPrincipal\Ec040mercimpuestos.vb" />
     <Compile Include="ESistemaPrincipal\Ec050mercvinculadas.vb" />
     <Compile Include="ESistemaPrincipal\Ed010asientosdetalles.vb" />
     <Compile Include="ESistemaPrincipal\Ed020mercentrada.vb" />
     <Compile Include="ESistemaPrincipal\Ed030mercsalida.vb" />
     <Compile Include="ESistemaPrincipal\Ee010asientoscabeceras.vb" />
     <Compile Include="ESistemaPrincipal\Ee020listaprecio.vb" />
+    <Compile Include="ESistemaPrincipal\Ee030notapedido.vb" />
+    <Compile Include="ESistemaPrincipal\Ee031notapedido.vb" />
+    <Compile Include="ESistemaPrincipal\Ee040ventas.vb" />
+    <Compile Include="ESistemaPrincipal\Ee041ventas.vb" />
+    <Compile Include="ESistemaPrincipal\Ee050compras.vb" />
+    <Compile Include="ESistemaPrincipal\Ee051compras.vb" />
+    <Compile Include="ESistemaPrincipal\Ee060entmercaderia.vb" />
+    <Compile Include="ESistemaPrincipal\Ee061entmercaderia.vb" />
+    <Compile Include="ESistemaPrincipal\Ee062entmercaderia.vb" />
+    <Compile Include="ESistemaPrincipal\Ee070salmercaderia.vb" />
+    <Compile Include="ESistemaPrincipal\Ee071salmercaderia.vb" />
+    <Compile Include="ESistemaPrincipal\Ez010inventario.vb" />
+    <Compile Include="Formularios\Browse\frmBe030notapedido.Designer.vb">
+      <DependentUpon>frmBe030notapedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBe030notapedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormulariosBases\frmBrowseSinGrid.Designer.vb">
       <DependentUpon>frmBrowseSinGrid.vb</DependentUpon>
     </Compile>
@@ -252,12 +274,6 @@
       <DependentUpon>frmBa030personas.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Browse\frmBa030personas.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Browse\frmBa040impuestos.Designer.vb">
-      <DependentUpon>frmBa040impuestos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Browse\frmBa040impuestos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Browse\frmBa050unidades.Designer.vb">
@@ -368,12 +384,6 @@
     <Compile Include="Formularios\Browse\frmBc030ubicaciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Browse\frmBc040mercimpuestos.Designer.vb">
-      <DependentUpon>frmBc040mercimpuestos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Browse\frmBc040mercimpuestos.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Formularios\Browse\frmBc050mercvinculadas.Designer.vb">
       <DependentUpon>frmBc050mercvinculadas.vb</DependentUpon>
     </Compile>
@@ -402,6 +412,18 @@
       <DependentUpon>frmBe020listaprecio.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Browse\frmBe020listaprecio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBe050compras.Designer.vb">
+      <DependentUpon>frmBe050compras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBe050compras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBe051compras.Designer.vb">
+      <DependentUpon>frmBe051compras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBe051compras.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Browse\frmBMayorCuenta.Designer.vb">
@@ -486,12 +508,6 @@
       <DependentUpon>frmFa030personas.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Form\frmFa030personas.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Form\frmFa040impuestos.Designer.vb">
-      <DependentUpon>frmFa040impuestos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Form\frmFa040impuestos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Form\frmFa050unidades.Designer.vb">
@@ -596,12 +612,6 @@
     <Compile Include="Formularios\Form\frmFc030ubicaciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Form\frmFc040mercimpuestos.Designer.vb">
-      <DependentUpon>frmFc040mercimpuestos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Form\frmFc040mercimpuestos.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Formularios\Form\frmFc050mercvinculadas.Designer.vb">
       <DependentUpon>frmFc050mercvinculadas.vb</DependentUpon>
     </Compile>
@@ -642,6 +652,24 @@
       <DependentUpon>frmFe020listaprecio.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Form\frmFe020listaprecio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFe030notapedido.Designer.vb">
+      <DependentUpon>frmFe030notapedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFe030notapedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFe050compras.Designer.vb">
+      <DependentUpon>frmFe050compras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFe050compras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFe051compras.Designer.vb">
+      <DependentUpon>frmFe051compras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFe051compras.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Utilitarios\frmFEnviarMail.Designer.vb">
@@ -802,6 +830,7 @@
     <Compile Include="Utilitarios\modGFsCrearTablaTemporal.vb" />
     <Compile Include="Utilitarios\modGFsCuentaFormat.vb" />
     <Compile Include="Utilitarios\modGFsEjercicioContable.vb" />
+    <Compile Include="Utilitarios\modGFsMonedaBase.vb" />
     <Compile Include="Utilitarios\modGFsTieneSubCuentas.vb" />
     <Compile Include="Formularios\frmAviso.Designer.vb">
       <DependentUpon>frmAviso.vb</DependentUpon>
@@ -943,6 +972,7 @@
     <Compile Include="Utilitarios\modGPImportarConceptos.vb" />
     <Compile Include="Utilitarios\modGPImportarDocumentos.vb" />
     <Compile Include="Utilitarios\modGPImportarPlanCuenta.vb" />
+    <Compile Include="Utilitarios\modGPImportarUnidades.vb" />
     <Compile Include="Utilitarios\modGPReaperturaEjercicio.vb" />
     <Compile Include="Utilitarios\modGPReconstruccionCabAsiento.vb" />
     <Compile Include="Utilitarios\modGPReconstruccionSaldos.vb" />
@@ -952,6 +982,9 @@
     <Compile Include="Utilitarios\ValidacionDataEntry.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\Browse\frmBe030notapedido.resx">
+      <DependentUpon>frmBe030notapedido.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormulariosBases\frmBrowseSinGrid.resx">
       <DependentUpon>frmBrowseSinGrid.vb</DependentUpon>
     </EmbeddedResource>
@@ -966,9 +999,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Browse\frmBa030personas.resx">
       <DependentUpon>frmBa030personas.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Browse\frmBa040impuestos.resx">
-      <DependentUpon>frmBa040impuestos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Browse\frmBa050unidades.resx">
       <DependentUpon>frmBa050unidades.vb</DependentUpon>
@@ -1024,9 +1054,6 @@
     <EmbeddedResource Include="Formularios\Browse\frmBc030ubicaciones.resx">
       <DependentUpon>frmBc030ubicaciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Browse\frmBc040mercimpuestos.resx">
-      <DependentUpon>frmBc040mercimpuestos.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Browse\frmBc050mercvinculadas.resx">
       <DependentUpon>frmBc050mercvinculadas.vb</DependentUpon>
     </EmbeddedResource>
@@ -1041,6 +1068,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Browse\frmBe020listaprecio.resx">
       <DependentUpon>frmBe020listaprecio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Browse\frmBe050compras.resx">
+      <DependentUpon>frmBe050compras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Browse\frmBe051compras.resx">
+      <DependentUpon>frmBe051compras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Browse\frmBMayorCuenta.resx">
       <DependentUpon>frmBMayorCuenta.vb</DependentUpon>
@@ -1083,9 +1116,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form\frmFa030personas.resx">
       <DependentUpon>frmFa030personas.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Form\frmFa040impuestos.resx">
-      <DependentUpon>frmFa040impuestos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form\frmFa050unidades.resx">
       <DependentUpon>frmFa050unidades.vb</DependentUpon>
@@ -1138,9 +1168,6 @@
     <EmbeddedResource Include="Formularios\Form\frmFc030ubicaciones.resx">
       <DependentUpon>frmFc030ubicaciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Form\frmFc040mercimpuestos.resx">
-      <DependentUpon>frmFc040mercimpuestos.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form\frmFc050mercvinculadas.resx">
       <DependentUpon>frmFc050mercvinculadas.vb</DependentUpon>
     </EmbeddedResource>
@@ -1161,6 +1188,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form\frmFe020listaprecio.resx">
       <DependentUpon>frmFe020listaprecio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form\frmFe030notapedido.resx">
+      <DependentUpon>frmFe030notapedido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form\frmFe050compras.resx">
+      <DependentUpon>frmFe050compras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form\frmFe051compras.resx">
+      <DependentUpon>frmFe051compras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Utilitarios\frmFEnviarMail.resx">
       <DependentUpon>frmFEnviarMail.vb</DependentUpon>
@@ -1293,6 +1329,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="sigafyc_ClaveTemporal.pfx" />
+    <None Include="sigafyc_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="icono_sistema.ico" />

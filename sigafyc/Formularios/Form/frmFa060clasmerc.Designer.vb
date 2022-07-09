@@ -35,6 +35,9 @@ Partial Class frmFa060clasmerc
         Me.lblListaPrecio = New System.Windows.Forms.Label()
         Me.cmbEstado = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblNombreEmpresa = New System.Windows.Forms.Label()
+        Me.txtCodEmpresa_NE = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -42,16 +45,16 @@ Partial Class frmFa060clasmerc
         '
         'TabControl1
         '
-        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl1.Size = New System.Drawing.Size(523, 205)
+        Me.TabControl1.Size = New System.Drawing.Size(523, 223)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
-        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TabPage1.Controls.Add(Me.lblNombreEmpresa)
+        Me.TabPage1.Controls.Add(Me.txtCodEmpresa_NE)
+        Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.txtAbreviado_AN)
         Me.TabPage1.Controls.Add(Me.Label7)
         Me.TabPage1.Controls.Add(Me.txtNombre_AN)
@@ -60,38 +63,36 @@ Partial Class frmFa060clasmerc
         Me.TabPage1.Controls.Add(Me.txtCodClasificacion_NE)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
-        Me.TabPage1.Size = New System.Drawing.Size(515, 169)
+        Me.TabPage1.Size = New System.Drawing.Size(515, 187)
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 256)
+        Me.btnCancelar.Location = New System.Drawing.Point(16, 274)
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(398, 255)
+        Me.btnAceptar.Location = New System.Drawing.Point(398, 274)
         '
         'lblMensaje
         '
-        Me.lblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMensaje.Size = New System.Drawing.Size(519, 29)
         '
         'txtAbreviado_AN
         '
         Me.txtAbreviado_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAbreviado_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAbreviado_AN.Location = New System.Drawing.Point(117, 85)
+        Me.txtAbreviado_AN.Location = New System.Drawing.Point(116, 140)
         Me.txtAbreviado_AN.Name = "txtAbreviado_AN"
         Me.txtAbreviado_AN.Size = New System.Drawing.Size(244, 26)
-        Me.txtAbreviado_AN.TabIndex = 2
+        Me.txtAbreviado_AN.TabIndex = 4
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(20, 86)
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(19, 142)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(94, 20)
+        Me.Label7.Size = New System.Drawing.Size(84, 20)
         Me.Label7.TabIndex = 63
         Me.Label7.Text = "Abreviado:"
         '
@@ -99,7 +100,7 @@ Partial Class frmFa060clasmerc
         '
         Me.txtNombre_AN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNombre_AN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre_AN.Location = New System.Drawing.Point(117, 117)
+        Me.txtNombre_AN.Location = New System.Drawing.Point(116, 108)
         Me.txtNombre_AN.Name = "txtNombre_AN"
         Me.txtNombre_AN.Size = New System.Drawing.Size(383, 26)
         Me.txtNombre_AN.TabIndex = 3
@@ -107,10 +108,10 @@ Partial Class frmFa060clasmerc
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(20, 119)
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(19, 110)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(76, 20)
+        Me.Label8.Size = New System.Drawing.Size(69, 20)
         Me.Label8.TabIndex = 62
         Me.Label8.Text = "Nombre "
         '
@@ -121,37 +122,37 @@ Partial Class frmFa060clasmerc
         Me.cmbTipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbTipo.FormattingEnabled = True
         Me.cmbTipo.Items.AddRange(New Object() {"1-Entrada", "2-Salida"})
-        Me.cmbTipo.Location = New System.Drawing.Point(117, 19)
+        Me.cmbTipo.Location = New System.Drawing.Point(116, 42)
         Me.cmbTipo.Name = "cmbTipo"
         Me.cmbTipo.Size = New System.Drawing.Size(128, 28)
-        Me.cmbTipo.TabIndex = 0
+        Me.cmbTipo.TabIndex = 1
         '
         'txtCodClasificacion_NE
         '
         Me.txtCodClasificacion_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCodClasificacion_NE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodClasificacion_NE.Location = New System.Drawing.Point(117, 53)
+        Me.txtCodClasificacion_NE.Location = New System.Drawing.Point(116, 76)
         Me.txtCodClasificacion_NE.Name = "txtCodClasificacion_NE"
         Me.txtCodClasificacion_NE.Size = New System.Drawing.Size(87, 26)
-        Me.txtCodClasificacion_NE.TabIndex = 1
+        Me.txtCodClasificacion_NE.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(20, 22)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(19, 45)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(48, 20)
+        Me.Label2.Size = New System.Drawing.Size(43, 20)
         Me.Label2.TabIndex = 59
         Me.Label2.Text = "Tipo:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(20, 55)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(19, 78)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(70, 20)
+        Me.Label1.Size = New System.Drawing.Size(63, 20)
         Me.Label1.TabIndex = 58
         Me.Label1.Text = "Código:"
         '
@@ -164,7 +165,7 @@ Partial Class frmFa060clasmerc
         Me.TabPage2.Controls.Add(Me.Label9)
         Me.TabPage2.Location = New System.Drawing.Point(4, 32)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(515, 169)
+        Me.TabPage2.Size = New System.Drawing.Size(515, 187)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Complementario"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -211,12 +212,42 @@ Partial Class frmFa060clasmerc
         Me.Label9.TabIndex = 25
         Me.Label9.Text = "Estado:"
         '
+        'lblNombreEmpresa
+        '
+        Me.lblNombreEmpresa.AutoSize = True
+        Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.ForeColor = System.Drawing.Color.Navy
+        Me.lblNombreEmpresa.Location = New System.Drawing.Point(215, 12)
+        Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
+        Me.lblNombreEmpresa.Size = New System.Drawing.Size(198, 20)
+        Me.lblNombreEmpresa.TabIndex = 67
+        Me.lblNombreEmpresa.Text = "<nombre_de_empresa>"
+        '
+        'txtCodEmpresa_NE
+        '
+        Me.txtCodEmpresa_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCodEmpresa_NE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodEmpresa_NE.Location = New System.Drawing.Point(116, 10)
+        Me.txtCodEmpresa_NE.Name = "txtCodEmpresa_NE"
+        Me.txtCodEmpresa_NE.Size = New System.Drawing.Size(93, 26)
+        Me.txtCodEmpresa_NE.TabIndex = 0
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(19, 12)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(77, 20)
+        Me.Label4.TabIndex = 66
+        Me.Label4.Text = "Empresa:"
+        '
         'frmFa060clasmerc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Nothing
-        Me.ClientSize = New System.Drawing.Size(541, 340)
+        Me.ClientSize = New System.Drawing.Size(541, 358)
         Me.Name = "frmFa060clasmerc"
         Me.Tag = ""
         Me.Text = "Formulario Clasificacion de mercaderia"
@@ -242,4 +273,7 @@ Partial Class frmFa060clasmerc
     Friend WithEvents Label9 As Label
     Friend WithEvents cmbListaPrecio As ComboBox
     Friend WithEvents lblListaPrecio As Label
+    Friend WithEvents lblNombreEmpresa As Label
+    Friend WithEvents txtCodEmpresa_NE As TextBox
+    Friend WithEvents Label4 As Label
 End Class
