@@ -4,11 +4,6 @@ Public Class frmBc030ubicaciones
     Private moFormulario As frmFc030ubicaciones
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
-    Private mbAgregar As Boolean
-    Private mbModificar As Boolean
-    Private mbBorrar As Boolean
-    Private mbConsultar As Boolean
-    Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
     Private miCodEmpresa As Integer
     Private miCodDeposito As Integer
@@ -136,9 +131,7 @@ Public Class frmBc030ubicaciones
 
         msTabla = loDatos.tableName
         miCantidad = loDataSet.Tables.Item(0).Rows.Count
-        loDataSet = Nothing
         loDatos.CerrarConexion()
-        loDatos = Nothing
         LPSinRegistro_AbrirForm()
         LPHabilitaControles()
     End Sub
@@ -308,6 +301,13 @@ Public Class frmBc030ubicaciones
                 '---------------------------------------------------------------------------------------------
                 Dim lsParte() As String = lsTablaHash.Split(sSF_)
                 If GFbPuedeModificarBorrar(CType(sender, Button).AccessibleName, lsParte(0), lsParte(1), lsCodigo) = False Then Exit Sub
+                Dim lsUbicPredeterminada As String = GFsParametroObtener(sGeneral_, "Ubicacion predeterminada por Deposito - Empresa:" & loDatos.codEmpresa & ", Deposito:" & loDatos.codDeposito)
+                If CType(sender, Button).AccessibleName = sBORRAR_ Then
+                    If lsCodigo = lsUbicPredeterminada Then
+                        GFsAvisar("La ubicacion [" & lsCodigo & "] no puede eliminarse porque es el predeterminado para el Deposito [" & loDatos.codDeposito & "], Empresa[" & loDatos.codEmpresa & "]", sMENSAJE_, "Por favor verifique si es esto lo que desea realizar.")
+                        Exit Sub
+                    End If
+                End If
                 Try
                     loDatos.codUbicacion = lsCodigo
                     If loDatos.GetPK = sOk_ Then
@@ -331,7 +331,6 @@ Public Class frmBc030ubicaciones
                 End Try
         End Select
         loDatos.CerrarConexion()
-        loDatos = Nothing
         LPCargarDatos()
     End Sub
 

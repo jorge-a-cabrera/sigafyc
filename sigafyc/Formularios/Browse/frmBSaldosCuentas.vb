@@ -24,9 +24,7 @@ Public Class frmBSaldosCuentas
     Private mdTotDebito As Decimal = 0.00D
     Private mdTotCredito As Decimal = 0.00D
     Private msLocalizar As String = ""
-    Private mbConsultar As Boolean
     Private mbImprimir As Boolean
-    Private mbAuditoria As Boolean
 
     Private Sub Formulario_Load(sender As Object, e As EventArgs) Handles Me.Load
         DataGridView1.DefaultCellStyle.Font = New Font("Tahoma", 12, FontStyle.Regular, GraphicsUnit.Point)

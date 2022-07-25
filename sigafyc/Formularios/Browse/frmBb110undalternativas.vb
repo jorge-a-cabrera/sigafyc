@@ -3,11 +3,6 @@ Public Class frmBb110undalternativas
     Private moFormulario As frmFb110undalternativas
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
-    Private mbAgregar As Boolean
-    Private mbModificar As Boolean
-    Private mbBorrar As Boolean
-    Private mbConsultar As Boolean
-    Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
     Private miCodEmpresa As Integer
     Private msTipo As String
@@ -252,10 +247,8 @@ Public Class frmBb110undalternativas
                 e.Cancel = True
                 Exit Sub
             End If
-            loLookUp = Nothing
         End If
         loFK.CerrarConexion()
-        loFK = Nothing
 
         If GFsPuedeUsar("Empresa No." & liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength), "Puede gestionar la Empresa No." & liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength)) <> sSi_ Then
             e.Cancel = True
@@ -399,7 +392,6 @@ Public Class frmBb110undalternativas
                 End Try
         End Select
         loDatos.CerrarConexion()
-        loDatos = Nothing
         LPCargarDatos()
     End Sub
     Private Sub btnAuditoria_Click(sender As Object, e As EventArgs) Handles btnAuditoria.Click

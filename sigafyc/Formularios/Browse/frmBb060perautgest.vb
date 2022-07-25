@@ -5,11 +5,6 @@ Public Class frmBb060perautgest
     Private moFormulario As frmFb060perautgest
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
-    Private mbAgregar As Boolean
-    Private mbModificar As Boolean
-    Private mbBorrar As Boolean
-    Private mbConsultar As Boolean
-    Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
     Private msTipoPerfil As String = ""
     Private miCodEmpresa As Integer
@@ -174,7 +169,6 @@ Public Class frmBb060perautgest
                 End If
             End If
             loFK.CerrarConexion()
-            loFK = Nothing
             Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
             txtCodEmpresa_NE.Text = liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength)
         End If
@@ -229,10 +223,8 @@ Public Class frmBb060perautgest
                 e.Cancel = True
                 Exit Sub
             End If
-            loLookUp = Nothing
         End If
         loFK.CerrarConexion()
-        loFK = Nothing
 
         If GFsPuedeUsar("Empresa No." & liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength), "Puede gestionar la Empresa No." & liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength)) <> sSi_ Then
             e.Cancel = True
@@ -300,7 +292,6 @@ Public Class frmBb060perautgest
                 End Try
         End Select
         loDatos.CerrarConexion()
-        loDatos = Nothing
         LPCargarDatos()
     End Sub
 
@@ -386,9 +377,9 @@ Public Class frmBb060perautgest
 
     Private Sub LPInicializaParametros()
         Dim lsTipo As String = sGeneral_
-        Dim lsClave As String = ""
-        Dim lsValor As String = ""
-        Dim lsCodigo As String = ""
+        Dim lsClave As String
+        Dim lsValor As String
+        Dim lsCodigo As String
 
         lsClave = "b060perautgest.tipoperfil"
         lsValor = "CLIENTES" & sSF_ & "PROVEEDORES"

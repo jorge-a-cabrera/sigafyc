@@ -38,6 +38,8 @@ Partial Class frmFb040depositos
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cmbUbicaciones = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtUbicPredeterminada = New System.Windows.Forms.TextBox()
+        Me.lblUbicPredeterminada = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -45,16 +47,15 @@ Partial Class frmFb040depositos
         '
         'TabControl1
         '
-        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Size = New System.Drawing.Size(654, 265)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage2, 0)
         Me.TabControl1.Controls.SetChildIndex(Me.TabPage1, 0)
         '
         'TabPage1
         '
-        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TabPage1.Controls.Add(Me.lblUbicPredeterminada)
+        Me.TabPage1.Controls.Add(Me.txtUbicPredeterminada)
         Me.TabPage1.Controls.Add(Me.cmbUbicaciones)
         Me.TabPage1.Controls.Add(Me.Label3)
         Me.TabPage1.Controls.Add(Me.txtAbreviado_AN)
@@ -68,7 +69,6 @@ Partial Class frmFb040depositos
         Me.TabPage1.Controls.Add(Me.txtCodigo_NE)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
         Me.TabPage1.Size = New System.Drawing.Size(646, 229)
         '
         'btnCancelar
@@ -247,6 +247,25 @@ Partial Class frmFb040depositos
         Me.Label3.TabIndex = 67
         Me.Label3.Text = "Con ubicaciones:"
         '
+        'txtUbicPredeterminada
+        '
+        Me.txtUbicPredeterminada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtUbicPredeterminada.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUbicPredeterminada.Location = New System.Drawing.Point(400, 182)
+        Me.txtUbicPredeterminada.Name = "txtUbicPredeterminada"
+        Me.txtUbicPredeterminada.Size = New System.Drawing.Size(225, 26)
+        Me.txtUbicPredeterminada.TabIndex = 68
+        '
+        'lblUbicPredeterminada
+        '
+        Me.lblUbicPredeterminada.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUbicPredeterminada.Location = New System.Drawing.Point(267, 184)
+        Me.lblUbicPredeterminada.Name = "lblUbicPredeterminada"
+        Me.lblUbicPredeterminada.Size = New System.Drawing.Size(127, 20)
+        Me.lblUbicPredeterminada.TabIndex = 69
+        Me.lblUbicPredeterminada.Text = "predeterminada"
+        Me.lblUbicPredeterminada.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'frmFb040depositos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -281,4 +300,6 @@ Partial Class frmFb040depositos
     Friend WithEvents Label9 As Label
     Friend WithEvents cmbUbicaciones As ComboBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents lblUbicPredeterminada As Label
+    Friend WithEvents txtUbicPredeterminada As TextBox
 End Class

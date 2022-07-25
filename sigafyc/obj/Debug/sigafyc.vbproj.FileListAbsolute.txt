@@ -547,6 +547,7 @@ C:\Mis Proyectos\sigafyc\sigafyc\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Mis Proyectos\sigafyc\sigafyc\bin\Debug\System.ValueTuple.xml
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\Interop.ADOX.dll
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.vbproj.ResolveComReference.cache
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBe030notapedido.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBrowseSinGrid.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFVisualizadorReporte.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmProcesamiento.resources
@@ -575,6 +576,11 @@ C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBd020mercentrada.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBd030mercsalida.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBe010asientoscabeceras.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBe020listaprecio.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBe050compras.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBe051compras.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBe060entmercaderia.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBe061entmercaderia.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBe062entmercaderia.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBMayorCuenta.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBSaldosCuentas.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBss010sistemas.resources
@@ -587,6 +593,7 @@ C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBss090perusu.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBss100habilitaciones.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBss110parametros.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBBitacoraDatos.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFe062entmercaderia.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFa010monedas.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFa030personas.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFa050unidades.resources
@@ -613,6 +620,11 @@ C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFd020mercentrada.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFd030mercsalida.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFe010asientoscabeceras.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFe020listaprecio.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFe030notapedido.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFe050compras.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFe051compras.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFe060entmercaderia.resources
+C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFe061entmercaderia.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFEnviarMail.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFCierreEjercicio.resources
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFReaperturaEjercicio.resources
@@ -658,10 +670,3 @@ C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.vbproj.CopyComplete
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.exe
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.xml
 C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.pdb
-C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.vbproj.AssemblyReference.cache
-C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBe030notapedido.resources
-C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBe050compras.resources
-C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFe030notapedido.resources
-C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFe050compras.resources
-C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmBe051compras.resources
-C:\Mis Proyectos\sigafyc\sigafyc\obj\Debug\sigafyc.frmFe051compras.resources

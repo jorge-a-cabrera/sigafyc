@@ -6,14 +6,9 @@ Public Class frmBb050plancuentas
     Private moFormulario As frmFb050plancuentas
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
-    Private mbAgregar As Boolean
-    Private mbModificar As Boolean
-    Private mbBorrar As Boolean
-    Private mbConsultar As Boolean
-    Private mbImprimir As Boolean = False
-    Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
     Private Shared mbabrirform As Boolean = False
+    Private mbImprimir As Boolean = False
 
     Private miCodEmpresa As Integer
     Public Property codEmpresa As Integer
@@ -127,9 +122,7 @@ Public Class frmBb050plancuentas
 
         msTabla = loDatos.tableName
         miCantidad = loDataSet.Tables.Item(0).Rows.Count
-        loDataSet = Nothing
         loDatos.CerrarConexion()
-        loDatos = Nothing
         LPSinRegistro_AbrirForm()
         LPHabilitaControles2()
     End Sub
@@ -294,7 +287,6 @@ Public Class frmBb050plancuentas
                 End Try
         End Select
         loDatos.CerrarConexion()
-        loDatos = Nothing
         LPCargarDatos()
     End Sub
 

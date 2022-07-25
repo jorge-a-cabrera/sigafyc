@@ -50,7 +50,7 @@ Public Class RBase : Inherits Ebase
         Try
             loDatos = RecuperarConsulta(lsSQL)
             If loDatos.Read Then
-                If Not loDatos.Item("ultimo") Is DBNull.Value Then
+                If loDatos.Item("ultimo") IsNot DBNull.Value Then
                     liResultado = Integer.Parse(loDatos.Item("ultimo").ToString)
                 End If
             End If
@@ -87,7 +87,7 @@ Public Class RBase : Inherits Ebase
         Try
             loDatos = RecuperarConsulta(lsSQL)
             If loDatos.Read Then
-                If Not loDatos.Item("rowcount") Is DBNull.Value Then
+                If loDatos.Item("rowcount") IsNot DBNull.Value Then
                     liResultado = Integer.Parse(loDatos.Item("rowcount").ToString)
                 End If
             End If
@@ -123,7 +123,7 @@ Public Class RBase : Inherits Ebase
         Try
             loDatos = RecuperarConsulta(psSQL)
             If loDatos.Read Then
-                If Not loDatos.Item(psCampo) Is DBNull.Value Then
+                If loDatos.Item(psCampo) IsNot DBNull.Value Then
                     liResultado = Integer.Parse(loDatos.Item(psCampo).ToString)
                 End If
             End If

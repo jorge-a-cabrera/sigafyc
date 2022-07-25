@@ -4,11 +4,6 @@ Public Class frmBc050mercvinculadas
     Private moFormulario As frmFc050mercvinculadas
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
-    Private mbAgregar As Boolean
-    Private mbModificar As Boolean
-    Private mbBorrar As Boolean
-    Private mbConsultar As Boolean
-    Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
     Private miCodEmpresa As Integer
     Private msCodSalida As String
@@ -228,10 +223,8 @@ Public Class frmBc050mercvinculadas
                 e.Cancel = True
                 Exit Sub
             End If
-            loLookUp = Nothing
         End If
         loFK.CerrarConexion()
-        loFK = Nothing
 
         If GFsPuedeUsar("Empresa No." & liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength), "Puede gestionar la Empresa No." & liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength)) <> sSi_ Then
             e.Cancel = True
@@ -264,10 +257,8 @@ Public Class frmBc050mercvinculadas
                 e.Cancel = True
                 Exit Sub
             End If
-            loLookUp = Nothing
         End If
         loFK.CerrarConexion()
-        loFK = Nothing
         LPDespliegaDescripciones()
         LPCargarDatos()
     End Sub

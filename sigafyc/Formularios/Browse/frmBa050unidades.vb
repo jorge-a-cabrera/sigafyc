@@ -3,11 +3,6 @@ Public Class frmBa050unidades
     Private moFormulario As frmFa050unidades
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
-    Private mbAgregar As Boolean
-    Private mbModificar As Boolean
-    Private mbBorrar As Boolean
-    Private mbConsultar As Boolean
-    Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
     Private miCodEmpresa As Integer
     Private msCodigo As String = "codunidad"
@@ -263,10 +258,8 @@ Public Class frmBa050unidades
                 e.Cancel = True
                 Exit Sub
             End If
-            loLookUp = Nothing
         End If
         loFK.CerrarConexion()
-        loFK = Nothing
 
         If GFsPuedeUsar("Empresa No." & liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength), "Puede gestionar la Empresa No." & liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength)) <> sSi_ Then
             e.Cancel = True
@@ -285,7 +278,6 @@ Public Class frmBa050unidades
                 lblNombreEmpresa.Text = loFK.nombre
             End If
             loFK.CerrarConexion()
-            loFK = Nothing
             Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
             txtCodEmpresa_NE.Text = liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength)
         End If

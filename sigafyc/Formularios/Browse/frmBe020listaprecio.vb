@@ -4,11 +4,6 @@ Public Class frmBe020listaprecio
     Private moFormulario As frmFe020listaprecio
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
-    Private mbAgregar As Boolean
-    Private mbModificar As Boolean
-    Private mbBorrar As Boolean
-    Private mbConsultar As Boolean
-    Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
     Private miCodEmpresa As Integer
     Private msCodMercaderia As String
@@ -180,7 +175,6 @@ Public Class frmBe020listaprecio
                 lblNombreEmpresa.Text = loFK.nombre
             End If
             loFK.CerrarConexion()
-            loFK = Nothing
             Dim liCodEmpresa As Integer = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
             txtCodEmpresa_NE.Text = liCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength)
         End If

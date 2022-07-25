@@ -105,7 +105,7 @@ Public Class Ebase : Inherits BaseDatos
 
         lsSQL = LFsAsignaParametros(lsSQL)
 
-        Dim loDataTable As DataTable = Nothing
+        Dim loDataTable As DataTable
         Dim loDataRow As DataRowCollection = Nothing
         Try
             Call CrearComando(lsSQL)
@@ -162,7 +162,7 @@ Public Class Ebase : Inherits BaseDatos
 
         lsSQL = LFsAsignaParametros(lsSQL)
 
-        Dim loDataTable As DataTable = Nothing
+        Dim loDataTable As DataTable
         Dim loDataRow As DataRow = Nothing
         Try
             Call CrearComando(lsSQL)
@@ -210,8 +210,8 @@ Public Class Ebase : Inherits BaseDatos
 
         lsSQL = LFsAsignaParametros(lsSQL)
 
-        Dim loBackTable As DataTable = Nothing
-        Dim loDataTable As DataTable = Nothing
+        Dim loBackTable As DataTable
+        Dim loDataTable As DataTable
         Dim loDataRow As DataRowCollection = Nothing
         Try
             Call CrearComando(lsSQL)

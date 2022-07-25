@@ -4,11 +4,6 @@ Public Class frmBb070sucursales
     Private moFormulario As frmFb070sucursales
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
-    Private mbAgregar As Boolean
-    Private mbModificar As Boolean
-    Private mbBorrar As Boolean
-    Private mbConsultar As Boolean
-    Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
     Private miCodEmpresa As Integer
     Private Shared mbabrirform As Boolean = False
@@ -125,9 +120,7 @@ Public Class frmBb070sucursales
 
         msTabla = loDatos.tableName
         miCantidad = loDataSet.Tables.Item(0).Rows.Count
-        loDataSet = Nothing
         loDatos.CerrarConexion()
-        loDatos = Nothing
 
         LPSinRegistro_AbrirForm()
         LPHabilitaControles()
@@ -264,7 +257,6 @@ Public Class frmBb070sucursales
                 End Try
         End Select
         loDatos.CerrarConexion()
-        loDatos = Nothing
         LPCargarDatos()
     End Sub
 

@@ -5,11 +5,6 @@ Public Class frmBss090perusu
     Private msSS050_codigo As String = ""
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
-    Private mbAgregar As Boolean
-    Private mbModificar As Boolean
-    Private mbBorrar As Boolean
-    Private mbConsultar As Boolean
-    Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
     Private Shared mbabrirform As Boolean = False
 

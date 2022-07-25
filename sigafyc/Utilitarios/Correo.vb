@@ -160,7 +160,6 @@ Public Class Correo
         End While
         loDataReader.Close()
         loDatos.CerrarConexion()
-        loDatos = Nothing
         If moMailMessage.To.Count = 0 Then
             lsClave = "Mail - Address - From Cuenta"
             lsValor = GFsParametroObtener(sGeneral_, lsClave)

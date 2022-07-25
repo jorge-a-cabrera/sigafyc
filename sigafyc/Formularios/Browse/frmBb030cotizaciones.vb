@@ -4,11 +4,6 @@ Public Class frmBb030cotizaciones
     Private moFormulario As frmFb030cotizaciones
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
-    Private mbAgregar As Boolean
-    Private mbModificar As Boolean
-    Private mbBorrar As Boolean
-    Private mbConsultar As Boolean
-    Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
     Private Shared mbabrirform As Boolean = False
 
@@ -89,9 +84,7 @@ Public Class frmBb030cotizaciones
 
         msTabla = loDatos.tableName
         miCantidad = loDataSet.Tables.Item(0).Rows.Count
-        loDataSet = Nothing
         loDatos.CerrarConexion()
-        loDatos = Nothing
 
         LPSinRegistro_AbrirForm()
         LPHabilitaControles()
@@ -110,7 +103,6 @@ Public Class frmBb030cotizaciones
                 lblNombreMoneda1.Text = loFK1.nombre
             End If
             loFK1.CerrarConexion()
-            loFK1 = Nothing
         End If
 
         lblNombreMoneda2.Text = ""
@@ -121,7 +113,6 @@ Public Class frmBb030cotizaciones
                 lblNombreMoneda2.Text = loFK1.nombre
             End If
             loFK1.CerrarConexion()
-            loFK1 = Nothing
         End If
     End Sub
 
@@ -165,10 +156,8 @@ Public Class frmBb030cotizaciones
                 txtCodMoneda1_AN.Text = CType(loLookUp.entidad, Ea010monedas).codMoneda
             End If
             e.Cancel = True
-            loLookUp = Nothing
         End If
         loFK.CerrarConexion()
-        loFK = Nothing
         LPDespliegaDescripciones()
     End Sub
 
@@ -189,10 +178,8 @@ Public Class frmBb030cotizaciones
                 txtCodMoneda2_AN.Text = CType(loLookUp.entidad, Ea010monedas).codMoneda
             End If
             e.Cancel = True
-            loLookUp = Nothing
         End If
         loFK.CerrarConexion()
-        loFK = Nothing
 
         LPDespliegaDescripciones()
         LPCargarDatos()
@@ -245,7 +232,6 @@ Public Class frmBb030cotizaciones
                 End Try
         End Select
         loDatos.CerrarConexion()
-        loDatos = Nothing
         LPCargarDatos()
     End Sub
 

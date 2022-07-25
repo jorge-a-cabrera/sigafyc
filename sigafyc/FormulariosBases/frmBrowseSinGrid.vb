@@ -2,11 +2,11 @@
 
 Public Class frmBrowseSinGrid
     Private moEntidad As Object
-    Private mbAgregar As Boolean = False
-    Private mbBorrar As Boolean = False
-    Private mbModificar As Boolean = False
-    Private mbConsultar As Boolean = False
-    Private mbAuditoria As Boolean = False
+    Friend mbAgregar As Boolean = False
+    Friend mbBorrar As Boolean = False
+    Friend mbModificar As Boolean = False
+    Friend mbConsultar As Boolean = False
+    Friend mbAuditoria As Boolean = False
     Friend miCantidad As Integer = 0
     Private miCantApertura As Integer = 0
 
@@ -127,7 +127,6 @@ Public Class frmBrowseSinGrid
                 loValidaEntrada.tipoValor = eTipoValor.AlfaNumerico
         End Select
         e.KeyChar = ChrW(loValidaEntrada.TeclaPresionada(Asc(e.KeyChar), sender))
-        loValidaEntrada = Nothing
     End Sub
 
     Public Sub ManejoEvento_KeyDown(sender As Object, e As KeyEventArgs)

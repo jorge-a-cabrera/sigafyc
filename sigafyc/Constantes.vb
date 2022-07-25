@@ -3,6 +3,7 @@
     Public Const sSQLSERVER_ As String = "SQLSERVER"
     Public Const sMYSQL_ As String = "MYSQL"
 
+    Public Const sNOAPLICA_ As String = "***NO APLICA***"
     Public Const sNODEFINIDO_ As String = "***NO DEFINIDO***"
     Public Const sRESERVADO_ As String = "***RESERVADO***"
     Public Const sNOAUTORIZADO_ As String = "***NO AUTORIZADO***"
@@ -58,6 +59,8 @@
     Public Const sPrefijoParam_ As String = "@"
     Public Const sActivo_ As String = "Activo"
     Public Const sBloqueado_ As String = "Bloqueado"
+    Public Const sEnCosteo_ As String = "EnCosteo"
+    Public Const sCosteado_ As String = "Costeado"
     Public Const sImportado_ As String = "Importado"
     Public Const sBorradoField_ As String = "borrado"
     Public Const sHashidField_ As String = "hashid"

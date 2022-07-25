@@ -4,11 +4,6 @@ Public Class frmBb020conceptos
     Private moFormulario As frmFb020conceptos
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
-    Private mbAgregar As Boolean
-    Private mbModificar As Boolean
-    Private mbBorrar As Boolean
-    Private mbConsultar As Boolean
-    Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
     Private msCodEmpresa As String = ""
     Private miCodEmpresa As Integer
@@ -119,9 +114,7 @@ Public Class frmBb020conceptos
 
         msTabla = loDatos.tableName
         miCantidad = loDataSet.Tables.Item(0).Rows.Count
-        loDataSet = Nothing
         loDatos.CerrarConexion()
-        loDatos = Nothing
 
         LPSinRegistro_AbrirForm()
         LPHabilitaControles()
@@ -248,7 +241,6 @@ Public Class frmBb020conceptos
                 End Try
         End Select
         loDatos.CerrarConexion()
-        loDatos = Nothing
         LPCargarDatos()
     End Sub
 

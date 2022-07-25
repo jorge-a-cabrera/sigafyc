@@ -308,6 +308,12 @@ Module modMain
         If GFsParametroObtener(lsTipo, lsClave) = sRESERVADO_ Then
             GPParametroGuardar(lsTipo, lsClave, lsValor)
         End If
+
+        lsClave = "Ubicacion predeterminada por Deposito"
+        lsValor = "Recepcionados"
+        If GFsParametroObtener(lsTipo, lsClave) = sRESERVADO_ Then
+            GPParametroGuardar(lsTipo, lsClave, lsValor)
+        End If
     End Sub
 
     Private Sub LPParametrosLocales()

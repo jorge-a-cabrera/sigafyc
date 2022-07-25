@@ -1,18 +1,12 @@
 ﻿Imports System.ComponentModel
 Imports System.Globalization
-
 Public Class frmBe050compras
     Private moFormulario As frmFe050compras
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
-    Private mbAgregar As Boolean
-    Private mbModificar As Boolean
-    Private mbBorrar As Boolean
-    Private mbConsultar As Boolean
-    Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
-    Private miCodEmpresa As Integer
-    Private msFecOperacion As String
+    Private miCodEmpresa As Integer = 0
+    Private msFecOperacion As String = ""
     Private Const sCLAVE_ As String = "transaccion"
     Private Shared mbabrirform As Boolean = False
     Public Property codEmpresa As Integer
@@ -89,8 +83,10 @@ Public Class frmBe050compras
         End If
         lblNombreEmpresa.Text = ""
         If miCodEmpresa > 0 Then
+            txtCodEmpresa_NE.Text = miCodEmpresa.ToString(sFormatD_ & txtCodEmpresa_NE.MaxLength.ToString)
             txtCodEmpresa_NE.Enabled = False
             If msFecOperacion.Trim.Length > 0 Then
+                txtFecOperacion_FE.Text = msFecOperacion
                 txtFecOperacion_FE.Enabled = False
                 LPCargarDatos()
                 LPDespliegaDescripciones()

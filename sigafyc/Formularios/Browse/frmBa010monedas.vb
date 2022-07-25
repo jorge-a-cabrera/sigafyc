@@ -4,11 +4,6 @@ Public Class frmBa010monedas
     Private moFormulario As frmFa010monedas
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
-    Private mbAgregar As Boolean
-    Private mbModificar As Boolean
-    Private mbBorrar As Boolean
-    Private mbConsultar As Boolean
-    Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
     Private Shared mbabrirform As Boolean = False
 
@@ -161,7 +156,6 @@ Public Class frmBa010monedas
                 End Try
         End Select
         loDatos.CerrarConexion()
-        loDatos = Nothing
         LPCargarDatos()
     End Sub
 

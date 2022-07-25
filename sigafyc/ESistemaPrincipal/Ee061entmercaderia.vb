@@ -9,21 +9,16 @@
                                        "codubicacion" & sString_ & sSF_ &
                                        "codmercaderia" & sString_ & sSF_ &
                                        "nommercaderia" & sString_ & sSF_ &
+                                       "iva" & sString_ & sSF_ &
                                        "codunidad" & sString_ & sSF_ &
                                        "cantentrada" & sDecimal_ & sSF_ &
-                                       "cantcosteada" & sDecimal_ & sSF_ &
+                                       "cantsalida" & sDecimal_ & sSF_ &
                                        "costo_mb" & sDecimal_ & sSF_ &
-                                       "impexenta_mb" & sDecimal_ & sSF_ &
-                                       "impgrav05_mb" & sDecimal_ & sSF_ &
-                                       "impgrav10_mb" & sDecimal_ & sSF_ &
-                                       "ivagrav05_mb" & sDecimal_ & sSF_ &
-                                       "ivagrav10_mb" & sDecimal_ & sSF_ &
-                                       "gastexenta_mb" & sDecimal_ & sSF_ &
-                                       "gastgrav05_mb" & sDecimal_ & sSF_ &
-                                       "gastgrav10_mb" & sDecimal_ & sSF_ &
-                                       "gastiva05_mb" & sDecimal_ & sSF_ &
-                                       "gastiva10_mb" & sDecimal_ & sSF_ &
-                                       "costofinal_mb" & sDecimal_
+                                       "costoimpuesto_mb" & sDecimal_ & sSF_ &
+                                       "compneta_mb" & sDecimal_ & sSF_ &
+                                       "compimpuesto_mb" & sDecimal_ & sSF_ &
+                                       "gastneto_mb" & sDecimal_ & sSF_ &
+                                       "gastimpuesto_mb" & sDecimal_
 
     Private msCampos_PK() As Integer = {0, 1, 2}
     Private msAutonumerado As String = "numorden"
@@ -36,21 +31,16 @@
     Private msCodUbicacion As String
     Private msCodMercaderia As String
     Private msNomMercaderia As String
+    Private msIva As String
     Private msCodUnidad As String
     Private mdCantEntrada As Decimal
-    Private mdCantCosteada As Decimal
+    Private mdCantSalida As Decimal
     Private mdCosto_mb As Decimal
-    Private mdImpExenta_mb As Decimal
-    Private mdImpGrav05_mb As Decimal
-    Private mdImpGrav10_mb As Decimal
-    Private mdIvaGrav05_mb As Decimal
-    Private mdIvaGrav10_mb As Decimal
-    Private mdGastExenta_mb As Decimal
-    Private mdGastGrav05_mb As Decimal
-    Private mdGastGrav10_mb As Decimal
-    Private mdGastIva05_mb As Decimal
-    Private mdGastIva10_mb As Decimal
-    Private mdCostoFinal_mb As Decimal
+    Private mdCostoImpuesto_mb As Decimal
+    Private mdCompNeta_mb As Decimal
+    Private mdCompImpuesto_mb As Decimal
+    Private mdGastNeto_mb As Decimal
+    Private mdGastImpuesto_mb As Decimal
 #End Region
     Public Property codempresa As Integer
         Get
@@ -100,6 +90,14 @@
             msNomMercaderia = value
         End Set
     End Property
+    Public Property iva As String
+        Get
+            Return msIva
+        End Get
+        Set(value As String)
+            msIva = value
+        End Set
+    End Property
     Public Property codunidad As String
         Get
             Return msCodUnidad
@@ -116,12 +114,12 @@
             mdCantEntrada = value
         End Set
     End Property
-    Public Property cantcosteada As Decimal
+    Public Property cantsalida As Decimal
         Get
-            Return mdCantCosteada
+            Return mdCantSalida
         End Get
         Set(value As Decimal)
-            mdCantCosteada = value
+            mdCantSalida = value
         End Set
     End Property
     Public Property costo_mb As Decimal
@@ -132,92 +130,44 @@
             mdCosto_mb = value
         End Set
     End Property
-    Public Property impexenta_mb As Decimal
+    Public Property costoimpuesto_mb As Decimal
         Get
-            Return mdImpExenta_mb
+            Return mdCostoImpuesto_mb
         End Get
         Set(value As Decimal)
-            mdImpExenta_mb = value
+            mdCostoImpuesto_mb = value
         End Set
     End Property
-    Public Property impgrav05_mb As Decimal
+    Public Property compneta_mb As Decimal
         Get
-            Return mdImpGrav05_mb
+            Return mdCompNeta_mb
         End Get
         Set(value As Decimal)
-            mdImpGrav05_mb = value
+            mdCompNeta_mb = value
         End Set
     End Property
-    Public Property impgrav10_mb As Decimal
+    Public Property compimpuesto_mb As Decimal
         Get
-            Return mdImpGrav10_mb
+            Return mdCompImpuesto_mb
         End Get
         Set(value As Decimal)
-            mdImpGrav10_mb = value
+            mdCompImpuesto_mb = value
         End Set
     End Property
-    Public Property ivagrav05_mb As Decimal
+    Public Property gastneto_mb As Decimal
         Get
-            Return mdIvaGrav05_mb
+            Return mdGastNeto_mb
         End Get
         Set(value As Decimal)
-            mdIvaGrav05_mb = value
+            mdGastNeto_mb = value
         End Set
     End Property
-    Public Property ivagrav10_mb As Decimal
+    Public Property gastimpuesto_mb As Decimal
         Get
-            Return mdIvaGrav10_mb
+            Return mdGastImpuesto_mb
         End Get
         Set(value As Decimal)
-            mdIvaGrav10_mb = value
-        End Set
-    End Property
-    Public Property gastexenta_mb As Decimal
-        Get
-            Return mdGastExenta_mb
-        End Get
-        Set(value As Decimal)
-            mdGastExenta_mb = value
-        End Set
-    End Property
-    Public Property gastgrav05_mb As Decimal
-        Get
-            Return mdGastGrav05_mb
-        End Get
-        Set(value As Decimal)
-            mdGastGrav05_mb = value
-        End Set
-    End Property
-    Public Property gastgrav10_mb As Decimal
-        Get
-            Return mdGastGrav10_mb
-        End Get
-        Set(value As Decimal)
-            mdGastGrav10_mb = value
-        End Set
-    End Property
-    Public Property gastiva05_mb As Decimal
-        Get
-            Return mdGastIva05_mb
-        End Get
-        Set(value As Decimal)
-            mdGastIva05_mb = value
-        End Set
-    End Property
-    Public Property gastiva10_mb As Decimal
-        Get
-            Return mdGastIva10_mb
-        End Get
-        Set(value As Decimal)
-            mdGastIva10_mb = value
-        End Set
-    End Property
-    Public Property costofinal_mb As Decimal
-        Get
-            Return mdCostoFinal_mb
-        End Get
-        Set(value As Decimal)
-            mdCostoFinal_mb = value
+            mdGastImpuesto_mb = value
         End Set
     End Property
     Public Sub New()
@@ -235,21 +185,16 @@
         codubicacion = sRESERVADO_
         codmercaderia = sRESERVADO_
         nommercaderia = sRESERVADO_
-        codunidad = sRESERVADO_
+        iva = sRESERVADO_
+        codunidad = sCero6_
         cantentrada = 0.00D
-        cantcosteada = 0.00D
+        cantsalida = 0.00D
         costo_mb = 0.00D
-        impexenta_mb = 0.00D
-        impgrav05_mb = 0.00D
-        impgrav10_mb = 0.00D
-        ivagrav05_mb = 0.00D
-        ivagrav10_mb = 0.00D
-        gastexenta_mb = 0.00D
-        gastgrav05_mb = 0.00D
-        gastgrav10_mb = 0.00D
-        gastiva05_mb = 0.00D
-        gastiva10_mb = 0.00D
-        costofinal_mb = 0.00D
+        costoimpuesto_mb = 0.00D
+        compneta_mb = 0.00D
+        compimpuesto_mb = 0.00D
+        gastneto_mb = 0.00D
+        gastimpuesto_mb = 0.00D
         Add(sNo_, sNo_)
         Return liNumero
     End Function

@@ -3,13 +3,25 @@
     Private msRama As String = sRegistryTablasPrincipal_
     Private msTableName As String = "e062entmercaderia"
 
+    'codempresa integer Not NULL,
+    'numtransaccion integer Not NULL,
+    'numorden integer Not NULL,
+    'orgdocumento integer,
+    'orgtransaccion integer,
+    'gastneto_mb numeric(17, 2),
+    'gastimpuesto_mb numeric(17,2),
+    'estado character varying(15) COLLATE pg_catalog."default",
+    'borrado character varying(1) COLLATE pg_catalog."default",
+    'hashid character varying(64) COLLATE pg_catalog."default",
+    'CONSTRAINT e052entmercaderia_pkey PRIMARY KEY (codempresa, numtransaccion, numorden)
+
+
     Private msRequeridos As String = "codempresa" & sInteger_ & sSF_ &
                                        "numtransaccion" & sInteger_ & sSF_ &
                                        "numorden" & sInteger_ & sSF_ &
-                                       "orgdocumento" & sInteger_ & sSF_ &
                                        "orgtransaccion" & sInteger_ & sSF_ &
-                                       "impneto_mb" & sDecimal_ & sSF_ &
-                                       "impuesto_mb" & sDecimal_
+                                       "gastneto_mb" & sDecimal_ & sSF_ &
+                                       "gastimpuesto_mb" & sDecimal_
 
     Private msCampos_PK() As Integer = {0, 1, 2}
     Private msAutonumerado As String = "numorden"
@@ -19,10 +31,9 @@
     Private miCodEmpresa As Integer
     Private miNumTransaccion As Integer
     Private miNumOrden As Integer
-    Private miOrgDocumento As Integer
     Private miOrgTransaccion As Integer
-    Private mdImpNeto_mb As Decimal
-    Private mdImpuesto_mb As Decimal
+    Private mdGastNeto_mb As Decimal
+    Private mdGastImpuesto_mb As Decimal
 #End Region
     Public Property codempresa As Integer
         Get
@@ -48,14 +59,6 @@
             miNumOrden = value
         End Set
     End Property
-    Public Property orgdocumento As Integer
-        Get
-            Return miOrgDocumento
-        End Get
-        Set(value As Integer)
-            miOrgDocumento = value
-        End Set
-    End Property
     Public Property orgtransaccion As Integer
         Get
             Return miOrgTransaccion
@@ -64,20 +67,20 @@
             miOrgTransaccion = value
         End Set
     End Property
-    Public Property impneto_mb As Decimal
+    Public Property gastneto_mb As Decimal
         Get
-            Return mdImpNeto_mb
+            Return mdGastNeto_mb
         End Get
         Set(value As Decimal)
-            mdImpNeto_mb = value
+            mdGastNeto_mb = value
         End Set
     End Property
-    Public Property impuesto_mb As Decimal
+    Public Property gastimpuesto_mb As Decimal
         Get
-            Return mdImpuesto_mb
+            Return mdGastImpuesto_mb
         End Get
         Set(value As Decimal)
-            mdImpuesto_mb = value
+            mdGastImpuesto_mb = value
         End Set
     End Property
     Public Sub New()
@@ -92,10 +95,9 @@
         codempresa = piCodEmpresa
         numtransaccion = piNumTransaccion
         numorden = liNumero
-        orgdocumento = 0
         orgtransaccion = 0
-        impneto_mb = 0.00D
-        impuesto_mb = 0.00D
+        gastneto_mb = 0.00D
+        gastimpuesto_mb = 0.00D
         Add(sNo_, sNo_)
         Return liNumero
     End Function

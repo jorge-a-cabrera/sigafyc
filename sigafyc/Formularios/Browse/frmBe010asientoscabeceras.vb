@@ -8,12 +8,6 @@ Public Class frmBe010asientoscabeceras
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
     Private mbEntro As Boolean = True
-    Private mbAgregar As Boolean
-    Private mbModificar As Boolean
-    Private mbBorrar As Boolean
-    Private mbImprimir As Boolean
-    Private mbConsultar As Boolean
-    Private mbAuditoria As Boolean
     Private msLocalizar1 As String = ""
     Private msLocalizar2 As String = ""
     Private msCodigo As String = "asiento"
@@ -26,6 +20,7 @@ Public Class frmBe010asientoscabeceras
     Private msCulture As String = ""
     Private msDecimales As String = ""
     Private Shared mbabrirform As Boolean = False
+    Private mbImprimir As Boolean = False
 
     Private Sub Formulario_Load(sender As Object, e As EventArgs) Handles Me.Load
         LPInicializaDataGridView()
@@ -46,7 +41,6 @@ Public Class frmBe010asientoscabeceras
                 btnAuditoria.Location = lofrmBase.btnAuditoria.Location
                 btnSalir.Location = lofrmBase.btnSalir.Location
                 Me.Size = lofrmBase.Size
-                lofrmBase = Nothing
             End If
         End If
         lblNombreEmpresa.Text = ""
@@ -100,9 +94,7 @@ Public Class frmBe010asientoscabeceras
 
         msTabla = loDatos.tableName
         miCantidad = loDataSet.Tables.Item(0).Rows.Count
-        loDataSet = Nothing
         loDatos.CerrarConexion()
-        loDatos = Nothing
         LPSinRegistro_AbrirForm()
         LPHabilitaControles2()
     End Sub
@@ -157,9 +149,7 @@ Public Class frmBe010asientoscabeceras
 
         msTabla = loDatos.tableName
         miCantidad2 = loDataSet.Tables.Item(0).Rows.Count
-        loDataSet = Nothing
         loDatos.CerrarConexion()
-        loDatos = Nothing
         Dim loFK As New Ea010monedas
         loFK.codMoneda = msCodMoneda
         If loFK.GetPK = sOk_ Then
@@ -167,7 +157,6 @@ Public Class frmBe010asientoscabeceras
             msDecimales = loFK.decimales.ToString
         End If
         loFK.CerrarConexion()
-        loFK = Nothing
 
         Dim loFK1 As New Ee010asientoscabeceras
         loFK1.codEmpresa = miCodEmpresa
@@ -184,10 +173,8 @@ Public Class frmBe010asientoscabeceras
             lblTotalDebitos.Text = loFK1.debito_o.ToString(sFormatC_ & lsDecimales, CultureInfo.CreateSpecificCulture(lsCulture))
             lblTotalCreditos.Text = loFK1.credito_o.ToString(sFormatC_ & lsDecimales, CultureInfo.CreateSpecificCulture(lsCulture))
             loFK2.CerrarConexion()
-            loFK2 = Nothing
         End If
         loFK1.CerrarConexion()
-        loFK1 = Nothing
 
         LPSinRegistro_AbrirForm()
         LPHabilitaControles2()

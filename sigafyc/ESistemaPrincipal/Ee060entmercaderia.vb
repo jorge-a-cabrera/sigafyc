@@ -6,11 +6,13 @@
     Private msRequeridos As String = "codempresa" & sInteger_ & sSF_ &
                                        "numtransaccion" & sInteger_ & sSF_ &
                                        "coddeposito" & sInteger_ & sSF_ &
-                                       "orgdocumento" & sInteger_ & sSF_ &
                                        "orgtransaccion" & sInteger_ & sSF_ &
                                        "fecoperacion" & sString_ & sSF_ &
-                                       "fecrendicion" & sString_ & sSF_ &
-                                       "fase" & sString_
+                                       "fecvigencia" & sString_ & sSF_ &
+                                       "compneta_mb" & sDecimal_ & sSF_ &
+                                       "compimpuesto_mb" & sDecimal_ & sSF_ &
+                                       "gastneto_mb" & sDecimal_ & sSF_ &
+                                       "gastimpuesto_mb" & sDecimal_
 
     Private msCampos_PK() As Integer = {0, 1}
     Private msAutonumerado As String = "numtransaccion"
@@ -20,11 +22,13 @@
     Private miCodEmpresa As Integer
     Private miNumTransaccion As Integer
     Private miCodDeposito As Integer
-    Private miOrgDocumento As Integer
     Private miOrgTransaccion As Integer
     Private msFecOperacion As String
-    Private msFecRendicion As String
-    Private msFase As String
+    Private msFecVigencia As String
+    Private mdCompNeta_mb As Decimal
+    Private mdCompImpuesto_mb As Decimal
+    Private mdGastNeto_mb As Decimal
+    Private mdGastImpuesto_mb As Decimal
 #End Region
     Public Property codempresa As Integer
         Get
@@ -50,14 +54,6 @@
             miCodDeposito = value
         End Set
     End Property
-    Public Property orgdocumento As Integer
-        Get
-            Return miOrgDocumento
-        End Get
-        Set(value As Integer)
-            miOrgDocumento = value
-        End Set
-    End Property
     Public Property orgtransaccion As Integer
         Get
             Return miOrgTransaccion
@@ -74,20 +70,44 @@
             msFecOperacion = value
         End Set
     End Property
-    Public Property fecrendicion As String
+    Public Property fecvigencia As String
         Get
-            Return msFecRendicion
+            Return msFecVigencia
         End Get
         Set(value As String)
-            msFecRendicion = value
+            msFecVigencia = value
         End Set
     End Property
-    Public Property fase As String
+    Public Property compneta_mb As Decimal
         Get
-            Return msFase
+            Return mdCompNeta_mb
         End Get
-        Set(value As String)
-            msFase = value
+        Set(value As Decimal)
+            mdCompNeta_mb = value
+        End Set
+    End Property
+    Public Property compimpuesto_mb As Decimal
+        Get
+            Return mdCompImpuesto_mb
+        End Get
+        Set(value As Decimal)
+            mdCompImpuesto_mb = value
+        End Set
+    End Property
+    Public Property gastneto_mb As Decimal
+        Get
+            Return mdGastNeto_mb
+        End Get
+        Set(value As Decimal)
+            mdGastNeto_mb = value
+        End Set
+    End Property
+    Public Property gastimpuesto_mb As Decimal
+        Get
+            Return mdGastImpuesto_mb
+        End Get
+        Set(value As Decimal)
+            mdGastImpuesto_mb = value
         End Set
     End Property
     Public Sub New()
@@ -101,11 +121,13 @@
         codempresa = piCodEmpresa
         numtransaccion = liNumero
         coddeposito = 0
-        orgdocumento = 0
         orgtransaccion = 0
-        fecoperacion = sRESERVADO_
-        fecrendicion = sRESERVADO_
-        fase = sRESERVADO_
+        fecoperacion = sFormatoFecha1_
+        fecvigencia = sFormatoFecha1_
+        compneta_mb = 0.00D
+        compimpuesto_mb = 0.00D
+        gastneto_mb = 0.00D
+        gastimpuesto_mb = 0.00D
         Add(sNo_, sNo_)
         Return liNumero
     End Function

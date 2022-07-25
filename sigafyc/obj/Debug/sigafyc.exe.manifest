@@ -307,14 +307,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="sigafyc.exe" size="3858432">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="sigafyc.exe" size="4002816">
       <assemblyIdentity name="sigafyc" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>F8UoSMsbR6dZtHpmhTf99lG1LHj9fNrl9izVIp5vKW0=</dsig:DigestValue>
+        <dsig:DigestValue>Hmc4Gub9aEFZfNqGT7htSoO+n3j4jiFUUGx+TiM7buk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

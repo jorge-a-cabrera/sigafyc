@@ -426,6 +426,24 @@
     <Compile Include="Formularios\Browse\frmBe051compras.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Browse\frmBe060entmercaderia.Designer.vb">
+      <DependentUpon>frmBe060entmercaderia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBe060entmercaderia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBe061entmercaderia.Designer.vb">
+      <DependentUpon>frmBe061entmercaderia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBe061entmercaderia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBe062entmercaderia.Designer.vb">
+      <DependentUpon>frmBe062entmercaderia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Browse\frmBe062entmercaderia.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Browse\frmBMayorCuenta.Designer.vb">
       <DependentUpon>frmBMayorCuenta.vb</DependentUpon>
     </Compile>
@@ -496,6 +514,12 @@
       <DependentUpon>frmBBitacoraDatos.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Browse\frmBBitacoraDatos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFe062entmercaderia.Designer.vb">
+      <DependentUpon>frmFe062entmercaderia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFe062entmercaderia.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Form\frmFa010monedas.Designer.vb">
@@ -670,6 +694,18 @@
       <DependentUpon>frmFe051compras.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Form\frmFe051compras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFe060entmercaderia.Designer.vb">
+      <DependentUpon>frmFe060entmercaderia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFe060entmercaderia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFe061entmercaderia.Designer.vb">
+      <DependentUpon>frmFe061entmercaderia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form\frmFe061entmercaderia.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Utilitarios\frmFEnviarMail.Designer.vb">
@@ -973,6 +1009,7 @@
     <Compile Include="Utilitarios\modGPImportarDocumentos.vb" />
     <Compile Include="Utilitarios\modGPImportarPlanCuenta.vb" />
     <Compile Include="Utilitarios\modGPImportarUnidades.vb" />
+    <Compile Include="Utilitarios\modProcesoInventario.vb" />
     <Compile Include="Utilitarios\modGPReaperturaEjercicio.vb" />
     <Compile Include="Utilitarios\modGPReconstruccionCabAsiento.vb" />
     <Compile Include="Utilitarios\modGPReconstruccionSaldos.vb" />
@@ -1075,6 +1112,15 @@
     <EmbeddedResource Include="Formularios\Browse\frmBe051compras.resx">
       <DependentUpon>frmBe051compras.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Browse\frmBe060entmercaderia.resx">
+      <DependentUpon>frmBe060entmercaderia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Browse\frmBe061entmercaderia.resx">
+      <DependentUpon>frmBe061entmercaderia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Browse\frmBe062entmercaderia.resx">
+      <DependentUpon>frmBe062entmercaderia.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Browse\frmBMayorCuenta.resx">
       <DependentUpon>frmBMayorCuenta.vb</DependentUpon>
     </EmbeddedResource>
@@ -1110,6 +1156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Browse\frmBBitacoraDatos.resx">
       <DependentUpon>frmBBitacoraDatos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form\frmFe062entmercaderia.resx">
+      <DependentUpon>frmFe062entmercaderia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form\frmFa010monedas.resx">
       <DependentUpon>frmFa010monedas.vb</DependentUpon>
@@ -1197,6 +1246,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form\frmFe051compras.resx">
       <DependentUpon>frmFe051compras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form\frmFe060entmercaderia.resx">
+      <DependentUpon>frmFe060entmercaderia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form\frmFe061entmercaderia.resx">
+      <DependentUpon>frmFe061entmercaderia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Utilitarios\frmFEnviarMail.resx">
       <DependentUpon>frmFEnviarMail.vb</DependentUpon>

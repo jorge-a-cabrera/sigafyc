@@ -11,10 +11,10 @@
                                        "codubicacion" & sString_ & sSF_ &
                                        "cantentrada" & sDecimal_ & sSF_ &
                                        "cantsalida" & sDecimal_ & sSF_ &
-                                       "impentrada_mb" & sDecimal_ & sSF_ &
-                                       "impsalida_mb" & sDecimal_ & sSF_ &
-                                       "impuesto1_mb" & sDecimal_ & sSF_ &
-                                       "impuesto2_mb " & sDecimal_
+                                       "impentneto_mb" & sDecimal_ & sSF_ &
+                                       "impentimpuesto_mb" & sDecimal_ & sSF_ &
+                                       "impsalneto_mb" & sDecimal_ & sSF_ &
+                                       "impsalimpuesto_mb" & sDecimal_
 
     Private msCampos_PK() As Integer = {0, 1, 2, 3, 4, 5}
 #End Region
@@ -28,10 +28,10 @@
     Private msCodUbicacion As String
     Private mdCantEntrada As Decimal
     Private mdCantSalida As Decimal
-    Private mdImpEntrada_mb As Decimal
-    Private mdImpSalida_mb As Decimal
-    Private mdImpuesto1_mb As Decimal
-    Private mdImpuesto2_mb As Decimal
+    Private mdImpEntNeto_mb As Decimal
+    Private mdImpEntImpuesto_mb As Decimal
+    Private mdImpSalNeto_mb As Decimal
+    Private mdImpSalImpuesto_mb As Decimal
 #End Region
 
     Public Property codEmpresa As Integer
@@ -98,36 +98,36 @@
             mdCantSalida = value
         End Set
     End Property
-    Public Property impentrada_mb As Decimal
+    Public Property impentneto_mb As Decimal
         Get
-            Return mdImpEntrada_mb
+            Return mdImpEntNeto_mb
         End Get
         Set(value As Decimal)
-            mdImpEntrada_mb = value
+            mdImpEntNeto_mb = value
         End Set
     End Property
-    Public Property impsalida_mb As Decimal
+    Public Property impentimpuesto_mb As Decimal
         Get
-            Return mdImpSalida_mb
+            Return mdImpEntImpuesto_mb
         End Get
         Set(value As Decimal)
-            mdImpSalida_mb = value
+            mdImpEntImpuesto_mb = value
         End Set
     End Property
-    Public Property impuesto1_mb As Decimal
+    Public Property impsalneto_mb As Decimal
         Get
-            Return mdImpuesto1_mb
+            Return mdImpSalNeto_mb
         End Get
         Set(value As Decimal)
-            mdImpuesto1_mb = value
+            mdImpSalNeto_mb = value
         End Set
     End Property
-    Public Property impuesto2_mb As Decimal
+    Public Property impsalimpuesto_mb As Decimal
         Get
-            Return mdImpuesto2_mb
+            Return mdImpSalImpuesto_mb
         End Get
         Set(value As Decimal)
-            mdImpuesto2_mb = value
+            mdImpSalImpuesto_mb = value
         End Set
     End Property
     Public Sub New()
@@ -141,5 +141,4 @@
     Protected Overloads Sub Finalize()
         MyBase.Finalize()
     End Sub
-
 End Class

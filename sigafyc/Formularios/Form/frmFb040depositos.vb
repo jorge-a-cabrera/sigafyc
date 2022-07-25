@@ -1,9 +1,10 @@
 ﻿Imports System.ComponentModel
 Public Class frmFb040depositos
     Private msValidado() As String
-    Private msRequeridos As String() = {"codempresa", "coddeposito", "nombre", "abreviado", "tipdeposito", "ubicaciones", "estado"}
+    Private msRequeridos As String() = {"codempresa", "coddeposito", "nombre", "abreviado", "tipdeposito", "ubicaciones", "UbicPredeterminada", "estado"}
     Private moRequeridos As New ArrayList(msRequeridos)
     Private msCodMoneda As String = ""
+    Private msUbicPredeterminada As String = ""
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         LPOperacionCancelada()
     End Sub
@@ -36,12 +37,14 @@ Public Class frmFb040depositos
                         End If
                         Try
                             loDatos.Put(sSi_, sSi_, sAGREGAR_)
+                            If loDatos.ubicaciones = sSi_ Then
+                                LPCreaUbicacionPredeterminada(txtUbicPredeterminada.Text.ToString)
+                            End If
                         Catch ex As Exception
                             LPOperacionCancelada()
                             Exit Sub
                         End Try
                         loDatos.CerrarConexion()
-                        loDatos = Nothing
                     Case sMODIFICAR_
                         Dim loDatos As New Eb040depositos
                         loDatos.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
@@ -57,10 +60,10 @@ Public Class frmFb040depositos
                             If cmbEstado.Text.Trim.Length > 0 Then
                                 loDatos.estado = cmbEstado.Text
                             End If
+                            LPCreaUbicacionPredeterminada(txtUbicPredeterminada.Text.ToString)
                             loDatos.Put()
                         End If
                         loDatos.CerrarConexion()
-                        loDatos = Nothing
                 End Select
                 Me.Tag = sOk_
                 '-->  .AccesibleName envia al Browse la información del codigo que luego deberia 
@@ -80,7 +83,6 @@ Public Class frmFb040depositos
                     loDatos.Del()
                 End If
                 loDatos.CerrarConexion()
-                loDatos = Nothing
             End If
             Me.Tag = sOk_
             GPBitacoraRegistrar(sSALIO_, Me.Text & ", haciendo click en ACEPTAR.")
@@ -146,7 +148,6 @@ Public Class frmFb040depositos
                 txtCodEmpresa_NE.Tag = sOk_
                 txtCodigo_NE.Tag = sOk_
                 loDatos.CerrarConexion()
-                loDatos = Nothing
             Case Else
                 txtCodEmpresa_NE.Text = CType(entidad, Eb040depositos).codEmpresa.ToString
                 txtCodigo_NE.Text = CType(entidad, Eb040depositos).coddeposito.ToString
@@ -155,12 +156,21 @@ Public Class frmFb040depositos
                 cmbTipo.Text = CType(entidad, Eb040depositos).tipdeposito
                 cmbUbicaciones.Text = CType(entidad, Eb040depositos).ubicaciones
                 cmbEstado.Text = CType(entidad, Eb040depositos).estado
+                msUbicPredeterminada = GFsParametroObtener(sGeneral_, "Ubicacion predeterminada por Deposito - Empresa:" & Integer.Parse(txtCodEmpresa_NE.Text.ToString) & ", Deposito:" & Integer.Parse(txtCodigo_NE.Text.ToString))
+                If msUbicPredeterminada = sRESERVADO_ Then
+                    msUbicPredeterminada = GFsParametroObtener(sGeneral_, "Ubicacion predeterminada por Deposito")
+                    txtUbicPredeterminada.Enabled = True
+                Else
+                    txtUbicPredeterminada.Enabled = False
+                End If
+                txtUbicPredeterminada.Text = msUbicPredeterminada
                 txtCodEmpresa_NE.Tag = sOk_
                 txtCodigo_NE.Tag = sOk_
                 txtNombre_AN.Tag = sOk_
                 txtAbreviado_AN.Tag = sOk_
                 cmbTipo.Tag = sOk_
                 cmbUbicaciones.Tag = sOk_
+                txtUbicPredeterminada.Tag = sOk_
                 cmbEstado.Tag = sOk_
         End Select
         ' Habilita o deshabilita los controles de edición
@@ -178,6 +188,7 @@ Public Class frmFb040depositos
         txtAbreviado_AN.AccessibleName = "abreviado"
         cmbTipo.AccessibleName = "tipdeposito"
         cmbUbicaciones.AccessibleName = "ubicaciones"
+        txtUbicPredeterminada.AccessibleName = "UbicPredeterminada"
         cmbEstado.AccessibleName = "estado"
 
         Select Case Me.Tag.ToString
@@ -350,5 +361,45 @@ Public Class frmFb040depositos
         If Me.Tag.ToString = sAGREGAR_ Then
             cmbUbicaciones.Text = cmbUbicaciones.Items(0).ToString
         End If
+    End Sub
+
+    Private Sub cmbUbicaciones_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbUbicaciones.SelectedIndexChanged
+        If cmbUbicaciones.Text = sSi_ Then
+            If Me.Tag.ToString = sAGREGAR_ Then
+                msUbicPredeterminada = GFsParametroObtener(sGeneral_, "Ubicacion predeterminada por Deposito")
+                txtUbicPredeterminada.Text = msUbicPredeterminada
+            End If
+            lblUbicPredeterminada.Visible = True
+            txtUbicPredeterminada.Visible = True
+        Else
+            lblUbicPredeterminada.Visible = False
+            txtUbicPredeterminada.Visible = False
+            txtUbicPredeterminada.Text = ""
+        End If
+    End Sub
+
+    Private Sub LPCreaUbicacionPredeterminada(ByVal psCodUbicacion As String)
+        Dim loC030 As New Ec030ubicaciones
+        loC030.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+        loC030.codDeposito = Integer.Parse(txtCodigo_NE.Text.ToString)
+        loC030.codUbicacion = psCodUbicacion
+        If loC030.GetPK <> sOk_ Then
+            loC030.codEmpresa = Integer.Parse(txtCodEmpresa_NE.Text.ToString)
+            loC030.codDeposito = Integer.Parse(txtCodigo_NE.Text.ToString)
+            loC030.codUbicacion = psCodUbicacion
+            loC030.nombre = "Ubicacion: " & psCodUbicacion
+            loC030.estado = sActivo_
+            Try
+                loC030.Add(sNo_)
+                GPParametroGuardar(sGeneral_, "Ubicacion predeterminada por Deposito - Empresa:" & loC030.codEmpresa & ", Deposito:" & loC030.codDeposito, psCodUbicacion, sNo_)
+            Catch ex As Exception
+                GFsAvisar("Error al crear ubicacion predeterminada [" & psCodUbicacion & "]", sMENSAJE_, "Por favor comunique esto al Dpto. Informatica.")
+            End Try
+        Else
+            If Me.Tag.ToString = sAGREGAR_ Then
+                GFsAvisar("Error Ya existe la ubicacion predeterminada [" & psCodUbicacion & "]", sMENSAJE_, "Por favor comunique esto al Dpto. Informatica.")
+            End If
+        End If
+        loC030.CerrarConexion()
     End Sub
 End Class

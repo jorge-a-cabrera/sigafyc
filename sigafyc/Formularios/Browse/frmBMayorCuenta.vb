@@ -31,9 +31,7 @@ Public Class frmBMayorCuenta
     Private mdTotCredito As Decimal = 0.00D
     Private msLocalizar As String = ""
     Private mbEntro As Boolean = True
-    Private mbConsultar As Boolean
     Private mbImprimir As Boolean = False
-    Private mbAuditoria As Boolean
 
     Public Property codEmpresa As Integer
         Get

@@ -501,4 +501,5 @@ Public Class frmRMayorCuenta
         Next
         LPCargarDatos()
     End Sub
+
 End Class

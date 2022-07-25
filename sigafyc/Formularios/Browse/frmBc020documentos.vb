@@ -3,11 +3,6 @@ Public Class frmBc020documentos
     Private moFormulario As frmFc020documentos
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
-    Private mbAgregar As Boolean
-    Private mbModificar As Boolean
-    Private mbBorrar As Boolean
-    Private mbConsultar As Boolean
-    Private mbAuditoria As Boolean
     Private msLocalizar As String = ""
     Private miCodEmpresa As Integer = 0
     Private msTipo As String = ""
@@ -132,9 +127,7 @@ Public Class frmBc020documentos
 
         msTabla = loDatos.tableName
         miCantidad = loDataSet.Tables.Item(0).Rows.Count
-        loDataSet = Nothing
         loDatos.CerrarConexion()
-        loDatos = Nothing
         LPSinRegistro_AbrirForm()
         LPHabilitaControles()
     End Sub
@@ -264,7 +257,6 @@ Public Class frmBc020documentos
                 End Try
         End Select
         loDatos.CerrarConexion()
-        loDatos = Nothing
         LPCargarDatos()
     End Sub
     Private Sub btnAuditoria_Click(sender As Object, e As EventArgs) Handles btnAuditoria.Click

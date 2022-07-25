@@ -4,11 +4,6 @@ Public Class frmBss110parametros
     Private moFormulario As frmFss110parametros
     Private msTabla As String = ""
     Private msPk_Hash As String = ""
-    Private mbAgregar As Boolean
-    Private mbModificar As Boolean
-    Private mbBorrar As Boolean
-    Private mbConsultar As Boolean
-    Private mbAuditoria As Boolean
     Private msLocalizar As String
     Private msSS010_codigo As String
     Private msTipo As String

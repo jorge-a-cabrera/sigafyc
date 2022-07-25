@@ -47,12 +47,11 @@ Partial Class frmRMayorCuenta : Inherits frmFormulario
         '
         'TabControl1
         '
-        Me.TabControl1.Location = New System.Drawing.Point(9, 12)
-        Me.TabControl1.Size = New System.Drawing.Size(1262, 527)
+        Me.TabControl1.Location = New System.Drawing.Point(13, 49)
+        Me.TabControl1.Size = New System.Drawing.Size(1258, 486)
         '
         'TabPage1
         '
-        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage1.Controls.Add(Me.ListBox1)
         Me.TabPage1.Controls.Add(Me.Buscar)
         Me.TabPage1.Controls.Add(Me.Label5)
@@ -67,74 +66,76 @@ Partial Class frmRMayorCuenta : Inherits frmFormulario
         Me.TabPage1.Controls.Add(Me.lblNombreEmpresa)
         Me.TabPage1.Controls.Add(Me.txtCodEmpresa_NE)
         Me.TabPage1.Controls.Add(Me.Label4)
-        Me.TabPage1.Size = New System.Drawing.Size(1254, 487)
+        Me.TabPage1.Size = New System.Drawing.Size(1250, 450)
         Me.TabPage1.Text = "Parametros requeridos"
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(13, 541)
+        Me.btnCancelar.Location = New System.Drawing.Point(17, 537)
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(1134, 541)
+        Me.btnAceptar.Location = New System.Drawing.Point(1134, 537)
         '
         'lblMensaje
         '
-        Me.lblMensaje.Size = New System.Drawing.Size(1256, 37)
+        Me.lblMensaje.Location = New System.Drawing.Point(37, 9)
+        Me.lblMensaje.Size = New System.Drawing.Size(1207, 37)
         '
         'lblNombreEmpresa
         '
         Me.lblNombreEmpresa.AutoSize = True
-        Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombreEmpresa.Location = New System.Drawing.Point(240, 21)
+        Me.lblNombreEmpresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpresa.Location = New System.Drawing.Point(220, 21)
         Me.lblNombreEmpresa.Name = "lblNombreEmpresa"
-        Me.lblNombreEmpresa.Size = New System.Drawing.Size(233, 24)
+        Me.lblNombreEmpresa.Size = New System.Drawing.Size(198, 20)
         Me.lblNombreEmpresa.TabIndex = 65
         Me.lblNombreEmpresa.Text = "<nombre_de_empresa>"
         '
         'txtCodEmpresa_NE
         '
         Me.txtCodEmpresa_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodEmpresa_NE.Location = New System.Drawing.Point(119, 19)
+        Me.txtCodEmpresa_NE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodEmpresa_NE.Location = New System.Drawing.Point(99, 19)
         Me.txtCodEmpresa_NE.Name = "txtCodEmpresa_NE"
-        Me.txtCodEmpresa_NE.Size = New System.Drawing.Size(115, 29)
+        Me.txtCodEmpresa_NE.Size = New System.Drawing.Size(115, 26)
         Me.txtCodEmpresa_NE.TabIndex = 0
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(16, 21)
+        Me.Label4.Location = New System.Drawing.Point(18, 21)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(91, 24)
+        Me.Label4.Size = New System.Drawing.Size(77, 20)
         Me.Label4.TabIndex = 64
         Me.Label4.Text = "Empresa:"
         '
         'lblNombreSucursal
         '
         Me.lblNombreSucursal.AutoSize = True
-        Me.lblNombreSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombreSucursal.Location = New System.Drawing.Point(240, 65)
+        Me.lblNombreSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreSucursal.Location = New System.Drawing.Point(220, 57)
         Me.lblNombreSucursal.Name = "lblNombreSucursal"
-        Me.lblNombreSucursal.Size = New System.Drawing.Size(195, 24)
+        Me.lblNombreSucursal.Size = New System.Drawing.Size(166, 20)
         Me.lblNombreSucursal.TabIndex = 83
         Me.lblNombreSucursal.Text = "<nombre_sucursal>"
         '
         'txtCodSucursal_NE
         '
         Me.txtCodSucursal_NE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodSucursal_NE.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodSucursal_NE.Location = New System.Drawing.Point(119, 63)
+        Me.txtCodSucursal_NE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodSucursal_NE.Location = New System.Drawing.Point(99, 51)
         Me.txtCodSucursal_NE.Name = "txtCodSucursal_NE"
-        Me.txtCodSucursal_NE.Size = New System.Drawing.Size(74, 29)
+        Me.txtCodSucursal_NE.Size = New System.Drawing.Size(74, 26)
         Me.txtCodSucursal_NE.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(14, 65)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(18, 53)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(88, 24)
+        Me.Label2.Size = New System.Drawing.Size(75, 20)
         Me.Label2.TabIndex = 82
         Me.Label2.Text = "Sucursal:"
         '
@@ -145,10 +146,10 @@ Partial Class frmRMayorCuenta : Inherits frmFormulario
         Me.gbxGrupo.Controls.Add(Me.Label8)
         Me.gbxGrupo.Controls.Add(Me.Label7)
         Me.gbxGrupo.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.gbxGrupo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbxGrupo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbxGrupo.Location = New System.Drawing.Point(754, 19)
         Me.gbxGrupo.Name = "gbxGrupo"
-        Me.gbxGrupo.Size = New System.Drawing.Size(482, 99)
+        Me.gbxGrupo.Size = New System.Drawing.Size(482, 75)
         Me.gbxGrupo.TabIndex = 2
         Me.gbxGrupo.TabStop = False
         Me.gbxGrupo.Text = "rango de fecha"
@@ -156,7 +157,8 @@ Partial Class frmRMayorCuenta : Inherits frmFormulario
         'txtFecha2_FE
         '
         Me.txtFecha2_FE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtFecha2_FE.Location = New System.Drawing.Point(215, 57)
+        Me.txtFecha2_FE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFecha2_FE.Location = New System.Drawing.Point(307, 32)
         Me.txtFecha2_FE.Name = "txtFecha2_FE"
         Me.txtFecha2_FE.Size = New System.Drawing.Size(162, 26)
         Me.txtFecha2_FE.TabIndex = 1
@@ -164,7 +166,8 @@ Partial Class frmRMayorCuenta : Inherits frmFormulario
         'txtFecha1_FE
         '
         Me.txtFecha1_FE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtFecha1_FE.Location = New System.Drawing.Point(215, 25)
+        Me.txtFecha1_FE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFecha1_FE.Location = New System.Drawing.Point(79, 32)
         Me.txtFecha1_FE.Name = "txtFecha1_FE"
         Me.txtFecha1_FE.Size = New System.Drawing.Size(162, 26)
         Me.txtFecha1_FE.TabIndex = 0
@@ -172,38 +175,40 @@ Partial Class frmRMayorCuenta : Inherits frmFormulario
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(105, 59)
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(245, 34)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(62, 20)
+        Me.Label8.Size = New System.Drawing.Size(56, 20)
         Me.Label8.TabIndex = 100
         Me.Label8.Text = "Hasta:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(105, 27)
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(13, 34)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(66, 20)
+        Me.Label7.Size = New System.Drawing.Size(60, 20)
         Me.Label7.TabIndex = 99
         Me.Label7.Text = "Desde:"
         '
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.ItemHeight = 24
-        Me.ListBox1.Location = New System.Drawing.Point(754, 166)
+        Me.ListBox1.ItemHeight = 20
+        Me.ListBox1.Location = New System.Drawing.Point(754, 147)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
-        Me.ListBox1.Size = New System.Drawing.Size(482, 292)
+        Me.ListBox1.Size = New System.Drawing.Size(482, 284)
         Me.ListBox1.TabIndex = 4
         '
         'Buscar
         '
         Me.Buscar.AccessibleDescription = "codigo"
         Me.Buscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Buscar.Location = New System.Drawing.Point(20, 111)
+        Me.Buscar.Location = New System.Drawing.Point(22, 83)
         Me.Buscar.Name = "Buscar"
-        Me.Buscar.Size = New System.Drawing.Size(625, 29)
+        Me.Buscar.Size = New System.Drawing.Size(625, 26)
         Me.Buscar.TabIndex = 5
         Me.Buscar.Tag = "ingrese su busqueda"
         Me.Buscar.Text = "ingrese su busqueda"
@@ -211,18 +216,18 @@ Partial Class frmRMayorCuenta : Inherits frmFormulario
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(750, 138)
+        Me.Label5.Location = New System.Drawing.Point(750, 124)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(202, 24)
+        Me.Label5.Size = New System.Drawing.Size(171, 20)
         Me.Label5.TabIndex = 99
         Me.Label5.Text = "cuentas seleccionadas"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(16, 139)
+        Me.Label3.Location = New System.Drawing.Point(18, 124)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(177, 24)
+        Me.Label3.Size = New System.Drawing.Size(149, 20)
         Me.Label3.TabIndex = 98
         Me.Label3.Text = "cuentas disponibles"
         '
@@ -257,7 +262,7 @@ Partial Class frmRMayorCuenta : Inherits frmFormulario
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(20, 166)
+        Me.DataGridView1.Location = New System.Drawing.Point(22, 147)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(625, 292)
